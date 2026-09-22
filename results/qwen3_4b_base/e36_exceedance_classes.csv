@@ -1,0 +1,7 @@
+model,method,token_class,group_token_observations,over_half_step_count,fraction_over_half_step
+qwen3_4b_base,pq,BOS,663552,128,0.00019290123456790122
+qwen3_4b_base,pq,massive,1368576,194,0.0001417531799476244
+qwen3_4b_base,pq,other,1356922368,807,5.947282018716048e-07
+qwen3_4b_base,hadamard,BOS,663552,0,0.0
+qwen3_4b_base,hadamard,massive,1368576,0,0.0
+qwen3_4b_base,hadamard,other,1356922368,0,0.0

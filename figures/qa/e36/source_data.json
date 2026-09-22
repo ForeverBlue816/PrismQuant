@@ -1,0 +1,57 @@
+{
+  "source_rows": 256,
+  "plotted_rows": 256,
+  "excluded_rows": 0,
+  "panels": [
+    {
+      "panel": "a",
+      "model": "qwen3_4b_base",
+      "site": "qkv",
+      "layers": 36,
+      "methods": 2,
+      "center": "exact pooled P99 over all 3 seeds and all token-groups",
+      "spread": "minimum to maximum of the three seed P99 values; not a CI",
+      "excluded_layer_rows": 0
+    },
+    {
+      "panel": "b",
+      "model": "qwen3_4b_base",
+      "site": "down",
+      "layers": 36,
+      "methods": 2,
+      "center": "exact pooled P99 over all 3 seeds and all token-groups",
+      "spread": "minimum to maximum of the three seed P99 values; not a CI",
+      "excluded_layer_rows": 0
+    },
+    {
+      "panel": "c",
+      "model": "llama32_3b",
+      "site": "qkv",
+      "layers": 28,
+      "methods": 2,
+      "center": "exact pooled P99 over all 3 seeds and all token-groups",
+      "spread": "minimum to maximum of the three seed P99 values; not a CI",
+      "excluded_layer_rows": 0
+    },
+    {
+      "panel": "d",
+      "model": "llama32_3b",
+      "site": "down",
+      "layers": 28,
+      "methods": 2,
+      "center": "exact pooled P99 over all 3 seeds and all token-groups",
+      "spread": "minimum to maximum of the three seed P99 values; not a CI",
+      "excluded_layer_rows": 0
+    }
+  ],
+  "axis_scale": "log",
+  "linthresh": null,
+  "y_limits": [
+    0.0016209186300779079,
+    0.725
+  ],
+  "width_mm": 183,
+  "height_mm": 70,
+  "style_reuse": "paper palette; publication-safe sans-serif typography; new statistical chart",
+  "zero_denominator_policy": "documented in source statistics; P99 offset/step uses actual positive guarded steps"
+}

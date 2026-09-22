@@ -1,0 +1,78 @@
+{
+  "H36a": {
+    "Z16_seed_sd": 0.006475619822230856,
+    "delta": 0.0007614059460199959,
+    "supported": true
+  },
+  "H36b": [
+    {
+      "ci90_high": 0.0014373722404807557,
+      "ci90_low": -9.045188211065217e-05,
+      "delta": 0.0006734601791850517,
+      "method": "pq",
+      "supported": false
+    },
+    {
+      "ci90_high": 0.001790325185357165,
+      "ci90_low": 0.00016610975976615494,
+      "delta": 0.00097821747256166,
+      "method": "hadamard",
+      "supported": true
+    }
+  ],
+  "H36c": [
+    {
+      "aligned_level_interpretation": "aligned constant Walsh level",
+      "error_to_unaligned_infinite_count": 7,
+      "error_to_unaligned_median": 0.008462483071155066,
+      "error_to_unaligned_undefined_count": 0,
+      "fraction_over_half_step": 8.307857277952595e-07,
+      "group_token_observations": 1358954496,
+      "largest_p99": 0.02538558337635519,
+      "largest_p99_layer": 0,
+      "largest_p99_site": "qkv",
+      "median_ratio_below_one_percent": true,
+      "method": "pq",
+      "model": "qwen3_4b_base",
+      "over_half_step_count": 1129,
+      "overall_below_one_percent": true,
+      "supported": true,
+      "worst_fraction_layer": 1,
+      "worst_fraction_site": "down",
+      "worst_layer_below_five_percent": true,
+      "worst_layer_fraction": 2.583286218475877e-05
+    },
+    {
+      "aligned_level_interpretation": "incidental group DC only",
+      "error_to_unaligned_infinite_count": 382,
+      "error_to_unaligned_median": 0.04178948391571989,
+      "error_to_unaligned_undefined_count": 0,
+      "fraction_over_half_step": 0.0,
+      "group_token_observations": 1358954496,
+      "largest_p99": 0.0039471521490736065,
+      "largest_p99_layer": 32,
+      "largest_p99_site": "qkv",
+      "median_ratio_below_one_percent": false,
+      "method": "hadamard",
+      "model": "qwen3_4b_base",
+      "over_half_step_count": 0,
+      "overall_below_one_percent": true,
+      "supported": false,
+      "worst_fraction_layer": 0,
+      "worst_fraction_site": "qkv",
+      "worst_layer_below_five_percent": true,
+      "worst_layer_fraction": 0.0
+    }
+  ],
+  "H36d": {
+    "baseline_paired_seed_sd": 0.014362785888459616,
+    "ci90_high": 0.00021637910673957144,
+    "ci90_low": -0.0014818567858590136,
+    "delta": -0.0006327388395597211,
+    "seed_ci90_high": 0.0013886927745018988,
+    "seed_ci90_low": -0.002654170453621341,
+    "supported": true
+  },
+  "model": "qwen3_4b_base",
+  "primary_scope": "PQ on both models; method-specific Hadamard stress and DC-comparison controls also reported"
+}

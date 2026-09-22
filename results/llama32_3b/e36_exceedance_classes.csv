@@ -1,0 +1,7 @@
+model,method,token_class,group_token_observations,over_half_step_count,fraction_over_half_step
+llama32_3b,pq,BOS,473088,512,0.0010822510822510823
+llama32_3b,pq,massive,975744,0,0.0
+llama32_3b,pq,other,967435392,0,0.0
+llama32_3b,hadamard,BOS,473088,0,0.0
+llama32_3b,hadamard,massive,975744,0,0.0
+llama32_3b,hadamard,other,967435392,0,0.0

@@ -2703,3 +2703,165 @@ Source tables: [all-row PPL](results/llama32_3b/e34_summary.csv), [group ranges]
 No manuscript main text is present in this repository; this section supplies the decision-conditioned replacement mechanism wording. Pre-registration, execution hashes and preservation checks accompany the results. No row was tuned or dropped after observing PPL.
 
 <!-- E34 RESULTS END -->
+
+## E36 — Offset precision: is the aligned level really stored losslessly?
+
+Status: all measurements and exact distribution analyses complete; fixed hypotheses retained.
+
+The hypotheses, fixed-code interpretation, precision routines, token/group strata and statistical margins were fixed before measurement in the [E36 preregistration](experiments/e36_preregistration.md).
+
+<!-- E36 RESULTS START -->
+
+The complete fixed grid comprises eight precision/method rows per model, three paired seeds and 64 frozen 2048-token chunks (3,072 chunk evaluations across both models). Z16 is the original activation-only fp16-metadata pipeline. Each Z16 chunk must reproduce its frozen E29 fp32 NLL bit for bit before its precision controls run.
+
+**Scope of the intervention.** All four rows use the same saved Z16 codes at every layer/site. Z32 and ZB16 also use exactly the same stored scale. Only the reconstruction metadata changes; S32 is the explicit scale-changing control. This satisfies the requested across-row hash gate. A dynamically re-encoded precision sweep would change codes and downstream quantizer inputs, so these results are a fixed-code storage diagnostic, not an estimate for that different experiment. Residual connections and unquantized model operations still execute normally.
+
+Z16 stores a 16-bit scale and real offset, giving 4.25 effective bits/value at g=128. ZB16 keeps that bit width but changes offset precision to the 8-bit bf16 significand (7 explicit fraction bits). Z32 and S32 are diagnostics excluded from default bit-accounted comparisons; their nominal metadata storage would give 4.375 bits/value. All model weights and KV remain bf16.
+
+PPL is the mean of three seed-level corpus PPLs. The displayed paired 90% intervals retain E29’s 3×64 delta-method convention (t191; the same texts recur across seeds); the CSVs additionally report paired three-seed intervals (t2). “Within seed noise” uses the fixed pre-registered baseline SD, not a formal equivalence test. Group statistics use every Z16 input position, including the final unscored predictor, and exact pooled empirical quantiles across seeds, without subsampling.
+
+### Qwen3-4B-Base
+
+**A. Metadata precision at fixed codes**
+
+| Method | Precision | PPL | Seed SD | Δ vs method Z16 [90% paired CI] |
+| --- | --- | --- | --- | --- |
+| PrismQuant | Z16 | 7.69745 | 0.00647562 | 0 [0, 0] |
+| PrismQuant | Z32 | 7.69821 | 0.00669786 | 0.000761406 [0.000129123, 0.00139369] |
+| PrismQuant | ZB16 | 7.69813 | 0.00674672 | 0.00067346 [-9.04519e-05, 0.00143737] |
+| PrismQuant | S32 | 7.69723 | 0.0066559 | -0.000218122 [-0.000837439, 0.000401195] |
+| Hadamard | Z16 | 7.87694 | 0.00993312 | 0 [0, 0] |
+| Hadamard | Z32 | 7.87707 | 0.0103029 | 0.000128667 [-0.000443725, 0.000701059] |
+| Hadamard | ZB16 | 7.87792 | 0.00985134 | 0.000978217 [0.00016611, 0.00179033] |
+| Hadamard | S32 | 7.87748 | 0.00999795 | 0.000543908 [-0.000110305, 0.00119812] |
+
+The PQ Z32−Z16 paired interval excludes zero on the positive side (0.000761406 [0.000129123, 0.00139369]), even though the separate baseline-SD rule may classify the change as within seed noise. Thus that operational H36a rule must not be paraphrased as no detectable change. Z32 retains codes selected using rounded Z16 metadata; a finer reconstruction offset is not guaranteed to improve those fixed codes or their PPL.
+
+**B. Where fp16 offset rounding lives**
+
+| Method | Token-group observations | Error > 0.5 step, overall | Worst layer/site fraction | Median error / unaligned-step comparison |
+| --- | --- | --- | --- | --- |
+| PrismQuant | 1358954496 | 8.30786e-05% | 0.00258329% (layer 1, down) | 0.00846248 |
+| Hadamard | 1358954496 | 0% | 0% (layer 0, qkv) | 0.0417895 |
+
+The following is the layer/site with the **largest pooled P99 offset error in step units** for each method; layer indices are zero based. This need not be the layer/site with the largest threshold-exceedance fraction above.
+
+| Method | Layer/site | \|z\| / range: median / P99 / max | Offset error / step: median / P99 | Fraction > 0.5 step | (2\|c\|/15) / step: median / P99 |
+| --- | --- | --- | --- | --- | --- |
+| PrismQuant | 0 / qkv | 0.51088 / 9.97136 / 21.5409 | 0.00124352 / 0.0253856 | 0% | 0.14912 / 20.6048 |
+| Hadamard | 32 / qkv | 0.564453 / 0.690208 / 0.815684 | 0.00144213 / 0.00394715 | 0% | 0.144318 / 0.248757 |
+
+PrismQuant half-step exceedances over all layers/sites split as BOS=128, massive=194, other=807; [class counts and denominators](results/qwen3_4b_base/e36_exceedance_classes.csv) are retained.
+
+Rare half-step exceedances can be missed by the all-token P99. The following disjoint input-class breakdown uses each method’s predeclared maximum-exceedance layer/site when any exceedances exist; the all row is a total, not an additional disjoint class.
+
+| Method / layer / site | Input class | Token-group count | Count > 0.5 step | Fraction > 0.5 step | Maximum error / step |
+| --- | --- | --- | --- | --- | --- |
+| PrismQuant / 1 / down | all | 29884416 | 772 | 0.00258329% | 4.71125 |
+| PrismQuant / 1 / down | BOS | 14592 | 0 | 0% | 0.00378275 |
+| PrismQuant / 1 / down | massive | 30096 | 0 | 0% | 0.0781355 |
+| PrismQuant / 1 / down | other | 29839728 | 772 | 0.00258715% | 4.71125 |
+
+| Method at its P99-max layer | Input class | Token-group count | \|z\| / range: median / P99 | Offset error / step: median / P99 | Fraction > 0.5 step |
+| --- | --- | --- | --- | --- | --- |
+| PrismQuant | BOS | 3840 | 0.486091 / 0.798187 | 0.00110068 / 0.00336945 | 0% |
+| PrismQuant | massive | 7920 | 0.506422 / 5.9499 | 0.00121858 / 0.016602 | 0% |
+| PrismQuant | BOS+massive | 11760 | 0.498134 / 5.45386 | 0.00114402 / 0.0114439 | 0% |
+| Hadamard | BOS | 3840 | 0.444921 / 0.504556 | 0.000958329 / 0.0031266 | 0% |
+| Hadamard | massive | 7920 | 0.466828 / 0.677656 | 0.00117179 / 0.00373078 | 0% |
+| Hadamard | BOS+massive | 11760 | 0.455791 / 0.667664 | 0.00104058 / 0.0035915 | 0% |
+
+BOS and massive positions are the frozen E34 **input** classes: 64 BOS and 132 massive positions, combined fraction 0.149536%, selected from residual norms at E34 layer 21. Token-group counts include three repeated rotation seeds and the number of groups, not independent text samples. The full CSV retains every layer/site/seed, all/anchor/other groups and all/BOS/massive/BOS+massive/other input classes. At k=max, every PQ group is anchored and Hadamard has no aligned anchor groups; empty strata are N/A with zero count.
+
+Here c is the measured rotated group mean: the constant aligned Walsh level for PQ, and only an incidental group-DC comparison for Hadamard. The 2|c|/15 quantity describes the isolated sign-changing level’s step cost; it is not a claim that the extrema of level plus residual add linearly. The reported median ratio is the median of per-group ratios, not a ratio of medians. Zero-denominator and infinite-value counts remain in the full tables; no epsilon clipping or silent finite-only filtering is applied.
+
+**Pre-registered decisions**
+
+| Hypothesis | Outcome |
+| --- | --- |
+| H36a | supported; PQ Z32−Z16=0.000761406, Z16 seed SD=0.00647562 |
+| H36b | PQ: not supported, 0.00067346 [-9.04519e-05, 0.00143737]; Hadamard control: supported, 0.000978217 [0.00016611, 0.00179033] |
+| H36c | PQ: supported; overall <1%: True; worst layer <5%: True; median ratio <0.01: True |
+| H36d | supported; Had−PQ precision-effect contrast -0.000632739 [-0.00148186, 0.000216379]; baseline paired seed SD=0.0143628 |
+
+**Reading.** PQ’s Z32−Z16 change is 0.000761406 PPL, so the fixed baseline-seed-noise criterion is supported. The bf16-offset stress test is not supported for PQ; its paired interval is 0.00067346 [-9.04519e-05, 0.00143737], which limits what can be claimed about sensitivity. The largest PQ P99 offset error is 0.0253856 steps at layer 0 (qkv), while the overall >half-step fraction is 8.30786e-05%. The median per-group rounding-error/unaligned-step ratio is 0.00846248; all three H36c clauses are reported rather than inferred from this one number. The comparison of PQ and Hadamard precision effects is supported under H36d’s fixed noise reference. Small or undetected PPL changes in this frozen-payload experiment do not establish mathematically lossless storage and do not substitute for a dynamically re-encoded precision sweep.
+
+Source tables: [PPL sweep](results/qwen3_4b_base/e36_summary.csv), [all group statistics](results/qwen3_4b_base/e36_group_statistics.csv), [model-wide checks](results/qwen3_4b_base/e36_overall.csv), [P99-max layers and token classes](results/qwen3_4b_base/e36_worst_layer.csv), [method precision contrast](results/qwen3_4b_base/e36_method_precision_contrast.csv), [hypotheses](results/qwen3_4b_base/e36_hypotheses.json), [payload hashes](results/qwen3_4b_base/e36_payload_hashes.csv), [E29 replays](results/qwen3_4b_base/e36_baseline_replay.csv).
+
+### Llama-3.2-3B
+
+**A. Metadata precision at fixed codes**
+
+| Method | Precision | PPL | Seed SD | Δ vs method Z16 [90% paired CI] |
+| --- | --- | --- | --- | --- |
+| PrismQuant | Z16 | 7.70523 | 0.00839897 | 0 [0, 0] |
+| PrismQuant | Z32 | 7.70592 | 0.00837837 | 0.000694394 [0.00026076, 0.00112803] |
+| PrismQuant | ZB16 | 7.70598 | 0.00852078 | 0.000747047 [0.000149672, 0.00134442] |
+| PrismQuant | S32 | 7.70516 | 0.00888247 | -7.10878e-05 [-0.000541064, 0.000398889] |
+| Hadamard | Z16 | 7.76663 | 0.00519842 | 0 [0, 0] |
+| Hadamard | Z32 | 7.76639 | 0.0055131 | -0.000242749 [-0.000674861, 0.000189364] |
+| Hadamard | ZB16 | 7.76733 | 0.00548785 | 0.000697357 [0.000219072, 0.00117564] |
+| Hadamard | S32 | 7.76636 | 0.00479255 | -0.000274892 [-0.000694088, 0.000144303] |
+
+The PQ Z32−Z16 paired interval excludes zero on the positive side (0.000694394 [0.00026076, 0.00112803]), even though the separate baseline-SD rule may classify the change as within seed noise. Thus that operational H36a rule must not be paraphrased as no detectable change. Z32 retains codes selected using rounded Z16 metadata; a finer reconstruction offset is not guaranteed to improve those fixed codes or their PPL.
+
+**B. Where fp16 offset rounding lives**
+
+| Method | Token-group observations | Error > 0.5 step, overall | Worst layer/site fraction | Median error / unaligned-step comparison |
+| --- | --- | --- | --- | --- |
+| PrismQuant | 968884224 | 5.28443e-05% | 0.000762939% (layer 0, down) | 0.0092867 |
+| Hadamard | 968884224 | 0% | 0% (layer 0, qkv) | 0.0579278 |
+
+The following is the layer/site with the **largest pooled P99 offset error in step units** for each method; layer indices are zero based. This need not be the layer/site with the largest threshold-exceedance fraction above.
+
+| Method | Layer/site | \|z\| / range: median / P99 / max | Offset error / step: median / P99 | Fraction > 0.5 step | (2\|c\|/15) / step: median / P99 |
+| --- | --- | --- | --- | --- | --- |
+| PrismQuant | 0 / qkv | 0.518887 / 5.8213 / 10.2326 | 0.00123683 / 0.017315 | 0% | 0.246947 / 11.6704 |
+| Hadamard | 3 / qkv | 0.50025 / 0.625593 / 0.760815 | 0.00116265 / 0.00357323 | 0% | 0.0187004 / 0.0744397 |
+
+PrismQuant half-step exceedances over all layers/sites split as BOS=512, massive=0, other=0; [class counts and denominators](results/llama32_3b/e36_exceedance_classes.csv) are retained.
+
+Rare half-step exceedances can be missed by the all-token P99. The following disjoint input-class breakdown uses each method’s predeclared maximum-exceedance layer/site when any exceedances exist; the all row is a total, not an additional disjoint class.
+
+| Method / layer / site | Input class | Token-group count | Count > 0.5 step | Fraction > 0.5 step | Maximum error / step |
+| --- | --- | --- | --- | --- | --- |
+| PrismQuant / 0 / down | all | 25165824 | 192 | 0.000762939% | 2.40282 |
+| PrismQuant / 0 / down | BOS | 12288 | 192 | 1.5625% | 2.40282 |
+| PrismQuant / 0 / down | massive | 25344 | 0 | 0% | 0.00892762 |
+| PrismQuant / 0 / down | other | 25128192 | 0 | 0% | 0.0527426 |
+
+| Method at its P99-max layer | Input class | Token-group count | \|z\| / range: median / P99 | Offset error / step: median / P99 | Fraction > 0.5 step |
+| --- | --- | --- | --- | --- | --- |
+| PrismQuant | BOS | 4608 | 0.519012 / 0.996574 | 0.00103165 / 0.00430325 | 0% |
+| PrismQuant | massive | 9504 | 0.492794 / 0.972379 | 0.00116297 / 0.00376297 | 0% |
+| PrismQuant | BOS+massive | 14112 | 0.496722 / 0.974991 | 0.00113861 / 0.00390228 | 0% |
+| Hadamard | BOS | 4608 | 0.494915 / 0.558034 | 0.00132759 / 0.00329712 | 0% |
+| Hadamard | massive | 9504 | 0.498433 / 0.626695 | 0.00114977 / 0.0035188 | 0% |
+| Hadamard | BOS+massive | 14112 | 0.496887 / 0.617284 | 0.00121448 / 0.00340413 | 0% |
+
+BOS and massive positions are the frozen E34 **input** classes: 64 BOS and 132 massive positions, combined fraction 0.149536%, selected from residual norms at E34 layer 1. Token-group counts include three repeated rotation seeds and the number of groups, not independent text samples. The full CSV retains every layer/site/seed, all/anchor/other groups and all/BOS/massive/BOS+massive/other input classes. At k=max, every PQ group is anchored and Hadamard has no aligned anchor groups; empty strata are N/A with zero count.
+
+Here c is the measured rotated group mean: the constant aligned Walsh level for PQ, and only an incidental group-DC comparison for Hadamard. The 2|c|/15 quantity describes the isolated sign-changing level’s step cost; it is not a claim that the extrema of level plus residual add linearly. The reported median ratio is the median of per-group ratios, not a ratio of medians. Zero-denominator and infinite-value counts remain in the full tables; no epsilon clipping or silent finite-only filtering is applied.
+
+**Pre-registered decisions**
+
+| Hypothesis | Outcome |
+| --- | --- |
+| H36a | supported; PQ Z32−Z16=0.000694394, Z16 seed SD=0.00839897 |
+| H36b | PQ: supported, 0.000747047 [0.000149672, 0.00134442]; Hadamard control: supported, 0.000697357 [0.000219072, 0.00117564] |
+| H36c | PQ: supported; overall <1%: True; worst layer <5%: True; median ratio <0.01: True |
+| H36d | supported; Had−PQ precision-effect contrast -0.000937143 [-0.00154915, -0.000325139]; baseline paired seed SD=0.00524281 |
+
+The method-interaction paired-chunk interval also excludes zero (-0.000937143 [-0.00154915, -0.000325139]), despite satisfying the separate baseline-SD margin. Its three-seed interval is [-0.00240237, 0.000528084]. These uncertainty views do not establish identical precision responses between methods.
+
+**Reading.** PQ’s Z32−Z16 change is 0.000694394 PPL, so the fixed baseline-seed-noise criterion is supported. The bf16-offset stress test is supported for PQ; its paired interval is 0.000747047 [0.000149672, 0.00134442], which limits what can be claimed about sensitivity. The largest PQ P99 offset error is 0.017315 steps at layer 0 (qkv), while the overall >half-step fraction is 5.28443e-05%. The median per-group rounding-error/unaligned-step ratio is 0.0092867; all three H36c clauses are reported rather than inferred from this one number. The comparison of PQ and Hadamard precision effects is supported under H36d’s fixed noise reference. Small or undetected PPL changes in this frozen-payload experiment do not establish mathematically lossless storage and do not substitute for a dynamically re-encoded precision sweep.
+
+Source tables: [PPL sweep](results/llama32_3b/e36_summary.csv), [all group statistics](results/llama32_3b/e36_group_statistics.csv), [model-wide checks](results/llama32_3b/e36_overall.csv), [P99-max layers and token classes](results/llama32_3b/e36_worst_layer.csv), [method precision contrast](results/llama32_3b/e36_method_precision_contrast.csv), [hypotheses](results/llama32_3b/e36_hypotheses.json), [payload hashes](results/llama32_3b/e36_payload_hashes.csv), [E29 replays](results/llama32_3b/e36_baseline_replay.csv).
+
+### Per-layer precision figure
+
+[PDF](figures/fig_offset_precision.pdf), [editable SVG](figures/fig_offset_precision.svg), [PNG](figures/fig_offset_precision.png), [source data](figures/fig_offset_precision_source.csv), and [caption](figures/fig_offset_precision_caption.md). The curve is the exact pooled P99; its envelope spans the three individual seed P99s and is not a confidence interval. All layers and both activation sites are shown for both models.
+
+The [final audit](experiments/e36_final_verification.json) checks baseline bit identity, actual code/scale hashes, numerical gates, frozen inputs, full row coverage and preservation of old results. The [run manifest](experiments/e36_run_manifest.json) and [preregistration](experiments/e36_preregistration.md) preserve execution and decision provenance.
+
+<!-- E36 RESULTS END -->

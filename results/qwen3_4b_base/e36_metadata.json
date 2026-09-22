@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-09-22T07:14:14.759245+00:00",
+  "default_bits": 4.25,
+  "diagnostic_fp32_metadata_bits": 4.375,
+  "execution_manifest_sha256": "dce306399db019f269bea5671cefcc91392806eb09b6a3c18a187b3979fb79ad",
+  "hardware": {
+    "cuda_available": true,
+    "cuda_runtime": "12.8",
+    "gpu_capability": [
+      12,
+      0
+    ],
+    "gpu_name": "NVIDIA GeForce RTX 5090",
+    "hostname": "gpu-5090-5.cluster02.eee.ntu.edu.sg",
+    "nvidia_smi": [
+      "0, NVIDIA GeForce RTX 5090, GPU-c456f1a1-92c3-b503-cbb8-e75a86e2654e, 32607 MiB, 31518 MiB, 580.173.02"
+    ],
+    "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+    "slurm_job_gpus": "2",
+    "slurm_job_id": "165590",
+    "torch": "2.11.0+cu128"
+  },
+  "model": "qwen3_4b_base",
+  "preregistration_sha256": "145d3b4fd4290d6973e531402b9d5ce874e481db3166e495f9aae1cc7415ee2e",
+  "protocol": "fixed Z16 payload; change reconstruction metadata only",
+  "raw_metric_fields": [
+    "minimum_fp32",
+    "range_fp32",
+    "stored_step_fp16_as_fp32",
+    "group_mean_fp32"
+  ],
+  "rows": [
+    {
+      "method": "pq",
+      "precision": "Z16",
+      "row": "pq_Z16"
+    },
+    {
+      "method": "pq",
+      "precision": "Z32",
+      "row": "pq_Z32"
+    },
+    {
+      "method": "pq",
+      "precision": "ZB16",
+      "row": "pq_ZB16"
+    },
+    {
+      "method": "pq",
+      "precision": "S32",
+      "row": "pq_S32"
+    },
+    {
+      "method": "hadamard",
+      "precision": "Z16",
+      "row": "hadamard_Z16"
+    },
+    {
+      "method": "hadamard",
+      "precision": "Z32",
+      "row": "hadamard_Z32"
+    },
+    {
+      "method": "hadamard",
+      "precision": "ZB16",
+      "row": "hadamard_ZB16"
+    },
+    {
+      "method": "hadamard",
+      "precision": "S32",
+      "row": "hadamard_S32"
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "sites": [
+    "qkv",
+    "down"
+  ]
+}
