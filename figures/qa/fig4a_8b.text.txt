@@ -1,8 +1,0 @@
-Nature Figure PDF Text Audit
-pdf: figures/fig4a_8b.pdf
-minimum required: 5 pt
-minimum found: 6 pt
-text runs: 35
-below minimum: 0
-verdict: PASS
-note: Tf scanning does not replace final-size visual inspection or account for every PDF transform

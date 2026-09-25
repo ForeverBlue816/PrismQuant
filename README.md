@@ -1,110 +1,145 @@
-# NAR offline tensor validation
+<div align="center">
 
-A reproducible benchmark for normalized-anchor rotations (NAR) under dynamic
-asymmetric INT4 quantization. It covers post-RoPE Llama K tensors, wide
-`q_proj`/`down_proj` inputs, activation-only perplexity, factorized online
-cost, per-token V-cache quantization, and a KIVI-style per-channel K baseline.
+# PrismQuant
 
-The refined **PrismQuant method framework** is available as an [editable PowerPoint](figures/prismquant_method/PrismQuant_method_refined.pptx), [vector PDF](figures/prismquant_method/PrismQuant_method_refined.pdf), and [high-resolution preview](figures/prismquant_method/PrismQuant_method_refined.png). [Source, reproduction instructions, and QA records](figures/prismquant_method/) are included.
+**Quantizer-aware rotations for low-bit language models**
 
-> **Corrected result:** the valid pre-registered K gates at `b=32/64` pass, as
-> do all frozen E2 NAR rows. The original `b=128` K gate is invalid because a
-> 128-dimensional head contains only one group and therefore one DC slot. In
-> the fair K-axis comparison, however, per-channel K quantization beats every
-> tested per-token rotation method.
+[Models](docs/models.md) · [Quick start](#quick-start) · [Method](#method) · [Figures](Figures/README.md) · [Reproduction](docs/reproduction.md)
 
-| Check | Result | Main number |
-|---|---:|---:|
-| Corrected E1 K, `b=32` | PASS | 20.489% range reduction vs Hadamard |
-| Corrected E1 K, `b=64` | PASS | 12.612% range reduction vs Hadamard |
-| All frozen E2 NAR rows | PASS | Paired PPL deltas satisfy the frozen gate |
-| E1b position robustness | PASS | 19.602–20.978% (`b=32`), 11.984–12.788% (`b=64`) |
-| E1c `q_proj` input | positive | 23.755% mean paired-layer range reduction vs full Hadamard |
-| E1c `down_proj` input | positive | 25.301% mean paired-layer range reduction vs full Hadamard |
-| E1d KIVI-style baseline | **clear winner** | Lower NMSE in 28/28 layers at both group sizes |
-| E5 activation PPL, 3B | positive | NAR beats Hadamard at qkv/down/both; paired 90% CIs exclude zero |
-| E5 activation PPL, 1B | positive | NAR beats Hadamard at qkv/down/both; paired 90% CIs exclude zero |
-| E5 activation PPL, 8B | positive | NAR beats Hadamard at qkv/down/both; paired 90% CIs exclude zero |
-| E6 unfused online cost | **FAIL** | NAR wall time exceeds 10% of `down_proj` matmul at every measured token count |
-| E7 per-token V cache | positive, modest | NAR reduces mean range and NMSE vs Hadamard at `b=32/64/128` |
-| E8 range-direct refinement | negative for range | Held-out mean range worsens by 0.000560; NMSE improves by 0.000012 |
+**arXiv:** coming soon <!-- Replace with the paper URL when available. -->
 
-NAR-RoPE is dominated by plain NAR in every available paired range/NMSE check
-and at every paired E2 seed, so it is dropped from further work. These are
-paired, no-tuning results; negative findings and randomized-eigenspace residuals
-are reported rather than filtered.
+</div>
 
-![E1c mean range versus absorbed rank](results/llama32_3b/e1c_range_vs_k.png)
+![PrismQuant method overview](Figures/method.png)
 
-![E1c realized range versus absorbed energy](results/llama32_3b/e1c_energy_fit.png)
+PrismQuant aligns high-energy activation directions with the constant directions
+of quantization groups. It combines calibrated orthogonal rotations, compact-WY
+representations and groupwise asymmetric INT4 quantization. This repository
+contains the core implementation, released model checkpoints and paper figures.
 
-## Scope and artifacts
+## Quick start
 
-E1--E13 perform forward-hook activation capture, offline tensor analysis,
-KV-only fake quantization, and activation-only perplexity/accuracy proxies. E14
-is the explicitly requested expansion to pinned QuaRot GPTQ and end-to-end
-W4A4KV4; E15 is the no-zero-point FP4 boundary check. No stage performs
-result-driven configuration tuning. Models are Llama-3.2-3B, Llama-3.2-1B,
-and Llama-3.1-8B; data are fixed WikiText-2 chunks.
-
-SpinQuant and other training-dependent baselines are citation-only unless an
-explicitly approved released artifact is supplied. This repository never
-trains baseline rotation matrices (including Cayley/Stiefel optimization).
-For SpinQuant specifically, official-repository community reproductions are
-the primary reference and paper values are retained only to show the reported
-reproduction gap.
-
-By explicit protocol amendment, the end-to-end official DuQuant row is also
-citation-only: use official published data with its exact model and setting,
-and do not run or reproduce DuQuant locally. The optional MoE generality row is
-deferred and consumes no GPU budget.
-
-The complete protocol, exact fit statistics, summary tables, confidence
-intervals, caveats, and results are in [`report.md`](report.md). Exact per-layer
-CSV/JSON outputs and figures are committed under [`results/`](results/), with execution
-transcripts under [`runs/`](runs/). `results/decision_corrected.json` is the
-authoritative decision; the older `results/decision.json` is retained only as
-the archival outcome of the mis-specified `b=128` gate.
-
-Large assets are intentionally excluded from Git: model weights, caches,
-environments, and raw activations. The E1c capture retains exact bf16 bit
-patterns for all 128×2048 tokens at every layer (168 GiB total) so that E3 FP4
-E2M1 and E4 two-level NVFP4 can reuse it.
-
-## Reproduce
-
-The original frozen E0/E1/E2 pipeline is:
+Use Python 3.10+ and a PyTorch installation appropriate for your CUDA version.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-./run_all.sh
+git clone --depth 1 https://github.com/ForeverBlue816/PrismQuant.git
+cd PrismQuant
+pip install -e .
+prismquant models
 ```
 
-The E1b/E1c/E1d extension requires project storage because it writes the large
-activation capture. Set `NAR_WORKDIR` to that storage and submit from the
-repository root so Slurm can create relative log paths:
+Start with the smallest released model:
+
+```python
+from prismquant import load_model
+
+model = load_model("qwen3_0.6b_base")
+print(model.generate("The key idea behind quantization is", max_new_tokens=64))
+```
+
+Or use the command line:
 
 ```bash
-mkdir -p runs
-NAR_WORKDIR=/path/to/project-storage sbatch slurm_extensions.sh
+prismquant generate --model qwen3_0.6b_base \
+  --prompt "The key idea behind quantization is" --max-new-tokens 64
 ```
 
-The activation continuation has separate jobs so models and diagnostics can
-run independently:
+The loader downloads only the selected checkpoint and its required rotation
+factors, then obtains the matching base model and tokenizer. It defaults to
+PrismQuant at `k=max`, seed 0. These are **base-model completions**, not chat-tuned
+assistants. See [model selection, memory and loading options](docs/models.md).
+
+**Checkpoint format.** The released GPTQ weights are dequantized INT4 values in
+floating-point tensors. The reference runtime simulates activation and KV
+quantization while retaining floating-point storage; it is not a packed INT4
+serving engine. Use this package's loader, rather than passing the artifact repo
+to `AutoModelForCausalLM.from_pretrained`. The separate fused R4 kernels are
+provided for implementation work.
+
+## Released models
+
+| Family | Sizes | Hugging Face |
+| --- | --- | --- |
+| Qwen3 Base | 0.6B, 1.7B, 4B, 8B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/nar-w4a4kv4-qwen3-base) |
+| Llama 3.2 | 3B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/nar-w4a4kv4-llama-3.2-3b) |
+| Llama 3.1 | 8B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/nar-w4a4kv4-llama-3.1-8b) |
+| Llama 3.1 | 70B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/nar-w4a4kv4-llama-3.1-70b) |
+
+The Hub URLs retain the original `nar-` names for stable links. Model cards and
+the public API use **PrismQuant**. The [model catalog](prismquant/models.json)
+pins exact revisions and enumerates 37 available checkpoint variants, including
+Hadamard controls where present. Upstream model licenses apply.
+
+## Method
+
+1. **Construct:** estimate dominant uncentered activation directions and map them
+   to group anchors with Householder reflectors and a balanced permutation.
+2. **Represent:** apply block Hadamard transforms so aligned directions become
+   constant within groups; store the group scale and real affine offset in fp16.
+3. **Deploy:** fold static transforms into weights and use compact-WY factors for
+   the remaining online rotations.
+
+![Alignment and group quantization](Figures/fig1.png)
+
+The core rotation can also be used independently of a language model:
+
+```python
+import torch
+from prismquant import fit_rotation, dynamic_asym_int4
+
+calibration = torch.randn(512, 256)  # replace with your calibration activations
+rotation = fit_rotation(calibration, rank=2, group_size=128)
+signs = torch.ones(256)
+rotated = rotation.apply(calibration, signs)
+quantized, scale, offset, codes = dynamic_asym_int4(rotated, 128)
+reconstructed = rotation.transpose(quantized, signs)
+```
+
+This small example uses exact second moments; the archived paper pipeline also
+contains streamed calibration for larger models. See [the technical guide](docs/method.md)
+for conventions and [the kernel guide](docs/kernels.md) for the fused path.
+
+## Results and figures
+
+![Layerwise activation range and INT4 error](Figures/fig2.png)
+
+![Geometry, energy coverage and range law](Figures/fig3.png)
+
+The [figure gallery](Figures/README.md) includes the author's final Figure 1–6,
+method overview and activation matrices, with PDF originals and PNG/SVG previews.
+Figure 5 reports the dedicated deployment implementation; its throughput should
+not be attributed to the floating-point reference loader above.
+
+## Repository layout
+
+```text
+prismquant/       Rotation, quantization, GPTQ, folding, loading and CUDA kernels
+examples/         Text completion and standalone rotation examples
+Figures/          Author-provided paper figures and shareable previews
+docs/             Model format, technical guide and reproduction pointers
+tests/            Algebra, metadata, loading and generation checks
+```
+
+The complete experiments through E36, per-token results, figure generators and
+execution records remain in the [research archive](https://github.com/ForeverBlue816/PrismQuant/tree/research-archive-2026-09-25).
+The release tree focuses on reusable code and model use.
+
+## Development
 
 ```bash
-NAR_WORKDIR=/path/to/project-storage sbatch slurm_activation_3b.sh
-NAR_WORKDIR=/path/to/project-storage sbatch slurm_activation_1b.sh
-NAR_WORKDIR=/path/to/project-storage sbatch slurm_activation_8b.sh
-NAR_WORKDIR=/path/to/project-storage sbatch slurm_activation_diagnostics.sh
+pip install -e '.[dev]'
+pytest -q
 ```
 
-The batch script expects the environment at `$NAR_WORKDIR/venv`. See
-[`nar/README.md`](nar/README.md) for frozen choices and individual stage
-commands.
+See [release validation](docs/validation.md) for the test scope and numerical checks.
 
-## Qwen3-8B activation visualization
+## Paper and citation
 
-[Revised local 3D figures](outputs/qwen_activation_viz/qwen3_8b_seed42/README.md) use a fixed 128-token × 512-channel window, four g128 groups, and a true norm-fused FP32 unrotated reference. Heights remain linear; the fixed square-root mapping affects colors only. Full-domain overviews, exact ECDFs and all measured results are preserved. [Revision and audit](outputs/qwen_activation_viz/qwen3_8b_seed42/figure_revision_report.md).
+The arXiv link and BibTeX citation will be added when the paper is available.
+
+## License and acknowledgments
+
+Code: [Apache-2.0](LICENSE). Model weights retain their respective upstream
+licenses. Built with Llama for the Llama-derived checkpoints. The GPTQ core is
+adapted from [QuaRot](https://github.com/spcl/QuaRot); see
+[third-party notices](THIRD_PARTY_NOTICES.md).

@@ -1,0 +1,82 @@
+[
+  {
+    "file": "fig1.pdf",
+    "source": "author-provided e13-pip/figures/fig1.pdf",
+    "pdf_sha256": "b824d4d1762c6ca1b75b7136b55a1c285f9a71cdee75135cc3edc746f06ebe8b",
+    "pdf_preserved_byte_for_byte": true,
+    "preview_width_px": 2000,
+    "svg": "derived faithfully from author PDF; text retained as paths"
+  },
+  {
+    "file": "fig2.pdf",
+    "source": "author-provided e13-pip/figures/fig2.pdf",
+    "pdf_sha256": "3985f08a487ad10289df89a8aa9b613a82f7d4a760f6c3e3d7ac9423484d013c",
+    "pdf_preserved_byte_for_byte": true,
+    "preview_width_px": 2000,
+    "svg": "derived faithfully from author PDF; text retained as paths"
+  },
+  {
+    "file": "fig3.pdf",
+    "source": "author-provided e13-pip/figures/fig3.pdf",
+    "pdf_sha256": "df14afa9ed5fedd366e3c86bbfd04b76f63800774ca22395335afbb8fa26beb1",
+    "pdf_preserved_byte_for_byte": true,
+    "preview_width_px": 2000,
+    "svg": "derived faithfully from author PDF; text retained as paths"
+  },
+  {
+    "file": "fig4.pdf",
+    "source": "author-provided e13-pip/figures/fig4.pdf",
+    "pdf_sha256": "66a1c15c266ed4cca0b0f197ebd14ea320f653483b8b2618a0ec1af16b656dc9",
+    "pdf_preserved_byte_for_byte": true,
+    "preview_width_px": 2000,
+    "svg": "derived faithfully from author PDF; text retained as paths"
+  },
+  {
+    "file": "fig5.pdf",
+    "source": "author-provided e13-pip/figures/fig5.pdf",
+    "pdf_sha256": "cb28301193b59dc96a5b32e2a03665f35ee62a642a7a7e96457e31789a2c649b",
+    "pdf_preserved_byte_for_byte": true,
+    "preview_width_px": 2000,
+    "svg": "derived faithfully from author PDF; text retained as paths"
+  },
+  {
+    "file": "fig6.pdf",
+    "source": "author-provided e13-pip/figures/fig6.pdf",
+    "pdf_sha256": "bb06e8086e2d179f291864fa77984cce2e32f60774153422d8632c5df78121b7",
+    "pdf_preserved_byte_for_byte": true,
+    "preview_width_px": 2000,
+    "svg": "derived faithfully from author PDF; text retained as paths"
+  },
+  {
+    "file": "matrixd.pdf",
+    "source": "author-provided e13-pip/figures/matrixd.pdf",
+    "pdf_sha256": "b0d550acb4ca54217e13b17ba45715506def00270848231a3d8aa9bd78902f0e",
+    "pdf_preserved_byte_for_byte": true,
+    "preview_width_px": 2000,
+    "svg": "derived faithfully from author PDF; text retained as paths"
+  },
+  {
+    "file": "matrixp.pdf",
+    "source": "author-provided e13-pip/figures/matrixp.pdf",
+    "pdf_sha256": "11088104763b1eb2c4c6a469195f2bad9e463d3d2ac24e5f6d12cc12ef5bcb9c",
+    "pdf_preserved_byte_for_byte": true,
+    "preview_width_px": 2000,
+    "svg": "derived faithfully from author PDF; text retained as paths"
+  },
+  {
+    "file": "matrixq.pdf",
+    "source": "author-provided e13-pip/figures/matrixq.pdf",
+    "pdf_sha256": "e372bc6e0c0c4cc6061fb80ae119b5ab125f6e3b1f488ab9a76404d8cdf63d04",
+    "pdf_preserved_byte_for_byte": true,
+    "preview_width_px": 2000,
+    "svg": "derived faithfully from author PDF; text retained as paths"
+  },
+  {
+    "file": "method.pdf",
+    "source": "author-provided e13-pip/figures/method.pdf",
+    "pdf_sha256": "d35724d4bb83ca87abd22d2ec8ae2105c6cc2e24af494c788abd56629f1fe0c9",
+    "pdf_preserved_byte_for_byte": true,
+    "preview_width_px": 2000,
+    "svg": "derived faithfully from author PDF; text retained as paths"
+  }
+]

@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "utc": "2026-09-25T07:53:39.460844+00:00",
+  "archive_commit": "728e6e5a7fe6395d8c38c5a286295fc87926ae8a",
+  "archive_tag": "research-archive-2026-09-25",
+  "unit_tests": {
+    "passed": 21,
+    "command": "OMP_NUM_THREADS=4 python -m pytest -q"
+  },
+  "wheel": {
+    "version": "0.1.0",
+    "isolated_install_import": true,
+    "model_catalog_included": true,
+    "optional_kernel_import": true
+  },
+  "gpu_parity": {
+    "status": "PASS",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.11.0+cu128",
+    "records": [
+      {
+        "model": "qwen3_0.6b_base",
+        "checkpoint": "gptq_nar_kmax_seed0_g128_asym",
+        "status": "PASS",
+        "weight_tensors": 311,
+        "all_weight_hashes_identical": true,
+        "logits_bit_identical": true,
+        "max_abs_logit_difference": 0.0,
+        "padded_batch": 2,
+        "input_tokens": 40,
+        "cached_generation_matches_original": true,
+        "uncached_generation_matches_original": true,
+        "cached_and_uncached_greedy_match": false,
+        "original_cached_and_uncached_match": false,
+        "generation": "The capital of France is Paris. The capital of Germany is Berlin. The capital of",
+        "compute_dtype": "float32"
+      },
+      {
+        "model": "llama32_3b",
+        "checkpoint": "gptq_nar_kmax_seed0",
+        "status": "PASS",
+        "weight_tensors": 255,
+        "all_weight_hashes_identical": true,
+        "logits_bit_identical": true,
+        "max_abs_logit_difference": 0.0,
+        "padded_batch": 2,
+        "input_tokens": 40,
+        "cached_generation_matches_original": true,
+        "uncached_generation_matches_original": true,
+        "cached_and_uncached_greedy_match": false,
+        "original_cached_and_uncached_match": false,
+        "generation": "The capital of France is Paris. It is the largest city in France and the second",
+        "compute_dtype": "bfloat16"
+      }
+    ]
+  },
+  "public_models": [
+    {
+      "repo_id": "ForeverBlue/nar-w4a4kv4-llama-3.1-70b",
+      "public": true,
+      "model_card_commit": "f99aa297358915e79966c05b70de5e40480cbea8",
+      "current_revision": "f99aa297358915e79966c05b70de5e40480cbea8",
+      "anonymous_card_and_pinned_metadata_download": true,
+      "weight_files_unchanged": true,
+      "published_files": {
+        "README.md": "a628b19be4d9ce894c9cf7205da2f12c767cb385a2f4859d4d65f19f983a621e",
+        "NOTICE": "9b4ce1898c6fdbefd6d0ca4d40a55cb994ed86ae3fd56166866b988bee7a6464",
+        "USE_POLICY.md": "f456a3f5b15ab588c84d06cf095a245bfee0bbc1620b48ed00af2cca4a711735",
+        "LICENSE": "bf2eac60b81e5c5f779fc3b4849d3bfacfd63f97f3eb68b44e9c6868c5801712"
+      },
+      "anonymous_weight_stream": true
+    },
+    {
+      "repo_id": "ForeverBlue/nar-w4a4kv4-llama-3.1-8b",
+      "public": true,
+      "model_card_commit": "d5acd2d2f104594e5d2c6b94592081bff9926322",
+      "current_revision": "d5acd2d2f104594e5d2c6b94592081bff9926322",
+      "anonymous_card_and_pinned_metadata_download": true,
+      "weight_files_unchanged": true,
+      "published_files": {
+        "README.md": "841b8065ae7c1923f53e0362296949c53908508e66cb6972e75b902c4d3d9aff",
+        "NOTICE": "9b4ce1898c6fdbefd6d0ca4d40a55cb994ed86ae3fd56166866b988bee7a6464",
+        "USE_POLICY.md": "f456a3f5b15ab588c84d06cf095a245bfee0bbc1620b48ed00af2cca4a711735",
+        "LICENSE": "bf2eac60b81e5c5f779fc3b4849d3bfacfd63f97f3eb68b44e9c6868c5801712"
+      },
+      "anonymous_weight_stream": true
+    },
+    {
+      "repo_id": "ForeverBlue/nar-w4a4kv4-llama-3.2-3b",
+      "public": true,
+      "model_card_commit": "a3985453e4e197b573e7ccb6849ba1c09eecc3a2",
+      "current_revision": "a3985453e4e197b573e7ccb6849ba1c09eecc3a2",
+      "anonymous_card_and_pinned_metadata_download": true,
+      "weight_files_unchanged": true,
+      "published_files": {
+        "README.md": "87f1f3c5f17f38f564a7c9e6f4b81bef808f8e683f45379ee11433e8a27b6af9",
+        "NOTICE": "3bc2d1a6b360a03d172058198631b931c9aadf01650892fb0d25b93c6b8f0025",
+        "USE_POLICY.md": "40e2777d7faa6beaf98400654170f414d8ab29b921b5163ad4ea0a1d39894201",
+        "LICENSE": "8cc15535a8a34b41888f644b339a1a9eb428af793a4f5e24df58a3e5b1487d74"
+      },
+      "anonymous_weight_stream": true
+    },
+    {
+      "repo_id": "ForeverBlue/nar-w4a4kv4-qwen3-base",
+      "public": true,
+      "model_card_commit": "5195fee9ea8f1abbb03eec36f233b67f50c343e3",
+      "current_revision": "5195fee9ea8f1abbb03eec36f233b67f50c343e3",
+      "anonymous_card_and_pinned_metadata_download": true,
+      "weight_files_unchanged": true,
+      "published_files": {
+        "README.md": "33d97dc555891b478d51300a6bab21adabc9e884eb0d2b40e1535640c01213f3",
+        "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+      },
+      "anonymous_weight_stream": true
+    }
+  ],
+  "catalog_models": 7,
+  "catalog_variants": 37,
+  "restored_missing_factors": {
+    "ForeverBlue/nar-w4a4kv4-llama-3.1-8b": 32,
+    "ForeverBlue/nar-w4a4kv4-llama-3.2-3b": 28
+  },
+  "author_pdfs_preserved": 10,
+  "source_sha256": {
+    "prismquant/gptq.py": "b63b3fcf0f18bc5d17b23394746a1b851f4c642d6c2f2274e131efd5f68f5f33",
+    "prismquant/rotations.py": "5b6c8ba3ef28300befabd9c4df270aa05fe57d3dd9fab833d11d1ee7dd36e389",
+    "prismquant/cli.py": "6cefd52ffd9a8544d18cde9972a3f1ac8f1f30185fd1f212b059a69a84c4e9aa",
+    "prismquant/__init__.py": "2e34f53b8be87906c846a4c605abac857d56b87cc81d684b0dc30f23170acf04",
+    "prismquant/hub.py": "12f0e36e3b0da61ac510f00232b663f54a7b4c9fe4bd7639221b3835c80b0f68",
+    "prismquant/folding.py": "4b474d87a408b6b62152b086bb7385fa051bf1650f618cc43e19010b027962d0",
+    "prismquant/fused.py": "f9b50bf5830fcfcb7ecb8a0e91e3f12fc5e6791e50f97219bf9c2f8042dbe0a3",
+    "prismquant/quantization.py": "9c712b2f755eb00a00f9beb54cafd69532e7c43ca3ec42b7513ea6dcdb49b6fa",
+    "prismquant/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "prismquant/model.py": "510db8bf67507144bed18fba3f288ebd755ad8229612befc25b0fb9c24ab1d9b",
+    "prismquant/runtime.py": "cf8217bc9ff56f3a2cd8af5a90a11d20d9515e17467bee50f0fd293b96abf3f8",
+    "prismquant/calibration.py": "bd09528ecc8845c26b8b22ed6215a04ca9a42395f378c5aba6f669cb6f511350",
+    "prismquant/kernels/r4_fused_v3.py": "0571b3512889e172f6f24494918195872520daa093ab42d2f505b1fbff352fcf",
+    "prismquant/kernels/r4_fused_v2.py": "5e71c1eccbb62b9e61e0fd4b8e817ab6ea725d59ff821757b2d2b3e99a594196",
+    "prismquant/kernels/__init__.py": "3bb2f9dc9e42a8d535c792dca631f2d2e990370ef55950475c7f54d0e923b75b",
+    "tests/test_model.py": "85039f01e049de5896aa5bfe2dbf2c1b483f4d5aa19dbdd442e29be91e0f65e3",
+    "tests/test_hub.py": "56a5bf123b0345e1e6d3f987c257c5c1b69ea77ef13998106e8b33e1522972db",
+    "tests/test_core.py": "f1bd1edccad9c1bf3c4cd7a09056bb721321d856230a2d9a94f4609e066b3bab",
+    "prismquant/models.json": "8baaab17ca017ae54c946743a0f445ffa4bd9e53b0ebc7718d59c093d8d65f62"
+  }
+}
