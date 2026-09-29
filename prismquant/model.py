@@ -19,7 +19,8 @@ class ModelRotations:
         self.layers = config.num_hidden_layers
         self.heads = config.num_attention_heads
         self.hidden = config.hidden_size
-        self.intermediate = config.intermediate_size
+        self.intermediate = (config.moe_intermediate_size if config.model_type == 'qwen3_moe'
+                             else config.intermediate_size)
         self.head_dim = getattr(config, 'head_dim', None) or self.hidden // self.heads
         self._factors, self._copies, self._wy, self._signs = {}, {}, {}, {}
         if self.method == 'hadamard':
@@ -30,6 +31,8 @@ class ModelRotations:
         self._factors['r1', 0] = RotationFactor.load(root / f'r1_{r1_rank}.pt', torch.device('cpu'))
         for i in range(self.layers):
             self._factors['r2', i] = RotationFactor.load(root / f'r2_v_layer_{i:02d}.pt', torch.device('cpu'))
+            if config.model_type == 'qwen3_moe':
+                continue
             self._factors['r4', i] = RotationFactor.load(Path(snapshot) / variant['r4_root'] / f'down_layer_{i:02d}.pt', torch.device('cpu'))
         for (label, layer), f in self._factors.items():
             expected = {'r1': self.hidden, 'r2': self.head_dim, 'r4': self.intermediate}[label]
@@ -92,6 +95,15 @@ def restore_unquantized_state(model, rotations, row_batch=256):
     scale = model.model.norm.weight.detach().float()
     model.lm_head.weight.mul_(scale.to(device=model.lm_head.weight.device, dtype=model.lm_head.weight.dtype).unsqueeze(0))
     for block in model.model.layers:
+        if model.config.model_type == 'qwen3_moe':
+            # Routers are absent from GPTQ shards: retain their full-precision
+            # values, fuse the post-attention norm, and fold the residual R1.
+            router = block.mlp.gate.weight
+            post_scale = block.post_attention_layernorm.weight.detach()
+            router.mul_(post_scale.to(device=router.device, dtype=router.dtype).unsqueeze(0))
+            for start in range(0, router.shape[0], row_batch):
+                rows = router[start:start + row_batch]
+                rows.copy_(rotations.apply('r1', 0, rows.float()).to(rows.dtype))
         block.input_layernorm.weight.fill_(1)
         block.post_attention_layernorm.weight.fill_(1)
     model.model.norm.weight.fill_(1)
@@ -157,10 +169,14 @@ def load_model(model_key: str, checkpoint: str | None = None, *, snapshot_path=N
         model = model.to(device)
     if any(p.device.type == 'meta' for p in model.parameters()):
         raise ValueError('Disk/meta offloading is not supported; give the model enough CPU/GPU memory.')
-    rotations = ModelRotations(snapshot, model_key, variant, model.config)
+    rotation_cls, hook_cls, load_layer = ModelRotations, RuntimeHooks, _load_layer_state
+    if spec['architecture'] == 'qwen3_moe':
+        from .moe import MoERotations, MoERuntimeHooks, load_moe_layer
+        rotation_cls, hook_cls, load_layer = MoERotations, MoERuntimeHooks, load_moe_layer
+    rotations = rotation_cls(snapshot, model_key, variant, model.config)
     restore_unquantized_state(model, rotations)
     for i, layer in enumerate(model.model.layers):
-        _load_layer_state(layer, snapshot / 'checkpoints' / model_key / name / f'layer_{i:02d}.pt')
+        load_layer(layer, snapshot / 'checkpoints' / model_key / name / f'layer_{i:02d}.pt')
     model.eval()
     model.generation_config.max_length = None
     model.generation_config.max_new_tokens = None
@@ -170,7 +186,7 @@ def load_model(model_key: str, checkpoint: str | None = None, *, snapshot_path=N
     tokenizer.padding_side = 'left'
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token = tokenizer.eos_token
-    hooks = RuntimeHooks(model, rotations, 'asymmetric_g128' if quantize_activations else None, quantize_kv)
+    hooks = hook_cls(model, rotations, 'asymmetric_g128' if quantize_activations else None, quantize_kv)
     hooks.install()
     return LoadedModel(model, tokenizer, hooks, dict(model=model_key, checkpoint=name,
                        repo_id=spec['repo_id'], revision=spec['revision'], base_revision=spec['base_revision'], compute_dtype=spec['compute_dtype'],

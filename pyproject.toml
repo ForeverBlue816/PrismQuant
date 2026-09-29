@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "prismquant"
-version = "0.1.0"
+version = "0.2.0"
 description = "Quantizer-aware anchor rotations for low-bit language models"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -17,6 +17,7 @@ figures = ["PyMuPDF>=1.24", "Pillow>=10"]
 kernels = ["triton>=3.4; platform_system == 'Linux'"]
 
 [project.urls]
+Paper = "https://arxiv.org/abs/2609.32429"
 Homepage = "https://github.com/ForeverBlue816/PrismQuant"
 Repository = "https://github.com/ForeverBlue816/PrismQuant"
 Issues = "https://github.com/ForeverBlue816/PrismQuant/issues"

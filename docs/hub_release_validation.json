@@ -1,0 +1,86 @@
+{
+  "date": "2026-09-29",
+  "paper": "https://arxiv.org/abs/2609.32429",
+  "package_version": "0.2.0",
+  "cpu_tests": {
+    "passed": 23,
+    "command": "pytest -q"
+  },
+  "wheel": {
+    "built": true,
+    "imported_outside_checkout": true,
+    "catalog_models": 8
+  },
+  "dense_models": [
+    {
+      "repo_id": "ForeverBlue/PrismQuant-Llama-3.1-70B",
+      "revision": "e20f78c664714326b65c065b69c4e90cdd35e842",
+      "old_id": "ForeverBlue/nar-w4a4kv4-llama-3.1-70b",
+      "private": false,
+      "weights_unchanged": true,
+      "old_url_redirects": true,
+      "config_anonymous_access": true
+    },
+    {
+      "repo_id": "ForeverBlue/PrismQuant-Llama-3.1-8B",
+      "revision": "fc812e6687165115feee00293c953a1b521d3bd0",
+      "old_id": "ForeverBlue/nar-w4a4kv4-llama-3.1-8b",
+      "private": false,
+      "weights_unchanged": true,
+      "old_url_redirects": true,
+      "config_anonymous_access": true
+    },
+    {
+      "repo_id": "ForeverBlue/PrismQuant-Llama-3.2-3B",
+      "revision": "78e0a124e359aace82793c74ff5e3827bf18b64c",
+      "old_id": "ForeverBlue/nar-w4a4kv4-llama-3.2-3b",
+      "private": false,
+      "weights_unchanged": true,
+      "old_url_redirects": true,
+      "config_anonymous_access": true
+    },
+    {
+      "repo_id": "ForeverBlue/PrismQuant-Qwen3-Base",
+      "revision": "48352eb797db63f064697143b072222484e39d89",
+      "old_id": "ForeverBlue/nar-w4a4kv4-qwen3-base",
+      "private": false,
+      "weights_unchanged": true,
+      "old_url_redirects": true,
+      "config_anonymous_access": true
+    }
+  ],
+  "dense_variants_required_files_verified": 37,
+  "moe": {
+    "repo_id": "ForeverBlue/PrismQuant-Qwen3-30B-A3B-Base",
+    "revision": "de2d668db3be43473a79fcfb4b48791f1fc73900",
+    "private": false,
+    "required_files": 6243,
+    "verified_tensor_sha256": 6241,
+    "anonymous_config_access": true,
+    "anonymous_weight_stream": true,
+    "real_model_validation": {
+      "status": "PASS",
+      "model": "qwen3_30b_a3b_base",
+      "layers": 48,
+      "experts_per_layer": 128,
+      "router_fold_bit_identical": true,
+      "logits_bit_identical_to_e26": true,
+      "max_abs_logit_difference": 0.0,
+      "padded_cached_generation_matches_e26": true,
+      "prompt": "The capital of France is",
+      "generation": "The capital of France is Paris. Which of the following options correctly describes this fact?\n",
+      "gpus": [
+        "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+        "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition"
+      ],
+      "torch": "2.11.0+cu128",
+      "elapsed_seconds": 1665.9873650074005
+    }
+  },
+  "download_counting": {
+    "query_file": "config.json",
+    "validated_during_checkpoint_loading": true,
+    "source": "https://huggingface.co/docs/hub/models-download-stats",
+    "dashboard_note": "Counts are aggregated by Hugging Face; zero/unprocessed counts can still display a dash."
+  }
+}

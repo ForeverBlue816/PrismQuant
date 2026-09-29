@@ -2,11 +2,11 @@
 
 # PrismQuant
 
-**Quantizer-aware rotations for low-bit language models**
+**Optimal Null-Space Rotations for Grouped Quantizers**
 
 [Models](docs/models.md) · [Quick start](#quick-start) · [Method](#method) · [Figures](Figures/README.md) · [Reproduction](docs/reproduction.md)
 
-**arXiv:** coming soon <!-- Replace with the paper URL when available. -->
+[![arXiv](https://img.shields.io/badge/arXiv-2609.32429-b31b1b.svg)](https://arxiv.org/abs/2609.32429)
 
 </div>
 
@@ -45,8 +45,8 @@ prismquant generate --model qwen3_0.6b_base \
 ```
 
 The loader downloads only the selected checkpoint and its required rotation
-factors, then obtains the matching base model and tokenizer. It defaults to
-PrismQuant at `k=max`, seed 0. These are **base-model completions**, not chat-tuned
+factors, then obtains the matching base model and tokenizer. The default
+PrismQuant configuration is selected automatically. These are **base-model completions**, not chat-tuned
 assistants. See [model selection, memory and loading options](docs/models.md).
 
 **Checkpoint format.** The released GPTQ weights are dequantized INT4 values in
@@ -60,15 +60,15 @@ provided for implementation work.
 
 | Family | Sizes | Hugging Face |
 | --- | --- | --- |
-| Qwen3 Base | 0.6B, 1.7B, 4B, 8B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/nar-w4a4kv4-qwen3-base) |
-| Llama 3.2 | 3B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/nar-w4a4kv4-llama-3.2-3b) |
-| Llama 3.1 | 8B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/nar-w4a4kv4-llama-3.1-8b) |
-| Llama 3.1 | 70B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/nar-w4a4kv4-llama-3.1-70b) |
+| Qwen3 Base | 0.6B, 1.7B, 4B, 8B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/PrismQuant-Qwen3-Base) |
+| Qwen3 MoE Base | 30B-A3B | [Checkpoint and expert rotations](https://huggingface.co/ForeverBlue/PrismQuant-Qwen3-30B-A3B-Base) |
+| Llama 3.2 | 3B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/PrismQuant-Llama-3.2-3B) |
+| Llama 3.1 | 8B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/PrismQuant-Llama-3.1-8B) |
+| Llama 3.1 | 70B | [Checkpoints and rotation factors](https://huggingface.co/ForeverBlue/PrismQuant-Llama-3.1-70B) |
 
-The Hub URLs retain the original `nar-` names for stable links. Model cards and
-the public API use **PrismQuant**. The [model catalog](prismquant/models.json)
-pins exact revisions and enumerates 37 available checkpoint variants, including
-Hadamard controls where present. Upstream model licenses apply.
+The [model catalog](prismquant/models.json) pins the model artifacts and base
+models to exact revisions. The MoE release includes all expert weights and
+per-expert rotations. Upstream model licenses apply.
 
 ## Method
 
@@ -135,7 +135,20 @@ See [release validation](docs/validation.md) for the test scope and numerical ch
 
 ## Paper and citation
 
-The arXiv link and BibTeX citation will be added when the paper is available.
+**[PrismQuant: Optimal Null-Space Rotations for Grouped Quantizers](https://arxiv.org/abs/2609.32429)**
+
+Yanlong Chen, Yining Chen, Song Zhang, Amirhossein Habibian, and Yawei Li.
+
+```bibtex
+@article{chen2026prismquant,
+  title={PrismQuant: Optimal Null-Space Rotations for Grouped Quantizers},
+  author={Chen, Yanlong and Chen, Yining and Zhang, Song and Habibian, Amirhossein and Li, Yawei},
+  journal={arXiv preprint arXiv:2609.32429},
+  year={2026},
+  doi={10.48550/arXiv.2609.32429},
+  url={https://arxiv.org/abs/2609.32429}
+}
+```
 
 ## License and acknowledgments
 

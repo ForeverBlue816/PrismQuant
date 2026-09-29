@@ -57,11 +57,11 @@ def test_restore_matches_full_fold_and_cached_padded_generation(tmp_path, archit
 
 
 def test_catalog_only_exposes_complete_pinned_variants():
-    catalog=list_models();assert len(catalog)==7
+    catalog=list_models();assert len(catalog)==8
     for key,spec in catalog.items():
         _,name,row=checkpoint_spec(key)
         assert len(spec['revision'])==40
-        assert sum('/layer_' in p for p in row['required_files'])==spec['layers']
+        assert sum(p.startswith('checkpoints/') and '/layer_' in p for p in row['required_files'])==spec['layers']
         assert all(not p.startswith('/') and '..' not in p.split('/') for p in row['required_files'])
         assert row['download_bytes']>0
     with pytest.raises(ValueError):checkpoint_spec('unknown')

@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use PrismQuant, please cite our paper."
+type: software
+title: "PrismQuant"
+repository-code: "https://github.com/ForeverBlue816/PrismQuant"
+url: "https://github.com/ForeverBlue816/PrismQuant"
+license: Apache-2.0
+authors:
+  - family-names: Chen
+    given-names: Yanlong
+  - family-names: Chen
+    given-names: Yining
+  - family-names: Zhang
+    given-names: Song
+  - family-names: Habibian
+    given-names: Amirhossein
+  - family-names: Li
+    given-names: Yawei
+preferred-citation:
+  type: article
+  title: "PrismQuant: Optimal Null-Space Rotations for Grouped Quantizers"
+  authors:
+    - family-names: Chen
+      given-names: Yanlong
+    - family-names: Chen
+      given-names: Yining
+    - family-names: Zhang
+      given-names: Song
+    - family-names: Habibian
+      given-names: Amirhossein
+    - family-names: Li
+      given-names: Yawei
+  journal: arXiv
+  year: 2026
+  date-published: 2026-09-26
+  doi: "10.48550/arXiv.2609.32429"
+  url: "https://arxiv.org/abs/2609.32429"

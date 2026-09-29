@@ -1,6 +1,6 @@
 # Released models
 
-Use `prismquant models` to list the exact checkpoint names. The loader verifies
+Use `prismquant models` to list the released models. The loader verifies
 that every decoder layer and rotation factor is present before loading a model.
 Downloads are restricted to one selected variant at an immutable Hub revision.
 
@@ -12,21 +12,19 @@ Downloads are restricted to one selected variant at an immutable Hub revision.
 | `qwen3_1.7b_base` | Qwen/Qwen3-1.7B-Base | fp32 | asymmetric group-128 GPTQ |
 | `qwen3_4b_base` | Qwen/Qwen3-4B-Base | fp32 | asymmetric group-128 GPTQ |
 | `qwen3_8b_base` | Qwen/Qwen3-8B-Base | fp32 | asymmetric group-128 GPTQ |
+| `qwen3_30b_a3b_base` | Qwen/Qwen3-30B-A3B-Base | fp32 | asymmetric group-128 GPTQ |
 | `llama32_3b` | unsloth/Llama-3.2-3B | bf16 | symmetric per-channel GPTQ |
 | `llama31_8b` | unsloth/Meta-Llama-3.1-8B | bf16 | symmetric per-channel GPTQ |
 | `llama31_70b` | unsloth/Meta-Llama-3.1-70B | fp32 | symmetric per-channel GPTQ |
 
-The defaults preserve the released checkpoint/evaluation conventions. Additional
-Llama-3.2-3B protocols and paired seeds are available in the catalog; not every
-model has every variant. A filename containing `nar` denotes PrismQuant's original
-internal naming, retained to preserve checkpoint compatibility.
+The loader selects the default PrismQuant configuration automatically. See the
+[Hugging Face repositories](../README.md#released-models) for model cards and licenses.
 
-## Download and select a variant
+## Download and generate
 
 ```bash
 prismquant download --model qwen3_0.6b_base
 prismquant generate --model qwen3_0.6b_base \
-  --checkpoint gptq_nar_k8_seed0_g128_asym \
   --prompt "A neural network is"
 ```
 
@@ -46,9 +44,10 @@ model still follows its upstream terms.
 
 ## What is stored and computed
 
-`checkpoints/<model>/<variant>/layer_XX.pt` stores the seven attention/MLP linear
+`checkpoints/<model>/<variant>/layer_XX.pt` stores the attention/MLP linear
 weight tensors after rotation folding and GPTQ. These are dequantized INT4 values
 stored as floating-point tensors, with restricted `weights_only=True` loading.
+MoE shards contain attention projections and the stacked expert gate/up/down tensors.
 They are **not** a standard Transformers checkpoint or a packed INT4 model.
 
 `rotations/<model>/...` contains calibrated Householder factors and permutations.
@@ -71,7 +70,25 @@ for all tensors. Disk/meta offloading is not supported. Keep the default dtype
 for comparisons with the released results; silently casting the model would
 change the numerical protocol.
 
+## MoE loading
+
+```python
+loaded = load_model("qwen3_30b_a3b_base", device_map="balanced")
+print(loaded.generate("The key idea behind mixture-of-experts models is", max_new_tokens=64))
+```
+
+The 30B-A3B reference uses fp32 and needs roughly 122 GB for parameters alone.
+Use enough aggregate memory for parameters, activations, and KV state; optionally
+set `max_memory={...}` to control placement. All 128 experts in every layer are
+included. Each expert uses its own calibrated down-input rotation. The loader
+restores the unquantized router with the correct norm and residual rotation folds;
+routing happens before expert-input quantization.
+
 ## Advanced usage
+
+`prismquant models --json` exposes exact artifact variants and revision hashes
+for reproduction. Pass an exact variant with `--checkpoint` or `checkpoint=...`.
+The original artifact filenames remain compatible with existing downloads.
 
 The returned object exposes `model`, `tokenizer`, `hooks` and provenance
 `metadata`. Batched Transformers generation is available directly:
@@ -94,3 +111,10 @@ runtime hooks; do not use the rotated model afterward as an ordinary base model.
 Qwen-derived artifacts retain Apache-2.0. Llama-derived artifacts retain the
 Llama 3.1/3.2 Community License and the accompanying usage policy. Built with
 Llama. See the exact license and provenance in each linked Hub repository.
+
+## Hub download statistics
+
+Each new download includes a real `config.json` manifest, which the loader checks
+against the pinned catalog before loading weights. Hugging Face automatically
+counts requests for this configuration in its monthly download statistics.
+Updates follow Hub aggregation; offline loads do not add downloads. See [Hugging Face's counting rules](https://huggingface.co/docs/hub/models-download-stats).

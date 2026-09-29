@@ -7,11 +7,12 @@ from .hub import list_models, download_checkpoint
 def main():
     parser = argparse.ArgumentParser(prog='prismquant', description=__doc__)
     commands = parser.add_subparsers(dest='command', required=True)
-    commands.add_parser('models', help='List released models and checkpoint variants')
+    model_parser = commands.add_parser('models', help='List released models')
+    model_parser.add_argument('--json', action='store_true', help='Include exact checkpoint variants and revisions')
     for name in ['download', 'generate']:
         p = commands.add_parser(name)
         p.add_argument('--model', required=True, choices=list_models())
-        p.add_argument('--checkpoint', help='Exact variant name from prismquant models')
+        p.add_argument('--checkpoint', help='Exact variant name from prismquant models --json')
         p.add_argument('--cache-dir')
         p.add_argument('--local-files-only', action='store_true')
         if name == 'generate':
@@ -21,8 +22,14 @@ def main():
             p.add_argument('--device-map', choices=['auto', 'balanced'])
     args = parser.parse_args()
     if args.command == 'models':
-        print(json.dumps({k: {key: val for key, val in v.items() if key != 'checkpoints'} |
-                          {'checkpoints': list(v['checkpoints'])} for k, v in list_models().items()}, indent=2))
+        catalog = list_models()
+        if args.json:
+            print(json.dumps({k: {key: val for key, val in v.items() if key != 'checkpoints'} |
+                              {'checkpoints': list(v['checkpoints'])} for k, v in catalog.items()}, indent=2))
+        else:
+            print(f'{"Model":<24} {"Quantization":<14} Hugging Face')
+            for key, spec in catalog.items():
+                print(f'{key:<24} {"W4A4KV4":<14} https://huggingface.co/{spec["repo_id"]}')
         return
     options = dict(cache_dir=args.cache_dir, local_files_only=args.local_files_only)
     if args.command == 'download':

@@ -4,7 +4,7 @@ from .hub import download_checkpoint, list_models
 from .quantization import dynamic_asym_int4
 from .rotations import RotationFactor, WYFactor, compact_wy
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 __all__ = ['fit_rotation', 'download_checkpoint', 'list_models', 'load_model',
            'dynamic_asym_int4', 'RotationFactor', 'WYFactor', 'compact_wy']
 

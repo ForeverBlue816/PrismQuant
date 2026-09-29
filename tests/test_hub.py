@@ -9,6 +9,7 @@ def make_snapshot(root, model):
     for relative in var['required_files']:
         p=root/relative;p.parent.mkdir(parents=True,exist_ok=True);p.touch()
     (root/'checkpoints'/model/name/'DONE.json').write_text(json.dumps(dict(model=model,rotation=var['rotation'],model_id=spec['base_model'])))
+    (root/'config.json').write_text(json.dumps({'format':'prismquant-reference-v1', 'models':{model:dict(base_model=spec['base_model'], architecture=spec['architecture'], storage_dtype=spec['compute_dtype'], default_checkpoint=spec['default_checkpoint'])}}))
     return spec,name,var
 
 
@@ -33,3 +34,14 @@ def test_wrong_model_metadata_is_rejected(tmp_path):
     model='qwen3_0.6b_base';spec,name,_=make_snapshot(tmp_path,model)
     p=tmp_path/'checkpoints'/model/name/'DONE.json';d=json.loads(p.read_text());d['model']='wrong';p.write_text(json.dumps(d))
     with pytest.raises(ValueError,match='metadata'):validate_snapshot(tmp_path,model)
+
+
+def test_wrong_manifest_is_rejected(tmp_path):
+    model = 'qwen3_0.6b_base'
+    make_snapshot(tmp_path, model)
+    path = tmp_path/'config.json'
+    config = json.loads(path.read_text())
+    config['models'][model]['base_model'] = 'unrelated/model'
+    path.write_text(json.dumps(config))
+    with pytest.raises(ValueError, match='configuration'):
+        validate_snapshot(tmp_path, model)

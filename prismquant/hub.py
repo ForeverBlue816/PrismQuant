@@ -29,6 +29,16 @@ def validate_snapshot(snapshot: str | Path, model: str, checkpoint: str | None =
     missing = [p for p in variant['required_files'] if not (root / p).is_file()]
     if missing:
         raise FileNotFoundError(f'Incomplete {model}/{name}: {len(missing)} missing files; first: {missing[:3]}')
+    config_path = root / 'config.json'
+    if config_path.is_file():
+        config = json.loads(config_path.read_text())
+        entry = config.get('models', {}).get(model, {})
+        if config.get('format') != 'prismquant-reference-v1':
+            raise ValueError('Unsupported PrismQuant artifact format')
+        expected = dict(base_model=spec['base_model'], architecture=spec['architecture'],
+                        storage_dtype=spec['compute_dtype'], default_checkpoint=spec['default_checkpoint'])
+        if any(entry.get(key) != value for key, value in expected.items()):
+            raise ValueError('Hub configuration does not match the model registry')
     metadata = json.loads((root / 'checkpoints' / model / name / 'DONE.json').read_text())
     if metadata['model'] != model or metadata['rotation'] != variant['rotation']:
         raise ValueError('Checkpoint metadata does not match the requested model/rotation')
