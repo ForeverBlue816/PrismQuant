@@ -6,11 +6,16 @@
 
 **Optimal Null-Space Rotations for Grouped Quantizers**
 
-[Models](docs/models.md) · [Quick start](#quick-start) · [Method](#method) · [Figures](Figures/README.md) · [Reproduction](docs/reproduction.md)
+[Paper](https://arxiv.org/abs/2609.32429) · [Hugging Face](https://huggingface.co/ForeverBlue/PrismQuant-Qwen3-Base) · [Models](docs/models.md) · [Quick start](#quick-start) · [Method](#method) · [Figures](Figures/README.md) · [Reproduction](docs/reproduction.md)
 
 [![arXiv](https://img.shields.io/badge/arXiv-2609.32429-b31b1b.svg)](https://arxiv.org/abs/2609.32429)
 
 </div>
+
+Official code and pretrained checkpoints for
+**[PrismQuant: Optimal Null-Space Rotations for Grouped Quantizers](https://arxiv.org/abs/2609.32429)**
+(arXiv:2609.32429), by Yanlong Chen, Yining Chen, Song Zhang, Amirhossein Habibian,
+and Yawei Li. See the [released models](#released-models) for all Hugging Face checkpoints.
 
 ![PrismQuant method overview](Figures/method.png)
 
