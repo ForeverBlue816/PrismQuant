@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="Figures/blue_triangle_logo_hd.svg" alt="PrismQuant blue triangular logo" width="128" height="128">
+
 # PrismQuant
 
 **Optimal Null-Space Rotations for Grouped Quantizers**
