@@ -108,6 +108,9 @@ for conventions and [the kernel guide](docs/kernels.md) for the fused path.
 
 ## Results and figures
 
+See [verified evaluation metadata](docs/evaluation_metadata.md) for indexed paper
+scores, benchmark protocols, and checkpoint links.
+
 ![Layerwise activation range and INT4 error](Figures/fig2.png)
 
 ![Geometry, energy coverage and range law](Figures/fig3.png)
