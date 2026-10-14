@@ -1,0 +1,62 @@
+[
+  {
+    "file": "fig1.pdf",
+    "pdf_sha256": "dc9ca89778b55e556637e06277615fe9f97706c490c03b9a1b4d38c1b1a80fe8",
+    "source": "PrismQuant paper figure",
+    "metadata": "Document properties removed; page content and rendered pixels preserved."
+  },
+  {
+    "file": "fig2.pdf",
+    "pdf_sha256": "6779ccd5647178c6b7840bfffb8d6122c86c2073c0a8714b403cba837029065a",
+    "source": "PrismQuant paper figure",
+    "metadata": "Document properties removed; page content and rendered pixels preserved."
+  },
+  {
+    "file": "fig3.pdf",
+    "pdf_sha256": "502c6b6624bc3aaf4d960cb02866bb5e7ad034960bca698a19c090bb1f7dc1a5",
+    "source": "PrismQuant paper figure",
+    "metadata": "Document properties removed; page content and rendered pixels preserved."
+  },
+  {
+    "file": "fig4.pdf",
+    "pdf_sha256": "316a2024a9879083f33aee88f992f22841e4b69fe81055e5e069a6288b0fa08b",
+    "source": "PrismQuant paper figure",
+    "metadata": "Document properties removed; page content and rendered pixels preserved."
+  },
+  {
+    "file": "fig5.pdf",
+    "pdf_sha256": "ec80e95f7456028dc8892eb04bcb0cc30696c31c0170a3c115192f166a4b54a7",
+    "source": "PrismQuant paper figure",
+    "metadata": "Document properties removed; page content and rendered pixels preserved."
+  },
+  {
+    "file": "fig6.pdf",
+    "pdf_sha256": "4b8414ff0b1d66b3df905f4bf6481b3cfdb1760c9c5a99a959da1a6c1e70078b",
+    "source": "PrismQuant paper figure",
+    "metadata": "Document properties removed; page content and rendered pixels preserved."
+  },
+  {
+    "file": "matrixd.pdf",
+    "pdf_sha256": "c812ade617f72e14ba731bd3be57679381f321b52663c1efa4db88c7d2a7fb6c",
+    "source": "PrismQuant paper figure",
+    "metadata": "Document properties removed; page content and rendered pixels preserved."
+  },
+  {
+    "file": "matrixp.pdf",
+    "pdf_sha256": "9aa9037cc2518f82bc5aa20398f72a9fb55c54f2a37d17e96ef0a33545946038",
+    "source": "PrismQuant paper figure",
+    "metadata": "Document properties removed; page content and rendered pixels preserved."
+  },
+  {
+    "file": "matrixq.pdf",
+    "pdf_sha256": "980eb1cef2fe1f0beef94f30c126a5f14878d3b5a41bbb71119c88d790260d8f",
+    "source": "PrismQuant paper figure",
+    "metadata": "Document properties removed; page content and rendered pixels preserved."
+  },
+  {
+    "file": "method.pdf",
+    "pdf_sha256": "d15d19477a31d5d929fa46fb00fb30dbfbe0146eb74cc54bfcd7f048bfeec28a",
+    "source": "PrismQuant paper figure",
+    "metadata": "Document properties removed; page content and rendered pixels preserved."
+  }
+]

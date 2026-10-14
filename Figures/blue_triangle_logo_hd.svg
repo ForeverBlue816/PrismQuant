@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="2048" height="2048"
+     viewBox="0 0 70 85"
+     preserveAspectRatio="xMidYMid meet"
+     role="img" aria-label="Blue triangular logo">
+  <defs>
+    <!-- Light left face -->
+    <linearGradient id="leftFace" x1="35" y1="23" x2="5" y2="67" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9FD9FD"/>
+      <stop offset="1" stop-color="#D2EDFE"/>
+    </linearGradient>
+
+    <!-- Deep blue right face -->
+    <linearGradient id="rightFace" x1="35" y1="23" x2="61" y2="77" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3D9EFD"/>
+      <stop offset="1" stop-color="#43A6FD"/>
+    </linearGradient>
+
+    <!-- Cyan lower face -->
+    <linearGradient id="bottomFace" x1="4" y1="66" x2="64" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#84DBFD"/>
+      <stop offset="1" stop-color="#79D7FC"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Transparent background; all faces meet on the same vertices for clean scaling -->
+  <path d="M35 23 L4 66 L33 60 Z" fill="url(#leftFace)"/>
+  <path d="M35 23 L33 60 L64 78 Z" fill="url(#rightFace)"/>
+  <path d="M4 66 L33 60 L64 78 Z" fill="url(#bottomFace)"/>
+</svg>
