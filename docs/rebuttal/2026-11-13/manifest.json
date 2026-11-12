@@ -238,10 +238,11 @@
       "source_bytes": 12714,
       "source_sha256": "f2c41e310ee2019987e455d304a40166a5bb85053ae2382f4f3ef973153aea37",
       "exported_path": "records/e38/protocol_audit.md",
-      "exported_bytes": 12843,
-      "exported_sha256": "600a6578d2c2b7757c0da8ab84f58bdb26f520c8895a9d77e99ae5312eae8fe5",
+      "exported_bytes": 12842,
+      "exported_sha256": "b0c03f73dcc1175ccad6cda9e343eaccf2b8e3ec61708d41b231eb23a0e2e1ff",
       "transformations": [
-        "repository-relative links, broken job-name link repair, historical-status banner"
+        "repository-relative links, broken job-name link repair, historical-status banner",
+        "trim redundant blank line at end of Markdown"
       ],
       "omitted_sample_payloads": []
     },

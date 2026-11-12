@@ -63,4 +63,3 @@ The existing E17 pack epilogue uses `floor(q+0.5)` and lacks E14's post-fp16-con
 3. Implement one audited real-weight linear adapter and a layer-level accuracy diagnostic. Use E14 runtime rotations and attention first to isolate packing from other changes; do not present that diagnostic as the final fast deployment path.
 4. Build the full Stage-A adapter only for supported weight formats, and explicitly record activation/KV/dtype differences. Add the Stage-B grouped integer primitive, offset correction and exact KV implementation under separate gates.
 5. After the required gate succeeds, evaluate all eight tasks with per-item logs, then time the same loaded model on an exclusive GPU using matched conditions and all requested batch sizes. Repeat seeds and build paired intervals only from genuine paired items.
-

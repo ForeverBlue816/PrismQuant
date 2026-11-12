@@ -91,7 +91,7 @@ def rewrite_markdown(text,source,target):
     is_archived=('/records/' in str(target) and '/rotation_optimization/' not in str(target)) or target.name=='history.md'
     if is_archived:
         text='> Historical record snapshot. Some original job states and plans are stale. Use the [current status index]('+rel(DEST/'README.md',target.parent)+') for the active scope and observed scheduler state.\n\n'+text
-    return text
+    return text.rstrip()+'\n'
 
 
 def main():
