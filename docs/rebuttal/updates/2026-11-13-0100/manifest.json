@@ -1,0 +1,40 @@
+{
+  "observed_utc": "2026-11-12T17:03:00.664077+00:00",
+  "files": [
+    {
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_train-ppl_job1736285.json",
+      "path": "flatquant_3b_ppl.json",
+      "bytes": 17520,
+      "sha256": "f8f9bb11d79cff9591a6580ba5cedea133bc287eb4b0ef140f1512d0e8712bbc",
+      "transformation": "none"
+    },
+    {
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285.json",
+      "path": "flatquant_3b_tasks_progress.json",
+      "bytes": 1507,
+      "sha256": "bf80a888f6187d8f2ff6dad4e83b1c27deaa8b1ff1d0314307b6857dc711452f",
+      "transformation": "none"
+    },
+    {
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285.json",
+      "path": "duquant_3b_tasks_progress.json",
+      "bytes": 9733,
+      "sha256": "7b1c4d30aec5279258a67621480455280dca04f8497a0ec3f4876395d649c0e7",
+      "transformation": "none"
+    },
+    {
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/baselines/llama32_3b/collection.json",
+      "path": "paired_ppl_collection.json",
+      "bytes": 4339,
+      "sha256": "590f93513d3ad704ef5be2ef91eca0f74c1f036463eef839808a3887a8def5bd",
+      "transformation": "none"
+    },
+    {
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/baselines/priority_update_20261113.json",
+      "path": "priority_update.json",
+      "bytes": 6912,
+      "sha256": "66645d4ccbf46d00d451c1615c3e27bef4fd19ef39303dd3e70ec07d7d67cc4f",
+      "transformation": "none"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-12T17:00:56.669956+00:00",
+  "actions": [
+    {
+      "job": "1736252",
+      "reason": "Reduce overly broad72h reservation while retaining queue age; both official methods unchanged",
+      "command": [
+        "scontrol",
+        "update",
+        "JobId=1736252",
+        "TimeLimit=1-00:00:00"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "scontrol: error: slurm_job_submit: Updating TimeLimit is not allowed\nJob violates accounting/QOS policy (job submit limit, user's size and/or time limits) for job 1736252\n",
+      "before": "JobId=1736252 JobName=pq8b-flat-duquant\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=2 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Priority Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=3-00:00:00 TimeMin=N/A\n   SubmitTime=2026-11-12T15:20:04 EligibleTime=2026-11-12T15:20:04\n   AccrueTime=2026-11-12T15:20:04\n   StartTime=2026-11-14T01:48:59 EndTime=2026-11-17T01:48:59 Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T17:00:55 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-1:1799583\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=8 NumTasks=2 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=8,mem=66G,node=1,billing=16,gres/gpu=2,gres/gpu:pro6000=2\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=66G MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_baselines_8b.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-baselines-8b-1736252.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-baselines-8b-1736252.out\n   Power=\n   TresPerJob=gres/gpu:pro6000:2\n   TresPerTask=cpu:4\n   \n\n",
+      "after": "JobId=1736252 JobName=pq8b-flat-duquant\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=2 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Priority Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=3-00:00:00 TimeMin=N/A\n   SubmitTime=2026-11-12T15:20:04 EligibleTime=2026-11-12T15:20:04\n   AccrueTime=2026-11-12T15:20:04\n   StartTime=2026-11-14T01:48:59 EndTime=2026-11-17T01:48:59 Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T17:00:55 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-1:1799583\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=8 NumTasks=2 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=8,mem=66G,node=1,billing=16,gres/gpu=2,gres/gpu:pro6000=2\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=66G MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_baselines_8b.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-baselines-8b-1736252.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-baselines-8b-1736252.out\n   Power=\n   TresPerJob=gres/gpu:pro6000:2\n   TresPerTask=cpu:4\n   \n\n"
+    },
+    {
+      "job": "1736286",
+      "reason": "Both3B quantized checkpoints and full141 PPL now complete; timing need not wait for all eight tasks",
+      "command": [
+        "scontrol",
+        "update",
+        "JobId=1736286",
+        "Dependency="
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "before": "JobId=1736286 JobName=pq3b-baselines-timing\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Dependency Dependency=afterany:1736285(unfulfilled)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=1-00:00:00 TimeMin=N/A\n   SubmitTime=2026-11-12T15:36:45 EligibleTime=Unknown\n   AccrueTime=Unknown\n   StartTime=Unknown EndTime=Unknown Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T15:36:45 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-1:1847027\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=4,mem=40G,node=1,billing=3,gres/gpu=1,gres/gpu:a40=1\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=40G MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_baseline_timing.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-baselines-timing-1736286.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-baselines-timing-1736286.out\n   Power=\n   TresPerJob=gres/gpu:a40:1\n   TresPerTask=cpu:4\n   \n\n",
+      "after": "JobId=1736286 JobName=pq3b-baselines-timing\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=None Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=1-00:00:00 TimeMin=N/A\n   SubmitTime=2026-11-12T15:36:45 EligibleTime=2026-11-12T17:00:56\n   AccrueTime=Unknown\n   StartTime=Unknown EndTime=Unknown Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T15:36:45 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-1:1847027\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=4,mem=40G,node=1,billing=3,gres/gpu=1,gres/gpu:a40=1\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=40G MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_baseline_timing.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-baselines-timing-1736286.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-baselines-timing-1736286.out\n   Power=\n   TresPerJob=gres/gpu:a40:1\n   TresPerTask=cpu:4\n   \n\n"
+    }
+  ],
+  "no_new_configuration": true,
+  "no_recalibration": true
+}

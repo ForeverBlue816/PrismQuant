@@ -1,0 +1,80 @@
+{
+  "model": "Llama-3.2-3B",
+  "created_utc": "2026-11-12T16:57:45.184608+00:00",
+  "rows": {
+    "FlatQuant": {
+      "ppl_source": "[native_3b_seed0_train-ppl_job1736285.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_train-ppl_job1736285.json)",
+      "task_source": "[native_3b_seed0_tasks_job1736285.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285.json)",
+      "timing_source": "pending",
+      "calibration_source": "[native_3b_seed0_train-ppl_job1736285.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_train-ppl_job1736285.json)",
+      "prior_attempts": [
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285.json",
+          "sha256": "bf80a888f6187d8f2ff6dad4e83b1c27deaa8b1ff1d0314307b6857dc711452f",
+          "phase": "tasks",
+          "status": "RUNNING"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_train-ppl_job1736285.json",
+          "sha256": "f8f9bb11d79cff9591a6580ba5cedea133bc287eb4b0ef140f1512d0e8712bbc",
+          "phase": "train-ppl",
+          "status": "COMPLETE"
+        }
+      ]
+    },
+    "DuQuant": {
+      "ppl_source": "[duquant_3b_seed0_quantize-ppl_retry1_job1736285.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_retry1_job1736285.json)",
+      "task_source": "[duquant_3b_seed0_eight-tasks_retry2_job1736285.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285.json)",
+      "timing_source": "pending",
+      "calibration_source": "[duquant_3b_seed0_quantize-ppl_retry1_job1736285.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_retry1_job1736285.json)",
+      "prior_attempts": [
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_job1736285.json",
+          "sha256": "bfad9de4b3218a1371b018bf50373ff50c12f67fbf4f38acaaa7c5230e53bd0a",
+          "phase": "quantize-ppl",
+          "status": "FAILED"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285.json",
+          "sha256": "7b1c4d30aec5279258a67621480455280dca04f8497a0ec3f4876395d649c0e7",
+          "phase": "eight-tasks",
+          "status": "RUNNING"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_retry1_job1736285.json",
+          "sha256": "99eaed8a1d09edfd6b6bc68a2b942a17637ad4d7e2d3bcdd2457df2aacde9e08",
+          "phase": "quantize-ppl",
+          "status": "COMPLETE"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry1_job1736285.json",
+          "sha256": "896ac69772bc3225c155c4d7eea4e70995462f6793ca5a719511807813d6a8c0",
+          "phase": "eight-tasks",
+          "status": "RUNNING"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_job1736285.json",
+          "sha256": "e7ad3bba06d75cbd71c112c0b321222040567d55889443725c851384c6f60062",
+          "phase": "eight-tasks",
+          "status": "FAILED"
+        }
+      ]
+    }
+  },
+  "paired_ppl": {
+    "status": "COMPLETE",
+    "point": -1.6332979498833495,
+    "percentile95": [
+      -1.7249579079869877,
+      -1.5447213736112755
+    ],
+    "replicates": 20000,
+    "rng_seed": 20261111,
+    "evaluation_tokens_sha256": "0b1879cd29bec44e095f6ed5fa5c672a1cb1d7dac199c7f33ec5eca400e05a50",
+    "reference_source": "[duquant_3b_seed0_quantize-ppl_retry1_job1736285.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_retry1_job1736285.json)",
+    "candidate_source": "[native_3b_seed0_train-ppl_job1736285.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_train-ppl_job1736285.json)",
+    "scope": "paired test-sequence PPL difference, candidate minus reference; fixed runs, not seed uncertainty or a causal implementation effect"
+  },
+  "same_physical_gpu": false,
+  "selection": "latest attempt per method/model/phase, never score based"
+}
