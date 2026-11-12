@@ -1,0 +1,329 @@
+{
+  "kind": "E38_saved_PrismQuant_rotation_optimization",
+  "created_utc": "2026-11-12T15:58:00.229549+00:00",
+  "model": "Meta-Llama-3.1-8B",
+  "seed": 0,
+  "k": 8,
+  "job_id": "1736296",
+  "gpu": "NVIDIA A40",
+  "scope": "Stage A native INT4 deployment format variant; not Table 1 asymmetric g128/KIVI reference",
+  "quantization": {
+    "weights": "original default E14 GPTQ symmetric per-channel saved BF16 values recovered into signed4 codes; native FP16scale projection drift recorded",
+    "activation": "symmetric per-token maxabs/7; native packed4",
+    "kv": "native asymmetric packed4 per-token/head128, FP16 scale+offset, no residual window; prefill reads actual packed pages and reconstructs K/V",
+    "table1_difference": "Table1 uses asymmetric group128 activations and KIVI token-axis grouped K plus residual32",
+    "native_int4_tensorcore": true,
+    "whole_graph_integer": false
+  },
+  "backend": "native CUTLASS signed INT4 GEMM",
+  "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "quant_snapshot": "fc812e6687165115feee00293c953a1b521d3bd0",
+  "checkpoint_directory": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0",
+  "checkpoint_manifest_sha256": "88513729f6560245ea2f00a0f955cf1d1ee8ad79156ba10b93d2ad3bf23a1d52",
+  "recorded_identity_fields_equal": {
+    "base_revision": true,
+    "quant_snapshot": true,
+    "evaluation_tokens": true,
+    "checkpoint_loading": true,
+    "rotation_assets": true,
+    "packed_layers": true,
+    "embedding_head_fold": true,
+    "source_sha256": true,
+    "quantization": true,
+    "libraries": true,
+    "native_operator_sources": true,
+    "native_extension": true
+  },
+  "packed_layers_reused": {
+    "original": 32,
+    "fast": 32
+  },
+  "protocol": {
+    "mode": "eager synchronized wall time; no CUDA Graph claim",
+    "logits": "last position only, matched across all Stage A rows",
+    "cache": "all pages/scales/length/init flags cleared; decode prefix rebuilt before every repetition",
+    "prefix": 2048,
+    "decode_steps": 128,
+    "discarded_decode_steps": 8,
+    "measured_decode_steps": 120,
+    "fixed_decode_token_id": 100,
+    "warmup": 10,
+    "repetitions": 20,
+    "batch_size": 1
+  },
+  "source_file_sha256": {
+    "quarot-llama3/e38/stage_a_8b.py": "a690212ff9a6a34a9fff66771a1d8459aef6da9c6413fdda969012875b4e9be1",
+    "quarot-llama3/e38/stage_a_8b_model.py": "92c2f295da29b3347fbde12a0c4b690e8f9fbea209552e0ce50e6af4cfa45dd9",
+    "quarot-llama3/e38/fp16.py": "5ce9ae1f7dd00910cd08b1c68bc4a95970b295ba4a92fd426ad5fcb4925af367",
+    "quarot-llama3/modeling_llama3.py": "ec8f03779820a4a749a97a8e84b337a31f880c40e4145a0a0099ae3ca9299582",
+    "quarot-llama3/e28_v2/cache_adapter.py": "91b8fa46bfa453d553190ccc526257717650002607b016ef917a1d383d5f3bfe",
+    "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+    "nar/activation_experiments.py": "60ae33785675a388d3879a5e53cb7ab34233fea15807eab411348d0ce0b72303",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+    "nar/e38_checkpoint_probe.py": "584797c5347e8f37aa125fb0f0d4e1593f504c2aa77152e8ba94b8957300787c",
+    "quarot-llama3/e38/optimized_rotation.py": "fb04fb049ffc0d13efb96b4e6593c19e26c646fd9d43dcbc03109a97ace2fa32"
+  },
+  "libraries": {
+    "torch": "2.4.1+cu124",
+    "transformers": "4.36.2",
+    "triton": "3.0.0",
+    "datasets": "2.17.1",
+    "numpy": "1.26.4",
+    "tokenizers": "0.15.2",
+    "flash-attn": "2.6.3",
+    "fast-hadamard-transform": "1.0.4.post1"
+  },
+  "rows": {
+    "original": {
+      "status": "COMPLETE",
+      "source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_original_job1736296.json",
+        "sha256": "e4df4bfa087480839f1fa9469d7485d87d02fe80282f0829432f683e7902be2b"
+      },
+      "ppl": 9.995008261163498,
+      "prefill_ms": {
+        "n": 20,
+        "median": 625.8374685421586,
+        "q25": 625.743692391552,
+        "q75": 626.0328316129744,
+        "iqr": 0.28913922142237425
+      },
+      "decode_tokens_per_second": {
+        "n": 20,
+        "median": 13.764723519851977,
+        "q25": 13.71374509459202,
+        "q75": 13.807221945110294,
+        "iqr": 0.09347685051827348
+      },
+      "decode_ms_per_token": {
+        "n": 20,
+        "median": 72.64948090499578,
+        "q25": 72.42586553911678,
+        "q75": 72.91954139849015,
+        "iqr": 0.49367585937336855
+      },
+      "peak_allocated_bytes": {
+        "prefill": 8709356544,
+        "decode": 8713812992
+      },
+      "peak_reserved_bytes": {
+        "prefill": 8927576064,
+        "decode": 8931770368
+      },
+      "same_loaded_instance_ppl_then_timing": true,
+      "exclusivity": {
+        "checks": 43,
+        "statuses": [
+          "EXCLUSIVE"
+        ],
+        "other_process_count": 0,
+        "gpu_uuids": [
+          "GPU-08ae42ad-9fd5-758c-de1f-d715a5622efc"
+        ]
+      },
+      "source_commit": "d5589f81eb7c95ab4a1f3c6ee6192a4775196784",
+      "observed_head_commit": "d5589f81eb7c95ab4a1f3c6ee6192a4775196784",
+      "component_profile": {
+        "prefill": {
+          "act_quant_pack": {
+            "calls": 128,
+            "inclusive_ms_per_model_call": 25.74652823805809,
+            "measured": true
+          },
+          "linear": {
+            "calls": 225,
+            "inclusive_ms_per_model_call": 104.6140168607235,
+            "measured": true
+          },
+          "r4": {
+            "calls": 32,
+            "inclusive_ms_per_model_call": 344.9620170593262,
+            "measured": true
+          },
+          "r2": {
+            "calls": 0,
+            "inclusive_ms_per_model_call": 0.0,
+            "measured": false
+          },
+          "kv_cache_update": {
+            "calls": 32,
+            "inclusive_ms_per_model_call": 50.841599225997925,
+            "measured": true
+          }
+        },
+        "decode": {
+          "act_quant_pack": {
+            "calls": 1024,
+            "inclusive_ms_per_model_call": 10.359716031467542,
+            "measured": true
+          },
+          "linear": {
+            "calls": 1800,
+            "inclusive_ms_per_model_call": 20.143956204410642,
+            "measured": true
+          },
+          "r4": {
+            "calls": 256,
+            "inclusive_ms_per_model_call": 15.3093520142138,
+            "measured": true
+          },
+          "r2": {
+            "calls": 0,
+            "inclusive_ms_per_model_call": 0.0,
+            "measured": false
+          },
+          "kv_cache_update": {
+            "calls": 256,
+            "inclusive_ms_per_model_call": 9.215575974434614,
+            "measured": true
+          }
+        }
+      }
+    },
+    "fast": {
+      "status": "COMPLETE",
+      "source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_fast_job1736296.json",
+        "sha256": "d350e48219deb7d0dee4b30d6b3df102a54644a3aa7c2eedb12681a86f55e51b"
+      },
+      "ppl": 9.995008261163498,
+      "prefill_ms": {
+        "n": 20,
+        "median": 346.6510421130806,
+        "q25": 346.62080195266753,
+        "q75": 346.67691693175584,
+        "iqr": 0.05611497908830643
+      },
+      "decode_tokens_per_second": {
+        "n": 20,
+        "median": 18.71854352719946,
+        "q25": 18.656093870729862,
+        "q75": 19.0271739844018,
+        "iqr": 0.37108011367193683
+      },
+      "decode_ms_per_token": {
+        "n": 20,
+        "median": 53.42297276753622,
+        "q25": 52.55641256711291,
+        "q75": 53.60178977328663,
+        "iqr": 1.0453772061737254
+      },
+      "peak_allocated_bytes": {
+        "prefill": 8360737792,
+        "decode": 8365194240
+      },
+      "peak_reserved_bytes": {
+        "prefill": 8470396928,
+        "decode": 8474591232
+      },
+      "same_loaded_instance_ppl_then_timing": true,
+      "exclusivity": {
+        "checks": 43,
+        "statuses": [
+          "EXCLUSIVE"
+        ],
+        "other_process_count": 0,
+        "gpu_uuids": [
+          "GPU-08ae42ad-9fd5-758c-de1f-d715a5622efc"
+        ]
+      },
+      "source_commit": "d5589f81eb7c95ab4a1f3c6ee6192a4775196784",
+      "observed_head_commit": "8a750713c5213913756c3a8152610382f1a9fa0b",
+      "component_profile": {
+        "prefill": {
+          "act_quant_pack": {
+            "calls": 128,
+            "inclusive_ms_per_model_call": 25.7555842846632,
+            "measured": true
+          },
+          "linear": {
+            "calls": 225,
+            "inclusive_ms_per_model_call": 104.5016647130251,
+            "measured": true
+          },
+          "r4": {
+            "calls": 32,
+            "inclusive_ms_per_model_call": 87.60108852386475,
+            "measured": true
+          },
+          "r2": {
+            "calls": 32,
+            "inclusive_ms_per_model_call": 5.9248639941215515,
+            "measured": true
+          },
+          "kv_cache_update": {
+            "calls": 32,
+            "inclusive_ms_per_model_call": 50.891839146614075,
+            "measured": true
+          }
+        },
+        "decode": {
+          "act_quant_pack": {
+            "calls": 1024,
+            "inclusive_ms_per_model_call": 10.55523206316866,
+            "measured": true
+          },
+          "linear": {
+            "calls": 1800,
+            "inclusive_ms_per_model_call": 20.29058416141197,
+            "measured": true
+          },
+          "r4": {
+            "calls": 256,
+            "inclusive_ms_per_model_call": 6.409576013684273,
+            "measured": true
+          },
+          "r2": {
+            "calls": 256,
+            "inclusive_ms_per_model_call": 5.903091989457607,
+            "measured": true
+          },
+          "kv_cache_update": {
+            "calls": 256,
+            "inclusive_ms_per_model_call": 8.830695996060967,
+            "measured": true
+          }
+        }
+      }
+    }
+  },
+  "paired_quality": {
+    "windows": 141,
+    "sequence_length": 2048,
+    "tokens_scored": 288627,
+    "aligned": true,
+    "equal_nll_windows": 141,
+    "max_abs_segment_nll_difference": 0.0,
+    "mean_segment_nll_difference": 0.0,
+    "ppl_difference": 0.0,
+    "relative_ppl_difference_percent": 0.0,
+    "probes": {
+      "sites": 64,
+      "r2_sites": 32,
+      "r4_sites": 32,
+      "compared_elements": 3702784,
+      "max_abs_fp32_difference": 0.0,
+      "max_relative_l2_fp32_difference": 0.0,
+      "output_cast_changed_elements": 0,
+      "input_scope": "first up to8 rows per site on the first actual PPL forward"
+    },
+    "limitation": "Recorded segment NLL equality and sampled rotation equality do not assert exhaustive full-logit or argmax equality"
+  },
+  "speedup": {
+    "prefill": 1.8053817600756121,
+    "decode": 1.3598924453660772
+  },
+  "peak_allocated_reduction_bytes": {
+    "prefill": 348618752,
+    "decode": 348618752
+  },
+  "numerical_execution_gate": false,
+  "limitations": [
+    "Only two sequential measurements of one seed/checkpoint on one A40; no new calibration or cross-seed timing claim.",
+    "Per-token symmetric A4 and native per-head KV4 differ from Table 1 asymmetric g128 A4 and KIVI token-axis grouped K with residual32.",
+    "The original and fast paths are separate processes using the same checkpoint/GPU; each process reuses its own loaded model for PPL and timing.",
+    "Component profiles are inclusive, non-additive diagnostics; original R2 has no separate module measurement, so its zero-call entry is unmeasured rather than zero cost.",
+    "DuQuant/FlatQuant matched timing is separate and is not included in this two-row result."
+  ]
+}

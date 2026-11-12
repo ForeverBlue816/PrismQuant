@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-11-11T04:12:31.868336+00:00",
+  "method": "DuQuant",
+  "official_source": "/home/yanlongc/DuQuant-upstream",
+  "official_commit": "d56cfc6fe97c34c0eb100fec82fe439865905679",
+  "delivery_model": "Meta-Llama-3.1-8B",
+  "delivery_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "published_validation_model": "LLaMA-3-8B",
+  "status": "CPU_PREPARATION_ONLY",
+  "gpu_submitted": false,
+  "execution_dependency": "User-required8B Had/PQk8 reference-anchor reconciliation before furtherGPUexperiments",
+  "no_3b": true,
+  "official_url": "https://github.com/Hsu1023/DuQuant",
+  "published_anchor": "To extract precisely from officialpaper before execution; do not copy another method target"
+}

@@ -1,0 +1,459 @@
+{
+  "kind": "validated_fp16_timing_collection",
+  "collected_utc": "2026-11-10T11:18:00.291305+00:00",
+  "job_id": "1733011",
+  "experiment_status": "PASS for first FP16 B1 session; overall E38 incomplete",
+  "rows": [
+    {
+      "model": "llama32_3b",
+      "phase": "prefill",
+      "seed": 0,
+      "source": "results/e38/raw/fp16_3b_prefill_b1_s1_job1733011.json",
+      "source_sha256": "4dd4d454fe39c4b77ec55092c407194dc4ac715f272f621a62dc1ed1acaebc8b",
+      "source_commit": "bc4f66b77eda8a460274b1d5026e31be8120ba86",
+      "source_files_verified_against_commit": 137,
+      "gpu_model": "NVIDIA A40",
+      "gpu_uuid": "GPU-81f21ce2-6b51-cbc9-3d2d-5756d4bf3150",
+      "ppl": 7.81657912796739,
+      "chunks": 141,
+      "all_chunks_equal_prior_attempt": true,
+      "prefill_gate": {
+        "status": "PASS",
+        "sequences": 64,
+        "backend_ppl": 7.6438352681611175,
+        "reference_ppl": 7.6438352681611175,
+        "ppl_difference": 0.0,
+        "threshold_absolute_ppl": 0.01,
+        "max_abs_logit_difference": 0.0,
+        "argmax_agreement": 1.0,
+        "positions": 131072,
+        "scope": "FP16 backend vs same-version HF FP16; not an INT4 equivalence gate"
+      },
+      "decode_gate": {
+        "status": "PASS",
+        "rows": [
+          {
+            "sequence": 0,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 9.503395636917272,
+            "reference_ppl": 9.502104546010314,
+            "ppl_difference": 0.0012910909069585585,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.03125,
+            "status": "PASS"
+          },
+          {
+            "sequence": 1,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 16.99354618120419,
+            "reference_ppl": 16.99721165793755,
+            "ppl_difference": -0.0036654767333601512,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.03515625,
+            "status": "PASS"
+          }
+        ]
+      },
+      "timing": {
+        "status": "PASS",
+        "phase": "prefill",
+        "batch_size": 1,
+        "session": 1,
+        "backend": "original QuaRot extension, shared-metadata cache, continuous eager",
+        "logits": "last position only",
+        "warmups": 10,
+        "repetitions": 50,
+        "prefix": 2048,
+        "capacity": 2048,
+        "decode_steps": 0,
+        "discarded_decode_steps": 0,
+        "timed_decode_steps": 0,
+        "decode_token_id": 100,
+        "input_sha256": "ef52c403484a6ed7eda4d7cbd354475a337918c00f7b1fcb9a34c90434d2710b",
+        "cache_reset_exact": true,
+        "allocated_before_bytes": 8552175616,
+        "latency_seconds": {
+          "n": 50,
+          "median": 0.21095511340536177,
+          "q25": 0.21077284787315875,
+          "q75": 0.21134875039570034,
+          "iqr": 0.0005759025225415826,
+          "quantile_definition": "linear interpolation at (n-1)*p"
+        },
+        "peak_allocated_bytes": 8703186944,
+        "peak_reserved_bytes": 8784969728,
+        "independent_process": true,
+        "gpu_model": "NVIDIA A40",
+        "gpu_uuid": "GPU-81f21ce2-6b51-cbc9-3d2d-5756d4bf3150",
+        "prefill_tokens_per_second": {
+          "n": 50,
+          "median": 9708.226398196188,
+          "q25": 9690.144825780826,
+          "q75": 9716.621570567033,
+          "iqr": 26.476744786206837,
+          "quantile_definition": "linear interpolation at (n-1)*p"
+        }
+      },
+      "samples": 50,
+      "guard_count": 52,
+      "all_guards_pass": true,
+      "max_load1_per_cpu": 0.3101704915364583,
+      "max_cpu_busy_fraction": 0.3149540517961571,
+      "statistics_independently_recomputed": true
+    },
+    {
+      "model": "llama32_3b",
+      "phase": "decode",
+      "seed": 0,
+      "source": "results/e38/raw/fp16_3b_decode_b1_s1_job1733011.json",
+      "source_sha256": "0bb59d217918fd62f0e54724831bd1dd1deb6609b48b4454fc61c9ba5377ce85",
+      "source_commit": "bc4f66b77eda8a460274b1d5026e31be8120ba86",
+      "source_files_verified_against_commit": 137,
+      "gpu_model": "NVIDIA A40",
+      "gpu_uuid": "GPU-81f21ce2-6b51-cbc9-3d2d-5756d4bf3150",
+      "ppl": 7.81657912796739,
+      "chunks": 141,
+      "all_chunks_equal_prior_attempt": true,
+      "prefill_gate": {
+        "status": "PASS",
+        "sequences": 64,
+        "backend_ppl": 7.6438352681611175,
+        "reference_ppl": 7.6438352681611175,
+        "ppl_difference": 0.0,
+        "threshold_absolute_ppl": 0.01,
+        "max_abs_logit_difference": 0.0,
+        "argmax_agreement": 1.0,
+        "positions": 131072,
+        "scope": "FP16 backend vs same-version HF FP16; not an INT4 equivalence gate"
+      },
+      "decode_gate": {
+        "status": "PASS",
+        "rows": [
+          {
+            "sequence": 0,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 9.503395636917272,
+            "reference_ppl": 9.502104546010314,
+            "ppl_difference": 0.0012910909069585585,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.03125,
+            "status": "PASS"
+          },
+          {
+            "sequence": 1,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 16.99354618120419,
+            "reference_ppl": 16.99721165793755,
+            "ppl_difference": -0.0036654767333601512,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.03515625,
+            "status": "PASS"
+          }
+        ]
+      },
+      "timing": {
+        "status": "PASS",
+        "phase": "decode",
+        "batch_size": 1,
+        "session": 1,
+        "backend": "original QuaRot extension, shared-metadata cache, continuous eager",
+        "logits": "last position only",
+        "warmups": 10,
+        "repetitions": 50,
+        "prefix": 2048,
+        "capacity": 2176,
+        "decode_steps": 128,
+        "discarded_decode_steps": 8,
+        "timed_decode_steps": 120,
+        "decode_token_id": 100,
+        "input_sha256": "ef52c403484a6ed7eda4d7cbd354475a337918c00f7b1fcb9a34c90434d2710b",
+        "cache_reset_exact": true,
+        "allocated_before_bytes": 8567085056,
+        "latency_seconds": {
+          "n": 50,
+          "median": 2.7964632934890687,
+          "q25": 2.7919301595538855,
+          "q75": 2.8006456558359787,
+          "iqr": 0.008715496282093227,
+          "quantile_definition": "linear interpolation at (n-1)*p"
+        },
+        "peak_allocated_bytes": 8718096384,
+        "peak_reserved_bytes": 8799649792,
+        "independent_process": true,
+        "gpu_model": "NVIDIA A40",
+        "gpu_uuid": "GPU-81f21ce2-6b51-cbc9-3d2d-5756d4bf3150",
+        "decode_tokens_per_second": {
+          "n": 50,
+          "median": 42.911344598613724,
+          "q25": 42.8472630310794,
+          "q75": 42.98101788186844,
+          "iqr": 0.13375485078903893,
+          "quantile_definition": "linear interpolation at (n-1)*p"
+        },
+        "decode_ms_per_step": {
+          "n": 50,
+          "median": 23.30386077907557,
+          "q25": 23.266084662949044,
+          "q75": 23.338713798633155,
+          "iqr": 0.07262913568411022,
+          "quantile_definition": "linear interpolation at (n-1)*p"
+        }
+      },
+      "samples": 50,
+      "guard_count": 52,
+      "all_guards_pass": true,
+      "max_load1_per_cpu": 0.3694051106770833,
+      "max_cpu_busy_fraction": 0.40920502092050204,
+      "statistics_independently_recomputed": true
+    },
+    {
+      "model": "llama31_8b",
+      "phase": "prefill",
+      "seed": 0,
+      "source": "results/e38/raw/fp16_8b_prefill_b1_s1_job1733011.json",
+      "source_sha256": "a8eea9476a7f946c44e641c42df99550e08489745a62e9ed89aaabb42d5f449c",
+      "source_commit": "bc4f66b77eda8a460274b1d5026e31be8120ba86",
+      "source_files_verified_against_commit": 137,
+      "gpu_model": "NVIDIA A40",
+      "gpu_uuid": "GPU-81f21ce2-6b51-cbc9-3d2d-5756d4bf3150",
+      "ppl": 6.238432455537351,
+      "chunks": 141,
+      "all_chunks_equal_prior_attempt": true,
+      "prefill_gate": {
+        "status": "PASS",
+        "sequences": 64,
+        "backend_ppl": 6.188467932452708,
+        "reference_ppl": 6.188467932452708,
+        "ppl_difference": 0.0,
+        "threshold_absolute_ppl": 0.01,
+        "max_abs_logit_difference": 0.0,
+        "argmax_agreement": 1.0,
+        "positions": 131072,
+        "scope": "FP16 backend vs same-version HF FP16; not an INT4 equivalence gate"
+      },
+      "decode_gate": {
+        "status": "PASS",
+        "rows": [
+          {
+            "sequence": 0,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 7.596131284995609,
+            "reference_ppl": 7.593029118447095,
+            "ppl_difference": 0.0031021665485138072,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.046875,
+            "status": "PASS"
+          },
+          {
+            "sequence": 1,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 14.30248797553562,
+            "reference_ppl": 14.304771860108715,
+            "ppl_difference": -0.002283884573095918,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.04638671875,
+            "status": "PASS"
+          }
+        ]
+      },
+      "timing": {
+        "status": "PASS",
+        "phase": "prefill",
+        "batch_size": 1,
+        "session": 1,
+        "backend": "original QuaRot extension, shared-metadata cache, continuous eager",
+        "logits": "last position only",
+        "warmups": 10,
+        "repetitions": 50,
+        "prefix": 2048,
+        "capacity": 2048,
+        "decode_steps": 0,
+        "discarded_decode_steps": 0,
+        "timed_decode_steps": 0,
+        "decode_token_id": 100,
+        "input_sha256": "ef52c403484a6ed7eda4d7cbd354475a337918c00f7b1fcb9a34c90434d2710b",
+        "cache_reset_exact": true,
+        "allocated_before_bytes": 18489190400,
+        "latency_seconds": {
+          "n": 50,
+          "median": 0.4174685194157064,
+          "q25": 0.41696176142431796,
+          "q75": 0.41785082255955786,
+          "iqr": 0.0008890611352398992,
+          "quantile_definition": "linear interpolation at (n-1)*p"
+        },
+        "peak_allocated_bytes": 18732476416,
+        "peak_reserved_bytes": 18939379712,
+        "independent_process": true,
+        "gpu_model": "NVIDIA A40",
+        "gpu_uuid": "GPU-81f21ce2-6b51-cbc9-3d2d-5756d4bf3150",
+        "prefill_tokens_per_second": {
+          "n": 50,
+          "median": 4905.759128638081,
+          "q25": 4901.27076255744,
+          "q75": 4911.721388122343,
+          "iqr": 10.45062556490302,
+          "quantile_definition": "linear interpolation at (n-1)*p"
+        }
+      },
+      "samples": 50,
+      "guard_count": 52,
+      "all_guards_pass": true,
+      "max_load1_per_cpu": 0.280242919921875,
+      "max_cpu_busy_fraction": 0.28297161936560933,
+      "statistics_independently_recomputed": true
+    },
+    {
+      "model": "llama31_8b",
+      "phase": "decode",
+      "seed": 0,
+      "source": "results/e38/raw/fp16_8b_decode_b1_s1_job1733011.json",
+      "source_sha256": "346a4c6371f93d981b8a83bf635bc15b2fa89fd24bb5bacafb8a6eb9cb73b4ae",
+      "source_commit": "bc4f66b77eda8a460274b1d5026e31be8120ba86",
+      "source_files_verified_against_commit": 137,
+      "gpu_model": "NVIDIA A40",
+      "gpu_uuid": "GPU-81f21ce2-6b51-cbc9-3d2d-5756d4bf3150",
+      "ppl": 6.238432455537351,
+      "chunks": 141,
+      "all_chunks_equal_prior_attempt": true,
+      "prefill_gate": {
+        "status": "PASS",
+        "sequences": 64,
+        "backend_ppl": 6.188467932452708,
+        "reference_ppl": 6.188467932452708,
+        "ppl_difference": 0.0,
+        "threshold_absolute_ppl": 0.01,
+        "max_abs_logit_difference": 0.0,
+        "argmax_agreement": 1.0,
+        "positions": 131072,
+        "scope": "FP16 backend vs same-version HF FP16; not an INT4 equivalence gate"
+      },
+      "decode_gate": {
+        "status": "PASS",
+        "rows": [
+          {
+            "sequence": 0,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 7.596131284995609,
+            "reference_ppl": 7.593029118447095,
+            "ppl_difference": 0.0031021665485138072,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.046875,
+            "status": "PASS"
+          },
+          {
+            "sequence": 1,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 14.30248797553562,
+            "reference_ppl": 14.304771860108715,
+            "ppl_difference": -0.002283884573095918,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.04638671875,
+            "status": "PASS"
+          }
+        ]
+      },
+      "timing": {
+        "status": "PASS",
+        "phase": "decode",
+        "batch_size": 1,
+        "session": 1,
+        "backend": "original QuaRot extension, shared-metadata cache, continuous eager",
+        "logits": "last position only",
+        "warmups": 10,
+        "repetitions": 50,
+        "prefix": 2048,
+        "capacity": 2176,
+        "decode_steps": 128,
+        "discarded_decode_steps": 8,
+        "timed_decode_steps": 120,
+        "decode_token_id": 100,
+        "input_sha256": "ef52c403484a6ed7eda4d7cbd354475a337918c00f7b1fcb9a34c90434d2710b",
+        "cache_reset_exact": true,
+        "allocated_before_bytes": 18506229760,
+        "latency_seconds": {
+          "n": 50,
+          "median": 4.132551922928542,
+          "q25": 4.132023434503935,
+          "q75": 4.1335200214525685,
+          "iqr": 0.001496586948633194,
+          "quantile_definition": "linear interpolation at (n-1)*p"
+        },
+        "peak_allocated_bytes": 18749515776,
+        "peak_reserved_bytes": 18958254080,
+        "independent_process": true,
+        "gpu_model": "NVIDIA A40",
+        "gpu_uuid": "GPU-81f21ce2-6b51-cbc9-3d2d-5756d4bf3150",
+        "decode_tokens_per_second": {
+          "n": 50,
+          "median": 29.037747678798667,
+          "q25": 29.03094683904824,
+          "q75": 29.041461623379394,
+          "iqr": 0.010514784331153493,
+          "quantile_definition": "linear interpolation at (n-1)*p"
+        },
+        "decode_ms_per_step": {
+          "n": 50,
+          "median": 34.43793269107118,
+          "q25": 34.43352862086613,
+          "q75": 34.4460001787714,
+          "iqr": 0.01247155790527188,
+          "quantile_definition": "linear interpolation at (n-1)*p"
+        }
+      },
+      "samples": 50,
+      "guard_count": 52,
+      "all_guards_pass": true,
+      "max_load1_per_cpu": 0.2834676106770833,
+      "max_cpu_busy_fraction": 0.26083333333333336,
+      "statistics_independently_recomputed": true
+    }
+  ],
+  "scheduler": {
+    "command": [
+      "sacct",
+      "-j",
+      "1733011",
+      "-o",
+      "JobID,JobName,State,ExitCode,Elapsed,Start,End,NodeList",
+      "-P"
+    ],
+    "stdout": "JobID|JobName|State|ExitCode|Elapsed|Start|End|NodeList\n1733011|e38-fp16-stage-a|COMPLETED|0:0|00:23:52|2026-11-10T09:44:38|2026-11-10T10:08:30|gpu-a40-2\n1733011.batch|batch|COMPLETED|0:0|00:23:52|2026-11-10T09:44:38|2026-11-10T10:08:30|gpu-a40-2\n1733011.extern|extern|COMPLETED|0:0|00:23:52|2026-11-10T09:44:38|2026-11-10T10:08:30|gpu-a40-2\n",
+    "stderr": "",
+    "timezone": "UTC; job ended2026-11-10 18:08:30 Asia/Singapore"
+  },
+  "logs": [
+    {
+      "path": "runs/e38-stage-a-1733011.err",
+      "sha256": "ccd5926f850e7dac37366800d751c206a9373fed2e438008512b4687208c6118",
+      "bytes": 3324,
+      "content": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n"
+    },
+    {
+      "path": "runs/e38-stage-a-1733011.out",
+      "sha256": "a6b646b6e05a07482d29b0a23727873e95fc794b056818f270b4eee7d63adc05",
+      "bytes": 428,
+      "content": "{\"model\": \"llama32_3b\", \"status\": \"PASS\", \"reason\": null, \"ended_utc\": \"2026-11-10T09:48:22.769775+00:00\"}\n{\"model\": \"llama32_3b\", \"status\": \"PASS\", \"reason\": null, \"ended_utc\": \"2026-11-10T09:53:36.150688+00:00\"}\n{\"model\": \"llama31_8b\", \"status\": \"PASS\", \"reason\": null, \"ended_utc\": \"2026-11-10T09:58:19.966411+00:00\"}\n{\"model\": \"llama31_8b\", \"status\": \"PASS\", \"reason\": null, \"ended_utc\": \"2026-11-10T10:08:29.414111+00:00\"}\n"
+    }
+  ],
+  "prior_attempt": "raw/fp16_collection_001.json; CPU-load-blocked attempt retained",
+  "statistics_note": "One seed and one timing session per model/phase. Repetition IQR is not seed or session uncertainty.",
+  "memory_note": "PyTorch peak allocated bytes over the measurement cohort, including resident model, cache and live buffers; decode cohort includes prefill setup outside the timed decode interval. Not device-wide peak or serialized model size.",
+  "scope_note": "FP16 baselines only. INT4 deployment, eight tasks and random-weight timing control not run."
+}

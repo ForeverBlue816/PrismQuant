@@ -1,0 +1,80 @@
+{
+  "kind": "integer_gate_collection_and_user_criterion_amendment",
+  "collected_utc": "2026-11-10T13:18:44.034713+00:00",
+  "job_id": "1733332",
+  "seed": 0,
+  "sources": [
+    {
+      "path": "results/e38/raw/integer_gate_3b_kmax_seed0_job1733332.json",
+      "sha256": "422a46672a950179462f3ef64e4fb2e96a232521dc3c5636cb921bb0123de432"
+    },
+    {
+      "path": "results/e38/raw/integer_operator_3b_kmax_seed0_job1733332.json",
+      "sha256": "edc9c1f04ff23c8bf25973d4ebafd399bde4e0f274c79606db3c06b1905720d1"
+    }
+  ],
+  "original_gate": {
+    "status": "FAIL",
+    "sequences": 64,
+    "reference_ppl": 8.509199421408681,
+    "candidate_ppl": 8.49573068852138,
+    "ppl_difference": -0.01346873288730066,
+    "threshold_absolute_ppl": 0.01,
+    "max_abs_logit_difference": 13.03125,
+    "argmax_agreement": 0.8638839721679688,
+    "reference_replay_ppl": 8.509199421408681,
+    "reference_replay_difference": 0.0,
+    "reference_replay_chunks_exact": true,
+    "reference_replay_pass": true
+  },
+  "operator_summary": {
+    "sites": 196,
+    "all_packed_weight_bf16_reconstructions_exact": true,
+    "all_decoded_control_outputs_exact": true,
+    "all_integer_outputs_finite": true,
+    "maximum_integer_vs_same_input_relative_l2": 0.00444360077381134,
+    "maximum_integer_vs_same_input_max_abs": 0.125,
+    "sites_with_capture_qdq_mismatch": 2,
+    "full_model_equivalence": "not established",
+    "runtime": "not measured"
+  },
+  "user_amended_gate": {
+    "metric": "abs(candidate_ppl-reference_ppl)/reference_ppl",
+    "threshold_fraction": 0.005,
+    "threshold_percent": 0.5,
+    "measured_fraction": 0.00158284372245573,
+    "measured_percent": 0.158284372245573,
+    "status": "PASS",
+    "authorization": "User explicitly selected PPL relative difference <=0.5% after seeing the original gate result",
+    "original_gate_log_retained": true,
+    "qualification": "Quality tolerance under a post-result amended criterion; not exact numerical equivalence"
+  },
+  "statistics_independently_recomputed": true,
+  "chunk_nll_improved": 37,
+  "chunk_nll_worsened": 27,
+  "scope": "4-bit weight storage expanded to INT8 integer products; original E14 rotation and KV simulation; no native INT4 runtime claim",
+  "scheduler": {
+    "command": [
+      "sacct",
+      "-j",
+      "1733332,1733347,1733348,1733349",
+      "-o",
+      "JobID,JobName,State,ExitCode,Elapsed,Start,End,NodeList",
+      "-P"
+    ],
+    "stdout": "JobID|JobName|State|ExitCode|Elapsed|Start|End|NodeList\n1733332|e38-integer-seed0|FAILED|2:0|00:04:29|2026-11-10T12:27:32|2026-11-10T12:32:01|gpu-pro6000-11\n1733332.batch|batch|FAILED|2:0|00:04:29|2026-11-10T12:27:32|2026-11-10T12:32:01|gpu-pro6000-11\n1733332.extern|extern|COMPLETED|0:0|00:04:29|2026-11-10T12:27:32|2026-11-10T12:32:01|gpu-pro6000-11\n1733347|e38-fp16-eight-tasks|PENDING|0:0|00:00:00|Unknown|Unknown|None assigned\n1733348|e38-fp16-eight-tasks|PENDING|0:0|00:00:00|Unknown|Unknown|None assigned\n1733349|e38-ref-tasks-seed0|PENDING|0:0|00:00:00|Unknown|Unknown|None assigned\n",
+    "stderr": ""
+  },
+  "logs": [
+    {
+      "path": "runs/e38-integer-1733332.out",
+      "sha256": "cd7e6bf9120c96d4283a27b40731dbb20fa993b7d79730098372c4ec8b37e6c4",
+      "content": "integer operator layer 1/28\ninteger operator layer 2/28\ninteger operator layer 3/28\ninteger operator layer 4/28\ninteger operator layer 5/28\ninteger operator layer 6/28\ninteger operator layer 7/28\ninteger operator layer 8/28\ninteger operator layer 9/28\ninteger operator layer 10/28\ninteger operator layer 11/28\ninteger operator layer 12/28\ninteger operator layer 13/28\ninteger operator layer 14/28\ninteger operator layer 15/28\ninteger operator layer 16/28\ninteger operator layer 17/28\ninteger operator layer 18/28\ninteger operator layer 19/28\ninteger operator layer 20/28\ninteger operator layer 21/28\ninteger operator layer 22/28\ninteger operator layer 23/28\ninteger operator layer 24/28\ninteger operator layer 25/28\ninteger operator layer 26/28\ninteger operator layer 27/28\ninteger operator layer 28/28\n{\"status\": \"COMPLETE\", \"output\": \"/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_operator_3b_kmax_seed0_job1733332.json\"}\n2026-11-10T12:29:38Z INFO loading model /projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331\ninteger gate sequence 1/64: ref=1.9484640 candidate=1.9454426\ninteger gate sequence 2/64: ref=2.4949651 candidate=2.4989066\ninteger gate sequence 3/64: ref=2.6374741 candidate=2.6239371\ninteger gate sequence 4/64: ref=2.1358967 candidate=2.1506722\ninteger gate sequence 5/64: ref=2.0563459 candidate=2.0520544\ninteger gate sequence 6/64: ref=1.6601005 candidate=1.6519003\ninteger gate sequence 7/64: ref=1.7894578 candidate=1.7802931\ninteger gate sequence 8/64: ref=2.0285947 candidate=2.0335603\ninteger gate sequence 9/64: ref=2.3522599 candidate=2.3483191\ninteger gate sequence 10/64: ref=2.0701518 candidate=2.0704541\ninteger gate sequence 11/64: ref=1.9963491 candidate=2.0018992\ninteger gate sequence 12/64: ref=2.3447704 candidate=2.3412004\ninteger gate sequence 13/64: ref=2.2469351 candidate=2.2543490\ninteger gate sequence 14/64: ref=2.3392036 candidate=2.3310468\ninteger gate sequence 15/64: ref=2.2943058 candidate=2.2886765\ninteger gate sequence 16/64: ref=2.4830155 candidate=2.4927433\ninteger gate sequence 17/64: ref=2.2099018 candidate=2.2025504\ninteger gate sequence 18/64: ref=2.2565095 candidate=2.2643945\ninteger gate sequence 19/64: ref=2.0636954 candidate=2.0715549\ninteger gate sequence 20/64: ref=2.1873035 candidate=2.1683507\ninteger gate sequence 21/64: ref=2.3286426 candidate=2.3316977\ninteger gate sequence 22/64: ref=2.2561195 candidate=2.2479043\ninteger gate sequence 23/64: ref=2.2875943 candidate=2.2850230\ninteger gate sequence 24/64: ref=2.3551762 candidate=2.3441465\ninteger gate sequence 25/64: ref=2.3692293 candidate=2.3861501\ninteger gate sequence 26/64: ref=2.4591479 candidate=2.4603972\ninteger gate sequence 27/64: ref=2.5337737 candidate=2.5285375\ninteger gate sequence 28/64: ref=2.3250651 candidate=2.3399305\ninteger gate sequence 29/64: ref=2.1073327 candidate=2.0985003\ninteger gate sequence 30/64: ref=1.9201695 candidate=1.9366293\ninteger gate sequence 31/64: ref=1.8273174 candidate=1.8386153\ninteger gate sequence 32/64: ref=1.8502234 candidate=1.8563981\ninteger gate sequence 33/64: ref=2.1199501 candidate=2.1117895\ninteger gate sequence 34/64: ref=2.0839643 candidate=2.0699565\ninteger gate sequence 35/64: ref=2.2599909 candidate=2.2641153\ninteger gate sequence 36/64: ref=1.5619304 candidate=1.5632299\ninteger gate sequence 37/64: ref=1.5338608 candidate=1.5320202\ninteger gate sequence 38/64: ref=1.5512148 candidate=1.5450448\ninteger gate sequence 39/64: ref=1.5614809 candidate=1.5549709\ninteger gate sequence 40/64: ref=1.7480426 candidate=1.7613189\ninteger gate sequence 41/64: ref=2.3666148 candidate=2.3674283\ninteger gate sequence 42/64: ref=2.7567842 candidate=2.7743886\ninteger gate sequence 43/64: ref=2.8063519 candidate=2.7986619\ninteger gate sequence 44/64: ref=2.4733427 candidate=2.4626877\ninteger gate sequence 45/64: ref=2.4401937 candidate=2.4288254\ninteger gate sequence 46/64: ref=2.3667862 candidate=2.3716130\ninteger gate sequence 47/64: ref=2.4571195 candidate=2.4579844\ninteger gate sequence 48/64: ref=2.2230446 candidate=2.2431386\ninteger gate sequence 49/64: ref=2.1197147 candidate=2.1029789\ninteger gate sequence 50/64: ref=2.1410642 candidate=2.1211100\ninteger gate sequence 51/64: ref=1.9143164 candidate=1.9003564\ninteger gate sequence 52/64: ref=1.9217056 candidate=1.9014103\ninteger gate sequence 53/64: ref=1.7525982 candidate=1.7707075\ninteger gate sequence 54/64: ref=1.9735630 candidate=1.9739271\ninteger gate sequence 55/64: ref=1.7131474 candidate=1.7169054\ninteger gate sequence 56/64: ref=1.6832176 candidate=1.6816669\ninteger gate sequence 57/64: ref=1.9614100 candidate=1.9577665\ninteger gate sequence 58/64: ref=1.9083709 candidate=1.9075944\ninteger gate sequence 59/64: ref=2.2658260 candidate=2.2624640\ninteger gate sequence 60/64: ref=2.4341528 candidate=2.4169588\ninteger gate sequence 61/64: ref=2.4314251 candidate=2.4110594\ninteger gate sequence 62/64: ref=2.5928807 candidate=2.5908384\ninteger gate sequence 63/64: ref=1.6795083 candidate=1.6733556\ninteger gate sequence 64/64: ref=2.0143979 candidate=2.0095720\n{\"status\": \"GATE_FAILED\", \"output\": \"/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_gate_3b_kmax_seed0_job1733332.json\"}\n"
+    },
+    {
+      "path": "runs/e38-integer-1733332.err",
+      "sha256": "974c08c881e20dfe0ac1ca184e476ddebf466e2e555fc6a468ac19b6825a38d6",
+      "content": "\nLoading weights:   0%|          | 0/254 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 254/254 [00:00<00:00, 10332.50it/s]\n"
+    }
+  ]
+}

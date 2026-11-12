@@ -1,0 +1,81 @@
+{
+  "model": "Meta-Llama-3.1-8B",
+  "rows": [
+    {
+      "rotation": "hadamard",
+      "seeds": [
+        {
+          "seed": 0,
+          "ppl": 7.209735258128976,
+          "task_mean": null,
+          "sources": [
+            "[integer_8b_hadamard_seed0_equivalence-timing_job1734010.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_hadamard_seed0_equivalence-timing_job1734010.json)"
+          ]
+        },
+        {
+          "seed": 1,
+          "ppl": null,
+          "task_mean": null,
+          "sources": []
+        },
+        {
+          "seed": 2,
+          "ppl": null,
+          "task_mean": null,
+          "sources": []
+        }
+      ],
+      "ppl_statistics": null,
+      "eight_task_statistics": null,
+      "per_task": {
+        "arc_easy": null,
+        "arc_challenge": null,
+        "boolq": null,
+        "hellaswag": null,
+        "openbookqa": null,
+        "piqa": null,
+        "social_iqa": null,
+        "winogrande": null
+      }
+    },
+    {
+      "rotation": "nar_k8",
+      "seeds": [
+        {
+          "seed": 0,
+          "ppl": 6.990412215459079,
+          "task_mean": null,
+          "sources": [
+            "[integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json)"
+          ]
+        },
+        {
+          "seed": 1,
+          "ppl": null,
+          "task_mean": null,
+          "sources": []
+        },
+        {
+          "seed": 2,
+          "ppl": null,
+          "task_mean": null,
+          "sources": []
+        }
+      ],
+      "ppl_statistics": null,
+      "eight_task_statistics": null,
+      "per_task": {
+        "arc_easy": null,
+        "arc_challenge": null,
+        "boolq": null,
+        "hellaswag": null,
+        "openbookqa": null,
+        "piqa": null,
+        "social_iqa": null,
+        "winogrande": null
+      }
+    }
+  ],
+  "read_errors": [],
+  "statistics": "arithmetic mean and sample standard deviation ddof1 across all three quantization seeds"
+}

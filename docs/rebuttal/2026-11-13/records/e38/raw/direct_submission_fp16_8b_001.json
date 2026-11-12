@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-11-10T13:54:56.157505+00:00",
+  "source_commit": "35e76a6307602c17d0a801dcb7a4c73abd7273fb",
+  "seed": 0,
+  "backend": "fp16",
+  "model": "8b",
+  "replaces_pending_job": "1733348",
+  "old_state": "PENDING",
+  "reason": "User requested no numerical execution gates and faster reviewer evidence; directly evaluate full PPL and all tasks",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--job-name=e38-direct-fp16-8b",
+    "--gpus=a40:1",
+    "--mem=40G",
+    "--time=04:00:00",
+    "slurm_e38_direct_accuracy.sh"
+  ],
+  "script_sha256": "03a0dffb290eb162dceb4d3acdbaeed14288f3f07bb7302fc9a721f4875444ca",
+  "numerical_thresholds": "none",
+  "submit_returncode": 0,
+  "submit_stdout": "1733513\n",
+  "submit_stderr": "",
+  "job_id": "1733513",
+  "replacement_cancellation": {
+    "command": [
+      "scancel",
+      "1733348"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "scontrol": "JobId=1733513 JobName=e38-direct-fp16-8b\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Priority Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=04:00:00 TimeMin=N/A\n   SubmitTime=2026-11-10T13:54:56 EligibleTime=2026-11-10T13:54:56\n   AccrueTime=Unknown\n   StartTime=Unknown EndTime=Unknown Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-10T13:54:56 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-2:2480061\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=4,mem=40G,node=1,billing=3,gres/gpu=1,gres/gpu:a40=1\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=40G MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_e38_direct_accuracy.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-direct-1733513.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-direct-1733513.out\n   Power=\n   TresPerJob=gres/gpu:a40:1\n   TresPerTask=cpu:4\n   \n\n"
+}

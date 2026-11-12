@@ -1,0 +1,13 @@
+{
+  "observed_utc": "2026-11-12T04:11:14.179896+00:00",
+  "new_completed_gpu_job": "1735190",
+  "new_completed_rows": [
+    "native_hadamard",
+    "native_nar_k8"
+  ],
+  "all_five_e38_ppl_timing_rows_complete": true,
+  "tasks_complete": false,
+  "five_gpu_compute_started": false,
+  "squeue": "           JOBID                        NAME        STATE           NODELIST(REASON)           START_TIME\n         1734028          pq8b-parallel-five      PENDING                 (Priority)  2026-11-13T14:58:11\n         1735191            pq8b-tasks-seed0      PENDING                 (Priority)  2026-11-12T12:26:18\n         1735192           pq8b-tasks-seed12      PENDING               (Dependency)                  N/A\n",
+  "sacct": "JobID|State|ExitCode|Start|End|Elapsed\n1735190|COMPLETED|0:0|2026-11-12T02:30:28|2026-11-12T03:21:47|00:51:19\n1735190.batch|COMPLETED|0:0|2026-11-12T02:30:28|2026-11-12T03:21:47|00:51:19\n1735190.extern|COMPLETED|0:0|2026-11-12T02:30:28|2026-11-12T03:21:47|00:51:19\n"
+}

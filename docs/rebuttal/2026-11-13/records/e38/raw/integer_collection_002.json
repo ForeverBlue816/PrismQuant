@@ -1,0 +1,61 @@
+{
+  "kind": "completed_A40_candidate_quality_and_environment_gate_collection",
+  "collected_utc": "2026-11-10T13:39:15.019616+00:00",
+  "job_id": "1733477",
+  "seed": 0,
+  "source": "results/e38/raw/integer_timing_3b_kmax_seed0_job1733477.json",
+  "source_sha256": "ec7a8cbab14de5a2ed78e8c137ec0690f9c8159b5af77d2b729f90ea1e83d3fb",
+  "source_commit": "dd524c12db7d7dedb48879cef4bb3fc36a579caf",
+  "gpu_model": "NVIDIA A40",
+  "original_status": "GATE_FAILED",
+  "same_device_candidate_gate": {
+    "reference_ppl": 8.494409205555291,
+    "candidate_ppl": 8.504879769411524,
+    "signed_difference": 0.010470563856232573,
+    "absolute_relative_difference": 0.0012326418003720482,
+    "absolute_relative_difference_percent": 0.12326418003720482,
+    "threshold": 0.005,
+    "status": "PASS"
+  },
+  "separate_environment_gate": {
+    "current_reference_ppl": 8.494409205555291,
+    "historical_PRO_reference_ppl": 8.509199421408681,
+    "signed_difference": -0.01479021585338991,
+    "absolute_relative_difference_percent": 0.1738144227314562,
+    "original_absolute_threshold": 0.01,
+    "status": "FAIL",
+    "qualification": "This is the actual additional check that stopped the job; it is distinct from the user-amended candidate/reference gate"
+  },
+  "max_abs_logit_difference": 14.671875,
+  "argmax_agreement": 0.8637924194335938,
+  "full141_ppl": "not run",
+  "eight_tasks": "not run",
+  "decode_gate": "not run",
+  "timing": "not run",
+  "user_scope_update": "Deployment validation only needs asymmetric accuracy; do not resubmit prototype timing. Retain accuracy job1733476, seed0.",
+  "raw_logs_unchanged": true,
+  "scheduler": {
+    "command": [
+      "sacct",
+      "-j",
+      "1733477,1733476",
+      "-o",
+      "JobID,JobName,State,ExitCode,Elapsed,Start,End,NodeList",
+      "-P"
+    ],
+    "stdout": "JobID|JobName|State|ExitCode|Elapsed|Start|End|NodeList\n1733476|e38-int8-accuracy-seed0|PENDING|0:0|00:00:00|Unknown|Unknown|None assigned\n1733477|e38-int8-timing-seed0|FAILED|2:0|00:10:16|2026-11-10T13:25:12|2026-11-10T13:35:28|gpu-a40-2\n1733477.batch|batch|FAILED|2:0|00:10:16|2026-11-10T13:25:12|2026-11-10T13:35:28|gpu-a40-2\n1733477.extern|extern|COMPLETED|0:0|00:10:16|2026-11-10T13:25:12|2026-11-10T13:35:28|gpu-a40-2\n",
+    "stderr": ""
+  },
+  "logs": [
+    {
+      "path": "runs/e38-integer-followup-1733477.out",
+      "sha256": "0f5c577f860831be009e5fe0216af92105b58d28a5c6457ef7a8cef4eddac1fa",
+      "content": "2026-11-10T13:26:56Z INFO loading model /projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331\nrelative PPL gate 1/64: ref=1.9408548, integer=1.9411365\nrelative PPL gate 2/64: ref=2.5103645, integer=2.5005672\nrelative PPL gate 3/64: ref=2.6235273, integer=2.6277041\nrelative PPL gate 4/64: ref=2.1382315, integer=2.1469612\nrelative PPL gate 5/64: ref=2.0565176, integer=2.0585766\nrelative PPL gate 6/64: ref=1.6664932, integer=1.6493144\nrelative PPL gate 7/64: ref=1.7595583, integer=1.7633690\nrelative PPL gate 8/64: ref=2.0305541, integer=2.0437236\nrelative PPL gate 9/64: ref=2.3473179, integer=2.3471663\nrelative PPL gate 10/64: ref=2.0531085, integer=2.0682776\nrelative PPL gate 11/64: ref=2.0067732, integer=2.0049520\nrelative PPL gate 12/64: ref=2.3491178, integer=2.3472254\nrelative PPL gate 13/64: ref=2.2532494, integer=2.2490516\nrelative PPL gate 14/64: ref=2.3500407, integer=2.3374319\nrelative PPL gate 15/64: ref=2.2913291, integer=2.2849426\nrelative PPL gate 16/64: ref=2.4828088, integer=2.4844885\nrelative PPL gate 17/64: ref=2.2067428, integer=2.1989503\nrelative PPL gate 18/64: ref=2.2734239, integer=2.2691638\nrelative PPL gate 19/64: ref=2.0589881, integer=2.0715847\nrelative PPL gate 20/64: ref=2.1780899, integer=2.1819901\nrelative PPL gate 21/64: ref=2.3319154, integer=2.3383691\nrelative PPL gate 22/64: ref=2.2510715, integer=2.2503171\nrelative PPL gate 23/64: ref=2.2909660, integer=2.2974484\nrelative PPL gate 24/64: ref=2.3425088, integer=2.3415520\nrelative PPL gate 25/64: ref=2.3763411, integer=2.3719654\nrelative PPL gate 26/64: ref=2.4529505, integer=2.4564061\nrelative PPL gate 27/64: ref=2.5338957, integer=2.5343275\nrelative PPL gate 28/64: ref=2.3246772, integer=2.3238420\nrelative PPL gate 29/64: ref=2.1133261, integer=2.1049352\nrelative PPL gate 30/64: ref=1.9290644, integer=1.9305061\nrelative PPL gate 31/64: ref=1.8298925, integer=1.8350592\nrelative PPL gate 32/64: ref=1.8429204, integer=1.8472632\nrelative PPL gate 33/64: ref=2.1132693, integer=2.1253464\nrelative PPL gate 34/64: ref=2.0959315, integer=2.0842655\nrelative PPL gate 35/64: ref=2.2487442, integer=2.2793779\nrelative PPL gate 36/64: ref=1.5522133, integer=1.5547783\nrelative PPL gate 37/64: ref=1.5566378, integer=1.5469885\nrelative PPL gate 38/64: ref=1.5651863, integer=1.5619015\nrelative PPL gate 39/64: ref=1.5523767, integer=1.5538810\nrelative PPL gate 40/64: ref=1.7464254, integer=1.7561532\nrelative PPL gate 41/64: ref=2.3588128, integer=2.3791111\nrelative PPL gate 42/64: ref=2.7605772, integer=2.7770061\nrelative PPL gate 43/64: ref=2.7984257, integer=2.8065655\nrelative PPL gate 44/64: ref=2.4564288, integer=2.4507601\nrelative PPL gate 45/64: ref=2.4309332, integer=2.4407203\nrelative PPL gate 46/64: ref=2.3837328, integer=2.3806014\nrelative PPL gate 47/64: ref=2.4605293, integer=2.4577229\nrelative PPL gate 48/64: ref=2.2366188, integer=2.2213681\nrelative PPL gate 49/64: ref=2.0998943, integer=2.1171265\nrelative PPL gate 50/64: ref=2.1367443, integer=2.1338005\nrelative PPL gate 51/64: ref=1.9161536, integer=1.9033870\nrelative PPL gate 52/64: ref=1.8952783, integer=1.8968219\nrelative PPL gate 53/64: ref=1.7501607, integer=1.7687324\nrelative PPL gate 54/64: ref=1.9716073, integer=1.9683012\nrelative PPL gate 55/64: ref=1.7101768, integer=1.7080745\nrelative PPL gate 56/64: ref=1.6715877, integer=1.6818745\nrelative PPL gate 57/64: ref=1.9613402, integer=1.9401228\nrelative PPL gate 58/64: ref=1.9105004, integer=1.9131806\nrelative PPL gate 59/64: ref=2.2748034, integer=2.2717080\nrelative PPL gate 60/64: ref=2.4268970, integer=2.4327364\nrelative PPL gate 61/64: ref=2.4220586, integer=2.4156511\nrelative PPL gate 62/64: ref=2.5737679, integer=2.5765176\nrelative PPL gate 63/64: ref=1.6789812, integer=1.6778578\nrelative PPL gate 64/64: ref=2.0087094, integer=2.0099564\n{\"status\": \"GATE_FAILED\", \"output\": \"/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_timing_3b_kmax_seed0_job1733477.json\"}\n"
+    },
+    {
+      "path": "runs/e38-integer-followup-1733477.err",
+      "sha256": "dad3eff0c7d8dc117ccdf6efd4ba238376735b3e6a9a75801df5f41bc1613532",
+      "content": "\nLoading weights:   0%|          | 0/254 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 254/254 [00:00<00:00, 10219.22it/s]\n"
+    }
+  ]
+}

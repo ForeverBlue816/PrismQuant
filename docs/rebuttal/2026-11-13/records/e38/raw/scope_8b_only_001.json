@@ -1,0 +1,8 @@
+{
+  "observed_utc": "2026-11-11T04:09:30.740800+00:00",
+  "scheduler": "             JOBID                                   NAME      STATE       TIME   NODELIST(REASON)\n           1733874              vla-plustrain-pi05_fit_d1    PENDING       0:00         (Priority)\n           1733875              vla-plustrain-pi05_fit_d1    PENDING       0:00         (Priority)\n           1733878              vla-plustrain-pi05_fit_d1    PENDING       0:00 (QOSMaxJobsPerUser\n           1733876              vla-plustrain-pi05_fit_d1    PENDING       0:00         (Priority)\n           1733518                  vla-plustrain-drivers    PENDING       0:00       (Dependency)\n           1733877              vla-plustrain-pi05_fit_d1    RUNNING      45:03     gpu-pro6000-11\n           1733879              vla-plustrain-pi05_fit_d1    RUNNING    2:23:10      gpu-6000ada-3\n           1733517                  vla-plustrain-drivers    RUNNING   14:08:29              cpu-1\n",
+  "three_b_jobs_running_or_pending": [],
+  "cancelled_jobs": [],
+  "cancellation_reason": "No3B jobs present; no unrelated jobs changed",
+  "scope": "8B-only; Had/k8 reference anchor before newGPUexperiments; OffQpaused"
+}

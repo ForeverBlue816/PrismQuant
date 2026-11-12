@@ -1,0 +1,335 @@
+{
+  "kind": "e38_seed0_checkpoint_recovery",
+  "status": "ALREADY_VERIFIED_LOCAL",
+  "started_utc": "2026-11-10T11:40:29.819517+00:00",
+  "model": "3b",
+  "rotation": "nar_kmax",
+  "seed": 0,
+  "command_line": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "scripts/e38_restore_seed0.py",
+    "--model",
+    "3b",
+    "--rotation",
+    "nar_kmax",
+    "--manifest",
+    "results/e38/raw/restore_seed0_3b_kmax_local_001.json"
+  ],
+  "pid": 2107830,
+  "host": "login-2.cluster02.eee.ntu.edu.sg",
+  "script_sha256": "8b9eb9fdaaaebff65bff3facc4c5b96dc59d055ce7edc700aa86bcc60d43c09f",
+  "inventory_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/cache_audit.json",
+  "inventory_sha256": "9c8c10d73f97bdf3cf6c7c6535d2199cf4ae3379e96c622172e1df2741661b4a",
+  "cache_dir": "/projects/nar/nar-validation/cache/huggingface",
+  "files": [
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/DONE.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/0fe33eb3260a8e0c7e23210c6795310d316a8cd7",
+      "bytes": 2570,
+      "sha256": "a94bddf636350100474c6897da91613ce66c373e30a70d4c397318b1b2e55e11",
+      "expected_lfs_sha256": null,
+      "expected_git_blob_sha1": "0fe33eb3260a8e0c7e23210c6795310d316a8cd7",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_00.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/6f0ec8b45912a2cd37c63cbd23495b594163d111e4f7695543cf842406a6a196",
+      "bytes": 201329861,
+      "sha256": "6f0ec8b45912a2cd37c63cbd23495b594163d111e4f7695543cf842406a6a196",
+      "expected_lfs_sha256": "6f0ec8b45912a2cd37c63cbd23495b594163d111e4f7695543cf842406a6a196",
+      "expected_git_blob_sha1": "1db1ba0d447dd0ed3e73ec36d5946a2102d948d9",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_01.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/f5bd1af538e6c196438cafcdebd0d266b7fc2aa197f0174ff6cb95302c3a0369",
+      "bytes": 201329861,
+      "sha256": "f5bd1af538e6c196438cafcdebd0d266b7fc2aa197f0174ff6cb95302c3a0369",
+      "expected_lfs_sha256": "f5bd1af538e6c196438cafcdebd0d266b7fc2aa197f0174ff6cb95302c3a0369",
+      "expected_git_blob_sha1": "21f33b21c67d0c30d834ee25bf78c439a6639abb",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_02.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/f3edb5a216195ebc82e68aa4863ef1da76d6dde3ce973269665639c966745786",
+      "bytes": 201329861,
+      "sha256": "f3edb5a216195ebc82e68aa4863ef1da76d6dde3ce973269665639c966745786",
+      "expected_lfs_sha256": "f3edb5a216195ebc82e68aa4863ef1da76d6dde3ce973269665639c966745786",
+      "expected_git_blob_sha1": "686cfd983a84312a7779b63a5193760517b65f7f",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_03.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/6a617bd322edf88f51879567b4f5d4eb037fc1c823cef1791181e625b3ded2f8",
+      "bytes": 201329861,
+      "sha256": "6a617bd322edf88f51879567b4f5d4eb037fc1c823cef1791181e625b3ded2f8",
+      "expected_lfs_sha256": "6a617bd322edf88f51879567b4f5d4eb037fc1c823cef1791181e625b3ded2f8",
+      "expected_git_blob_sha1": "91a84a038b95350866e8eb0bd0e090712d7d3056",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_04.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/b4cfeddad2248e56eacd759b14711748951ac2c154ae90eebaabe1cbca4e9f18",
+      "bytes": 201329861,
+      "sha256": "b4cfeddad2248e56eacd759b14711748951ac2c154ae90eebaabe1cbca4e9f18",
+      "expected_lfs_sha256": "b4cfeddad2248e56eacd759b14711748951ac2c154ae90eebaabe1cbca4e9f18",
+      "expected_git_blob_sha1": "fd7cdfa3aa4866716131f8331f66311005b4d222",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_05.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/d2ba5ed8e724ab866709c54f8c54349ceafe649dda8ac00d37ae6979b97d3954",
+      "bytes": 201329861,
+      "sha256": "d2ba5ed8e724ab866709c54f8c54349ceafe649dda8ac00d37ae6979b97d3954",
+      "expected_lfs_sha256": "d2ba5ed8e724ab866709c54f8c54349ceafe649dda8ac00d37ae6979b97d3954",
+      "expected_git_blob_sha1": "8fb79ac82ff16528dd30f4fceb3e5b5788062560",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_06.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/863a000f5e976b0f4f82991b9fee0fad58c603c5fefe874cac7e7a61c62e49eb",
+      "bytes": 201329861,
+      "sha256": "863a000f5e976b0f4f82991b9fee0fad58c603c5fefe874cac7e7a61c62e49eb",
+      "expected_lfs_sha256": "863a000f5e976b0f4f82991b9fee0fad58c603c5fefe874cac7e7a61c62e49eb",
+      "expected_git_blob_sha1": "a3c4e0d6b704a1f015d1bdb42e7d7fb2a02a6bb0",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_07.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/e05c8948a2805864240e8bf83082d602b035f21d0cd2a2cf664c87e6927cdb1f",
+      "bytes": 201329861,
+      "sha256": "e05c8948a2805864240e8bf83082d602b035f21d0cd2a2cf664c87e6927cdb1f",
+      "expected_lfs_sha256": "e05c8948a2805864240e8bf83082d602b035f21d0cd2a2cf664c87e6927cdb1f",
+      "expected_git_blob_sha1": "30d3e40a4be5769cca3e9b00e0af5aacf8d2c876",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_08.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/53d3f1c8bb4e623f9754a997f8b63073771657f0936153e4477f83e99c587516",
+      "bytes": 201329861,
+      "sha256": "53d3f1c8bb4e623f9754a997f8b63073771657f0936153e4477f83e99c587516",
+      "expected_lfs_sha256": "53d3f1c8bb4e623f9754a997f8b63073771657f0936153e4477f83e99c587516",
+      "expected_git_blob_sha1": "e4278d2569d4655899612a04eaf62a34c341f47a",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_09.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/ed72e74442eb10764989699f72ab99c1c81e3bec2fb5b9f02e6c4ceb603e7e60",
+      "bytes": 201329861,
+      "sha256": "ed72e74442eb10764989699f72ab99c1c81e3bec2fb5b9f02e6c4ceb603e7e60",
+      "expected_lfs_sha256": "ed72e74442eb10764989699f72ab99c1c81e3bec2fb5b9f02e6c4ceb603e7e60",
+      "expected_git_blob_sha1": "fe65337a48b428e2e7803bb0ae87931196241850",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_10.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/2e6ca2adf604d2fc6cb181a0a1609dd19c9f6ac52e580498f9f9ad5d0fa0e7e9",
+      "bytes": 201329861,
+      "sha256": "2e6ca2adf604d2fc6cb181a0a1609dd19c9f6ac52e580498f9f9ad5d0fa0e7e9",
+      "expected_lfs_sha256": "2e6ca2adf604d2fc6cb181a0a1609dd19c9f6ac52e580498f9f9ad5d0fa0e7e9",
+      "expected_git_blob_sha1": "95599f0bbfc90a66d7ecd92d9652c9d4929bb450",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_11.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/99904d6388d75c2fcbf91288f68834a1e0f26fece8f7fcaf7f6568999e0398bd",
+      "bytes": 201329861,
+      "sha256": "99904d6388d75c2fcbf91288f68834a1e0f26fece8f7fcaf7f6568999e0398bd",
+      "expected_lfs_sha256": "99904d6388d75c2fcbf91288f68834a1e0f26fece8f7fcaf7f6568999e0398bd",
+      "expected_git_blob_sha1": "aed277617f23b61fdb0369249e2483b5c1dec081",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_12.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/247b288613d8c2dcd2aec591852cd31ff0ffe8eff2689952b1e097234c6d813e",
+      "bytes": 201329861,
+      "sha256": "247b288613d8c2dcd2aec591852cd31ff0ffe8eff2689952b1e097234c6d813e",
+      "expected_lfs_sha256": "247b288613d8c2dcd2aec591852cd31ff0ffe8eff2689952b1e097234c6d813e",
+      "expected_git_blob_sha1": "f1f33ead70e31640bf49f9218ab43e872818c00f",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_13.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/e55c4d3c98aefceb0897c7cf5d3850ae3773f39c77ede3e7e0313e7605e19889",
+      "bytes": 201329861,
+      "sha256": "e55c4d3c98aefceb0897c7cf5d3850ae3773f39c77ede3e7e0313e7605e19889",
+      "expected_lfs_sha256": "e55c4d3c98aefceb0897c7cf5d3850ae3773f39c77ede3e7e0313e7605e19889",
+      "expected_git_blob_sha1": "8b5028756863093e97faedc42ec31e94aba8417c",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_14.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/e4f9074e2194bb1cac95cc66ae69ff05a58561167723f6e1df74f0bce4620a0b",
+      "bytes": 201329861,
+      "sha256": "e4f9074e2194bb1cac95cc66ae69ff05a58561167723f6e1df74f0bce4620a0b",
+      "expected_lfs_sha256": "e4f9074e2194bb1cac95cc66ae69ff05a58561167723f6e1df74f0bce4620a0b",
+      "expected_git_blob_sha1": "3920868f5389a70d9552a0d90411137b619b3f18",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_15.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/8f78d22738579eb6c1b5cbe268a87e914edb24d8cb0358b25c2cff9cd142eb38",
+      "bytes": 201329861,
+      "sha256": "8f78d22738579eb6c1b5cbe268a87e914edb24d8cb0358b25c2cff9cd142eb38",
+      "expected_lfs_sha256": "8f78d22738579eb6c1b5cbe268a87e914edb24d8cb0358b25c2cff9cd142eb38",
+      "expected_git_blob_sha1": "c2517f0478abd1c3beeb0cab9a2418803a6f93d3",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_16.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/b9897f24784872e39286e975d891d7c14e7837ef8eb054e97e608e3fb75d5934",
+      "bytes": 201329861,
+      "sha256": "b9897f24784872e39286e975d891d7c14e7837ef8eb054e97e608e3fb75d5934",
+      "expected_lfs_sha256": "b9897f24784872e39286e975d891d7c14e7837ef8eb054e97e608e3fb75d5934",
+      "expected_git_blob_sha1": "cbe3fd3ac86c4205bc588b8df7fe373593eb128d",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_17.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/836c337350bf2c980f4ebfac7d50748cf82114d44c61905174314302990be949",
+      "bytes": 201329861,
+      "sha256": "836c337350bf2c980f4ebfac7d50748cf82114d44c61905174314302990be949",
+      "expected_lfs_sha256": "836c337350bf2c980f4ebfac7d50748cf82114d44c61905174314302990be949",
+      "expected_git_blob_sha1": "6c6be1f61e375ac3a36014ba969aaaac0ecb5c7e",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_18.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/594a12420622680e16f41826a007cf2e468bb04d6e01e2681bb9f68db3ed08af",
+      "bytes": 201329861,
+      "sha256": "594a12420622680e16f41826a007cf2e468bb04d6e01e2681bb9f68db3ed08af",
+      "expected_lfs_sha256": "594a12420622680e16f41826a007cf2e468bb04d6e01e2681bb9f68db3ed08af",
+      "expected_git_blob_sha1": "7f66f6c8118236d7c63615df7aec8d8427300aa9",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_19.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/06ca4bf7c20d88e54dc6af8b986a0b37ecdf2cd2475283070a9c7edc482b268e",
+      "bytes": 201329861,
+      "sha256": "06ca4bf7c20d88e54dc6af8b986a0b37ecdf2cd2475283070a9c7edc482b268e",
+      "expected_lfs_sha256": "06ca4bf7c20d88e54dc6af8b986a0b37ecdf2cd2475283070a9c7edc482b268e",
+      "expected_git_blob_sha1": "58f03f82b381a3662a92e0da387abdca687e43d1",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_20.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/96a8274ae58e9a78173eb6afc40af65b526d45612b4bbde98c60d249acd1bdff",
+      "bytes": 201329861,
+      "sha256": "96a8274ae58e9a78173eb6afc40af65b526d45612b4bbde98c60d249acd1bdff",
+      "expected_lfs_sha256": "96a8274ae58e9a78173eb6afc40af65b526d45612b4bbde98c60d249acd1bdff",
+      "expected_git_blob_sha1": "a8e88a1a3eea1e77a5f5d89a4f7050038cc358e7",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_21.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/01580bb46f49ee0a8b1c2f9f5919614e2c7be6c6113746457b5bcee373522855",
+      "bytes": 201329861,
+      "sha256": "01580bb46f49ee0a8b1c2f9f5919614e2c7be6c6113746457b5bcee373522855",
+      "expected_lfs_sha256": "01580bb46f49ee0a8b1c2f9f5919614e2c7be6c6113746457b5bcee373522855",
+      "expected_git_blob_sha1": "bd467141654b850e2f631d6552617fc5f7aeacc7",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_22.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/5dee237953b1945eb5e6c43df5608f73ed73eea1573e301e889e903c32251dc4",
+      "bytes": 201329861,
+      "sha256": "5dee237953b1945eb5e6c43df5608f73ed73eea1573e301e889e903c32251dc4",
+      "expected_lfs_sha256": "5dee237953b1945eb5e6c43df5608f73ed73eea1573e301e889e903c32251dc4",
+      "expected_git_blob_sha1": "81c5c928b6ed6282340cd82283db3bd31ade23cb",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_23.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/df1c9b71149c8c479c0277d6db7dec29df6e832ae2604278b999b92ea1cbce68",
+      "bytes": 201329861,
+      "sha256": "df1c9b71149c8c479c0277d6db7dec29df6e832ae2604278b999b92ea1cbce68",
+      "expected_lfs_sha256": "df1c9b71149c8c479c0277d6db7dec29df6e832ae2604278b999b92ea1cbce68",
+      "expected_git_blob_sha1": "e991480e2c654964a98fdf0316d8807c87470518",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_24.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/933c71d33dc0c9ba9094b6c56784314ad345e8e46ec6fb5cef0809f93d91e58c",
+      "bytes": 201329861,
+      "sha256": "933c71d33dc0c9ba9094b6c56784314ad345e8e46ec6fb5cef0809f93d91e58c",
+      "expected_lfs_sha256": "933c71d33dc0c9ba9094b6c56784314ad345e8e46ec6fb5cef0809f93d91e58c",
+      "expected_git_blob_sha1": "7635bd2549914c246403752000c63124839fc3b7",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_25.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/c5cb4f88e18b921fbae16eafadf86fbf8c1cb4e5262210e1fac9d45dc3d1ce41",
+      "bytes": 201329861,
+      "sha256": "c5cb4f88e18b921fbae16eafadf86fbf8c1cb4e5262210e1fac9d45dc3d1ce41",
+      "expected_lfs_sha256": "c5cb4f88e18b921fbae16eafadf86fbf8c1cb4e5262210e1fac9d45dc3d1ce41",
+      "expected_git_blob_sha1": "7a730f3baf6b00818a38fdabe00bac96c574034c",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_26.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/b3b50773c6736fc5ebe962fcd25f52d8d3838a155c5a5375350aab446830763a",
+      "bytes": 201329861,
+      "sha256": "b3b50773c6736fc5ebe962fcd25f52d8d3838a155c5a5375350aab446830763a",
+      "expected_lfs_sha256": "b3b50773c6736fc5ebe962fcd25f52d8d3838a155c5a5375350aab446830763a",
+      "expected_git_blob_sha1": "740bf623015e71125dcab57b88b4237329fe5d2e",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_27.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/blobs/0945abbb23c573ccb1b313d7056eb427ae8de7e9524cb12eb6c518c9b0a9e908",
+      "bytes": 201329861,
+      "sha256": "0945abbb23c573ccb1b313d7056eb427ae8de7e9524cb12eb6c518c9b0a9e908",
+      "expected_lfs_sha256": "0945abbb23c573ccb1b313d7056eb427ae8de7e9524cb12eb6c518c9b0a9e908",
+      "expected_git_blob_sha1": "dbdaf1ea95827d9fd221686d041417cae2c4cfbe",
+      "verification": "full SHA256 inherited from completed job1732989; current size/resolved blob rechecked"
+    }
+  ],
+  "dry_run": false,
+  "scope": "Restore released default symmetric per-channel GPTQ checkpoint; no calibration, no new quantization, no GPU",
+  "model_internal": "llama32_3b",
+  "repo_id": "ForeverBlue/PrismQuant-Llama-3.2-3B",
+  "revision": "78e0a124e359aace82793c74ff5e3827bf18b64c",
+  "allow_files": [
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/DONE.json",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_00.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_01.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_02.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_03.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_04.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_05.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_06.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_07.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_08.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_09.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_10.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_11.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_12.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_13.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_14.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_15.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_16.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_17.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_18.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_19.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_20.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_21.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_22.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_23.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_24.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_25.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_26.pt",
+    "checkpoints/llama32_3b/gptq_nar_kmax_seed0/layer_27.pt"
+  ],
+  "total_expected_bytes": 5637238678,
+  "disk_free_bytes": 167123737378816,
+  "required_space_with_reserve_bytes": 7784722326,
+  "huggingface_hub_version": "1.28.0",
+  "source_commit": "fbf056ff6a6a8b666838998084d10ce43d139d6e",
+  "inherited_verification": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/checkpoint_3b_kmax_job1732989.json",
+    "sha256": "d7e247f3dbfabd0e41f27a9b6be81f41a019b0814ccc1d0eb4687183b7822902",
+    "job_id": "1732989"
+  },
+  "checkpoint_directory": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--nar-w4a4kv4-llama-3.2-3b/snapshots/25c6b2d9a04151fab7e5f37b9ce93c8f0edf2ee5/checkpoints/llama32_3b/gptq_nar_kmax_seed0",
+  "finished_utc": "2026-11-10T11:40:30.534238+00:00"
+}

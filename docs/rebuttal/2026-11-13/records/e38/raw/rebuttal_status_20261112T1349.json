@@ -1,0 +1,13 @@
+{
+  "observed_utc": "2026-11-12T13:49:55.319215+00:00",
+  "model": "Meta-Llama-3.1-8B",
+  "native_control_job": "1735315",
+  "native_control_status": "COMPLETE",
+  "current_compute_job": "1736074",
+  "current_seed0_tasks_job": "1736075",
+  "current_seed12_tasks_job": "1736076",
+  "squeue": "           JOBID                        NAME        STATE           NODELIST(REASON)           START_TIME\n         1736074          pq8b-parallel-five      PENDING                 (Priority)  2026-11-15T10:30:54\n         1736075            pq8b-tasks-seed0      PENDING                 (Priority)  2026-11-13T00:19:25\n         1736076           pq8b-tasks-seed12      PENDING               (Dependency)                  N/A\n",
+  "slurm_error_repaired": true,
+  "eight_task_new_results": false,
+  "e39_e40_e42_new_gpu_results": false
+}

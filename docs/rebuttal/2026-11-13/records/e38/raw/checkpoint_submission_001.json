@@ -1,0 +1,19 @@
+{
+  "kind": "scheduler_submission",
+  "status": "SUBMITTED",
+  "created_utc": "2026-11-10T07:50:38.268000+00:00",
+  "commit": "40330a7d796f13ebf2f056ad593af37aa74fe1f7",
+  "command": "sbatch --parsable slurm_e38_checkpoint_probe.sh",
+  "cwd": "/home/yanlongc/prismquant-rebuttal-e38",
+  "explicit_environment": {
+    "E38_EXPECTED_SOURCE_COMMIT": "40330a7d796f13ebf2f056ad593af37aa74fe1f7"
+  },
+  "gpu_request": "pro6000:1",
+  "time_limit": "02:00:00",
+  "purpose": "3B kmax real E14 checkpoint PPL replay, calibration captures, integer export audit",
+  "seed": 0,
+  "returncode": 0,
+  "stdout": "1732989\n",
+  "stderr": "",
+  "job_id": "1732989"
+}

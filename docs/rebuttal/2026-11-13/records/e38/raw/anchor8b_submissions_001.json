@@ -1,0 +1,57 @@
+{
+  "source_commit": "2e6202dbed586d5707984a5f314701538f94eafe",
+  "jobs": [
+    {
+      "rotation": "hadamard",
+      "seed": 0,
+      "model": "Meta-Llama-3.1-8B",
+      "source_commit": "2e6202dbed586d5707984a5f314701538f94eafe",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--array=0",
+        "--job-name=e38-anchor8b-hadamard",
+        "--gpus=pro6000:1",
+        "--constraint=highmem",
+        "--mem=90G",
+        "--time=08:00:00",
+        "--nodelist=gpu-pro6000-3",
+        "--export=ALL,E38_SOURCE_COMMIT=2e6202dbed586d5707984a5f314701538f94eafe",
+        "slurm_e38_anchor8b.sh"
+      ],
+      "returncode": 0,
+      "stdout": "1733996\n",
+      "stderr": "",
+      "submitted_utc": "2026-11-11T04:15:34.280862+00:00",
+      "hardware_selection": "Original corresponding raw8B anchor node; both RTX PRO6000 Blackwell Max-Q Workstation in original records",
+      "other_gpu_experiments": "held pending8Banchor reconciliation",
+      "array_job_id": "1733996"
+    },
+    {
+      "rotation": "nar_k8",
+      "seed": 0,
+      "model": "Meta-Llama-3.1-8B",
+      "source_commit": "2e6202dbed586d5707984a5f314701538f94eafe",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--array=1",
+        "--job-name=e38-anchor8b-nar_k8",
+        "--gpus=pro6000:1",
+        "--constraint=highmem",
+        "--mem=90G",
+        "--time=08:00:00",
+        "--nodelist=gpu-pro6000-5",
+        "--export=ALL,E38_SOURCE_COMMIT=2e6202dbed586d5707984a5f314701538f94eafe",
+        "slurm_e38_anchor8b.sh"
+      ],
+      "returncode": 0,
+      "stdout": "1733997\n",
+      "stderr": "",
+      "submitted_utc": "2026-11-11T04:15:34.287232+00:00",
+      "hardware_selection": "Original corresponding raw8B anchor node; both RTX PRO6000 Blackwell Max-Q Workstation in original records",
+      "other_gpu_experiments": "held pending8Banchor reconciliation",
+      "array_job_id": "1733997"
+    }
+  ]
+}

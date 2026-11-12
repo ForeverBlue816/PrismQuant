@@ -1,0 +1,14 @@
+{
+  "kind": "scheduler_status",
+  "observed_utc": "2026-11-10T08:12:51.599492+00:00",
+  "command": [
+    "squeue",
+    "-j",
+    "1732989,1733011",
+    "-o",
+    "%.18i %.22j %.9T %.25R"
+  ],
+  "stdout": "             JOBID                   NAME     STATE          NODELIST(REASON)\n           1733011       e38-fp16-stage-a   PENDING                (Priority)\n           1732989         e38-checkpoint   PENDING                (Priority)\n",
+  "stderr": "",
+  "returncode": 0
+}

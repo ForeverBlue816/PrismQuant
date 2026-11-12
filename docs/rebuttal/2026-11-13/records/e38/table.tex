@@ -1,0 +1,12 @@
+% **E38 — Meta-Llama-3.1-8B, seed0; GPTQ W4 / asymmetric g128 A4 / KV4 reference, with five explicitly labelled deployment formats**
+\begin{tabular}{lllllllllll}
+\toprule
+Actual format/backend & Rotation & Full141 PPL & Eight-task \% & Tasks & Max logits / argmax & Prefill ms & Decode tok/s & Peak GiB P/D & Run status & Source \\
+\midrule
+FP16 W/A/KV & fp16 & 6.23843 & pending & 3/8 & n/a & 388.445 [0.595] & 33.069 [0.006] & 17.446/17.462 & COMPLETE; tasks RUNNING & stage\_a\_8b\_fp16\_seed0\_job1735315.json; stage\_a\_8b\_fp16\_seed0\_job1736075.json \\
+Packed W4 / per-token symmetric A4 / native per-head KV4 & hadamard & 8.56296 & pending & pending & format variant & 643.051 [0.086] & 11.292 [0.378] & 7.954/7.958 & COMPLETE & stage\_a\_8b\_hadamard\_seed0\_job1735315.json \\
+Packed W4 / per-token symmetric A4 / native per-head KV4 & nar\_k8 & 9.99501 & pending & pending & format variant & 346.651 [0.056] & 18.719 [0.371] & 7.787/7.791 & COMPLETE & stage\_a\_8b\_nar\_k8\_seed0\_fast\_job1736296.json \\
+W4 expanded INT8 GEMM / asymmetric g128 A4 / simulated E14 KV4 & hadamard & 7.21191 & pending & 0/8 & 27.06250 / 0.853055 & 13579.846 [19.993] & 0.340 [0.007] & 7.323/7.323 & COMPLETE; tasks RUNNING & integer\_8b\_hadamard\_seed0\_equivalence-timing\_job1734010.json; integer\_8b\_hadamard\_seed0\_eight-tasks\_job1736075.json \\
+W4 expanded INT8 GEMM / asymmetric g128 A4 / simulated E14 KV4 & nar\_k8 & 6.98925 & pending & 0/8 & 28.00000 / 0.869130 & 13225.179 [14.691] & 0.378 [0.011] & 7.371/7.372 & COMPLETE; tasks RUNNING & integer\_8b\_nar\_k8\_seed0\_equivalence-timing\_job1734010.json; integer\_8b\_nar\_k8\_seed0\_eight-tasks\_job1736075.json \\
+\bottomrule
+\end{tabular}

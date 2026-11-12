@@ -1,0 +1,11 @@
+% E38 seed0 integer prototype, RTX PRO6000 Blackwell Max-Q Workstation Edition; 64 sequences, length2048.
+% Source: raw/integer_collection_001.json and two original job1733332 logs.
+% User amended the criterion after observing this result. Original failure retained.
+% Signed4 storage expanded to INT8 compute, original E14 simulated KV; no native INT4 timing.
+\begin{tabular}{rrrrllrr}
+\toprule
+Reference PPL & Candidate PPL & Difference & Relative difference & Original $|\Delta|\leq0.01$ & Amended relative $\leq0.5\%$ & Max logit difference & Argmax agreement \\
+\midrule
+8.50919942 & 8.49573069 & $-0.01346873$ & $0.158284\%$ & fail & pass & 13.03125 & $86.3884\%$ \\
+\bottomrule
+\end{tabular}

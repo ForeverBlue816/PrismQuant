@@ -1,0 +1,22 @@
+{
+  "kind": "scheduler_submission",
+  "status": "SUBMITTED",
+  "created_utc": "2026-11-10T08:12:15.885688+00:00",
+  "commit": "bc4f66b77eda8a460274b1d5026e31be8120ba86",
+  "command": "sbatch --parsable --nodelist=gpu-a40-2 slurm_e38_stage_a.sh",
+  "cwd": "/home/yanlongc/prismquant-rebuttal-e38",
+  "explicit_environment": {
+    "E38_EXPECTED_SOURCE_COMMIT": "bc4f66b77eda8a460274b1d5026e31be8120ba86"
+  },
+  "purpose": "Retry FP16 joint quality/timing cohort on another A40 host under unchanged equivalence and idle thresholds",
+  "retry_protocol": "experiments/e38_timing_retry_001.json",
+  "prior_job": "1732990",
+  "gpu_request": "a40:1",
+  "node": "gpu-a40-2",
+  "time_limit": "08:00:00",
+  "seed": 0,
+  "returncode": 0,
+  "stdout": "1733011\n",
+  "stderr": "sbatch: slurm_job_submit: enforced 4 CPUs for 1 task and 40960 MiB mem/node for 1 GPU(s) (model=a40)\nsbatch: slurm_job_submit: you requested 4 CPUs/node and 65536 MiB mem/node\n",
+  "job_id": "1733011"
+}

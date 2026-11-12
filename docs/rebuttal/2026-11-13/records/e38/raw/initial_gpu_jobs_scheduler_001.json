@@ -1,0 +1,31 @@
+{
+  "kind": "scheduler_status",
+  "observed_utc": "2026-11-10T07:52:03.934105+00:00",
+  "rows": [
+    {
+      "job_id": "1732989",
+      "command": [
+        "scontrol",
+        "show",
+        "job",
+        "1732989"
+      ],
+      "returncode": 0,
+      "stdout": "JobId=1732989 JobName=e38-checkpoint\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=QOSMaxJobsPerUserLimit Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=02:00:00 TimeMin=N/A\n   SubmitTime=2026-11-10T07:50:38 EligibleTime=2026-11-10T07:50:38\n   AccrueTime=2026-11-10T07:50:38\n   StartTime=Unknown EndTime=Unknown Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-10T07:52:03 Scheduler=Backfill:*\n   Partition=cluster02 AllocNode:Sid=login-3:1572212\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=4,mem=90G,node=1,billing=8,gres/gpu=1,gres/gpu:pro6000=1\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=90G MinTmpDiskNode=0\n   Features=highmem DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_e38_checkpoint_probe.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-checkpoint-1732989.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-checkpoint-1732989.out\n   Power=\n   TresPerJob=gres/gpu:pro6000:1\n   TresPerTask=cpu:4\n   \n\n",
+      "stderr": ""
+    },
+    {
+      "job_id": "1732990",
+      "command": [
+        "scontrol",
+        "show",
+        "job",
+        "1732990"
+      ],
+      "returncode": 0,
+      "stdout": "JobId=1732990 JobName=e38-fp16-stage-a\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=RUNNING Reason=None Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:30 TimeLimit=08:00:00 TimeMin=N/A\n   SubmitTime=2026-11-10T07:50:38 EligibleTime=2026-11-10T07:50:38\n   AccrueTime=2026-11-10T07:50:38\n   StartTime=2026-11-10T07:51:33 EndTime=2026-11-10T15:51:33 Deadline=N/A\n   PreemptEligibleTime=2026-11-10T07:51:33 PreemptTime=None\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-10T07:51:33 Scheduler=Backfill\n   Partition=cluster02 AllocNode:Sid=login-3:1572212\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=gpu-a40-1\n   BatchHost=gpu-a40-1\n   NumNodes=1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=4,mem=40G,node=1,billing=3,gres/gpu=1,gres/gpu:a40=1\n   AllocTRES=cpu=4,mem=40G,node=1,billing=3,gres/gpu=1,gres/gpu:a40=1\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=40G MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_e38_stage_a.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-stage-a-1732990.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-stage-a-1732990.out\n   Power=\n   TresPerJob=gres/gpu:a40:1\n   TresPerTask=cpu:4\n   \n\n",
+      "stderr": ""
+    }
+  ],
+  "allocation_note": "A40 submission requested64GiB host memory; site submission plugin enforced40GiB. Accepted CPUcount4. PRO6000 request remains90GiB. No nodeexclusive claim; runtime verifies GPUprocess exclusivity and hostload before and during timing."
+}

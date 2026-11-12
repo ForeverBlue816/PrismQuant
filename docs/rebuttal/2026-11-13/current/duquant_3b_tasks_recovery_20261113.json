@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-12T16:03:20.662004+00:00",
+  "reason": "Prior srun step .5 cancelled during client-turn interruption; PPL/checkpoint completed, tasks incomplete",
+  "previous_step": "1736285.5",
+  "previous_task_result": "duquant_3b_seed0_eight-tasks_retry1_job1736285.json",
+  "command": [
+    "srun",
+    "--jobid=1736285",
+    "--exclusive",
+    "--exact",
+    "--immediate=10",
+    "--nodes=1",
+    "--ntasks=1",
+    "--cpus-per-task=4",
+    "--gpus-per-task=a40:1",
+    "--gpu-bind=single:1",
+    "--mem=39G",
+    "bash",
+    "/home/yanlongc/prismquant-rebuttal-e38/scripts/resume_duquant_3b_tasks.sh"
+  ],
+  "detached_controller_pid": 1939151,
+  "source_commit": "e989827c42a256ca6cec7858b0cd6fcadfb90fba",
+  "reuse_quantized_checkpoint": true,
+  "no_recalibration": true,
+  "log": "/home/yanlongc/prismquant-rebuttal-e38/runs/duquant_3b_tasks_retry2_controller.log"
+}

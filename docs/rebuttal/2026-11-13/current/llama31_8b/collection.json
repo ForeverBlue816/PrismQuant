@@ -1,0 +1,26 @@
+{
+  "model": "Meta-Llama-3.1-8B",
+  "created_utc": "2026-11-12T16:24:06.740298+00:00",
+  "rows": {
+    "FlatQuant": {
+      "ppl_source": "pending",
+      "task_source": "pending",
+      "timing_source": "pending",
+      "calibration_source": "pending",
+      "prior_attempts": []
+    },
+    "DuQuant": {
+      "ppl_source": "pending",
+      "task_source": "pending",
+      "timing_source": "pending",
+      "calibration_source": "pending",
+      "prior_attempts": []
+    }
+  },
+  "paired_ppl": {
+    "status": "unavailable",
+    "reason": "Both complete NLL rows are required"
+  },
+  "same_physical_gpu": false,
+  "selection": "latest attempt per method/model/phase, never score based"
+}

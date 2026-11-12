@@ -1,0 +1,266 @@
+{
+  "rows": [
+    {
+      "family": "native",
+      "rotation": "fp16",
+      "source": "[stage_a_8b_fp16_seed0_job1735315.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1735315.json)",
+      "tasks_source": "[stage_a_8b_fp16_seed0_job1736075.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1736075.json)",
+      "paired_ppl": {
+        "status": "unavailable"
+      }
+    },
+    {
+      "family": "native",
+      "rotation": "hadamard",
+      "source": "[stage_a_8b_hadamard_seed0_job1735315.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_hadamard_seed0_job1735315.json)",
+      "tasks_source": "pending",
+      "paired_ppl": {
+        "status": "COMPLETE",
+        "point": 2.324527390601,
+        "percentile95": [
+          2.1966217092563696,
+          2.4573797250820473
+        ],
+        "replicates": 20000,
+        "rng_seed": 20261111,
+        "evaluation_tokens_sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021",
+        "reference_source": "[stage_a_8b_fp16_seed0_job1735315.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1735315.json)",
+        "candidate_source": "[stage_a_8b_hadamard_seed0_job1735315.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_hadamard_seed0_job1735315.json)",
+        "scope": "paired test-sequence PPL difference, candidate minus reference; fixed runs, not seed uncertainty or a causal implementation effect"
+      }
+    },
+    {
+      "family": "native",
+      "rotation": "nar_k8",
+      "source": "[stage_a_8b_nar_k8_seed0_fast_job1736296.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_fast_job1736296.json)",
+      "tasks_source": "pending",
+      "paired_ppl": {
+        "status": "COMPLETE",
+        "point": 3.756575805626147,
+        "percentile95": [
+          3.5622258331051495,
+          3.957645381127839
+        ],
+        "replicates": 20000,
+        "rng_seed": 20261111,
+        "evaluation_tokens_sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021",
+        "reference_source": "[stage_a_8b_fp16_seed0_job1735315.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1735315.json)",
+        "candidate_source": "[stage_a_8b_nar_k8_seed0_fast_job1736296.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_fast_job1736296.json)",
+        "scope": "paired test-sequence PPL difference, candidate minus reference; fixed runs, not seed uncertainty or a causal implementation effect"
+      }
+    },
+    {
+      "family": "integer",
+      "rotation": "hadamard",
+      "source": "[integer_8b_hadamard_seed0_equivalence-timing_job1734010.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_hadamard_seed0_equivalence-timing_job1734010.json)",
+      "tasks_source": "[integer_8b_hadamard_seed0_eight-tasks_job1736075.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_hadamard_seed0_eight-tasks_job1736075.json)",
+      "paired_ppl": {
+        "status": "COMPLETE",
+        "point": 0.0021719086549856215,
+        "percentile95": [
+          -0.011018750529688348,
+          0.015131240971275614
+        ],
+        "replicates": 20000,
+        "rng_seed": 20261111,
+        "evaluation_tokens_sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021",
+        "reference_source": "[integer_8b_hadamard_seed0_equivalence-timing_job1734010.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_hadamard_seed0_equivalence-timing_job1734010.json)",
+        "candidate_source": "[integer_8b_hadamard_seed0_equivalence-timing_job1734010.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_hadamard_seed0_equivalence-timing_job1734010.json)",
+        "scope": "paired test-sequence PPL difference, candidate minus reference; fixed runs, not seed uncertainty or a causal implementation effect"
+      }
+    },
+    {
+      "family": "integer",
+      "rotation": "nar_k8",
+      "source": "[integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json)",
+      "tasks_source": "[integer_8b_nar_k8_seed0_eight-tasks_job1736075.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_eight-tasks_job1736075.json)",
+      "paired_ppl": {
+        "status": "COMPLETE",
+        "point": -0.0011661103734326161,
+        "percentile95": [
+          -0.012607831529104097,
+          0.01042444274178541
+        ],
+        "replicates": 20000,
+        "rng_seed": 20261111,
+        "evaluation_tokens_sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021",
+        "reference_source": "[integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json)",
+        "candidate_source": "[integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json)",
+        "scope": "paired test-sequence PPL difference, candidate minus reference; fixed runs, not seed uncertainty or a causal implementation effect"
+      }
+    }
+  ],
+  "observed_runs": [
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_job1735315.json",
+      "sha256": "ffc9e1af601090939688f9e70a7985330f4052755c2b84d467cc1657257c9135",
+      "status": "COMPLETE",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_fast_job1736296.json",
+      "sha256": "d350e48219deb7d0dee4b30d6b3df102a54644a3aa7c2eedb12681a86f55e51b",
+      "status": "COMPLETE",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_hadamard_seed0_job1735190.json",
+      "sha256": "3cd9b0bbe320928c68f99e0d4f8c67c5783716f976aff65ca38c0e3e7481b9f9",
+      "status": "COMPLETE",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_hadamard_seed0_equivalence-timing_job1734010.json",
+      "sha256": "428bf211dbd3222e962999b263cf6eff0b56b48841643c58a9289ae6e09906ba",
+      "status": "COMPLETE",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_job1734010.json",
+      "sha256": "cdf924c3b32af32af3058d857e651faf44a6179add863e804bbc467e58b25da5",
+      "status": "FAILED",
+      "error": "RuntimeError('\"nextafter_cuda\" not implemented for \\'Half\\'')"
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1735315.json",
+      "sha256": "0e5b013548ef479fd94228dd0023861f9d94923a5ecc0f86f3c5c6a9adb3bfea",
+      "status": "COMPLETE",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1736075.json",
+      "sha256": "59db6f6f7bcd590317df16a1f7bbeae15dee7c9b7bdc9d93ad3a8728877078e0",
+      "status": "RUNNING",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_hadamard_seed0_job1735315.json",
+      "sha256": "5b3699b95c659ddc06dc4ef0922689aa35cd6dd2d2d0a5e24f32bac449b1e717",
+      "status": "COMPLETE",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_original_job1736296.json",
+      "sha256": "e4df4bfa087480839f1fa9469d7485d87d02fe80282f0829432f683e7902be2b",
+      "status": "COMPLETE",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_hadamard_seed0_eight-tasks_job1736075.json",
+      "sha256": "95d789007f2390ea03a3a27ab38b89043ea2e93ddad9efadee595286e6f72a9e",
+      "status": "RUNNING",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1734010.json",
+      "sha256": "4a45d65943048e624f37429cac1893c63a5242365b1e0bfa18417aef1920a016",
+      "status": "COMPLETE",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json",
+      "sha256": "36a9c122e6fa26feaf38d82fc78889e14dc008744ab3585f41946d8e39920b4e",
+      "status": "COMPLETE",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_eight-tasks_job1736075.json",
+      "sha256": "524908b381a28777f3ae4e6b8dab876a2bc38dec44d0eecf9f2c559ffc327ffe",
+      "status": "RUNNING",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_job1735190.json",
+      "sha256": "16995fff0f65e61be56e9f2619778155e3f0f8d053b4a302c03d054768a5cd6e",
+      "status": "COMPLETE",
+      "error": null
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_hadamard_seed0_job1734010.json",
+      "sha256": "2480f42daefad00e2a636469f7313a19c2a2b5177626384266b67fb3a419254e",
+      "status": "FAILED",
+      "error": "RuntimeError('\"nextafter_cuda\" not implemented for \\'Half\\'')"
+    }
+  ],
+  "read_errors": [],
+  "submission_provenance": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/parallel_8b_submissions_001.json",
+    "sha256": "b16dabc6b9046b9e215c898f1ba077af472d6b5589b35bac9c6c6bc714663ff0",
+    "description": "submitted 1734010 (PENDING Priority in submission manifest); submitted 1734028 (PENDING Priority in submission manifest)"
+  },
+  "experiment": "e38",
+  "created_utc": "2026-11-12T16:00:25.796342+00:00",
+  "collector": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/scripts/collect_rebuttal8b.py",
+    "sha256": "6b6032dc5076f2079b4672e0270547a3dc7991112e90851ede274e22679ff7e3"
+  },
+  "table_rows": [
+    [
+      "FP16 W/A/KV",
+      "fp16",
+      "6.23843",
+      "pending",
+      "3/8",
+      "n/a",
+      "388.445 [0.595]",
+      "33.069 [0.006]",
+      "17.446/17.462",
+      "COMPLETE; tasks RUNNING",
+      "[stage_a_8b_fp16_seed0_job1735315.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1735315.json); [stage_a_8b_fp16_seed0_job1736075.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1736075.json)"
+    ],
+    [
+      "Packed W4 / per-token symmetric A4 / native per-head KV4",
+      "hadamard",
+      "8.56296",
+      "pending",
+      "pending",
+      "format variant",
+      "643.051 [0.086]",
+      "11.292 [0.378]",
+      "7.954/7.958",
+      "COMPLETE",
+      "[stage_a_8b_hadamard_seed0_job1735315.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_hadamard_seed0_job1735315.json)"
+    ],
+    [
+      "Packed W4 / per-token symmetric A4 / native per-head KV4",
+      "nar_k8",
+      "9.99501",
+      "pending",
+      "pending",
+      "format variant",
+      "346.651 [0.056]",
+      "18.719 [0.371]",
+      "7.787/7.791",
+      "COMPLETE",
+      "[stage_a_8b_nar_k8_seed0_fast_job1736296.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_fast_job1736296.json)"
+    ],
+    [
+      "W4 expanded INT8 GEMM / asymmetric g128 A4 / simulated E14 KV4",
+      "hadamard",
+      "7.21191",
+      "pending",
+      "0/8",
+      "27.06250 / 0.853055",
+      "13579.846 [19.993]",
+      "0.340 [0.007]",
+      "7.323/7.323",
+      "COMPLETE; tasks RUNNING",
+      "[integer_8b_hadamard_seed0_equivalence-timing_job1734010.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_hadamard_seed0_equivalence-timing_job1734010.json); [integer_8b_hadamard_seed0_eight-tasks_job1736075.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_hadamard_seed0_eight-tasks_job1736075.json)"
+    ],
+    [
+      "W4 expanded INT8 GEMM / asymmetric g128 A4 / simulated E14 KV4",
+      "nar_k8",
+      "6.98925",
+      "pending",
+      "0/8",
+      "28.00000 / 0.869130",
+      "13225.179 [14.691]",
+      "0.378 [0.011]",
+      "7.371/7.372",
+      "COMPLETE; tasks RUNNING",
+      "[integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json); [integer_8b_nar_k8_seed0_eight-tasks_job1736075.json](/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_eight-tasks_job1736075.json)"
+    ]
+  ],
+  "selection_policy": "latest attempt by job ID then mtime per phase; never choose a better score",
+  "preserved_table": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/history_before_collect8b/table.md"
+}

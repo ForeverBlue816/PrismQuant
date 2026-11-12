@@ -1,0 +1,16 @@
+{
+  "kind": "scheduler_status",
+  "observed_utc": "2026-11-10T05:54:18.997331+00:00",
+  "command": [
+    "scontrol",
+    "show",
+    "job",
+    "1732842"
+  ],
+  "returncode": 0,
+  "stdout": "JobId=1732842 JobName=prism-e38-anchor\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Priority Dependency=(null)\n   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=02:00:00 TimeMin=N/A\n   SubmitTime=2026-11-10T05:53:14 EligibleTime=2026-11-10T05:53:14\n   AccrueTime=2026-11-10T05:53:14\n   StartTime=2026-11-10T10:36:59 EndTime=2026-11-10T12:36:59 Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-10T05:54:04 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-3:1141952\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList= SchedNodeList=gpu-pro6000-10\n   NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=4,mem=90G,node=1,billing=8,gres/gpu=1,gres/gpu:pro6000=1\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=90G MinTmpDiskNode=0\n   Features=highmem DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_e38_anchor.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-anchor-1732842.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-anchor-1732842.out\n   Power=\n   TresPerJob=gres/gpu:pro6000:1\n   TresPerTask=cpu:4\n   \n\n",
+  "stderr": "",
+  "job_id": "1732842",
+  "state": "PENDING",
+  "status": "not a model measurement"
+}

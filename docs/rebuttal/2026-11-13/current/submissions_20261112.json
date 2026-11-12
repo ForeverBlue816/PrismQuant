@@ -1,0 +1,62 @@
+{
+  "observed_utc": "2026-11-12T15:36:45.542129+00:00",
+  "source_heads": {
+    "e38": "aa93c1a81d10c63a20b17715f553ba32c3157b80",
+    "e39": "d359fd18eada56b81583370914fe0bad6ae6ed25",
+    "e42": "62196af88c0ec997f12efa636795b6c9f54b3ae2"
+  },
+  "existing_8b_accuracy_job": "1736252",
+  "no_fp16": true,
+  "commands": [
+    {
+      "label": "3b_accuracy",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--export=ALL",
+        "slurm_rebuttal_baselines_3b.sh"
+      ],
+      "extra_env": {},
+      "returncode": 0,
+      "stdout": "1736285\n",
+      "stderr": "",
+      "job_id": "1736285"
+    },
+    {
+      "label": "3b_same_gpu_timing",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--export=ALL",
+        "--job-name=pq3b-baselines-timing",
+        "--dependency=afterany:1736285",
+        "slurm_rebuttal_baseline_timing.sh"
+      ],
+      "extra_env": {
+        "BASELINE_MODEL": "llama32_3b"
+      },
+      "returncode": 0,
+      "stdout": "1736286\n",
+      "stderr": "",
+      "job_id": "1736286"
+    },
+    {
+      "label": "8b_same_gpu_timing",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--export=ALL",
+        "--job-name=pq8b-baselines-timing",
+        "--dependency=afterany:1736252",
+        "slurm_rebuttal_baseline_timing.sh"
+      ],
+      "extra_env": {
+        "BASELINE_MODEL": "llama31_8b"
+      },
+      "returncode": 0,
+      "stdout": "1736287\n",
+      "stderr": "",
+      "job_id": "1736287"
+    }
+  ]
+}

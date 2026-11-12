@@ -1,0 +1,84 @@
+{
+  "schema": "prismquant.e38.synthetic_affine_contract.v1",
+  "kind": "synthetic_arithmetic_validation",
+  "timestamp_utc": "2026-11-10T05:57:02.298388+00:00",
+  "commit": "35a88aba4232a58d6ed8908dd50da9ca34587127",
+  "command_line": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "/home/yanlongc/prismquant-rebuttal-e38/nar/e38_affine_contract.py",
+    "--seed",
+    "0",
+    "--output",
+    "results/e38/raw/affine_contract_seed0.json"
+  ],
+  "seed": 0,
+  "source_sha256": {
+    "nar/e38_affine_contract.py": "b1fad1d0e35e140fb75dd47d0cea2331a3b32ade65e9a1415f6da3c675b9fcb1",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "tests/test_e38_affine_contract.py": "545e5f8b8a125524a0981c09a914962add520bebf5c7d83e230dc58024d16ba9"
+  },
+  "source_git_status": "",
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "libraries": {
+    "torch": "2.11.0+cu128",
+    "numpy": "2.4.6"
+  },
+  "host": "login-3.cluster02.eee.ntu.edu.sg",
+  "device": "cpu",
+  "gpu_model": null,
+  "cpu_name": "QEMU Virtual CPU version 2.5+",
+  "model_evidence": false,
+  "gpu_evidence": false,
+  "status": "PASS",
+  "scope": "synthetic arithmetic, not model or performance evidence",
+  "validation": {
+    "status": "PASS",
+    "scope": "synthetic CPU grouped-affine arithmetic only",
+    "seed": 0,
+    "activation_shape": [
+      3,
+      384
+    ],
+    "weight_shape": [
+      4,
+      384
+    ],
+    "integer_dot_dtype": "torch.int32",
+    "metadata_dtype": "torch.float16",
+    "reference_dtype": "torch.float64",
+    "max_abs_reference_difference": 0.0,
+    "e14_fp32_qdq_vs_affine_fp64_max_abs": 0.0,
+    "max_abs_error_if_offset_terms_omitted": 492.83265483379364,
+    "pack_unpack_identity": true,
+    "analytic_group_bounds": [
+      {
+        "layout": "signed_signed",
+        "group_size": 128,
+        "minimum": -7168,
+        "maximum": 8192,
+        "fits_int16": true
+      },
+      {
+        "layout": "unsigned_signed",
+        "group_size": 128,
+        "minimum": -15360,
+        "maximum": 13440,
+        "fits_int16": true
+      },
+      {
+        "layout": "unsigned_unsigned",
+        "group_size": 128,
+        "minimum": 0,
+        "maximum": 28800,
+        "fits_int16": true
+      }
+    ],
+    "claims_not_established": [
+      "GPU INT4 execution",
+      "checkpoint export",
+      "model equivalence",
+      "PPL",
+      "timing"
+    ]
+  }
+}

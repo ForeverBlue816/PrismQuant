@@ -1,0 +1,30 @@
+{
+  "observed_utc": "2026-11-12T04:14:08.757904+00:00",
+  "model": "Meta-Llama-3.1-8B",
+  "source_commit": "f3588c1f7ce1763d39eed1720610d6b0baabff42",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--export=ALL",
+    "--job-name=pq8b-native-controlled",
+    "--time=04:00:00",
+    "slurm_e38_stage_a_retry_8b.sh"
+  ],
+  "env": {
+    "E38_SOURCE_COMMIT": "f3588c1f7ce1763d39eed1720610d6b0baabff42",
+    "E38_NATIVE_ROWS": "fp16 hadamard nar_k8"
+  },
+  "returncode": 0,
+  "stdout": "1735315\n",
+  "stderr": "",
+  "reason": "Eliminate repeated construction of identical Paley28 constant; measure FP16/Had/PQ in same physical exclusive A40 allocation",
+  "recalibration": false,
+  "reuse_native_packed_checkpoints": true,
+  "numerical_execution_gates": "none",
+  "prior_measurements_preserved": [
+    "1734010",
+    "1735190"
+  ],
+  "tests": "4 production-env cache tests; original matrix SHA and full14336 cold/warm bitwise equality; 4 collector tests",
+  "job_id": "1735315"
+}

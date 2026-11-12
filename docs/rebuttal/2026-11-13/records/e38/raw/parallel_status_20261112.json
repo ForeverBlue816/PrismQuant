@@ -1,0 +1,22 @@
+{
+  "observed_utc": "2026-11-12T02:25:53.450211+00:00",
+  "jobs": [
+    "1734010",
+    "1734028",
+    "1735190",
+    "1735191",
+    "1735192"
+  ],
+  "squeue": "          JOBID                     NAME        STATE          NODELIST(REASON)           START_TIME\n        1734028       pq8b-parallel-five      PENDING                (Priority)  2026-11-13T14:58:11\n        1735190        pq8b-native-retry      PENDING                (Priority)  2026-11-12T21:45:00\n        1735192        pq8b-tasks-seed12      PENDING              (Dependency)                  N/A\n        1735191         pq8b-tasks-seed0      PENDING              (Dependency)                  N/A\n",
+  "sacct": "JobID|JobName|State|ExitCode|Start|End|Elapsed\n1734010|pq8b-e38-timing|FAILED|1:0|2026-11-11T11:21:21|2026-11-11T19:41:03|08:19:42\n1734010.batch|batch|FAILED|1:0|2026-11-11T11:21:21|2026-11-11T19:41:03|08:19:42\n1734010.extern|extern|COMPLETED|0:0|2026-11-11T11:21:21|2026-11-11T19:41:03|08:19:42\n1734028|pq8b-parallel-five|PENDING|0:0|Unknown|Unknown|00:00:00\n1735190|pq8b-native-retry|PENDING|0:0|Unknown|Unknown|00:00:00\n1735191|pq8b-tasks-seed0|PENDING|0:0|Unknown|Unknown|00:00:00\n1735192|pq8b-tasks-seed12|PENDING|0:0|Unknown|Unknown|00:00:00\n",
+  "new_gpu_results": true,
+  "completed_rows": [
+    "fp16",
+    "integer_hadamard",
+    "integer_nar_k8"
+  ],
+  "native_retry": "1735190",
+  "tasks_seed0": "1735191",
+  "tasks_seed12": "1735192",
+  "previous_watcher_alive": false
+}

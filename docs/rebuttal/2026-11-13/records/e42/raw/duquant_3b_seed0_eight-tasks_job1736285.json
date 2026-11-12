@@ -1,0 +1,114 @@
+{
+  "kind": "E42_DuQuant_official_native_3b",
+  "status": "FAILED",
+  "scope": "Official DuQuant W4A4 native configuration in FP16 floating fake-quant modules; not E14 g128/KIVI and not native INT4 deployment",
+  "phase": "eight-tasks",
+  "seed": 0,
+  "model": "Llama-3.2-3B",
+  "model_key": "llama32_3b",
+  "base_revision": "d4446454d87d51aa42e1fb174f25acc5f8762331",
+  "command_line": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "-m",
+    "nar.e42_duquant_native",
+    "--model",
+    "llama32_3b",
+    "--artifact-dir",
+    "/projects/nar/nar-validation/artifacts/e42/duquant_3b_seed0_v1",
+    "--phase",
+    "eight-tasks",
+    "--batch-size",
+    "1",
+    "--source-commit",
+    "62196af88c0ec997f12efa636795b6c9f54b3ae2",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_job1736285.json"
+  ],
+  "source_commit": "62196af88c0ec997f12efa636795b6c9f54b3ae2",
+  "hostname": "gpu-a40-1.cluster02.eee.ntu.edu.sg",
+  "started_utc": "2026-11-12T15:38:55.148760+00:00",
+  "numerical_execution_gates": "none",
+  "ppl": {
+    "status": "not run"
+  },
+  "eight_tasks": {
+    "status": "not run"
+  },
+  "slurm": {
+    "SLURM_JOB_ID": "1736285",
+    "SLURM_JOB_NODELIST": "gpu-a40-1",
+    "CUDA_VISIBLE_DEVICES": "0"
+  },
+  "official_commit": "d56cfc6fe97c34c0eb100fec82fe439865905679",
+  "official_files": {
+    "main.py": "b43fd7fad7a5aca83532f676b3a2961de2985e1f32b53c7ad2b9b59ab06997a2",
+    "run.sh": "6cfba2299712370d5990384715df1e0890ea1713be3c64bb24b7c6c0a5f992c9",
+    "get_rot.py": "aa11b175c86d36eb48ecf729a76b57614dd7aab89c0c749cc392dfb035ff1981",
+    "datautils.py": "6cda55ce962408fdf295e13c293afd1aca105ee2b16cdc14418cd8c72ed7e061",
+    "generate_act_scale_shift.py": "183fed415f515bf7d205779b4e1d6ec327203e13e5d66dcf3268957bf6ddcabc",
+    "utils.py": "9907095a77b674725118e2d0ff5041f34eb7e3576158c7df83c5638b7a6ad6dc",
+    "quantize/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quantize/const.py": "813ebddbbf7a6255796b18ce6677d04887a84815b8a065c882c7e7963e635dee",
+    "quantize/du_norm.py": "db9330bba090263b701d7a30b101073321fc60f7015f9ebb7b5cd6ffc63b4fc4",
+    "quantize/duquant.py": "3f365a2c4092b08e0d49dcf9733c26ce68cdc55c9b6fc45f0793af918c5abe15",
+    "quantize/int_linear.py": "cd7a68f2120d6883048624b020e5396eea204e5ef70bed2d0cbf34ae1d45ff1f",
+    "quantize/int_matmul.py": "4ad76e18152793550436d7c6c1b67a0da7e7cadafc1734c93728165a8d26bc13",
+    "quantize/quantizer.py": "99c2a0d76866e2289658fb85a2b7e2673c23517fb1d9c68642753bf5b9830b1a",
+    "quantize/utils.py": "d1c1e725c1ddbbefbbb27c5e5ba9387617defaf35a709ec30c236a79c7516fe4",
+    "models/LMClass.py": "e5b13e4821c3564bee1786c6c46f8679e7248d9539cfbaa9fc37f6470503d1e3",
+    "models/int_llama_layer.py": "ba3715401c12fd5e09e853a0837d83552b982b98807633ea01db4a6e1fa02f43",
+    "models/int_mistral_layer.py": "6af52b664cec64e5cf23890c8afa45f085eee42aa4891e1e5d0f9eff695b8bcc",
+    "models/models_utils.py": "2e2ceec3a667326d486856b16cd61d2e62e92558f1f54ae34f4586984dd91aa6",
+    "models/transformation.py": "50ae070639510869e64c246961008787b6f8580ffbc54df9b2a15e94ce4ac78b"
+  },
+  "runner_files": {
+    "nar/e42_duquant_native.py": "e669bdf0c6bcf1adab56f2e971aa75dc287432f3c7b783588d720f19fdace165",
+    "nar/e42_duquant_compat.py": "d22cc888e4b0146316210ce910c5dea23bb2ea8728d13a00528bd085603509c8",
+    "slurm_e42_duquant_native.sh": "034c12210dddb39a92b8251be371b356fe266a11603d3e5da6fa17e16b96de14"
+  },
+  "policy": "record only; no source or numerical execution veto",
+  "libraries": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "transformers": "4.45.0",
+    "transformers_file": "/home/yanlongc/.prismquant/llama31-baseline-packages/transformers/__init__.py",
+    "tokenizers": "0.20.3",
+    "packages": {
+      "datasets": "5.0.1",
+      "accelerate": "0.32.0",
+      "peft": "0.13.2",
+      "numpy": "2.4.6"
+    }
+  },
+  "gpu_model": "NVIDIA A40",
+  "gpu_capability": [
+    8,
+    6
+  ],
+  "tokenizer_files": [
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/tokenizer.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+      "bytes": 17209920,
+      "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/tokenizer_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/8a071772876bc826e78c6649464bf838205fe5d1",
+      "bytes": 50641,
+      "sha256": "8ca815f697b8f6953d9bad3130ddd6238b99d36c20fde052cf730207ac0926d4"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/special_tokens_map.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/68b10c7f0a479eae0c358eac6a14959b3f9acdf1",
+      "bytes": 459,
+      "sha256": "32f404d626cf7b1b6eea36c241ae7cbd6ec29c777a8701ea48c0fe9ebb94c9b1"
+    }
+  ],
+  "tokenizer_adapter": "Fast loader for the same pinned tokenizer.json: TF4.45 cannot instantiate this snapshot via use_fast=False; no token vocabulary or special-token policy changed",
+  "error": "FileNotFoundError(2, 'No such file or directory')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/yanlongc/prismquant-rebuttal-e42/nar/e42_duquant_native.py\", line 363, in main\n    record['checkpoint']=identity(checkpoint)\n                         ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/yanlongc/prismquant-rebuttal-e42/nar/e42_duquant_native.py\", line 55, in identity\n    path=Path(path); out=dict(path=str(path),resolved=str(path.resolve()),bytes=path.stat().st_size)\n                                                                                ^^^^^^^^^^^\n  File \"/projects/river/envs/qwen35/lib/python3.11/pathlib.py\", line 1013, in stat\n    return os.stat(self, follow_symlinks=follow_symlinks)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_3b_seed0_v1/quantized_model.pt'\n",
+  "ended_utc": "2026-11-12T15:38:58.006348+00:00",
+  "total_elapsed_seconds": 2.8575689801946282,
+  "cost_scope": "wall clock of this process, phase breakdown and PyTorch peak memory; excludes queue wait; not a native kernel speed claim"
+}

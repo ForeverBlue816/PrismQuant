@@ -1,0 +1,889 @@
+{
+  "run_id": "anchor-bf16-3b-job1732842",
+  "experiment": "E38",
+  "status": "PASS",
+  "kind": "environment_anchor",
+  "started_utc": "2026-11-10T06:58:03.422158+00:00",
+  "hostname": "gpu-pro6000-10.cluster02.eee.ntu.edu.sg",
+  "command": "/projects/nar/nar-validation/venv/bin/python /home/yanlongc/prismquant-rebuttal-e38/nar/e38_anchor.py --run-id anchor-bf16-3b-job1732842 --expected-source-commit 33ed3b8188fffc09728c625bfedf9081b0d549ab --model-snapshot /projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331 --tokens /projects/nar/nar-validation/cache/tokenized/llama32_3b-wikitext2-test-full-l2048.pt",
+  "seed": 0,
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "slurm": {
+    "SLURM_JOB_ID": "1732842",
+    "SLURM_JOB_NODELIST": "gpu-pro6000-10",
+    "SLURM_JOB_GPUS": "4",
+    "SLURM_CPUS_PER_TASK": "4",
+    "SLURM_MEM_PER_NODE": "92160",
+    "CUDA_VISIBLE_DEVICES": "0"
+  },
+  "scope": "Frozen E14 BF16 reference replay; no deployed INT4 quality or timing claim.",
+  "commit": "247ead724c55121a32bbfbfae3d34c100f07df65",
+  "source_sha256": {
+    "nar/e38_anchor.py": "58dc1b4e61f1ccaaea0d0c94568db46b60c11a9dceedead4f1b7d4d553e77f3a",
+    "nar/e14_bf16_reference.py": "d1001632f21c1bb14177ae11ffcea6cf8174dbdf604a13fa145f9c954174da4d",
+    "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "nar/activation_experiments.py": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d",
+    "slurm_e38_anchor.sh": "8634a0d8f415fa8da8f7f6a44cb2be078389a558341da3b79af75f5d98a5e235",
+    "experiments/e38_protocol.json": "05654cc5bc122494b4549975b2703c5e9a4a5b912f11642fa7add5ad5f4079e8"
+  },
+  "expected_source_commit": "33ed3b8188fffc09728c625bfedf9081b0d549ab",
+  "libraries": {
+    "torch": {
+      "version": "2.11.0+cu128",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "transformers": {
+      "version": "5.16.0.dev0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": {
+        "url": "https://github.com/huggingface/transformers.git",
+        "vcs_info": {
+          "commit_id": "a353632607c59463e6ced86a44c2de3c2cd62d5e",
+          "requested_revision": "main",
+          "vcs": "git"
+        }
+      }
+    },
+    "triton": {
+      "version": "3.6.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "datasets": {
+      "version": "5.0.1",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "accelerate": {
+      "version": "1.14.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "numpy": {
+      "version": "2.4.6",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "lm_eval": {
+      "version": "0.4.14.dev0",
+      "location": "/home/yanlongc/.e13_packages",
+      "direct_url": {
+        "dir_info": {},
+        "url": "file:///home/yanlongc/lm-evaluation-harness-upstream"
+      }
+    },
+    "huggingface-hub": {
+      "version": "1.28.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "tokenizers": {
+      "version": "0.23.1",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    }
+  },
+  "hardware": {
+    "hostname": "gpu-pro6000-10.cluster02.eee.ntu.edu.sg",
+    "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+    "torch": "2.11.0+cu128",
+    "cuda_available": true,
+    "slurm_job_id": "1732842",
+    "slurm_job_gpus": "4",
+    "cuda_runtime": "12.8",
+    "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "gpu_capability": [
+      12,
+      0
+    ],
+    "nvidia_smi": [
+      "0, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-0f1161fa-c034-f6d3-1d89-7de954e6bbe5, 97887 MiB, 97249 MiB, 595.71.05"
+    ]
+  },
+  "model": "llama32_3b",
+  "model_id": "unsloth/Llama-3.2-3B",
+  "model_snapshot": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331",
+  "model_revision": "d4446454d87d51aa42e1fb174f25acc5f8762331",
+  "model_files": [
+    {
+      "file": "config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/eeab235d033323f98b16ee4c9bf2158e800ab8e1",
+      "bytes": 890,
+      "content_sha256": "c0a6833b9da6e99a2a8920e879de7c1532c78883948327658cfdbd1eac6d5be6"
+    },
+    {
+      "file": "generation_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/e9d7febb8a39c5a6f5fb8a2353806fba6cfff1fb",
+      "bytes": 230,
+      "content_sha256": "282855859ac10d3ccc1ff79fde2f8bf1568734d5d4e0c06f6173121d79b76e56"
+    },
+    {
+      "file": "model-00001-of-00002.safetensors",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+      "bytes": 4965799096,
+      "content_sha256": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002"
+    },
+    {
+      "file": "model-00002-of-00002.safetensors",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb",
+      "bytes": 1459729952,
+      "content_sha256": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb"
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/d3a1f0f5f401eeadca0c7a6786bd9e877fd42e58",
+      "bytes": 20919,
+      "content_sha256": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/68b10c7f0a479eae0c358eac6a14959b3f9acdf1",
+      "bytes": 459,
+      "content_sha256": "32f404d626cf7b1b6eea36c241ae7cbd6ec29c777a8701ea48c0fe9ebb94c9b1"
+    },
+    {
+      "file": "tokenizer.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+      "bytes": 17209920,
+      "content_sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/8a071772876bc826e78c6649464bf838205fe5d1",
+      "bytes": 50641,
+      "content_sha256": "8ca815f697b8f6953d9bad3130ddd6238b99d36c20fde052cf730207ac0926d4"
+    }
+  ],
+  "evaluation_tokens": {
+    "path": "/projects/nar/nar-validation/cache/tokenized/llama32_3b-wikitext2-test-full-l2048.pt",
+    "sha256": "0b1879cd29bec44e095f6ed5fa5c672a1cb1d7dac199c7f33ec5eca400e05a50",
+    "shape": [
+      141,
+      2048
+    ],
+    "bos": "none added"
+  },
+  "reference": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/results/llama32_3b/e14_bf16_reference_seed0_ppl.json",
+    "sha256": "42692fc9af89aa99a0bd24d0396150460e0b5d58d9ddc25913f6d138c12a40d1",
+    "ppl": 7.819581289874704
+  },
+  "tolerance_ppl_abs": 0.01,
+  "prompt_anchor_ppl": 7.8,
+  "prompt_anchor_status": "Different from frozen legacy reference; provenance unresolved",
+  "ppl": 7.819581289874704,
+  "chunks": [
+    {
+      "chunk": 0,
+      "nll": 1.836230993270874,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 1,
+      "nll": 2.4180097579956055,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 2,
+      "nll": 2.4976534843444824,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 3,
+      "nll": 2.01023006439209,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 4,
+      "nll": 1.9320151805877686,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 5,
+      "nll": 1.5516332387924194,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 6,
+      "nll": 1.664160966873169,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 7,
+      "nll": 1.9189226627349854,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 8,
+      "nll": 2.2489147186279297,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 9,
+      "nll": 1.9663515090942383,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 10,
+      "nll": 1.891007661819458,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 11,
+      "nll": 2.2556447982788086,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 12,
+      "nll": 2.137127637863159,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 13,
+      "nll": 2.2632462978363037,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 14,
+      "nll": 2.1906585693359375,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 15,
+      "nll": 2.3979339599609375,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 16,
+      "nll": 2.1237289905548096,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 17,
+      "nll": 2.1384453773498535,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 18,
+      "nll": 1.947945237159729,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 19,
+      "nll": 2.0980794429779053,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 20,
+      "nll": 2.22343373298645,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 21,
+      "nll": 2.156791925430298,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 22,
+      "nll": 2.2185730934143066,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 23,
+      "nll": 2.241055488586426,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 24,
+      "nll": 2.268521308898926,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 25,
+      "nll": 2.350888967514038,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 26,
+      "nll": 2.420524835586548,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 27,
+      "nll": 2.2163302898406982,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 28,
+      "nll": 1.9939056634902954,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 29,
+      "nll": 1.800428032875061,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 30,
+      "nll": 1.680783748626709,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 31,
+      "nll": 1.704105257987976,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 32,
+      "nll": 2.004044532775879,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 33,
+      "nll": 1.973873257637024,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 34,
+      "nll": 2.158961772918701,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 35,
+      "nll": 1.487095594406128,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 36,
+      "nll": 1.4348007440567017,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 37,
+      "nll": 1.4728516340255737,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 38,
+      "nll": 1.44997239112854,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 39,
+      "nll": 1.6437104940414429,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 40,
+      "nll": 2.2582905292510986,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 41,
+      "nll": 2.688722610473633,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 42,
+      "nll": 2.693864583969116,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 43,
+      "nll": 2.3159916400909424,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 44,
+      "nll": 2.3001961708068848,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 45,
+      "nll": 2.27651309967041,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 46,
+      "nll": 2.355046510696411,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 47,
+      "nll": 2.1495039463043213,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 48,
+      "nll": 2.0232455730438232,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 49,
+      "nll": 2.0314083099365234,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 50,
+      "nll": 1.7612792253494263,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 51,
+      "nll": 1.8317501544952393,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 52,
+      "nll": 1.6587954759597778,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 53,
+      "nll": 1.8921301364898682,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 54,
+      "nll": 1.6227422952651978,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 55,
+      "nll": 1.5907036066055298,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 56,
+      "nll": 1.8000344038009644,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 57,
+      "nll": 1.8195980787277222,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 58,
+      "nll": 2.1703569889068604,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 59,
+      "nll": 2.3266849517822266,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 60,
+      "nll": 2.3540024757385254,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 61,
+      "nll": 2.462891101837158,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 62,
+      "nll": 1.5168980360031128,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 63,
+      "nll": 1.9014947414398193,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 64,
+      "nll": 1.893295168876648,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 65,
+      "nll": 1.6359270811080933,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 66,
+      "nll": 1.8467007875442505,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 67,
+      "nll": 1.8554644584655762,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 68,
+      "nll": 1.8562105894088745,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 69,
+      "nll": 2.084655284881592,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 70,
+      "nll": 2.275442600250244,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 71,
+      "nll": 2.197558641433716,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 72,
+      "nll": 1.8918001651763916,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 73,
+      "nll": 2.1402695178985596,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 74,
+      "nll": 2.0007429122924805,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 75,
+      "nll": 1.9284107685089111,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 76,
+      "nll": 2.1250386238098145,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 77,
+      "nll": 2.1754133701324463,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 78,
+      "nll": 2.3258883953094482,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 79,
+      "nll": 1.7470213174819946,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 80,
+      "nll": 1.8713651895523071,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 81,
+      "nll": 1.948349118232727,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 82,
+      "nll": 1.8354249000549316,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 83,
+      "nll": 1.8313229084014893,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 84,
+      "nll": 1.7852730751037598,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 85,
+      "nll": 2.1454033851623535,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 86,
+      "nll": 2.1581010818481445,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 87,
+      "nll": 2.1638689041137695,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 88,
+      "nll": 2.8255679607391357,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 89,
+      "nll": 2.753901958465576,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 90,
+      "nll": 2.372859477996826,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 91,
+      "nll": 2.5853421688079834,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 92,
+      "nll": 2.566115617752075,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 93,
+      "nll": 2.134829044342041,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 94,
+      "nll": 2.4406228065490723,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 95,
+      "nll": 2.0847864151000977,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 96,
+      "nll": 2.2320449352264404,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 97,
+      "nll": 1.7809122800827026,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 98,
+      "nll": 2.1596736907958984,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 99,
+      "nll": 2.3727662563323975,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 100,
+      "nll": 2.0290167331695557,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 101,
+      "nll": 2.1606833934783936,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 102,
+      "nll": 2.005431652069092,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 103,
+      "nll": 2.442270517349243,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 104,
+      "nll": 2.0740113258361816,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 105,
+      "nll": 2.0600521564483643,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 106,
+      "nll": 1.875497817993164,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 107,
+      "nll": 1.8679269552230835,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 108,
+      "nll": 1.877576470375061,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 109,
+      "nll": 1.7800649404525757,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 110,
+      "nll": 2.2705836296081543,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 111,
+      "nll": 2.0241360664367676,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 112,
+      "nll": 2.183767318725586,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 113,
+      "nll": 2.156562566757202,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 114,
+      "nll": 1.8993704319000244,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 115,
+      "nll": 1.8726067543029785,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 116,
+      "nll": 2.310886859893799,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 117,
+      "nll": 1.9612582921981812,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 118,
+      "nll": 1.8719754219055176,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 119,
+      "nll": 1.7995525598526,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 120,
+      "nll": 2.018505573272705,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 121,
+      "nll": 2.049612522125244,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 122,
+      "nll": 1.9971787929534912,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 123,
+      "nll": 2.045851230621338,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 124,
+      "nll": 1.8945040702819824,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 125,
+      "nll": 2.0677711963653564,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 126,
+      "nll": 2.0157809257507324,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 127,
+      "nll": 1.9066686630249023,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 128,
+      "nll": 2.0484416484832764,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 129,
+      "nll": 2.2035562992095947,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 130,
+      "nll": 2.174990177154541,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 131,
+      "nll": 2.1490652561187744,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 132,
+      "nll": 1.639849305152893,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 133,
+      "nll": 1.4196172952651978,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 134,
+      "nll": 2.347505807876587,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 135,
+      "nll": 2.4990649223327637,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 136,
+      "nll": 2.284743070602417,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 137,
+      "nll": 1.9551072120666504,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 138,
+      "nll": 2.1603751182556152,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 139,
+      "nll": 2.1467792987823486,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 140,
+      "nll": 2.217663288116455,
+      "tokens_scored": 2047
+    }
+  ],
+  "ppl_delta_vs_reference": 0.0,
+  "ppl_delta_vs_prompt": 0.01958128987470431,
+  "max_abs_chunk_nll_delta": 0.0,
+  "peak_memory_allocated_bytes": 9598657536,
+  "finished_utc": "2026-11-10T06:59:22.271460+00:00"
+}

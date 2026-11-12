@@ -1,0 +1,21 @@
+{
+  "kind": "A3_scope_update",
+  "status": "superseded_by_8b_only_scope",
+  "updated_utc": "2026-11-11T04:12:48.085454+00:00",
+  "reason": "User restricted further work to Appendix-D 8B; 3B is retained only as configuration/log explanation and excluded from the main table.",
+  "original_partial": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/audit_a3_integer_001.json",
+    "sha256": "2dc20247137260fa85c4b239137e4efa0dc3b9b24f2691f1e46c87446942edb2",
+    "status": "FAILED",
+    "failure": "CPU audit config serialization comparison at hellaswag; not an experiment or model failure"
+  },
+  "stopped_retry": {
+    "output_intended": "results/e38/raw/audit_a3_integer_002.json",
+    "pid": 709237,
+    "signal": "SIGTERM",
+    "exit_code": 143,
+    "artifact_written": false
+  },
+  "gpu_work": false,
+  "further_3b_statistics": false
+}

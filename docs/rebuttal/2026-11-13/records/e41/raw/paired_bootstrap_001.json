@@ -1,0 +1,167 @@
+{
+  "kind": "e41_a4_paired_sequence_bootstrap",
+  "created_utc": "2026-11-11T04:01:28.287159+00:00",
+  "source_commit": "2302ce7c1c9f24bd65ded7ec7736a930eeb59f6c",
+  "script": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e41/scripts/e41_paired_bootstrap.py",
+    "sha256": "373d22ac324bc81b05e445c779d8d83b4e11874595dd5e1d4b10b08f4f0368ca"
+  },
+  "command_line": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "scripts/e41_paired_bootstrap.py",
+    "--replicates",
+    "20000",
+    "--rng-seed",
+    "20261111"
+  ],
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "numpy": "2.4.6",
+  "master": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e41/results/e41/raw/mechanism_8b_seed0_job1733515.json",
+    "sha256": "8a9d1a29fb175695c347e37f362232fa5111298219b587b8e8026b6d13f2fae6"
+  },
+  "experiment_source_commit": "4ee367bcec43869e874787bd921e9db6c6e684b7",
+  "input_records": [
+    {
+      "name": "hadamard_asym",
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/results/e41/raw/mechanism_8b_seed0_job1733515_hadamard_asym.json",
+      "sha256": "2f5736775bb5f1208de756ac43f68826ccdfe5c958f13507b8969a1951aae7b0",
+      "bytes": 18036
+    },
+    {
+      "name": "pq_constant_asym",
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/results/e41/raw/mechanism_8b_seed0_job1733515_pq_constant_asym.json",
+      "sha256": "2e3c39cbb08a911a296b0df3b269859b5af793c6dc4ba64962d2629d5004fbec",
+      "bytes": 18026
+    },
+    {
+      "name": "pq_signed_asym",
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/results/e41/raw/mechanism_8b_seed0_job1733515_pq_signed_asym.json",
+      "sha256": "0772114b9e3676121ba7fd3894f3adda229c9a1f5ac1d06da5138f74ff07834e",
+      "bytes": 18027
+    },
+    {
+      "name": "hadamard_sym",
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/results/e41/raw/mechanism_8b_seed0_job1733515_hadamard_sym.json",
+      "sha256": "09b7dd5d0991569a17aff7fcae7e7bf21b3a1b75efc552a153e2da14bd1a6317",
+      "bytes": 18042
+    },
+    {
+      "name": "pq_constant_sym",
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/results/e41/raw/mechanism_8b_seed0_job1733515_pq_constant_sym.json",
+      "sha256": "7ec5d75185b0b766d5c45d7ad35a8afd4bf7c85e7d43a2d39cf3f0582e5f0764",
+      "bytes": 18035
+    },
+    {
+      "name": "pq_signed_sym",
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/results/e41/raw/mechanism_8b_seed0_job1733515_pq_signed_sym.json",
+      "sha256": "e229bd7fabb885d53d2ff8dad35ecab4d2f628f535c78d3dc24ac9048c8c8909",
+      "bytes": 18032
+    }
+  ],
+  "model": "Llama-3.1-8B",
+  "rotation_seed": 0,
+  "configuration": "W16(BF16)/A4 at qkv and down input only/KV16(BF16), g128",
+  "sequences": 141,
+  "scored_tokens_per_row": 288627,
+  "evaluation_tokens_sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021",
+  "row_order": [
+    "hadamard_asym",
+    "pq_constant_asym",
+    "pq_signed_asym",
+    "hadamard_sym",
+    "pq_constant_sym",
+    "pq_signed_sym"
+  ],
+  "reported_ppl": [
+    6.402455527297511,
+    6.333371267806577,
+    6.3611985859275455,
+    6.4886230876162365,
+    6.398832585633139,
+    6.401769981228978
+  ],
+  "recomputed_point_ppl": [
+    6.402455527297511,
+    6.333371267806577,
+    6.3611985859275455,
+    6.4886230876162365,
+    6.398832585633139,
+    6.401769981228978
+  ],
+  "maximum_point_recomputation_difference": 0.0,
+  "replicates": 20000,
+  "random_generator": "NumPy PCG64",
+  "bootstrap_rng_seed": 20261111,
+  "resampling_unit": "One of141 contiguous2048-token test sequences, sampled with replacement; the same141 indices are used for every row in a replicate",
+  "aggregation": "Token-weighted mean NLL for each resampled row -> exp -> PPL differences and ratio",
+  "interval_method": "Marginal two-sided95% percentile intervals; NumPy quantile linear interpolation; no multiplicity adjustment",
+  "interpretation": "Conditional test-sequence sampling uncertainty only, not seed/calibration uncertainty; neighboring contiguous sequences can be dependent",
+  "ratio_definition": "[PPL(PQ_signed_asym)-PPL(PQ_constant_asym)]/[PPL(Had_asym)-PPL(PQ_constant_asym)]",
+  "ratio_interpretation": "Requested operational offset fraction; not causal attribution and not constrained to[0,1]",
+  "quantities": {
+    "asym_signed_minus_constant": {
+      "point": 0.02782731812096806,
+      "percentile95": [
+        0.021464187252048038,
+        0.03418385623245166
+      ],
+      "finite_draws": 20000
+    },
+    "sym_signed_minus_constant": {
+      "point": 0.002937395595838943,
+      "percentile95": [
+        -0.0048995285420236675,
+        0.010871410942169856
+      ],
+      "finite_draws": 20000
+    },
+    "difference_of_contrasts": {
+      "point": 0.024889922525129116,
+      "percentile95": [
+        0.014540388769132662,
+        0.03516947880646523
+      ],
+      "finite_draws": 20000
+    },
+    "operational_offset_fraction": {
+      "point": 0.40280258232513816,
+      "percentile95": [
+        0.3159036006340168,
+        0.4948095195713981
+      ],
+      "finite_draws": 20000
+    }
+  },
+  "denominator_diagnostics": {
+    "denominator_definition": "PPL(Had_asym)-PPL(PQ_constant_asym)",
+    "point": 0.06908425949093377,
+    "percentile95": [
+      0.060785775006573714,
+      0.07748094676064148
+    ],
+    "minimum": 0.05234971763885987,
+    "maximum": 0.08556441425784733,
+    "minimum_absolute": 0.05234971763885987,
+    "nonpositive_draws": 0,
+    "exact_zero_draws": 0,
+    "percentile95_crosses_zero": false,
+    "absolute_near_zero_threshold": 0.001,
+    "absolute_near_zero_draws": 0,
+    "relative_near_zero_definition": "abs(denominator) <=5% of absolute point denominator",
+    "relative_near_zero_threshold": 0.003454212974546689,
+    "relative_near_zero_draws": 0,
+    "nonfinite_ratio_draws": 0,
+    "ratio_below_zero_draws": 0,
+    "ratio_above_one_draws": 0,
+    "policy": "Do not clip to[0,1], trim or discard near-zero/negative denominator draws. Nonfinite ratios make the interval unavailable; a denominator95% interval crossing zero or any near-zero draws flags ratio instability.",
+    "unstable": false
+  },
+  "raw_archive": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e41/results/e41/raw/paired_bootstrap_001.npz",
+    "sha256": "a831959f79565a6dc34f25b9d201770ed607667c22ba6e1756356675ad491926",
+    "bytes": 4768171,
+    "contains": "All paired sequence indices, all six PPL draws, four derived quantities and denominator; no filtering or clipping"
+  },
+  "paired_index_sha256": "abb9e9c4d4de090a17878fc192ef6ce464265ed5f18ee6ee622e1c14ab210397"
+}

@@ -1,0 +1,43 @@
+{
+  "observed_utc": "2026-11-10T14:03:10.972686+00:00",
+  "source_result": "results/e38/raw/direct_reference_3b_kmax_seed0_job1733511.json",
+  "job_id": 1733511,
+  "status": "RUNNING",
+  "scope": "Original E14 W4A4KV4 BF16 fake-quant simulator reference",
+  "ppl": {
+    "status": "PASS",
+    "sequences_expected": 141,
+    "sequence_length": 2048,
+    "numerical_execution_gate": false,
+    "current_chunk": null,
+    "completed_sequences": 141,
+    "value": 8.718024406077516,
+    "historical_reference_ppl": 8.71896824654021,
+    "ppl_difference": -0.0009438404626944674,
+    "relative_ppl_difference_percent": 0.010825139351424916,
+    "comparison_policy": "report only; no absolute or relative acceptance threshold"
+  },
+  "eight_tasks_status": "RUNNING",
+  "current_task": "arc_challenge",
+  "completed_tasks": [
+    {
+      "task": "arc_easy",
+      "status": "PASS",
+      "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_arc_easy.json",
+      "sha256": "f449b54c5cf94cbfbbb0458209c60809a9ccfa379a94e35fffa59b8952da6932",
+      "elapsed_seconds": 193.8579877326265,
+      "metric": "acc_norm,none",
+      "accuracy": 0.7154882154882155,
+      "samples": 2376
+    }
+  ],
+  "ppl_reporting_reference": {
+    "absolute_relative_difference_percent": 0.5,
+    "execution_gate": false
+  },
+  "scheduler": {
+    "returncode": 0,
+    "stdout": "             JOBID                           NAME      STATE       TIME   NODELIST(REASON)\n           1733510          e38-direct-integer-3b    PENDING       0:00         (Priority)\n           1733515            e41-mechanism-seed0    PENDING       0:00         (Priority)\n           1733513             e38-direct-fp16-8b    PENDING       0:00         (Priority)\n           1733512             e38-direct-fp16-3b    PENDING       0:00         (Priority)\n           1733511        e38-direct-reference-3b    RUNNING       7:42          gpu-a40-2\n",
+    "stderr": ""
+  }
+}

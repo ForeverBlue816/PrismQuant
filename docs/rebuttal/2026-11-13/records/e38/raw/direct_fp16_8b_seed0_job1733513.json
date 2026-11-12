@@ -1,0 +1,1971 @@
+{
+  "kind": "e38_direct_fp16_ppl_and_eight_tasks",
+  "status": "COMPLETE",
+  "seed": 0,
+  "model": "llama31_8b",
+  "source_commit": "35e76a6307602c17d0a801dcb7a4c73abd7273fb",
+  "command_line": [
+    "/projects/nar/nar-validation/e28-env/bin/python",
+    "-m",
+    "e38.direct_eight_tasks",
+    "--model",
+    "8b",
+    "--seed",
+    "0",
+    "--batch-size",
+    "2",
+    "--source-commit",
+    "35e76a6307602c17d0a801dcb7a4c73abd7273fb",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_8b_seed0_job1733513.json"
+  ],
+  "started_utc": "2026-11-10T14:39:56.362078+00:00",
+  "hostname": "gpu-a40-1.cluster02.eee.ntu.edu.sg",
+  "pid": 2255639,
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "scope": "Real FP16 E28 backend; direct measurements, no reference or equivalence gate",
+  "user_execution_policy": "Prioritize results without numerical acceptance thresholds; retain failures and attempt remaining measurements",
+  "timing": {
+    "status": "not run",
+    "reason": "accuracy-only job"
+  },
+  "source_observation": {
+    "quarot-llama3/e38/direct_eight_tasks.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/direct_eight_tasks.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/direct_eight_tasks.py",
+      "bytes": 16377,
+      "sha256": "2dc8c4ccb35ca34a88e6dde63873a15358ebb644d85f6b31fd23b7cc6510d7d9"
+    },
+    "quarot-llama3/e38/eight_tasks.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/eight_tasks.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/eight_tasks.py",
+      "bytes": 23977,
+      "sha256": "21e2eccb875773541b7e4010f5f924ee21d55b6de815334187a5925bd5f83e04"
+    },
+    "quarot-llama3/e38/fp16.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/fp16.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/fp16.py",
+      "bytes": 25530,
+      "sha256": "5ce9ae1f7dd00910cd08b1c68bc4a95970b295ba4a92fd426ad5fcb4925af367"
+    },
+    "quarot-llama3/modeling_llama3.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/modeling_llama3.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/modeling_llama3.py",
+      "bytes": 15551,
+      "sha256": "ec8f03779820a4a749a97a8e84b337a31f880c40e4145a0a0099ae3ca9299582"
+    },
+    "quarot-llama3/e28_v2/checkpoint.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/checkpoint.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/checkpoint.py",
+      "bytes": 2041,
+      "sha256": "ea3704f3e5f2584e41f359f8ca4cbffa5f845b6b6e5d816237ae58c68813ebbc"
+    },
+    "quarot-llama3/e28_v2/common.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/common.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/common.py",
+      "bytes": 8467,
+      "sha256": "8be1e3f426acb796bfb15d51164a1f545c346ce9b024fb0e8dc879159449c5e8"
+    },
+    "quarot-llama3/e28_v2/cache_adapter.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/cache_adapter.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/cache_adapter.py",
+      "bytes": 2628,
+      "sha256": "91b8fa46bfa453d553190ccc526257717650002607b016ef917a1d383d5f3bfe"
+    },
+    "head": "03f484738ebf0a7874a07b1ca795e5604f866eac",
+    "working_tree": "M runs/commands.jsonl\n?? results/e38/raw/direct_fp16_3b_seed0_job1733512.json\n?? results/e38/raw/direct_fp16_3b_seed0_job1733512_arc_challenge.json\n?? results/e38/raw/direct_fp16_3b_seed0_job1733512_arc_easy.json\n?? results/e38/raw/direct_fp16_3b_seed0_job1733512_boolq.json\n?? results/e38/raw/direct_fp16_3b_seed0_job1733512_hellaswag.json\n?? results/e38/raw/direct_fp16_3b_seed0_job1733512_openbookqa.json\n?? results/e38/raw/direct_fp16_3b_seed0_job1733512_piqa.json\n?? results/e38/raw/direct_fp16_3b_seed0_job1733512_social_iqa.json\n?? results/e38/raw/direct_fp16_3b_seed0_job1733512_winogrande.json\n?? results/e38/raw/direct_fp16_8b_seed0_job1733513.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_arc_challenge.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_arc_easy.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_boolq.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_hellaswag.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_openbookqa.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_piqa.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_social_iqa.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_winogrande.json"
+  },
+  "slurm": {
+    "SLURM_JOB_ID": "1733513",
+    "SLURM_JOB_NODELIST": "gpu-a40-1",
+    "CUDA_VISIBLE_DEVICES": "0"
+  },
+  "dataset_metadata_compat": {
+    "scope": "in-process read compatibility only; cached files unchanged",
+    "change": "List[Value] feature metadata decoded as equivalent Sequence[Value]",
+    "rejected": "List[struct] and other List feature types",
+    "datasets_version": "2.17.1"
+  },
+  "libraries": {
+    "torch": "2.4.1+cu124",
+    "transformers": "4.36.2",
+    "datasets": "2.17.1",
+    "numpy": "1.26.4",
+    "lm_eval": "0.4.14.dev0",
+    "accelerate": "0.27.2",
+    "tokenizers": "0.23.1",
+    "huggingface-hub": "0.23.5",
+    "triton": "3.0.0",
+    "flash-attn": "2.6.3"
+  },
+  "tokenizer_runtime": {
+    "runtime_version": "0.23.1",
+    "module_path": "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/__init__.py",
+    "installed_metadata_version": "0.15.2",
+    "compatibility": "original E14 native library selected in-process; no environment files changed"
+  },
+  "gpu_model": "NVIDIA A40",
+  "visible_cuda_devices": 1,
+  "cuda_runtime": "12.4",
+  "gpu_inventory": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA A40, GPU-c1b342e4-5344-54bb-f0c9-08766f54d18b, 595.71.05, 49140 MiB",
+  "checkpoint": {
+    "snapshot": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+    "revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+    "dtype": "released BF16 values cast to FP16",
+    "files": [
+      {
+        "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00001-of-00004.safetensors",
+        "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/f8b9704ab09cdeb097aa4a0a24bca96f906eec36bad63ab495bc21475058601b",
+        "bytes": 4976698672
+      },
+      {
+        "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00002-of-00004.safetensors",
+        "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/c28b25e7541751056ee126627e007f8d4288319733285e9f7b17b9ff6eb313f0",
+        "bytes": 4999802720
+      },
+      {
+        "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00003-of-00004.safetensors",
+        "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/d8e9504dd4e4a146d484c52a97584ec14dac92237c46b064934af67a85e7d383",
+        "bytes": 4915916176
+      },
+      {
+        "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00004-of-00004.safetensors",
+        "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/e4486f35c040f683f7d790354f66c169c109eb9fa0954a4a35d7c458a108405d",
+        "bytes": 1168138808
+      }
+    ],
+    "config": {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/2a9e131b00e3cdf49fb230a17400519d4e098414",
+      "bytes": 947,
+      "sha256": "0ea2186ccf686654fea498aae830b9de201334432b24b07f031d80b76dd928f0"
+    },
+    "note": "asset identities recorded; no multi-GB rehash/preflight"
+  },
+  "tokenizer_files": [
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/tokenizer.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+      "bytes": 17209920,
+      "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/tokenizer_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/193429ed119d6246336a149bc56bb217f2adff3e",
+      "bytes": 50642,
+      "sha256": "590b9837d3c2a8790e2aaf920f4c69f9181c3ca8fe52e6579ad3a3f654e59a9b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/special_tokens_map.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/68b10c7f0a479eae0c358eac6a14959b3f9acdf1",
+      "bytes": 459,
+      "sha256": "32f404d626cf7b1b6eea36c241ae7cbd6ec29c777a8701ea48c0fe9ebb94c9b1"
+    }
+  ],
+  "backend_load": {
+    "snapshot": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+    "files": [
+      "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00001-of-00004.safetensors",
+      "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00002-of-00004.safetensors",
+      "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00003-of-00004.safetensors",
+      "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00004-of-00004.safetensors"
+    ],
+    "loaded_tensor_count": 291,
+    "dtype": "original BF16 checkpoint converted to FP16 for this backend",
+    "native_integer_support": false
+  },
+  "ppl": {
+    "status": "COMPLETE",
+    "chunks": [
+      {
+        "chunk": 0,
+        "status": "COMPLETE",
+        "nll": 1.5421912785442968,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 1.2201566589064896
+      },
+      {
+        "chunk": 1,
+        "status": "COMPLETE",
+        "nll": 2.1866062091627994,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4109800299629569
+      },
+      {
+        "chunk": 2,
+        "status": "COMPLETE",
+        "nll": 2.274771000387381,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4120658980682492
+      },
+      {
+        "chunk": 3,
+        "status": "COMPLETE",
+        "nll": 1.8299315675736405,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4126678518950939
+      },
+      {
+        "chunk": 4,
+        "status": "COMPLETE",
+        "nll": 1.7136914244382977,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4128327202051878
+      },
+      {
+        "chunk": 5,
+        "status": "COMPLETE",
+        "nll": 1.3008594410443923,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4144714013673365
+      },
+      {
+        "chunk": 6,
+        "status": "COMPLETE",
+        "nll": 1.3157898940630057,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4133698330260813
+      },
+      {
+        "chunk": 7,
+        "status": "COMPLETE",
+        "nll": 1.687975079825755,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41361513873562217
+      },
+      {
+        "chunk": 8,
+        "status": "COMPLETE",
+        "nll": 2.0262467198448757,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.414016280323267
+      },
+      {
+        "chunk": 9,
+        "status": "COMPLETE",
+        "nll": 1.8312225714507893,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4143622787669301
+      },
+      {
+        "chunk": 10,
+        "status": "COMPLETE",
+        "nll": 1.7277589098208697,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4143422809429467
+      },
+      {
+        "chunk": 11,
+        "status": "COMPLETE",
+        "nll": 2.054577572612455,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4144783290103078
+      },
+      {
+        "chunk": 12,
+        "status": "COMPLETE",
+        "nll": 1.9627881443785875,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41424803994596004
+      },
+      {
+        "chunk": 13,
+        "status": "COMPLETE",
+        "nll": 2.0583121817346077,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4139145417138934
+      },
+      {
+        "chunk": 14,
+        "status": "COMPLETE",
+        "nll": 1.9706116691704896,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41128251096233726
+      },
+      {
+        "chunk": 15,
+        "status": "COMPLETE",
+        "nll": 2.216620657230856,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41061179898679256
+      },
+      {
+        "chunk": 16,
+        "status": "COMPLETE",
+        "nll": 1.9204230445969903,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4118569721467793
+      },
+      {
+        "chunk": 17,
+        "status": "COMPLETE",
+        "nll": 1.9147715454399732,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41197390109300613
+      },
+      {
+        "chunk": 18,
+        "status": "COMPLETE",
+        "nll": 1.524325025564994,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41134761087596416
+      },
+      {
+        "chunk": 19,
+        "status": "COMPLETE",
+        "nll": 1.8466360803109352,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4116656109690666
+      },
+      {
+        "chunk": 20,
+        "status": "COMPLETE",
+        "nll": 1.9726838380695262,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41232395404949784
+      },
+      {
+        "chunk": 21,
+        "status": "COMPLETE",
+        "nll": 1.9369482087925929,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4119409960694611
+      },
+      {
+        "chunk": 22,
+        "status": "COMPLETE",
+        "nll": 1.931031816461113,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4123841277323663
+      },
+      {
+        "chunk": 23,
+        "status": "COMPLETE",
+        "nll": 1.9978922968325408,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41187012335285544
+      },
+      {
+        "chunk": 24,
+        "status": "COMPLETE",
+        "nll": 2.036571925712552,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41166864801198244
+      },
+      {
+        "chunk": 25,
+        "status": "COMPLETE",
+        "nll": 2.1715733873360787,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41210246505215764
+      },
+      {
+        "chunk": 26,
+        "status": "COMPLETE",
+        "nll": 2.2290743337238945,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4123176820576191
+      },
+      {
+        "chunk": 27,
+        "status": "COMPLETE",
+        "nll": 2.066413361326217,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41257054079324007
+      },
+      {
+        "chunk": 28,
+        "status": "COMPLETE",
+        "nll": 1.7801156242009075,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41186976386234164
+      },
+      {
+        "chunk": 29,
+        "status": "COMPLETE",
+        "nll": 1.6008828241882176,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4119478492066264
+      },
+      {
+        "chunk": 30,
+        "status": "COMPLETE",
+        "nll": 1.4158001383980368,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41211368469521403
+      },
+      {
+        "chunk": 31,
+        "status": "COMPLETE",
+        "nll": 1.4553547734799592,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41248458810150623
+      },
+      {
+        "chunk": 32,
+        "status": "COMPLETE",
+        "nll": 1.816519889589281,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41251956718042493
+      },
+      {
+        "chunk": 33,
+        "status": "COMPLETE",
+        "nll": 1.7901748709406105,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4124689348973334
+      },
+      {
+        "chunk": 34,
+        "status": "COMPLETE",
+        "nll": 1.9432947804535314,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41232250491157174
+      },
+      {
+        "chunk": 35,
+        "status": "COMPLETE",
+        "nll": 1.289831797903086,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4122645687311888
+      },
+      {
+        "chunk": 36,
+        "status": "COMPLETE",
+        "nll": 1.3002462196070563,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4123773882165551
+      },
+      {
+        "chunk": 37,
+        "status": "COMPLETE",
+        "nll": 1.3043196975864546,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41270601097494364
+      },
+      {
+        "chunk": 38,
+        "status": "COMPLETE",
+        "nll": 1.28447937324796,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41600434575229883
+      },
+      {
+        "chunk": 39,
+        "status": "COMPLETE",
+        "nll": 1.4992403888562627,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41451202565804124
+      },
+      {
+        "chunk": 40,
+        "status": "COMPLETE",
+        "nll": 2.0337171605813196,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41398104932159185
+      },
+      {
+        "chunk": 41,
+        "status": "COMPLETE",
+        "nll": 2.5182470816429148,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41366905719041824
+      },
+      {
+        "chunk": 42,
+        "status": "COMPLETE",
+        "nll": 2.524833429482837,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41314931120723486
+      },
+      {
+        "chunk": 43,
+        "status": "COMPLETE",
+        "nll": 2.019508805342517,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4138075397349894
+      },
+      {
+        "chunk": 44,
+        "status": "COMPLETE",
+        "nll": 2.0568851756071194,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41310469899326563
+      },
+      {
+        "chunk": 45,
+        "status": "COMPLETE",
+        "nll": 2.0935714490598856,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41346648894250393
+      },
+      {
+        "chunk": 46,
+        "status": "COMPLETE",
+        "nll": 2.1717331089155816,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41320369904860854
+      },
+      {
+        "chunk": 47,
+        "status": "COMPLETE",
+        "nll": 2.0240793307350504,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41399700101464987
+      },
+      {
+        "chunk": 48,
+        "status": "COMPLETE",
+        "nll": 1.8145366271763939,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41429242212325335
+      },
+      {
+        "chunk": 49,
+        "status": "COMPLETE",
+        "nll": 1.835700876956226,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41534447809681296
+      },
+      {
+        "chunk": 50,
+        "status": "COMPLETE",
+        "nll": 1.5325047204595807,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.414306762162596
+      },
+      {
+        "chunk": 51,
+        "status": "COMPLETE",
+        "nll": 1.6706908896427126,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4144521779380739
+      },
+      {
+        "chunk": 52,
+        "status": "COMPLETE",
+        "nll": 1.4971828488646686,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41473774425685406
+      },
+      {
+        "chunk": 53,
+        "status": "COMPLETE",
+        "nll": 1.6974508474673302,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41426263097673655
+      },
+      {
+        "chunk": 54,
+        "status": "COMPLETE",
+        "nll": 1.4335233896140884,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4141239207237959
+      },
+      {
+        "chunk": 55,
+        "status": "COMPLETE",
+        "nll": 1.4048812262419088,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4138740533962846
+      },
+      {
+        "chunk": 56,
+        "status": "COMPLETE",
+        "nll": 1.4362492824567488,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4144701040349901
+      },
+      {
+        "chunk": 57,
+        "status": "COMPLETE",
+        "nll": 1.6492666329298593,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41419447120279074
+      },
+      {
+        "chunk": 58,
+        "status": "COMPLETE",
+        "nll": 1.9313045887464888,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4147639269940555
+      },
+      {
+        "chunk": 59,
+        "status": "COMPLETE",
+        "nll": 2.1408397337257075,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4145253421738744
+      },
+      {
+        "chunk": 60,
+        "status": "COMPLETE",
+        "nll": 2.1677744557465,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41466988483443856
+      },
+      {
+        "chunk": 61,
+        "status": "COMPLETE",
+        "nll": 2.2763283733746222,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.413130478002131
+      },
+      {
+        "chunk": 62,
+        "status": "COMPLETE",
+        "nll": 1.272324819709245,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.414847691077739
+      },
+      {
+        "chunk": 63,
+        "status": "COMPLETE",
+        "nll": 1.7203087296553454,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4155897628515959
+      },
+      {
+        "chunk": 64,
+        "status": "COMPLETE",
+        "nll": 1.6893373684121389,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41480050701647997
+      },
+      {
+        "chunk": 65,
+        "status": "COMPLETE",
+        "nll": 1.467771812479963,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4146703411825001
+      },
+      {
+        "chunk": 66,
+        "status": "COMPLETE",
+        "nll": 1.668262625183195,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41480140713974833
+      },
+      {
+        "chunk": 67,
+        "status": "COMPLETE",
+        "nll": 1.6186202496042703,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41483727702870965
+      },
+      {
+        "chunk": 68,
+        "status": "COMPLETE",
+        "nll": 1.5620561309948628,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41496588569134474
+      },
+      {
+        "chunk": 69,
+        "status": "COMPLETE",
+        "nll": 1.8660534000070605,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4147723908536136
+      },
+      {
+        "chunk": 70,
+        "status": "COMPLETE",
+        "nll": 2.0807385391063904,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4156376728788018
+      },
+      {
+        "chunk": 71,
+        "status": "COMPLETE",
+        "nll": 1.9975285159708758,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4151011952199042
+      },
+      {
+        "chunk": 72,
+        "status": "COMPLETE",
+        "nll": 1.6985501138885601,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41534270299598575
+      },
+      {
+        "chunk": 73,
+        "status": "COMPLETE",
+        "nll": 1.947358802754412,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41525124898180366
+      },
+      {
+        "chunk": 74,
+        "status": "COMPLETE",
+        "nll": 1.837662175508843,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4157755319029093
+      },
+      {
+        "chunk": 75,
+        "status": "COMPLETE",
+        "nll": 1.7499620878352848,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4149569063447416
+      },
+      {
+        "chunk": 76,
+        "status": "COMPLETE",
+        "nll": 1.935514180789532,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41536257695406675
+      },
+      {
+        "chunk": 77,
+        "status": "COMPLETE",
+        "nll": 1.9868703748053553,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41539142187684774
+      },
+      {
+        "chunk": 78,
+        "status": "COMPLETE",
+        "nll": 2.138539562588735,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41552698193117976
+      },
+      {
+        "chunk": 79,
+        "status": "COMPLETE",
+        "nll": 1.6288526392472216,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4152873861603439
+      },
+      {
+        "chunk": 80,
+        "status": "COMPLETE",
+        "nll": 1.7490908646502026,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4150708871893585
+      },
+      {
+        "chunk": 81,
+        "status": "COMPLETE",
+        "nll": 1.752543372530208,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4157367260195315
+      },
+      {
+        "chunk": 82,
+        "status": "COMPLETE",
+        "nll": 1.669317926612783,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4158542547374964
+      },
+      {
+        "chunk": 83,
+        "status": "COMPLETE",
+        "nll": 1.6616381340977269,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41574908001348376
+      },
+      {
+        "chunk": 84,
+        "status": "COMPLETE",
+        "nll": 1.6426337856633755,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41596993431448936
+      },
+      {
+        "chunk": 85,
+        "status": "COMPLETE",
+        "nll": 1.970431359034372,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4155295407399535
+      },
+      {
+        "chunk": 86,
+        "status": "COMPLETE",
+        "nll": 1.959977239879912,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.415484800003469
+      },
+      {
+        "chunk": 87,
+        "status": "COMPLETE",
+        "nll": 1.8781789007219503,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41582549177110195
+      },
+      {
+        "chunk": 88,
+        "status": "COMPLETE",
+        "nll": 2.617139412824503,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41610248712822795
+      },
+      {
+        "chunk": 89,
+        "status": "COMPLETE",
+        "nll": 2.534874331386251,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.416013453155756
+      },
+      {
+        "chunk": 90,
+        "status": "COMPLETE",
+        "nll": 2.165042841789719,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4157753540202975
+      },
+      {
+        "chunk": 91,
+        "status": "COMPLETE",
+        "nll": 2.338115295201438,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4160004020668566
+      },
+      {
+        "chunk": 92,
+        "status": "COMPLETE",
+        "nll": 2.3501574689141123,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41575078992173076
+      },
+      {
+        "chunk": 93,
+        "status": "COMPLETE",
+        "nll": 1.9770982273625466,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41611694311723113
+      },
+      {
+        "chunk": 94,
+        "status": "COMPLETE",
+        "nll": 2.235022056143518,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.415752655826509
+      },
+      {
+        "chunk": 95,
+        "status": "COMPLETE",
+        "nll": 1.926973463094811,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4164951299317181
+      },
+      {
+        "chunk": 96,
+        "status": "COMPLETE",
+        "nll": 2.0310815644369047,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41551787313073874
+      },
+      {
+        "chunk": 97,
+        "status": "COMPLETE",
+        "nll": 1.2264880113736791,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41618067817762494
+      },
+      {
+        "chunk": 98,
+        "status": "COMPLETE",
+        "nll": 1.8373055283360558,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4158121640793979
+      },
+      {
+        "chunk": 99,
+        "status": "COMPLETE",
+        "nll": 1.9664594895326049,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4159805807285011
+      },
+      {
+        "chunk": 100,
+        "status": "COMPLETE",
+        "nll": 1.6334801596085735,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4159210752695799
+      },
+      {
+        "chunk": 101,
+        "status": "COMPLETE",
+        "nll": 1.7705408048792821,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4159740526229143
+      },
+      {
+        "chunk": 102,
+        "status": "COMPLETE",
+        "nll": 1.5349139915656391,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41590498527511954
+      },
+      {
+        "chunk": 103,
+        "status": "COMPLETE",
+        "nll": 2.031918964097135,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41587110608816147
+      },
+      {
+        "chunk": 104,
+        "status": "COMPLETE",
+        "nll": 1.5578298731786657,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41559938294813037
+      },
+      {
+        "chunk": 105,
+        "status": "COMPLETE",
+        "nll": 1.6719575927615107,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41599699202924967
+      },
+      {
+        "chunk": 106,
+        "status": "COMPLETE",
+        "nll": 1.546775482431178,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4157033069059253
+      },
+      {
+        "chunk": 107,
+        "status": "COMPLETE",
+        "nll": 1.541461707908582,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4158347509801388
+      },
+      {
+        "chunk": 108,
+        "status": "COMPLETE",
+        "nll": 1.4866393796979478,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4157940512523055
+      },
+      {
+        "chunk": 109,
+        "status": "COMPLETE",
+        "nll": 1.5285167200249699,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4157168688252568
+      },
+      {
+        "chunk": 110,
+        "status": "COMPLETE",
+        "nll": 2.084421356305531,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4159803809598088
+      },
+      {
+        "chunk": 111,
+        "status": "COMPLETE",
+        "nll": 1.7886870309208216,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.416597040835768
+      },
+      {
+        "chunk": 112,
+        "status": "COMPLETE",
+        "nll": 1.952757119317141,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4164937608875334
+      },
+      {
+        "chunk": 113,
+        "status": "COMPLETE",
+        "nll": 1.9248026972231658,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4166045179590583
+      },
+      {
+        "chunk": 114,
+        "status": "COMPLETE",
+        "nll": 1.77244509728175,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.417204175144434
+      },
+      {
+        "chunk": 115,
+        "status": "COMPLETE",
+        "nll": 1.6728098635913455,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41678498266264796
+      },
+      {
+        "chunk": 116,
+        "status": "COMPLETE",
+        "nll": 2.0900624344624945,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4161473512649536
+      },
+      {
+        "chunk": 117,
+        "status": "COMPLETE",
+        "nll": 1.7970810271963353,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4167905868962407
+      },
+      {
+        "chunk": 118,
+        "status": "COMPLETE",
+        "nll": 1.6843636516949347,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4165873392485082
+      },
+      {
+        "chunk": 119,
+        "status": "COMPLETE",
+        "nll": 1.6126353194437553,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4165165168233216
+      },
+      {
+        "chunk": 120,
+        "status": "COMPLETE",
+        "nll": 1.785838449065372,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41633481765165925
+      },
+      {
+        "chunk": 121,
+        "status": "COMPLETE",
+        "nll": 1.875152759337693,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4165649199858308
+      },
+      {
+        "chunk": 122,
+        "status": "COMPLETE",
+        "nll": 1.8178709819366947,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4165774420835078
+      },
+      {
+        "chunk": 123,
+        "status": "COMPLETE",
+        "nll": 1.851065094784288,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4166227960959077
+      },
+      {
+        "chunk": 124,
+        "status": "COMPLETE",
+        "nll": 1.6595374826227216,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41631767293438315
+      },
+      {
+        "chunk": 125,
+        "status": "COMPLETE",
+        "nll": 1.8585449874721391,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41627546306699514
+      },
+      {
+        "chunk": 126,
+        "status": "COMPLETE",
+        "nll": 1.8098497488583714,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4165083570405841
+      },
+      {
+        "chunk": 127,
+        "status": "COMPLETE",
+        "nll": 1.6611679516947437,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41672625904902816
+      },
+      {
+        "chunk": 128,
+        "status": "COMPLETE",
+        "nll": 1.8393855912544463,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4166319011710584
+      },
+      {
+        "chunk": 129,
+        "status": "COMPLETE",
+        "nll": 1.8820398700604162,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4165261257439852
+      },
+      {
+        "chunk": 130,
+        "status": "COMPLETE",
+        "nll": 1.9481952035491152,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41705162497237325
+      },
+      {
+        "chunk": 131,
+        "status": "COMPLETE",
+        "nll": 1.9125821887427676,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41685478622093797
+      },
+      {
+        "chunk": 132,
+        "status": "COMPLETE",
+        "nll": 1.457800294459594,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41661963192746043
+      },
+      {
+        "chunk": 133,
+        "status": "COMPLETE",
+        "nll": 1.2511875560706456,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4169587390497327
+      },
+      {
+        "chunk": 134,
+        "status": "COMPLETE",
+        "nll": 2.184293939826194,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41702908696606755
+      },
+      {
+        "chunk": 135,
+        "status": "COMPLETE",
+        "nll": 2.294530707332758,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41766288690268993
+      },
+      {
+        "chunk": 136,
+        "status": "COMPLETE",
+        "nll": 1.9074759797812324,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41767942998558283
+      },
+      {
+        "chunk": 137,
+        "status": "COMPLETE",
+        "nll": 1.6172281180467032,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4170554713346064
+      },
+      {
+        "chunk": 138,
+        "status": "COMPLETE",
+        "nll": 1.8536934454265197,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4166719210334122
+      },
+      {
+        "chunk": 139,
+        "status": "COMPLETE",
+        "nll": 1.9328343922997546,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.41677407175302505
+      },
+      {
+        "chunk": 140,
+        "status": "COMPLETE",
+        "nll": 2.0331547731996804,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.4179027839563787
+      }
+    ],
+    "requested_sequences": 141,
+    "requested_sequence_length": 2048,
+    "reference_model": "not loaded",
+    "numerical_thresholds": "none",
+    "token_file": {
+      "path": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+      "bytes": 2312087,
+      "sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021"
+    },
+    "loss": "FP32 cross entropy summed in blocks of128 positions; host FP64 aggregation",
+    "loaded_shape": [
+      141,
+      2048
+    ],
+    "attempted_sequences": 141,
+    "completed_sequences": 141,
+    "failed_sequences": 0,
+    "value": 6.238432455537358,
+    "finished_utc": "2026-11-10T14:42:34.023443+00:00"
+  },
+  "eight_tasks": {
+    "status": "COMPLETE",
+    "tasks": [
+      {
+        "task": "arc_easy",
+        "metric": "acc_norm,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "arc_easy",
+            "dataset_path": "allenai/ai2_arc",
+            "dataset_name": "ARC-Easy",
+            "training_split": "train",
+            "validation_split": "validation",
+            "test_split": "test",
+            "doc_to_text": "Question: {{question}}\nAnswer:",
+            "doc_to_target": "{{choices.label.index(answerKey)}}",
+            "unsafe_code": false,
+            "doc_to_choice": "{{choices.text}}",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "Question: {{question}}\nAnswer:",
+              "doc_to_choice": "{{choices.text}}",
+              "doc_to_target": "{{choices.label.index(answerKey)}}",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              },
+              {
+                "metric": "acc_norm",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/arc/arc_easy.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 2251,
+              "fingerprint": "3f0efa3624a04562",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-train.arrow",
+                  "bytes": 621640
+                }
+              ]
+            },
+            "test": {
+              "rows": 2376,
+              "fingerprint": "b019ca21ba59e1f3",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-test.arrow",
+                  "bytes": 660168
+                }
+              ]
+            },
+            "validation": {
+              "rows": 570,
+              "fingerprint": "85bbde565a00cd05",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-validation.arrow",
+                  "bytes": 158848
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 2376,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_8b_seed0_job1733513_arc_easy.json",
+        "sha256": "5d2719852187b916ea8d412a4d9b33e7373a74578c1186cf286431da7a66c41b",
+        "samples": 2376,
+        "expected_samples": 2376,
+        "accuracy": 0.8257575757575758,
+        "elapsed_seconds": 152.82134654792026
+      },
+      {
+        "task": "arc_challenge",
+        "metric": "acc_norm,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "arc_challenge",
+            "dataset_path": "allenai/ai2_arc",
+            "dataset_name": "ARC-Challenge",
+            "training_split": "train",
+            "validation_split": "validation",
+            "test_split": "test",
+            "doc_to_text": "Question: {{question}}\nAnswer:",
+            "doc_to_target": "{{choices.label.index(answerKey)}}",
+            "unsafe_code": false,
+            "doc_to_choice": "{{choices.text}}",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "Question: {{question}}\nAnswer:",
+              "doc_to_choice": "{{choices.text}}",
+              "doc_to_target": "{{choices.label.index(answerKey)}}",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              },
+              {
+                "metric": "acc_norm",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/arc/arc_challenge.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 1119,
+              "fingerprint": "4cad81c53cd88966",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-train.arrow",
+                  "bytes": 351808
+                }
+              ]
+            },
+            "test": {
+              "rows": 1172,
+              "fingerprint": "a4361c3f3e560fcd",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-test.arrow",
+                  "bytes": 377568
+                }
+              ]
+            },
+            "validation": {
+              "rows": 299,
+              "fingerprint": "7ad52fe9b4847f33",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-validation.arrow",
+                  "bytes": 98104
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 1172,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_8b_seed0_job1733513_arc_challenge.json",
+        "sha256": "4df35df2628383f9696723e89435bdda50bc163b3100745eebec6b97aed85b78",
+        "samples": 1172,
+        "expected_samples": 1172,
+        "accuracy": 0.5494880546075085,
+        "elapsed_seconds": 84.50993277924135
+      },
+      {
+        "task": "boolq",
+        "metric": "acc,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "boolq",
+            "dataset_path": "aps/super_glue",
+            "dataset_name": "boolq",
+            "training_split": "train",
+            "validation_split": "validation",
+            "doc_to_text": "{{passage}}\nQuestion: {{question}}?\nAnswer:",
+            "doc_to_target": "label",
+            "unsafe_code": false,
+            "doc_to_choice": [
+              "no",
+              "yes"
+            ],
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "{{passage}}\nQuestion: {{question}}?\nAnswer:",
+              "doc_to_choice": [
+                "no",
+                "yes"
+              ],
+              "doc_to_target": "label",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc"
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "passage",
+            "metadata": {
+              "version": 2.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/super_glue/boolq/default.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 9427,
+              "fingerprint": "b185bde8d81835b3",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-train.arrow",
+                  "bytes": 6177312
+                }
+              ]
+            },
+            "validation": {
+              "rows": 3270,
+              "fingerprint": "3465575e190d308f",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-validation.arrow",
+                  "bytes": 2118400
+                }
+              ]
+            },
+            "test": {
+              "rows": 3245,
+              "fingerprint": "395e21f9d993dfe0",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-test.arrow",
+                  "bytes": 2107904
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 3270,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_8b_seed0_job1733513_boolq.json",
+        "sha256": "47d1ee91aca8ad73e601092d3d29296369eda756aa72d5000f6b3b958684a3d0",
+        "samples": 3270,
+        "expected_samples": 3270,
+        "accuracy": 0.8305810397553517,
+        "elapsed_seconds": 124.2898675990291
+      },
+      {
+        "task": "hellaswag",
+        "metric": "acc_norm,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "hellaswag",
+            "dataset_path": "Rowan/hellaswag",
+            "training_split": "train",
+            "validation_split": "validation",
+            "process_docs": "def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:\n    def _process_doc(doc):\n        ctx = doc[\"ctx_a\"] + \" \" + doc[\"ctx_b\"].capitalize()\n        out_doc = {\n            \"query\": preprocess(doc[\"activity_label\"] + \": \" + ctx),\n            \"choices\": [preprocess(ending) for ending in doc[\"endings\"]],\n            \"gold\": int(doc[\"label\"]),\n        }\n        return out_doc\n\n    return dataset.map(_process_doc)\n",
+            "doc_to_text": "{{query}}",
+            "doc_to_target": "{{label}}",
+            "unsafe_code": false,
+            "doc_to_choice": "choices",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": "<function process_docs at 0x785f76167100>",
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "{{query}}",
+              "doc_to_choice": "choices",
+              "doc_to_target": "{{label}}",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              },
+              {
+                "metric": "acc_norm",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": false,
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/hellaswag/hellaswag.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 39905,
+              "fingerprint": "5c5bea5996a5827b",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-train.arrow",
+                  "bytes": 43268336
+                }
+              ]
+            },
+            "test": {
+              "rows": 10003,
+              "fingerprint": "ade68387409a89dc",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-test.arrow",
+                  "bytes": 10802528
+                }
+              ]
+            },
+            "validation": {
+              "rows": 10042,
+              "fingerprint": "71a62ba9d49be089",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-validation.arrow",
+                  "bytes": 11186424
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 10042,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_8b_seed0_job1733513_hellaswag.json",
+        "sha256": "d27c9881fa0b0f0046b605756d125b1ed0027a07fa1a52a55d599c542d777c8a",
+        "samples": 10042,
+        "expected_samples": 10042,
+        "accuracy": 0.7929695279824737,
+        "elapsed_seconds": 1008.4210176952183
+      },
+      {
+        "task": "openbookqa",
+        "metric": "acc_norm,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "openbookqa",
+            "dataset_path": "allenai/openbookqa",
+            "dataset_name": "main",
+            "training_split": "train",
+            "validation_split": "validation",
+            "test_split": "test",
+            "doc_to_text": "question_stem",
+            "doc_to_target": "{{choices.label.index(answerKey.lstrip())}}",
+            "unsafe_code": false,
+            "doc_to_choice": "{{choices.text}}",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "question_stem",
+              "doc_to_choice": "{{choices.text}}",
+              "doc_to_target": "{{choices.label.index(answerKey.lstrip())}}",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              },
+              {
+                "metric": "acc_norm",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "question_stem",
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/openbookqa/openbookqa.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 4957,
+              "fingerprint": "c8c4e9bb369b94e0",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-train.arrow",
+                  "bytes": 899280
+                }
+              ]
+            },
+            "validation": {
+              "rows": 500,
+              "fingerprint": "4809c50e92d6f852",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-validation.arrow",
+                  "bytes": 96896
+                }
+              ]
+            },
+            "test": {
+              "rows": 500,
+              "fingerprint": "6ab147ba0552ca72",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-test.arrow",
+                  "bytes": 93216
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 500,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_8b_seed0_job1733513_openbookqa.json",
+        "sha256": "e904a5f0dd1ccafe7d7bd48cdd0254203be8b2528a134b4dbe7ac86ce3b9e196",
+        "samples": 500,
+        "expected_samples": 500,
+        "accuracy": 0.454,
+        "elapsed_seconds": 27.843861562665552
+      },
+      {
+        "task": "piqa",
+        "metric": "acc_norm,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "piqa",
+            "dataset_path": "baber/piqa",
+            "training_split": "train",
+            "validation_split": "validation",
+            "doc_to_text": "Question: {{goal}}\nAnswer:",
+            "doc_to_target": "label",
+            "unsafe_code": false,
+            "doc_to_choice": "{{[sol1, sol2]}}",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "Question: {{goal}}\nAnswer:",
+              "doc_to_choice": "{{[sol1, sol2]}}",
+              "doc_to_target": "label",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              },
+              {
+                "metric": "acc_norm",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "goal",
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/piqa/piqa.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 16113,
+              "fingerprint": "f0a93a05e1bc907d",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-train.arrow",
+                  "bytes": 4110832
+                }
+              ]
+            },
+            "validation": {
+              "rows": 1838,
+              "fingerprint": "506e3cab853d8e73",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-validation.arrow",
+                  "bytes": 465608
+                }
+              ]
+            },
+            "test": {
+              "rows": 3084,
+              "fingerprint": "c8edc3d1dc86702a",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-test.arrow",
+                  "bytes": 763560
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 1838,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_8b_seed0_job1733513_piqa.json",
+        "sha256": "3ed16becaf23980a229fba075a85298024768b06c993b273bcd5869d1b5f312d",
+        "samples": 1838,
+        "expected_samples": 1838,
+        "accuracy": 0.8117519042437432,
+        "elapsed_seconds": 69.9935120921582
+      },
+      {
+        "task": "social_iqa",
+        "metric": "acc,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "social_iqa",
+            "dataset_path": "lighteval/siqa",
+            "training_split": "train",
+            "validation_split": "validation",
+            "doc_to_text": "Q: {{context}} {{question}}\nA:",
+            "doc_to_target": "{{ (label|int) - 1 }}",
+            "unsafe_code": false,
+            "doc_to_choice": "{{[answerA, answerB, answerC]}}",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "Q: {{context}} {{question}}\nA:",
+              "doc_to_choice": "{{[answerA, answerB, answerC]}}",
+              "doc_to_target": "{{ (label|int) - 1 }}",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": false,
+            "metadata": {
+              "version": 0.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/siqa/siqa.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 33410,
+              "fingerprint": "221898d646ee148b",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/lighteval___siqa/default/0.0.0/54c6a1f8cb6daf4f5abf24a601852612fb35eb25/siqa-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/lighteval___siqa/default/0.0.0/54c6a1f8cb6daf4f5abf24a601852612fb35eb25/siqa-train.arrow",
+                  "bytes": 6346480
+                }
+              ]
+            },
+            "validation": {
+              "rows": 1954,
+              "fingerprint": "12a14f9122f7c866",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/lighteval___siqa/default/0.0.0/54c6a1f8cb6daf4f5abf24a601852612fb35eb25/siqa-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/lighteval___siqa/default/0.0.0/54c6a1f8cb6daf4f5abf24a601852612fb35eb25/siqa-validation.arrow",
+                  "bytes": 374632
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 1954,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_8b_seed0_job1733513_social_iqa.json",
+        "sha256": "eb5f74d6302a050909448a789e56f730a34a1b007360cbac31a44df9afbe83b0",
+        "samples": 1954,
+        "expected_samples": 1954,
+        "accuracy": 0.4836233367451382,
+        "elapsed_seconds": 101.65698863193393
+      },
+      {
+        "task": "winogrande",
+        "metric": "acc,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "winogrande",
+            "dataset_path": "allenai/winogrande",
+            "dataset_name": "winogrande_xl",
+            "training_split": "train",
+            "validation_split": "validation",
+            "doc_to_text": "def doc_to_text(doc):\n    answer_to_num = {\"1\": 0, \"2\": 1}\n    return answer_to_num[doc[\"answer\"]]\n",
+            "doc_to_target": "def doc_to_target(doc):\n    idx = doc[\"sentence\"].index(\"_\") + 1\n    return doc[\"sentence\"][idx:].strip()\n",
+            "unsafe_code": false,
+            "doc_to_choice": "def doc_to_choice(doc):\n    idx = doc[\"sentence\"].index(\"_\")\n    options = [doc[\"option1\"], doc[\"option2\"]]\n    return [doc[\"sentence\"][:idx] + opt for opt in options]\n",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "<function doc_to_text at 0x785df89d5e40>",
+              "doc_to_choice": "<function doc_to_choice at 0x785df89d63e0>",
+              "doc_to_target": "<function doc_to_target at 0x785df89d7600>",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "sentence",
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/winogrande/default.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 40398,
+              "fingerprint": "d5752cdf34722002",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-train.arrow",
+                  "bytes": 5202424
+                }
+              ]
+            },
+            "test": {
+              "rows": 1767,
+              "fingerprint": "e1e2c9a9f0c7ce8f",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-test.arrow",
+                  "bytes": 228960
+                }
+              ]
+            },
+            "validation": {
+              "rows": 1267,
+              "fingerprint": "5b125086384c0403",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-validation.arrow",
+                  "bytes": 165504
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 1267,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_8b_seed0_job1733513_winogrande.json",
+        "sha256": "2fb78469fd76addd4be959be6739d9f7cf1af40bed09a7d88f01814a4f352a70",
+        "samples": 1267,
+        "expected_samples": 1267,
+        "accuracy": 0.7458563535911602,
+        "elapsed_seconds": 44.162923116702586
+      }
+    ],
+    "seed": 0,
+    "batch_size": 2,
+    "max_length": 2048,
+    "num_fewshot": 0,
+    "log_samples": true,
+    "limit": null,
+    "task_order": [
+      "arc_easy",
+      "arc_challenge",
+      "boolq",
+      "hellaswag",
+      "openbookqa",
+      "piqa",
+      "social_iqa",
+      "winogrande"
+    ],
+    "numerical_thresholds": "none",
+    "execution": "same model; each task attempted independently",
+    "current_task": null,
+    "completed_tasks": 8,
+    "attempted_tasks": 8,
+    "mean_accuracy": 0.6867534740853689,
+    "mean_definition": "unweighted mean of all eight frozen E14 metrics; unavailable if a task failed"
+  },
+  "finished_utc": "2026-11-10T15:09:58.106867+00:00"
+}

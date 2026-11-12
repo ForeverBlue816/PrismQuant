@@ -1,0 +1,22 @@
+{
+  "kind": "scheduler_submission",
+  "status": "SUBMITTED",
+  "created_utc": "2026-11-10T05:53:14.440334+00:00",
+  "commit": "33ed3b8188fffc09728c625bfedf9081b0d549ab",
+  "command": "sbatch --parsable slurm_e38_anchor.sh",
+  "cwd": "/home/yanlongc/prismquant-rebuttal-e38",
+  "explicit_environment": {
+    "E38_MODEL_SNAPSHOT": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331",
+    "E38_EXPECTED_SOURCE_COMMIT": "33ed3b8188fffc09728c625bfedf9081b0d549ab"
+  },
+  "gpu_count": 1,
+  "time_limit": "02:00:00",
+  "seed": 0,
+  "purpose": "E38 historical BF16 3B environment anchor",
+  "gpu_model": "pending allocation",
+  "library_provenance": "preflight-bf16-3b-001.json",
+  "returncode": 0,
+  "stdout": "1732842\n",
+  "stderr": "",
+  "job_id": "1732842"
+}

@@ -1,0 +1,64 @@
+{
+  "model": "Llama-3.2-3B",
+  "created_utc": "2026-11-12T16:24:06.734171+00:00",
+  "rows": {
+    "FlatQuant": {
+      "ppl_source": "[native_3b_seed0_train-ppl_job1736285.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_train-ppl_job1736285.json)",
+      "task_source": "pending",
+      "timing_source": "pending",
+      "calibration_source": "[native_3b_seed0_train-ppl_job1736285.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_train-ppl_job1736285.json)",
+      "prior_attempts": [
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_train-ppl_job1736285.json",
+          "sha256": "3775b8fecf9e9d7a9741ecc34d2e6a6c2d738ca350ebe6569a106ac6d022d778",
+          "phase": "train-ppl",
+          "status": "RUNNING"
+        }
+      ]
+    },
+    "DuQuant": {
+      "ppl_source": "[duquant_3b_seed0_quantize-ppl_retry1_job1736285.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_retry1_job1736285.json)",
+      "task_source": "[duquant_3b_seed0_eight-tasks_retry2_job1736285.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285.json)",
+      "timing_source": "pending",
+      "calibration_source": "[duquant_3b_seed0_quantize-ppl_retry1_job1736285.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_retry1_job1736285.json)",
+      "prior_attempts": [
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_job1736285.json",
+          "sha256": "bfad9de4b3218a1371b018bf50373ff50c12f67fbf4f38acaaa7c5230e53bd0a",
+          "phase": "quantize-ppl",
+          "status": "FAILED"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285.json",
+          "sha256": "6c61e80c1f9ab1c93da5dec795c445b1557e043178a62ffbe44deef9053b38e3",
+          "phase": "eight-tasks",
+          "status": "RUNNING"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_retry1_job1736285.json",
+          "sha256": "99eaed8a1d09edfd6b6bc68a2b942a17637ad4d7e2d3bcdd2457df2aacde9e08",
+          "phase": "quantize-ppl",
+          "status": "COMPLETE"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry1_job1736285.json",
+          "sha256": "896ac69772bc3225c155c4d7eea4e70995462f6793ca5a719511807813d6a8c0",
+          "phase": "eight-tasks",
+          "status": "RUNNING"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_job1736285.json",
+          "sha256": "e7ad3bba06d75cbd71c112c0b321222040567d55889443725c851384c6f60062",
+          "phase": "eight-tasks",
+          "status": "FAILED"
+        }
+      ]
+    }
+  },
+  "paired_ppl": {
+    "status": "unavailable",
+    "reason": "Need complete141 paired NLL arrays, equal token-file SHA256 and equal sequence token counts"
+  },
+  "same_physical_gpu": false,
+  "selection": "latest attempt per method/model/phase, never score based"
+}

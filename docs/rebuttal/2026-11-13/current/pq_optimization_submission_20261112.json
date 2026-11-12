@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-11-12T15:40:15.697501+00:00",
+  "model": "Meta-Llama-3.1-8B",
+  "method": "PrismQuant k8 original and optimized R2/R4",
+  "source_commit": "d5589f81eb7c95ab4a1f3c6ee6192a4775196784",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--export=ALL",
+    "slurm_pq_fast_rotation_8b.sh"
+  ],
+  "returncode": 0,
+  "stdout": "1736296\n",
+  "stderr": "",
+  "no_fp16": true,
+  "reuse_checkpoint": true,
+  "native_format": "per-token symmetric A4 / packed per-head KV4, not Table1 g128",
+  "job_id": "1736296"
+}

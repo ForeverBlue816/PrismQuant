@@ -1,0 +1,14 @@
+% E38: Meta-Llama-3.1-8B only. Base revision e9a141a2091ea561b96483212645a2a05e6f99fc.
+% All3B rows archived. Historical FP16 tasks and timing are separate jobs.
+\begin{tabular}{llrrrr}
+\toprule
+Format & Rotation & PPL & Eight-task avg (\%) & Prefill ms & Decode tok/s \\
+\midrule
+FP16 & None & 6.23843 & 68.68 & 417.469 [0.889] & 29.038 [0.011] \\
+Per-token symmetric & Hadamard & not run & not run & not run & not run \\
+Per-token symmetric & PQ k=8 & not run & not run & not run & not run \\
+g128 asymmetric & Hadamard & not run & not run & not run & not run \\
+g128 asymmetric & PQ k=8 & not run & not run & not run & not run \\
+g128 asymmetric & PQ k=max & not run & not run & not run & not run \\
+\bottomrule
+\end{tabular}

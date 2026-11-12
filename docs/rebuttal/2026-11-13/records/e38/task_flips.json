@@ -1,0 +1,18 @@
+{
+  "kind": "e38_8b_paired_correctness_flips",
+  "rotations": {
+    "hadamard": {
+      "status": "pending",
+      "reason": "Both complete seed0 eight-task parents are required",
+      "reference_status": "pending",
+      "integer_status": "RUNNING"
+    },
+    "nar_k8": {
+      "status": "pending",
+      "reason": "Both complete seed0 eight-task parents are required",
+      "reference_status": "pending",
+      "integer_status": "RUNNING"
+    }
+  },
+  "read_errors": []
+}

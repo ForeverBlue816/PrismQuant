@@ -1,0 +1,31 @@
+{
+  "observed_utc": "2026-11-11T04:12:31.785042+00:00",
+  "method": "FlatQuant",
+  "official_source": "/home/yanlongc/FlatQuant-upstream",
+  "official_commit": "9d88ffcb7d2c6bda59fb5c44dad36adc101aadb1",
+  "delivery_model": "Meta-Llama-3.1-8B",
+  "delivery_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "published_validation_model": "LLaMA-3-8B",
+  "status": "CPU_PREPARATION_ONLY",
+  "gpu_submitted": false,
+  "execution_dependency": "User-required8B Had/PQk8 reference-anchor reconciliation before furtherGPUexperiments",
+  "no_3b": true,
+  "official_url": "https://github.com/ruikangliu/FlatQuant",
+  "published_ppl": {
+    "RTN": 6.98,
+    "GPTQ": 6.9
+  },
+  "published_ppl_source": "https://github.com/ruikangliu/FlatQuant#accuracy-results",
+  "environment_preparation": {
+    "python": "/projects/nar/nar-validation/e28-env/bin/python",
+    "isolated_packages": "/home/yanlongc/.prismquant/flatquant-anchor-packages",
+    "packages": {
+      "transformers": "4.36.0",
+      "lm_eval": "0.4.4",
+      "peft": "0.13.2"
+    },
+    "import_checked": false,
+    "note": "CPU packages installed only; official-runtime compatibility has not yet been validated. No sharedenvironment was modified."
+  },
+  "assets_manifest": "raw/anchor_assets_001.json"
+}

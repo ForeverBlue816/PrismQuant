@@ -1,0 +1,220 @@
+{
+  "kind": "e38_stage_a_trained8b_native",
+  "status": "RUNNING",
+  "model": "llama31_8b",
+  "rotation": "fp16",
+  "row": "fp16",
+  "seed": 0,
+  "backend": "FP16",
+  "scope": "Actual trained8B weights; independent per-token symmetric activation/native per-head KV4 protocol; no Table1 equivalence claim",
+  "source_commit": "0bf135e1ea21df2f8f0e395009bb245d695319f0",
+  "command_line": [
+    "/projects/nar/nar-validation/e28-env/bin/python",
+    "-m",
+    "e38.stage_a_8b",
+    "--row",
+    "fp16",
+    "--phase",
+    "eight-tasks",
+    "--artifact-dir",
+    "/projects/nar/nar-validation/artifacts/e38/native_packed8b_seed0_v1",
+    "--source-commit",
+    "0bf135e1ea21df2f8f0e395009bb245d695319f0",
+    "--repetitions",
+    "20",
+    "--warmup",
+    "10",
+    "--batch-size",
+    "1",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1736075.json"
+  ],
+  "started_utc": "2026-11-12T14:51:03.738012+00:00",
+  "hostname": "gpu-a40-1.cluster02.eee.ntu.edu.sg",
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "pid": 3468500,
+  "source_sha256": {
+    "quarot-llama3/e38/stage_a_8b.py": "a872b42d54333409013e3411cf0d1b4f1281e1567bb7f3af6024886cedab4ab6",
+    "quarot-llama3/e38/stage_a_8b_model.py": "92c2f295da29b3347fbde12a0c4b690e8f9fbea209552e0ce50e6af4cfa45dd9",
+    "quarot-llama3/e38/fp16.py": "5ce9ae1f7dd00910cd08b1c68bc4a95970b295ba4a92fd426ad5fcb4925af367",
+    "quarot-llama3/modeling_llama3.py": "ec8f03779820a4a749a97a8e84b337a31f880c40e4145a0a0099ae3ca9299582",
+    "quarot-llama3/e28_v2/cache_adapter.py": "91b8fa46bfa453d553190ccc526257717650002607b016ef917a1d383d5f3bfe",
+    "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+    "nar/activation_experiments.py": "60ae33785675a388d3879a5e53cb7ab34233fea15807eab411348d0ce0b72303",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+    "nar/e38_checkpoint_probe.py": "584797c5347e8f37aa125fb0f0d4e1593f504c2aa77152e8ba94b8957300787c"
+  },
+  "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "quant_snapshot": "fc812e6687165115feee00293c953a1b521d3bd0",
+  "task_seed": 0,
+  "quality_execution_gates": "none",
+  "ppl": {
+    "status": "not run"
+  },
+  "eight_tasks": {
+    "status": "RUNNING",
+    "tasks": [
+      {
+        "task": "arc_easy",
+        "status": "PASS",
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1736075_arc_easy.json",
+        "sha256": "d71527ba110fb784b9c268c6791155e49fd8fd90b999a44cff087e7c52dea206",
+        "elapsed_seconds": 278.629620378837,
+        "metric": "acc_norm,none",
+        "accuracy": 0.8249158249158249,
+        "samples": 2376
+      },
+      {
+        "task": "arc_challenge",
+        "status": "PASS",
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1736075_arc_challenge.json",
+        "sha256": "d4b1638c7f32f82d1b227589b971b160d9a49aa94330ce79b6a0a325c02dda93",
+        "elapsed_seconds": 141.52116457093507,
+        "metric": "acc_norm,none",
+        "accuracy": 0.5503412969283277,
+        "samples": 1172
+      },
+      {
+        "task": "boolq",
+        "status": "PASS",
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1736075_boolq.json",
+        "sha256": "d78f2182cd47784a7c100c2245304e1bf5394af2db72ef46ad4d1660655a2a9b",
+        "elapsed_seconds": 157.02661599311978,
+        "metric": "acc,none",
+        "accuracy": 0.8308868501529052,
+        "samples": 3270
+      }
+    ],
+    "num_fewshot": 0,
+    "seed": 0,
+    "batch_size": 1,
+    "max_length": 2048,
+    "log_samples": true,
+    "limit": null,
+    "task_order": [
+      "arc_easy",
+      "arc_challenge",
+      "boolq",
+      "hellaswag",
+      "openbookqa",
+      "piqa",
+      "social_iqa",
+      "winogrande"
+    ],
+    "failure_policy": "record each failed task and continue all remaining tasks",
+    "current_task": "hellaswag"
+  },
+  "timing": {
+    "status": "not run"
+  },
+  "quantization": {
+    "weights": "released BF16 base cast to FP16",
+    "activation": "FP16",
+    "kv": "native FP16 paged cache",
+    "table1_difference": "Table1 uses asymmetric group128 activations and KIVI token-axis grouped K plus residual32",
+    "native_int4_tensorcore": false,
+    "whole_graph_integer": false
+  },
+  "slurm": {
+    "SLURM_JOB_ID": "1736075",
+    "SLURM_JOB_NODELIST": "gpu-a40-1",
+    "CUDA_VISIBLE_DEVICES": "0"
+  },
+  "dataset_metadata_compat": {
+    "scope": "in-process read compatibility only; cached files unchanged",
+    "change": "List[Value] feature metadata decoded as equivalent Sequence[Value]",
+    "rejected": "List[struct] and other List feature types",
+    "datasets_version": "2.17.1"
+  },
+  "tokenizer_runtime": {
+    "runtime_version": "0.23.1",
+    "module_file": "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/__init__.py",
+    "installed_distribution_metadata_version": "0.15.2",
+    "explicit_compatibility_override": "select existing E14 native module before importing transformers; installed environments unchanged",
+    "files": {
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/__init__.py": "b1cee924695651af5c3dab98e8c34406ab355a2cc1d633228646c470210e649e",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/decoders/__init__.py": "85fc0ce821540ef94c1862f8fb1b1a698cfcd4af4fe6b408e592f950758af18e",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/implementations/__init__.py": "57302ca65688a3bae5e0014ef0c8aeee283b31f663be89f055b959c34d7347a3",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/implementations/base_tokenizer.py": "b20192817decd800a26b6b0401afcb5f3ddcf9dc2bcf2e949619087bd73b6575",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/implementations/bert_wordpiece.py": "b0a0ae9b414a3d875280914937c2c37ab541a130d14aacaa49dadc9be96f42a2",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/implementations/byte_level_bpe.py": "8817a933fcf5b392b2ef314356b60b7372f96f262b228ba4efe934246b85d74b",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/implementations/char_level_bpe.py": "35a83f1c5abc46f72e72a8bc321575fb4c6da11d02ec58c739e70555444beecb",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/implementations/sentencepiece_bpe.py": "734f1f29fea2f7613646c2a0b31cbb2f365f617f3e3000874911bc53f239cad6",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/implementations/sentencepiece_unigram.py": "d91a087c556988c9093ad382b2433f54278210b59a0bf6cd9ddb3a1afb44d0a4",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/models/__init__.py": "d86e49a8152f16b2a2684a45125b95524b414f0f2d942619fb6a3c83b67c72a2",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/normalizers/__init__.py": "ff4eb0e1ca9122dbde12021d75868b3127209123a4200308cd809eb1be400385",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/pre_tokenizers/__init__.py": "584db71f3ea5c969b8dfe99bac7e57122744e00bf1f0e80bc3e5df3822fa8deb",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/processors/__init__.py": "990538dd3ce6c8570467f7900c82d243341bc477d78ec8fd967eed3db6229b3c",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/tokenizers.abi3.so": "40de09860e5df1b00bbf432eb68632465125a3efaa074f85972f3ea000c06dfc",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/tools/__init__.py": "c46f1c681f4e1c2f1c6c1d354b9bd8575e0767184ee9e59b2de86c6fbd29a62a",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/tools/visualizer.py": "fbcfedafd89b0f9784f4e0ce6a80cacc964906458fb8ff9d9a685adfda85b97e",
+      "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/trainers/__init__.py": "4197e9d9a4b553fccf58b714a235eb79fa003385a893fac971a5813ee319cb49"
+    }
+  },
+  "gpu_model": "NVIDIA A40",
+  "cuda_runtime": "12.4",
+  "actual_head_commit": "ef948c4606e343c33281b963cc562e13e676242f",
+  "libraries": {
+    "torch": "2.4.1+cu124",
+    "transformers": "4.36.2",
+    "triton": "3.0.0",
+    "datasets": "2.17.1",
+    "numpy": "1.26.4",
+    "tokenizers": "0.15.2",
+    "flash-attn": "2.6.3"
+  },
+  "native_operator_sources": [
+    {
+      "path": "/projects/_hdd/nar/nar-validation/external/quarot/quarot/nn/linear.py",
+      "sha256": "d53d33fff182ea6e561bf3a8fc8a49c3380eb76634dc760226bbde742241ac9e"
+    },
+    {
+      "path": "/projects/_hdd/nar/nar-validation/external/quarot/quarot/nn/quantization.py",
+      "sha256": "04b07eb72b55e556f2af7b9a5cb92c30f362bf41e4389ec9aed6855dac25fc0a"
+    },
+    {
+      "path": "/projects/_hdd/nar/nar-validation/external/quarot/quarot/transformers/kv_cache.py",
+      "sha256": "48d9f12a1b712c6494ca928b7cfba600f1b7774f9abe11dbac68761692447304"
+    }
+  ],
+  "native_extension": {
+    "path": "/projects/_hdd/nar/nar-validation/external/quarot/quarot/_CUDA.cpython-311-x86_64-linux-gnu.so",
+    "bytes": 912912,
+    "content_hash_checked": false
+  },
+  "evaluation_tokens": {
+    "path": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+    "sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021",
+    "shape": [
+      141,
+      2048
+    ]
+  },
+  "source_observation": {
+    "quarot-llama3/e38/stage_a_8b.py": "a872b42d54333409013e3411cf0d1b4f1281e1567bb7f3af6024886cedab4ab6",
+    "quarot-llama3/e38/stage_a_8b_model.py": "92c2f295da29b3347fbde12a0c4b690e8f9fbea209552e0ce50e6af4cfa45dd9",
+    "quarot-llama3/e38/fp16.py": "5ce9ae1f7dd00910cd08b1c68bc4a95970b295ba4a92fd426ad5fcb4925af367",
+    "quarot-llama3/modeling_llama3.py": "ec8f03779820a4a749a97a8e84b337a31f880c40e4145a0a0099ae3ca9299582",
+    "quarot-llama3/e28_v2/cache_adapter.py": "91b8fa46bfa453d553190ccc526257717650002607b016ef917a1d383d5f3bfe",
+    "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+    "nar/activation_experiments.py": "60ae33785675a388d3879a5e53cb7ab34233fea15807eab411348d0ce0b72303",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+    "nar/e38_checkpoint_probe.py": "584797c5347e8f37aa125fb0f0d4e1593f504c2aa77152e8ba94b8957300787c"
+  },
+  "checkpoint_loading": {
+    "snapshot": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+    "files": [
+      "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00001-of-00004.safetensors",
+      "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00002-of-00004.safetensors",
+      "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00003-of-00004.safetensors",
+      "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00004-of-00004.safetensors"
+    ],
+    "loaded_tensor_count": 291,
+    "dtype": "original BF16 checkpoint converted to FP16 for this backend",
+    "native_integer_support": false
+  },
+  "model_object_id": 127649079897872,
+  "parameter_dtype": "torch.float16"
+}

@@ -1,0 +1,245 @@
+{
+  "observed_utc": "2026-11-12T16:27:51.599272+00:00",
+  "observed_singapore": "2026-11-13T00:27:51.599272+08:00",
+  "source": "Slurm sacct",
+  "command": [
+    "sacct",
+    "-j",
+    "1736285,1736296,1736252,1736286,1736287,1736351,1736074,1736075,1736076",
+    "--format=JobID,JobName,State,ExitCode,Elapsed,Start,End",
+    "--parsable2"
+  ],
+  "jobs": [
+    {
+      "JobID": "1736074",
+      "JobName": "pq8b-parallel-five",
+      "State": "CANCELLED by 295800911",
+      "ExitCode": "0:0",
+      "Elapsed": "00:00:00",
+      "Start": "None",
+      "End": "2026-11-12T15:18:53"
+    },
+    {
+      "JobID": "1736075",
+      "JobName": "pq8b-tasks-seed0",
+      "State": "CANCELLED by 295800911",
+      "ExitCode": "0:0",
+      "Elapsed": "00:27:51",
+      "Start": "2026-11-12T14:51:02",
+      "End": "2026-11-12T15:18:53"
+    },
+    {
+      "JobID": "1736075.batch",
+      "JobName": "batch",
+      "State": "CANCELLED",
+      "ExitCode": "0:15",
+      "Elapsed": "00:27:51",
+      "Start": "2026-11-12T14:51:02",
+      "End": "2026-11-12T15:18:53"
+    },
+    {
+      "JobID": "1736075.extern",
+      "JobName": "extern",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "Elapsed": "00:27:51",
+      "Start": "2026-11-12T14:51:02",
+      "End": "2026-11-12T15:18:53"
+    },
+    {
+      "JobID": "1736075.0",
+      "JobName": "bash",
+      "State": "CANCELLED",
+      "ExitCode": "0:15",
+      "Elapsed": "00:27:55",
+      "Start": "2026-11-12T14:51:02",
+      "End": "2026-11-12T15:18:57"
+    },
+    {
+      "JobID": "1736075.1",
+      "JobName": "bash",
+      "State": "CANCELLED",
+      "ExitCode": "0:15",
+      "Elapsed": "00:27:55",
+      "Start": "2026-11-12T14:51:02",
+      "End": "2026-11-12T15:18:57"
+    },
+    {
+      "JobID": "1736075.2",
+      "JobName": "bash",
+      "State": "CANCELLED",
+      "ExitCode": "0:15",
+      "Elapsed": "00:27:55",
+      "Start": "2026-11-12T14:51:02",
+      "End": "2026-11-12T15:18:57"
+    },
+    {
+      "JobID": "1736076",
+      "JobName": "pq8b-tasks-seed12",
+      "State": "CANCELLED by 295800911",
+      "ExitCode": "0:0",
+      "Elapsed": "00:00:00",
+      "Start": "None",
+      "End": "2026-11-12T15:18:53"
+    },
+    {
+      "JobID": "1736252",
+      "JobName": "pq8b-flat-duquant",
+      "State": "PENDING",
+      "ExitCode": "0:0",
+      "Elapsed": "00:00:00",
+      "Start": "Unknown",
+      "End": "Unknown"
+    },
+    {
+      "JobID": "1736285",
+      "JobName": "pq3b-flat-duquant",
+      "State": "RUNNING",
+      "ExitCode": "0:0",
+      "Elapsed": "00:50:32",
+      "Start": "2026-11-12T15:37:19",
+      "End": "Unknown"
+    },
+    {
+      "JobID": "1736285.batch",
+      "JobName": "batch",
+      "State": "RUNNING",
+      "ExitCode": "0:0",
+      "Elapsed": "00:50:32",
+      "Start": "2026-11-12T15:37:19",
+      "End": "Unknown"
+    },
+    {
+      "JobID": "1736285.extern",
+      "JobName": "extern",
+      "State": "RUNNING",
+      "ExitCode": "0:0",
+      "Elapsed": "00:50:32",
+      "Start": "2026-11-12T15:37:19",
+      "End": "Unknown"
+    },
+    {
+      "JobID": "1736285.0",
+      "JobName": "bash",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "Elapsed": "00:01:39",
+      "Start": "2026-11-12T15:37:19",
+      "End": "2026-11-12T15:38:58"
+    },
+    {
+      "JobID": "1736285.1",
+      "JobName": "bash",
+      "State": "RUNNING",
+      "ExitCode": "0:0",
+      "Elapsed": "00:50:32",
+      "Start": "2026-11-12T15:37:19",
+      "End": "Unknown"
+    },
+    {
+      "JobID": "1736285.2",
+      "JobName": "bash",
+      "State": "FAILED",
+      "ExitCode": "1:0",
+      "Elapsed": "00:00:44",
+      "Start": "2026-11-12T15:43:55",
+      "End": "2026-11-12T15:44:39"
+    },
+    {
+      "JobID": "1736285.3",
+      "JobName": "bash",
+      "State": "FAILED",
+      "ExitCode": "2:0",
+      "Elapsed": "00:00:00",
+      "Start": "2026-11-12T15:47:53",
+      "End": "2026-11-12T15:47:53"
+    },
+    {
+      "JobID": "1736285.4",
+      "JobName": "bash",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "Elapsed": "00:00:12",
+      "Start": "2026-11-12T15:48:21",
+      "End": "2026-11-12T15:48:33"
+    },
+    {
+      "JobID": "1736285.5",
+      "JobName": "bash",
+      "State": "CANCELLED by 295800911",
+      "ExitCode": "0:9",
+      "Elapsed": "00:11:23",
+      "Start": "2026-11-12T15:49:11",
+      "End": "2026-11-12T16:00:34"
+    },
+    {
+      "JobID": "1736285.6",
+      "JobName": "bash",
+      "State": "RUNNING",
+      "ExitCode": "0:0",
+      "Elapsed": "00:24:31",
+      "Start": "2026-11-12T16:03:20",
+      "End": "Unknown"
+    },
+    {
+      "JobID": "1736286",
+      "JobName": "pq3b-baselines-timing",
+      "State": "PENDING",
+      "ExitCode": "0:0",
+      "Elapsed": "00:00:00",
+      "Start": "Unknown",
+      "End": "Unknown"
+    },
+    {
+      "JobID": "1736287",
+      "JobName": "pq8b-baselines-timing",
+      "State": "CANCELLED by 295800911",
+      "ExitCode": "0:0",
+      "Elapsed": "00:00:00",
+      "Start": "None",
+      "End": "2026-11-12T16:04:58"
+    },
+    {
+      "JobID": "1736296",
+      "JobName": "pq8b-fast-rotation",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "Elapsed": "00:14:18",
+      "Start": "2026-11-12T15:40:50",
+      "End": "2026-11-12T15:55:08"
+    },
+    {
+      "JobID": "1736296.batch",
+      "JobName": "batch",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "Elapsed": "00:14:18",
+      "Start": "2026-11-12T15:40:50",
+      "End": "2026-11-12T15:55:08"
+    },
+    {
+      "JobID": "1736296.extern",
+      "JobName": "extern",
+      "State": "COMPLETED",
+      "ExitCode": "0:0",
+      "Elapsed": "00:14:18",
+      "Start": "2026-11-12T15:40:50",
+      "End": "2026-11-12T15:55:08"
+    },
+    {
+      "JobID": "1736351",
+      "JobName": "pq8b-official-speed",
+      "State": "PENDING",
+      "ExitCode": "0:0",
+      "Elapsed": "00:00:00",
+      "Start": "Unknown",
+      "End": "Unknown"
+    }
+  ],
+  "notes": [
+    "Current scheduler state overrides the last status stored in interrupted raw JSON.",
+    "1736285.0 failed the initial RoPE-device compatibility path; .5 completed PPL/checkpoint then was interrupted during tasks; .6 evaluates the saved checkpoint.",
+    "1736285.2/.3/.4 are tiny native environment checks, not model experiment rows.",
+    "1736074/1736075/1736076 were cancelled by the scope change; 1736287 was replaced by1736351."
+  ]
+}

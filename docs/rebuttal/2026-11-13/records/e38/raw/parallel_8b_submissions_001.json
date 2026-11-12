@@ -1,0 +1,78 @@
+{
+  "observed_utc": "2026-11-11T05:02:29.950808+00:00",
+  "model": "Meta-Llama-3.1-8B",
+  "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "numerical_execution_gates": "none",
+  "jobs": [
+    {
+      "job_id": "1734010",
+      "kind": "e38_timing",
+      "tasks": [
+        "e38"
+      ],
+      "gpus": "1 exclusive A40",
+      "state": "PENDING Priority",
+      "source_commit": "9a1bade",
+      "allocated_host_memory_gib": 40
+    },
+    {
+      "job_id": "1734028",
+      "kind": "compute_bundle",
+      "tasks": [
+        "e38",
+        "e39",
+        "e40",
+        "e41",
+        "e42"
+      ],
+      "gpus": "5 PRO6000; one independent worker per GPU",
+      "state": "PENDING Priority",
+      "source_commit": "89b2150",
+      "allocated_host_memory_gib": 165,
+      "step_memory_gib": [
+        33,
+        33,
+        40,
+        25,
+        33
+      ]
+    }
+  ],
+  "cancelled": [
+    {
+      "job_id": "1733996",
+      "reason": "obsolete reference-only anchor gate"
+    },
+    {
+      "job_id": "1733997",
+      "reason": "obsolete reference-only anchor gate"
+    },
+    {
+      "job_id": "1734024",
+      "reason": "replaced before start to partition Slurm step RAM and guarantee concurrent steps"
+    }
+  ],
+  "background_tasks": {
+    "status": "WAITING_SUBMISSION_SLOT",
+    "error": "QOSMaxSubmitJobPerUserLimit",
+    "gpus": "3 A40",
+    "dependency_type": "afterany structural producers, not quality/afterok",
+    "producer_jobs": [
+      "1734010",
+      "1734028"
+    ],
+    "watcher_state": "results/e38/raw/background_tasks_submission_001.json",
+    "watcher_pid": 865457,
+    "unified_exec_session_id": 53883
+  },
+  "source_heads": {
+    "e38": "89b2150cbbe55f135a577f28c90f5beeafecbf6f",
+    "e39": "d1381da97502fbe2cf3c78aaf98058cdb4c7e889",
+    "e40": "c37621938421579eb779c36020e876eec60901f2",
+    "e41": "d95349beebd81d6fa1d017481ec0f47d7fb198da",
+    "e42": "cb6a22c6d13a3cb1ffbe8e061ff416f782c028be"
+  },
+  "unrelated_jobs": "untouched",
+  "source_policy": "Slurm source arguments identify submission revisions; prestart bugfixes are committed separately. Each runner records actual HEAD where supported and source-file SHA256; these identify executed code without a version or numerical gate.",
+  "e40_ladder": "six PPL steps: Had, OffQ, PQk1 token-selection, PQk1 full moment, PQk8, PQkmax; only three new GPTQ checkpoints, three reused; seven energy methods unchanged"
+}

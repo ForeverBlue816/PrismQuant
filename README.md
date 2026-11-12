@@ -177,3 +177,8 @@ Code: [Apache-2.0](LICENSE). Model weights retain their respective upstream
 licenses. Built with Llama for the Llama-derived checkpoints. The GPTQ core is
 adapted from [QuaRot](https://github.com/spcl/QuaRot); see
 [third-party notices](THIRD_PARTY_NOTICES.md).
+
+
+## Rebuttal experiment records
+
+The [experiment index](docs/rebuttal/README.md) separates model sizes, accuracy recipes, deployment backends, completed measurements, and queued or interrupted runs.

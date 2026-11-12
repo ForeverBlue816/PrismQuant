@@ -1,0 +1,13 @@
+{
+  "kind": "anchor_collection_audit",
+  "observed_utc": "2026-11-10T07:37:47.447091+00:00",
+  "status": "PASS",
+  "run": "anchor-bf16-3b-job1732842.json",
+  "run_sha256": "1de198ba5bc57d2db66ba5f280c37a0cafad92c78fb89749584a15e8e948dc03",
+  "chunks": 141,
+  "all_chunk_records_exactly_match": true,
+  "ppl_exactly_matches": true,
+  "declared_source_hashes_match_queued_commit": true,
+  "independent_audit": "cache_protocol_audit agent independently confirmed original project JSON, input and source identities",
+  "metadata_note": "Raw prompt_anchor_status retains generic unresolved wording; frozen protocol and manuscript audit identify the 7.80 BF16 cell as an externally sourced reference, not this legacy local BF16 target."
+}

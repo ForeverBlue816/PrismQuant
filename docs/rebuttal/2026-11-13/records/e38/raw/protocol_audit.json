@@ -1,0 +1,758 @@
+{
+  "schema": "prismquant.e38.protocol_audit.v1",
+  "status": "AUDIT_ONLY",
+  "created_utc": "2026-11-10T05:50:25.188740+00:00",
+  "source_commit": "728e6e5a7fe6395d8c38c5a286295fc87926ae8a",
+  "source_branch": "experiments/e38-joint-deploy",
+  "audit_runtime": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-6.8.0-142-generic-x86_64-with-glibc2.39",
+    "gpu_model": null,
+    "gpu_runs_launched": 0,
+    "command_line": "python3 - <<PY (read-only source/hash/JSON audit; no model forward)"
+  },
+  "scope": {
+    "offq_experiments": "excluded by user",
+    "submitted_pdf": {
+      "path": "/home/yanlongc/elastic_kv_probe/11144_PrismQuant_Optimal_Null_.pdf",
+      "sha256": "e40d8ecfbf63fcf562ae01de585b3316cfd7521483d0377f5958688799db7f87",
+      "bytes": 8708018,
+      "pages": 37,
+      "status": "user-identified submitted manuscript; primary reference",
+      "sections": {
+        "table_1": {
+          "page": 8,
+          "printed_lines": "378-404"
+        },
+        "three_seeds_claim": {
+          "page": 8,
+          "printed_line": 418
+        },
+        "appendix_a1": {
+          "page": 14,
+          "printed_lines": "704-748"
+        },
+        "appendix_d3": {
+          "pages": [
+            31,
+            32
+          ],
+          "printed_lines": "1669-1702"
+        },
+        "appendix_d4_scope": {
+          "page": 33,
+          "printed_lines": "1753-1758"
+        }
+      },
+      "parser": "pymupdf 1.28.2",
+      "source_pdf_modified": false
+    },
+    "public_paper": {
+      "url": "https://arxiv.org/html/2609.32429v1",
+      "version": "v1, 2026-09-26",
+      "sections": [
+        "Table 1",
+        "Appendix A.1",
+        "Appendix D.3"
+      ],
+      "access_date": "2026-11-10",
+      "status": "secondary public reference; inspected Table 1 and Appendix A/D agree with submitted evidence discussed here"
+    }
+  },
+  "historical_anchor_logs": [
+    {
+      "status": "historical measured logs; not a new E38 measurement",
+      "model": "llama32_3b",
+      "method": "hadamard",
+      "seed": 0,
+      "weight_protocol": "g128_asym",
+      "ppl": 9.042407805218268,
+      "eight_task_mean_percent": 59.29035216150903,
+      "per_task_percent": {
+        "arc_easy": 67.63468013468014,
+        "arc_challenge": 43.003412969283275,
+        "boolq": 66.97247706422019,
+        "hellaswag": 71.18103963353913,
+        "openbookqa": 40.0,
+        "piqa": 74.26550598476605,
+        "social_iqa": 45.598771750255885,
+        "winogrande": 65.66692975532754
+      },
+      "source_files": [
+        {
+          "path": "/projects/nar/nar-validation/results/llama32_3b/e14_hadamard_asym_g128_g128_asym_seed0_ppl.json",
+          "sha256": "905192a566fc416d7b45ee0b9dccfdba1c7ae91ca89d754f1f0af1cc0d6e490e",
+          "bytes": 14039
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama32_3b/e14_hadamard_asym_g128_g128_asym_seed0_zero_shot.json",
+          "sha256": "f60fa91cb72f753713562a10e8ec93b216e911e815dd38daeadbe6f0181cab2d",
+          "bytes": 2341
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama32_3b/e14_hadamard_asym_g128_g128_asym_seed0_zero_shot_extra.json",
+          "sha256": "32f9ba568b940bb1af1e5ca89d4d9378a13e1a67e9cd4bf787c1ce1f2e93f962",
+          "bytes": 1799
+        }
+      ],
+      "hardware": {
+        "cuda_available": true,
+        "cuda_runtime": "12.8",
+        "gpu_capability": [
+          12,
+          0
+        ],
+        "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "hostname": "gpu-pro6000-9.cluster02.eee.ntu.edu.sg",
+        "nvidia_smi": [
+          "0, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-ce51487d-868b-995a-a8fc-0866eeb30e0e, 97887 MiB, 86644 MiB, 580.173.02"
+        ],
+        "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+        "slurm_job_gpus": "3",
+        "slurm_job_id": "141650",
+        "torch": "2.11.0+cu128"
+      },
+      "harness_commit": "b954108c9baaaa934b4ad842033b31a97ee30816"
+    },
+    {
+      "status": "historical measured logs; not a new E38 measurement",
+      "model": "llama32_3b",
+      "method": "nar_k8",
+      "seed": 0,
+      "weight_protocol": "g128_asym",
+      "ppl": 8.636331433141889,
+      "eight_task_mean_percent": 60.2106244225488,
+      "per_task_percent": {
+        "arc_easy": 68.26599326599326,
+        "arc_challenge": 42.83276450511945,
+        "boolq": 72.07951070336391,
+        "hellaswag": 70.86237801234813,
+        "openbookqa": 38.800000000000004,
+        "piqa": 75.68008705114254,
+        "social_iqa": 45.445240532241556,
+        "winogrande": 67.71902131018153
+      },
+      "source_files": [
+        {
+          "path": "/projects/nar/nar-validation/results/llama32_3b/e14_nar_k8_asym_g128_g128_asym_seed0_ppl.json",
+          "sha256": "770b2be0f47896ff4445685d32133b8881bf8aa5aadb7071139f012ffcd53431",
+          "bytes": 14049
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama32_3b/e14_nar_k8_asym_g128_g128_asym_seed0_zero_shot.json",
+          "sha256": "7bdb2a32918a9aff2517f87cb5cf19399a9d473a27cf326e48aa83a81086c119",
+          "bytes": 2337
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama32_3b/e14_nar_k8_asym_g128_g128_asym_seed0_zero_shot_extra.json",
+          "sha256": "abbaebb44de012f45000821678e9484026d3451cccb621d034d722598c732265",
+          "bytes": 1797
+        }
+      ],
+      "hardware": {
+        "cuda_available": true,
+        "cuda_runtime": "12.8",
+        "gpu_capability": [
+          12,
+          0
+        ],
+        "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "hostname": "gpu-pro6000-9.cluster02.eee.ntu.edu.sg",
+        "nvidia_smi": [
+          "0, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-ce51487d-868b-995a-a8fc-0866eeb30e0e, 97887 MiB, 86118 MiB, 580.173.02"
+        ],
+        "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+        "slurm_job_gpus": "3",
+        "slurm_job_id": "141650",
+        "torch": "2.11.0+cu128"
+      },
+      "harness_commit": "b954108c9baaaa934b4ad842033b31a97ee30816"
+    },
+    {
+      "status": "historical measured logs; not a new E38 measurement",
+      "model": "llama32_3b",
+      "method": "nar_kmax",
+      "seed": 0,
+      "weight_protocol": "g128_asym",
+      "ppl": 8.597017867763926,
+      "eight_task_mean_percent": 60.804395114267194,
+      "per_task_percent": {
+        "arc_easy": 69.9074074074074,
+        "arc_challenge": 43.430034129692835,
+        "boolq": 74.06727828746178,
+        "hellaswag": 71.5893248356901,
+        "openbookqa": 40.2,
+        "piqa": 74.9727965179543,
+        "social_iqa": 45.496417604913,
+        "winogrande": 66.77190213101815
+      },
+      "source_files": [
+        {
+          "path": "/projects/nar/nar-validation/results/llama32_3b/e14_nar_kmax_asym_g128_g128_asym_seed0_ppl.json",
+          "sha256": "d4e1b55816c919c3e7332bdbc2ad68286f936a9f2726399fde5d0783347cc7d1",
+          "bytes": 14039
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama32_3b/e14_nar_kmax_asym_g128_g128_asym_seed0_zero_shot.json",
+          "sha256": "befa1223fd2f38762280ac0d026e7015b4604fb532c6d2ffcfefd8f739f100e6",
+          "bytes": 2340
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama32_3b/e14_nar_kmax_asym_g128_g128_asym_seed0_zero_shot_extra.json",
+          "sha256": "1cb0dfd0d65e91819ff41b2db1820d0629a3b411a5b8aef815487db35d8d76b7",
+          "bytes": 1798
+        }
+      ],
+      "hardware": {
+        "cuda_available": true,
+        "cuda_runtime": "12.8",
+        "gpu_capability": [
+          12,
+          0
+        ],
+        "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "hostname": "gpu-pro6000-9.cluster02.eee.ntu.edu.sg",
+        "nvidia_smi": [
+          "0, NVIDIA RTX PRO 6000 Blackwell Server Edition, GPU-ce51487d-868b-995a-a8fc-0866eeb30e0e, 97887 MiB, 85960 MiB, 580.173.02"
+        ],
+        "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+        "slurm_job_gpus": "3",
+        "slurm_job_id": "141650",
+        "torch": "2.11.0+cu128"
+      },
+      "harness_commit": "b954108c9baaaa934b4ad842033b31a97ee30816"
+    },
+    {
+      "status": "historical measured logs; not a new E38 measurement",
+      "model": "llama31_8b",
+      "method": "hadamard",
+      "seed": 0,
+      "weight_protocol": "default",
+      "ppl": 7.206380952159424,
+      "eight_task_mean_percent": 65.36590321387806,
+      "per_task_percent": {
+        "arc_easy": 78.24074074074075,
+        "arc_challenge": 50.34129692832765,
+        "boolq": 80.03058103975536,
+        "hellaswag": 76.13025293766182,
+        "openbookqa": 42.6,
+        "piqa": 79.32535364526659,
+        "social_iqa": 46.72466734902764,
+        "winogrande": 69.53433307024467
+      },
+      "source_files": [
+        {
+          "path": "/projects/nar/nar-validation/results/llama31_8b/e14_hadamard_asym_g128_seed0_ppl.json",
+          "sha256": "560c92a13b0c03b90ae62641ba2415f52c32d19772a36d84c6233f0a6bc98947",
+          "bytes": 14025
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama31_8b/e14_hadamard_asym_g128_seed0_zero_shot.json",
+          "sha256": "7e911828f380a233748e8c4b9582e6330db4347f5c33c84b61bbf6a679f98309",
+          "bytes": 2281
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama31_8b/e14_hadamard_asym_g128_seed0_zero_shot_extra.json",
+          "sha256": "91bde38d6e26fa124ff8fae8eb1424198585c20bf543bba1671f2288c4d3e7c2",
+          "bytes": 1743
+        }
+      ],
+      "hardware": {
+        "cuda_available": true,
+        "cuda_runtime": "12.8",
+        "gpu_capability": [
+          12,
+          0
+        ],
+        "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+        "hostname": "gpu-pro6000-3.cluster02.eee.ntu.edu.sg",
+        "nvidia_smi": [
+          "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, GPU-bd67f840-0adb-2d23-9b14-7ba742a07f1f, 97887 MiB, 77205 MiB, 580.173.02"
+        ],
+        "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+        "slurm_job_gpus": "1",
+        "slurm_job_id": "137081",
+        "torch": "2.11.0+cu128"
+      },
+      "harness_commit": "b954108c9baaaa934b4ad842033b31a97ee30816"
+    },
+    {
+      "status": "historical measured logs; not a new E38 measurement",
+      "model": "llama31_8b",
+      "method": "nar_k8",
+      "seed": 0,
+      "weight_protocol": "default",
+      "ppl": 6.989837961936862,
+      "eight_task_mean_percent": 65.35919019869063,
+      "per_task_percent": {
+        "arc_easy": 78.9983164983165,
+        "arc_challenge": 48.89078498293515,
+        "boolq": 80.1223241590214,
+        "hellaswag": 76.94682334196375,
+        "openbookqa": 44.2,
+        "piqa": 78.12840043525571,
+        "social_iqa": 47.236438075742065,
+        "winogrande": 68.35043409629044
+      },
+      "source_files": [
+        {
+          "path": "/projects/nar/nar-validation/results/llama31_8b/e14_nar_k8_asym_g128_seed0_ppl.json",
+          "sha256": "a983b8ac242bd1acb5e3f94d8e42fe80bc531ab0c959bb05165b51717bea3619",
+          "bytes": 14022
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama31_8b/e14_nar_k8_asym_g128_seed0_zero_shot.json",
+          "sha256": "f99db44715fdba31a18a6e34e4bf29141fd3f8e1a0fbca1b6f96b560f8cc7cf8",
+          "bytes": 2278
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama31_8b/e14_nar_k8_asym_g128_seed0_zero_shot_extra.json",
+          "sha256": "5284622e61306b0aac1d98d29ef0934df255a090626ccece8ff37aab70a7a03a",
+          "bytes": 1739
+        }
+      ],
+      "hardware": {
+        "cuda_available": true,
+        "cuda_runtime": "12.8",
+        "gpu_capability": [
+          12,
+          0
+        ],
+        "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+        "hostname": "gpu-pro6000-5.cluster02.eee.ntu.edu.sg",
+        "nvidia_smi": [
+          "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, GPU-cb73e577-3983-fef2-e730-6389a8531854, 97887 MiB, 77135 MiB, 580.173.02"
+        ],
+        "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+        "slurm_job_gpus": "4",
+        "slurm_job_id": "137079",
+        "torch": "2.11.0+cu128"
+      },
+      "harness_commit": "b954108c9baaaa934b4ad842033b31a97ee30816"
+    },
+    {
+      "status": "historical measured logs; not a new E38 measurement",
+      "model": "llama31_8b",
+      "method": "nar_kmax",
+      "seed": 0,
+      "weight_protocol": "default",
+      "ppl": 6.914668977039683,
+      "eight_task_mean_percent": 65.43436199949916,
+      "per_task_percent": {
+        "arc_easy": 77.86195286195287,
+        "arc_challenge": 50.7679180887372,
+        "boolq": 80.55045871559633,
+        "hellaswag": 76.71778530173272,
+        "openbookqa": 43.0,
+        "piqa": 78.83569096844396,
+        "social_iqa": 45.496417604913,
+        "winogrande": 70.2446724546172
+      },
+      "source_files": [
+        {
+          "path": "/projects/nar/nar-validation/results/llama31_8b/e14_nar_kmax_asym_g128_seed0_ppl.json",
+          "sha256": "a39624715238f7f24eb22bd0801cf8c7e54fa8a900f17aa8a87d555392c80324",
+          "bytes": 14018
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama31_8b/e14_nar_kmax_asym_g128_seed0_zero_shot.json",
+          "sha256": "ebf2561614de419ce04805c11b7d9d86a9e95f82a1c5336d833440fa42599f95",
+          "bytes": 2281
+        },
+        {
+          "path": "/projects/nar/nar-validation/results/llama31_8b/e14_nar_kmax_asym_g128_seed0_zero_shot_extra.json",
+          "sha256": "087a9962058100ce5c6060969b2ad3a1dd2156d2bc06d9fe96c25c9e93651144",
+          "bytes": 1740
+        }
+      ],
+      "hardware": {
+        "cuda_available": true,
+        "cuda_runtime": "12.8",
+        "gpu_capability": [
+          12,
+          0
+        ],
+        "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+        "hostname": "gpu-pro6000-3.cluster02.eee.ntu.edu.sg",
+        "nvidia_smi": [
+          "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, GPU-ec354382-414e-16f3-c2c4-b7d0d4b8671c, 97887 MiB, 76537 MiB, 580.173.02"
+        ],
+        "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+        "slurm_job_gpus": "0",
+        "slurm_job_id": "137080",
+        "torch": "2.11.0+cu128"
+      },
+      "harness_commit": "b954108c9baaaa934b4ad842033b31a97ee30816"
+    }
+  ],
+  "original_e14_artifact_inventory": [
+    {
+      "model": "llama32_3b",
+      "root": "/projects/nar/nar-validation/artifacts/e14/llama32_3b",
+      "complete_manifests": [],
+      "files": [
+        {
+          "path": "/projects/nar/nar-validation/artifacts/e14/llama32_3b/gptq_nar_kmax_seed1/gptq_audit.partial.csv",
+          "bytes": 4070
+        },
+        {
+          "path": "/projects/nar/nar-validation/artifacts/e14/llama32_3b/gptq_nar_kmax_seed1/layer_00.pt",
+          "bytes": 201329861
+        },
+        {
+          "path": "/projects/nar/nar-validation/artifacts/e14/llama32_3b/gptq_nar_kmax_seed1/layer_01.pt",
+          "bytes": 201329861
+        }
+      ],
+      "scope": "original E14 artifact root only; other release/Hub locations not ruled out"
+    },
+    {
+      "model": "llama31_8b",
+      "root": "/projects/nar/nar-validation/artifacts/e14/llama31_8b",
+      "complete_manifests": [],
+      "files": [],
+      "scope": "original E14 artifact root only; other release/Hub locations not ruled out"
+    }
+  ],
+  "sources": [
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/e14_w4a4kv4.py",
+      "sha256": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+      "bytes": 73819
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/quarot_gptq.py",
+      "sha256": "84da020ecdf05384d56026ab18e2fd8f50ceea92782285580c1e499a31e6dd1e",
+      "bytes": 19137
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/experiment.py",
+      "sha256": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+      "bytes": 71072
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/activation_experiments.py",
+      "sha256": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d",
+      "bytes": 48657
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/e17_fused_r4.py",
+      "sha256": "561d56aaa64ba126684587bccc16cfe679703c6c21288538a68dd0a0b7903d8d",
+      "bytes": 13833
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/e17_v2.py",
+      "sha256": "d25f1d14279b7d6d2ba6bfd7ef8ed2f339e7fd7449923aea2a48d896ef293af2",
+      "bytes": 19543
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/e17_v3.py",
+      "sha256": "73e104568fa3c6bcd61465c9d5ee4c3c0b312710cba76a055522d20f6427a262",
+      "bytes": 22146
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/kernels/r4_fused_v2.py",
+      "sha256": "5e71c1eccbb62b9e61e0fd4b8e817ab6ea725d59ff821757b2d2b3e99a594196",
+      "bytes": 15764
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/kernels/r4_fused_v3.py",
+      "sha256": "0571b3512889e172f6f24494918195872520daa093ab42d2f505b1fbff352fcf",
+      "bytes": 11602
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/fold_signed_permutation.py",
+      "sha256": "d8b8bb9aec56db6f51b916887923f6520725918353c1fdc5743033d5a9497a10",
+      "bytes": 8809
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/e27_direction_selection.py",
+      "sha256": "0087c6a5a2a79edebb17de5d8656f3a1883665f48ac5ddb6415d79c346e16b69",
+      "bytes": 45536
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/reviewer_ablations.py",
+      "sha256": "77fd8fb86343b22bd1a58309f99907d3566a601918aab1f16d314d04108d8880",
+      "bytes": 22026
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/e33_rangelaw.py",
+      "sha256": "37e594326bd6c9b111119c188b7744bff33a317fef24b4806240ca2547596482",
+      "bytes": 11820
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/e34_anchor_attribution.py",
+      "sha256": "9f06b33e77e07809faa2e161df27adae5c1ab18e820a1bde530092d6364aa28f",
+      "bytes": 19568
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/nar/e36_offset_precision.py",
+      "sha256": "996d7ec9dce1feb7ddff20772f61fafdf33d10ac76d746a8a80b85ffea11ee6d",
+      "bytes": 11969
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/experiments/e27_README.md",
+      "sha256": "66cfa92582862a8b8d5b6675eb1a2ccade6c3d073082ca1906329fb13fe441f7",
+      "bytes": 2589
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/experiments/e29_e33_README.md",
+      "sha256": "4f2999e395b559401f3ab2e97ffae881168c938ecf81696ca7049d1b3342a08f",
+      "bytes": 7837
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/experiments/e34_README.md",
+      "sha256": "aa03dd4dc5acb4e9ce10364d2ec0c7fe168c88d10c8c36781f3bfa4868feb2cb",
+      "bytes": 5900
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/experiments/e36_README.md",
+      "sha256": "9fc2b51743874e8bd57dfb844e209742bbe39b6704abac3eb556eaafb1e86e26",
+      "bytes": 5718
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/export_nar_factors.py",
+      "sha256": "451ebdbf20be268a90c1e7b535c3c14481bbef50bad258363ea0e6a44258b437",
+      "bytes": 2466
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/modeling_llama3.py",
+      "sha256": "ec8f03779820a4a749a97a8e84b337a31f880c40e4145a0a0099ae3ca9299582",
+      "bytes": 15551
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/common.py",
+      "sha256": "8be1e3f426acb796bfb15d51164a1f545c346ce9b024fb0e8dc879159449c5e8",
+      "bytes": 8467
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/benchmark.py",
+      "sha256": "2e99b15e516c4bcaa6caa88b3514b234eaa277b64953584c2c073083d96f1380",
+      "bytes": 8727
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/graph_benchmark.py",
+      "sha256": "a8d7ae0ff4b83ac8a3b171b344364656e2208e09f723e66366fb43a6248d7ca9",
+      "bytes": 10193
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/stream_pipeline.py",
+      "sha256": "3ddf6ab880ca1ca98c402888e5bbde6412e573a83f01f49e7b93df92c55e2b64",
+      "bytes": 3266
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/checkpoint.py",
+      "sha256": "ea3704f3e5f2584e41f359f8ca4cbffa5f845b6b6e5d816237ae58c68813ebbc",
+      "bytes": 2041
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/docs/quantizer_contract.md",
+      "sha256": "8f530d5502627d0c566c18be26b3ecaf6f6bfd9bf8fe74348f5cf44900e95c39",
+      "bytes": 7748
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e28_v2/20260912_a40_v2_full_int4/protocol.json",
+      "sha256": "9fb2c2cfdcdb666c661a4c84c91d6c436c1043e80a5cb43bc58c29ad52383528",
+      "bytes": 8178
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e28_v2/20260912_a40_v2_full_int4/checkpoint_audit.json",
+      "sha256": "fa94d6773fe784d099d86fdd14cb550ff9c3174544b3ffd4d4de2c172df18da3",
+      "bytes": 1184
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/results/llama32_3b/e14_nar_kmax_asym_g128_author_reported.json",
+      "sha256": "c6a4c59473bfdaabd963f380364177622f09367fa7b2a09e3f20f278d03124e2",
+      "bytes": 2663
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/report.md",
+      "sha256": "21f6d484168cab61cb73fa8b06af004cb9a40f9c227c90fba75c50378b32f325",
+      "bytes": 284390
+    },
+    {
+      "path": "/projects/nar/nar-validation/external/quarot/quarot/nn/linear.py",
+      "sha256": "d53d33fff182ea6e561bf3a8fc8a49c3380eb76634dc760226bbde742241ac9e",
+      "bytes": 3497
+    },
+    {
+      "path": "/projects/nar/nar-validation/external/quarot/quarot/nn/quantization.py",
+      "sha256": "04b07eb72b55e556f2af7b9a5cb92c30f362bf41e4389ec9aed6855dac25fc0a",
+      "bytes": 485
+    },
+    {
+      "path": "/projects/nar/nar-validation/external/quarot/quarot/functional/quantization.py",
+      "sha256": "28661deb2a8f5ae8b245d075de0294da9f3fdf0edf8690d9a6f1e6ee05f508b6",
+      "bytes": 2063
+    },
+    {
+      "path": "/projects/nar/nar-validation/external/quarot/quarot/kernels/quant.cu",
+      "sha256": "6f50ba4127380713e386b4bb2a7f78b936405db801e0eac19b1d6870f91e967e",
+      "bytes": 2677
+    },
+    {
+      "path": "/home/yanlongc/elastic_kv_probe/11144_PrismQuant_Optimal_Null_.pdf",
+      "sha256": "e40d8ecfbf63fcf562ae01de585b3316cfd7521483d0377f5958688799db7f87",
+      "bytes": 8708018
+    }
+  ],
+  "mismatches": [
+    {
+      "id": "anchor_correspondence",
+      "status": "unresolved",
+      "finding": "Submitted and public 3B k8 task vectors match local g128_asym kmax seed0 vector at displayed precision; raw provenance correspondence remains unresolved and this alone does not prove mislabeling"
+    },
+    {
+      "id": "author_report",
+      "status": "reported_only",
+      "finding": "3B 8.58/61.23 author-report file lacks raw remote harness output and specified seed aggregation"
+    },
+    {
+      "id": "dtype_weight_protocol",
+      "status": "unresolved",
+      "finding": "Submitted Appendix A.1 p14 fp32/asymmetric description differs from inspected E14 bf16/default symmetric path"
+    },
+    {
+      "id": "missing_metadata",
+      "status": "requires_export",
+      "finding": "E14 layer shards preserve reconstructed weights only, not original GPTQ codes/scales/zeros"
+    },
+    {
+      "id": "grouped_weight_backend",
+      "status": "unsupported_in_current_e28",
+      "finding": "Current Linear4bit one-scale-per-row symmetric interface cannot generally encode group128 affine W"
+    },
+    {
+      "id": "rotation_contract",
+      "status": "requires_adapter",
+      "finding": "Preserve online E14 post-v R2, method-specific o cross-head Hadamard, and E14 R4 sign/permutation schedule"
+    },
+    {
+      "id": "kv_contract",
+      "status": "different_models",
+      "finding": "K group axis, residual32, Q/K rotation and prefill quantized history differ between E14 and E28"
+    },
+    {
+      "id": "quant_rounding",
+      "status": "requires_gate",
+      "finding": "E17 half-up rounding and missing fp16-underflow guard differ from E14 nearest-even and zero-scale guard; dtype cast boundaries differ"
+    },
+    {
+      "id": "int32_to_half",
+      "status": "requires_real_input_test",
+      "finding": "E28 dequant casts full dot to fp16 before scaling; submitted D.4 p33 acknowledges recorded failures; finite behavior for new real checkpoints remains to test"
+    },
+    {
+      "id": "seed_aggregation",
+      "status": "unresolved",
+      "finding": "Submitted p8 line418 claims 3-seed PrismQuant means; identified local 3B g128_asym source logs are seed0 and author report has unspecified aggregation"
+    },
+    {
+      "id": "r2_text",
+      "status": "wording_inconsistency",
+      "finding": "Submitted p8 and code use post-v online R2; Appendix A.1 p14 says folded in V and O; preserve code behavior"
+    }
+  ],
+  "integer_group_bounds": [
+    {
+      "layout": "signed_signed",
+      "group_size": 128,
+      "sum_min": -7168,
+      "sum_max": 8192,
+      "fits_signed_int16": true,
+      "kind": "exact arithmetic bound, not hardware measurement"
+    },
+    {
+      "layout": "unsigned_signed",
+      "group_size": 128,
+      "sum_min": -15360,
+      "sum_max": 13440,
+      "fits_signed_int16": true,
+      "kind": "exact arithmetic bound, not hardware measurement"
+    },
+    {
+      "layout": "unsigned_unsigned",
+      "group_size": 128,
+      "sum_min": 0,
+      "sum_max": 28800,
+      "fits_signed_int16": true,
+      "kind": "exact arithmetic bound, not hardware measurement"
+    }
+  ],
+  "offset_storage_formula": {
+    "bytes": "out_features*(in_features/128)*bytes_per_element",
+    "relative_to_packed_weight_fp16_S": 0.03125,
+    "relative_to_packed_weight_fp32_S": 0.0625,
+    "status": "analytic estimate, excludes all other storage"
+  },
+  "required_export_fields": [
+    "checkpoint_sha256",
+    "shape",
+    "original_dtype",
+    "weight_protocol",
+    "code_minmax",
+    "scale_dtype",
+    "offset_dtype",
+    "metadata_sha256",
+    "out_of_range_count",
+    "max_abs_reconstruction_error",
+    "relative_reconstruction_error",
+    "unequal_element_count",
+    "pack_unpack_identity"
+  ],
+  "equivalence_gate": {
+    "heldout_sequences": 64,
+    "max_abs_ppl_difference": 0.01,
+    "report": [
+      "max_abs_logit_difference",
+      "argmax_agreement",
+      "reference_ppl",
+      "deployed_ppl"
+    ],
+    "status": "not run"
+  },
+  "new_performance_results": null,
+  "next_steps": [
+    "Freeze genuine anchor replay and exact variant; retain unresolved Table1-to-raw-run mapping explicitly",
+    "Inventory complete checkpoint variants and metadata",
+    "Implement audited one-linear adapter and real-input comparison",
+    "Implement method-specific model adapter and exact-format KV/grouped arithmetic",
+    "Pass full equivalence gate before timing, then task samples/paired statistics"
+  ],
+  "submitted_table1_8b_reported": {
+    "bf16": {
+      "ppl": 6.23,
+      "eight_task_mean_percent": 67.81,
+      "scope": "reported reference per paper caption"
+    },
+    "hadamard": {
+      "ppl": 7.21,
+      "eight_task_mean_percent": 65.37
+    },
+    "nar_k8": {
+      "ppl": 6.99,
+      "eight_task_mean_percent": 65.36
+    },
+    "nar_kmax": {
+      "ppl": 6.92,
+      "eight_task_mean_percent": 65.43
+    },
+    "source": {
+      "path": "/home/yanlongc/elastic_kv_probe/11144_PrismQuant_Optimal_Null_.pdf",
+      "sha256": "e40d8ecfbf63fcf562ae01de585b3316cfd7521483d0377f5958688799db7f87",
+      "page": 8
+    }
+  },
+  "submitted_page_text_sha256": {
+    "8": "65f6efaf5bcccd532c49a9bdc2aff99bc3df08f6b4fad04e51b095ba62dc535b",
+    "14": "9633521486601895c399b2a020ce611c38ee2c1d15db6357bc7d555a5a43fb36",
+    "31": "7687c4fc35bdd4a5878ede7bafae0f67050293b27e4b50b0fb5a9df386af533e",
+    "32": "0e9504951d142cfee5522c79cd4d672e8508457871b8785ecd040762028408b1",
+    "33": "92e85ebb3d1c6beaeec80d5e7d315e20c321c8f389832ea6c4c26ca6e43e5a44"
+  },
+  "submitted_scope_evidence": {
+    "page": 33,
+    "text": "Performance backend per-token symmetric activations and distinct KV interfaces; no checkpoint-level joint accuracy-speed measurement; recorded large-accumulator FP16-conversion failures.",
+    "kind": "paraphrase from submitted PDF"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "kind": "real_input_packed_integer_operator_diagnostic",
+  "status": "PREFLIGHT_PASS",
+  "started_utc": "2026-11-10T11:43:03.288745+00:00",
+  "command_line": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "-m",
+    "nar.e38_integer_operator",
+    "--preflight-only",
+    "--expected-source-commit",
+    "4bf6a7a9218f4b2a9d1793e380d0defc262030ba",
+    "--output",
+    "results/e38/raw/integer_operator_preflight_001.json"
+  ],
+  "seed": 0,
+  "model": "llama32_3b",
+  "rotation": "nar_kmax",
+  "weight_protocol": "default",
+  "hostname": "login-2.cluster02.eee.ntu.edu.sg",
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "rows": [],
+  "scope": "196 real calibration-input sites; not a full-model gate or runtime benchmark",
+  "implementation": "4-bit weight storage; INT8 GEMM with INT32 partial sums; FP32 correction; BF16 output",
+  "native_int4_tensorcore": false,
+  "slurm_job_id": null,
+  "expected_source_commit": "4bf6a7a9218f4b2a9d1793e380d0defc262030ba",
+  "source_sha256": {
+    "nar/e38_integer_operator.py": "396ed7faa3c7af1c3a1de35640515d07478a490626dacd88e468fd005b03a0a9",
+    "nar/e38_anchor.py": "58dc1b4e61f1ccaaea0d0c94568db46b60c11a9dceedead4f1b7d4d553e77f3a",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+    "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+    "nar/activation_experiments.py": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d",
+    "nar/extended_experiment.py": "8331f9bb5cd20c7877c836b2db1115aacf5689337fac4a7428ac59f7eb834f8b",
+    "nar/quarot_gptq.py": "84da020ecdf05384d56026ab18e2fd8f50ceea92782285580c1e499a31e6dd1e"
+  },
+  "libraries": {
+    "torch": {
+      "version": "2.11.0+cu128",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "transformers": {
+      "version": "5.16.0.dev0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": {
+        "url": "https://github.com/huggingface/transformers.git",
+        "vcs_info": {
+          "commit_id": "a353632607c59463e6ced86a44c2de3c2cd62d5e",
+          "requested_revision": "main",
+          "vcs": "git"
+        }
+      }
+    },
+    "triton": {
+      "version": "3.6.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "datasets": {
+      "version": "5.0.1",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "accelerate": {
+      "version": "1.14.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "numpy": {
+      "version": "2.4.6",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "lm_eval": {
+      "version": "0.4.14.dev0",
+      "location": "/home/yanlongc/.e13_packages",
+      "direct_url": {
+        "dir_info": {},
+        "url": "file:///home/yanlongc/lm-evaluation-harness-upstream"
+      }
+    },
+    "huggingface-hub": {
+      "version": "1.28.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "tokenizers": {
+      "version": "0.23.1",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    }
+  },
+  "input_probe": {
+    "path": "/projects/nar/nar-validation/artifacts/e38/checkpoint-3b-kmax-job1732989/run.json",
+    "sha256": "d7e247f3dbfabd0e41f27a9b6be81f41a019b0814ccc1d0eb4687183b7822902",
+    "source_commit": "40330a7d796f13ebf2f056ad593af37aa74fe1f7"
+  },
+  "input_artifacts": [
+    {
+      "path": "/projects/nar/nar-validation/artifacts/e38/checkpoint-3b-kmax-job1732989/real_calibration_inputs.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/artifacts/e38/checkpoint-3b-kmax-job1732989/real_calibration_inputs.pt",
+      "bytes": 23978105,
+      "sha256": "03af22d5c5bbbf4b908ee99899ec1445c5b1af2614344f0f1f803e066382b061",
+      "sites": 196
+    },
+    {
+      "path": "/projects/nar/nar-validation/artifacts/e38/checkpoint-3b-kmax-job1732989/weight_grid_candidates.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/artifacts/e38/checkpoint-3b-kmax-job1732989/weight_grid_candidates.pt",
+      "bytes": 21413415,
+      "sha256": "22386233cd0dc72502f2e73b7f2d1205aa4e5e1b2593b7be1f226c70b2a96c13"
+    }
+  ],
+  "capture_semantics": {
+    "raw_input_before_runtime": "before E14 online rotation/quantization hooks; down_proj is before R4",
+    "linear_input_after_runtime": "actual post-rotation and post-QDQ input received by Linear"
+  },
+  "capture_positions": [
+    0,
+    1,
+    2,
+    3,
+    31,
+    127,
+    511,
+    2047
+  ],
+  "samples_per_site": 8,
+  "cuda_required_for_full_run": true,
+  "ended_utc": "2026-11-10T11:43:03.513720+00:00"
+}

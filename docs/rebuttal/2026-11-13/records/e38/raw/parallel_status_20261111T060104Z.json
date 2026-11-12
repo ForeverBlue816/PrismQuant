@@ -1,0 +1,38 @@
+{
+  "observed_utc": "2026-11-11T06:01:04.378790+00:00",
+  "jobs": [
+    {
+      "job_id": "1734028",
+      "state": "PENDING",
+      "reason": "(Priority)"
+    },
+    {
+      "job_id": "1734010",
+      "state": "PENDING",
+      "reason": "(Priority)"
+    }
+  ],
+  "watcher_alive": true,
+  "watcher": {
+    "status": "WAITING_SUBMISSION_SLOT",
+    "pid": 865457,
+    "producer_jobs": [
+      "1734010",
+      "1734028"
+    ],
+    "reason": "QOSMaxSubmitJobPerUserLimit",
+    "qos": "rose",
+    "limit": 5,
+    "poll_seconds": 60,
+    "script": "/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_tasks_8b.sh",
+    "updated_utc": "2026-11-11T06:00:28.046844+00:00",
+    "current_rose_jobs": [
+      "1734018",
+      "1734028",
+      "1734019",
+      "1734020",
+      "1734010"
+    ]
+  },
+  "new_gpu_results": false
+}

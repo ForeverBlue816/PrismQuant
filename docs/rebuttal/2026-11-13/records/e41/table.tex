@@ -1,0 +1,27 @@
+\begin{table}[t]
+\centering
+\small
+\caption{E41: Meta-Llama-3.1-8B, seed 0; BF16 weights and K/V, activation-only A4 at qkv/down inputs, group size 128. WikiText-2 test uses 141 sequences of 2048 tokens. This activation-only simulation is distinct from Table 1 W4A4KV4.}
+\label{tab:e41-mechanism-seed0}
+\begin{tabular}{lrr}
+\toprule
+Rotation & Asymmetric PPL & Symmetric PPL \\
+\midrule
+Hadamard & 6.40246 & 6.48862 \\
+PQ constant direction & 6.33337 & 6.39883 \\
+PQ signed direction & 6.36120 & 6.40177 \\
+\midrule
+Paired quantity & Estimate & 95\% interval \\
+\midrule
+Signed $-$ constant, asymmetric & 0.02783 & [0.02146, 0.03418] \\
+Signed $-$ constant, symmetric & 0.00294 & [-0.00490, 0.01087] \\
+Difference of contrasts & 0.02489 & [0.01454, 0.03517] \\
+Operational offset fraction & 0.40280 & [0.31590, 0.49481] \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{0.98\linewidth}
+\footnotesize
+Intervals use 20,000 paired sequence resamples: token-weighted NLL is aggregated and exponentiated before differences or ratios are computed. The ratio is $(\mathrm{PPL}_{S,a}-\mathrm{PPL}_{C,a})/(\mathrm{PPL}_{H,a}-\mathrm{PPL}_{C,a})$, where $S,C,H$ denote signed, constant and Hadamard and $a$ denotes asymmetric. It is not causal attribution and is not clipped to $[0,1]$. The denominator 95\% interval is [0.06079,0.07748], with no near-zero draws. The symmetric contrast interval crosses zero. These conditional sequence intervals do not estimate seed variability; the target swap also moves a residual coordinate and the two quantizers differ in scale, code range and metadata (4.25 versus 4.125 bits).
+\end{minipage}
+\end{table}

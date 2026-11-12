@@ -1,0 +1,91 @@
+{
+  "observed_utc": "2026-11-12T02:24:37.319795+00:00",
+  "source_commit": "a758984bf3294237f1e6aa5c87b2c4c3fd660606",
+  "previous_timing_job": "1734010",
+  "model": "Meta-Llama-3.1-8B",
+  "numerical_execution_gates": "none",
+  "submissions": [
+    {
+      "label": "native_had_pq_retry",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--export=ALL",
+        "slurm_e38_stage_a_retry_8b.sh"
+      ],
+      "environment": {
+        "E38_SOURCE_COMMIT": "a758984bf3294237f1e6aa5c87b2c4c3fd660606"
+      },
+      "returncode": 0,
+      "stdout": "1735190\n",
+      "stderr": "",
+      "submitted_utc": "2026-11-12T02:24:37.326153+00:00",
+      "job_id": "1735190"
+    },
+    {
+      "label": "seed0_eight_tasks",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--export=ALL",
+        "--job-name=pq8b-tasks-seed0",
+        "--dependency=afterany:1735190",
+        "slurm_rebuttal_tasks_8b.sh"
+      ],
+      "environment": {
+        "E38_SOURCE_COMMIT": "a758984bf3294237f1e6aa5c87b2c4c3fd660606",
+        "E38_TASK_SCOPE": "seed0"
+      },
+      "returncode": 0,
+      "stdout": "1735191\n",
+      "stderr": "",
+      "submitted_utc": "2026-11-12T02:24:37.331998+00:00",
+      "job_id": "1735191"
+    },
+    {
+      "label": "seed12_reference_tasks",
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--export=ALL",
+        "--job-name=pq8b-tasks-seed12",
+        "--ntasks=2",
+        "--gpus=a40:2",
+        "--mem=80G",
+        "--dependency=afterany:1734028",
+        "slurm_rebuttal_tasks_8b.sh"
+      ],
+      "environment": {
+        "E38_SOURCE_COMMIT": "a758984bf3294237f1e6aa5c87b2c4c3fd660606",
+        "E38_TASK_SCOPE": "seed12"
+      },
+      "returncode": 0,
+      "stdout": "1735192\n",
+      "stderr": "",
+      "submitted_utc": "2026-11-12T02:24:37.338992+00:00",
+      "job_id": "1735192"
+    }
+  ],
+  "unrelated_jobs": "untouched",
+  "previous_watcher_state": {
+    "status": "WAITING_SUBMISSION_SLOT",
+    "pid": 865457,
+    "producer_jobs": [
+      "1734010",
+      "1734028"
+    ],
+    "reason": "QOSMaxSubmitJobPerUserLimit",
+    "qos": "rose",
+    "limit": 5,
+    "poll_seconds": 60,
+    "script": "/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_tasks_8b.sh",
+    "updated_utc": "2026-11-11T08:19:29.608661+00:00",
+    "current_rose_jobs": [
+      "1734028",
+      "1734010",
+      "1734020",
+      "1734019",
+      "1734018"
+    ]
+  }
+}

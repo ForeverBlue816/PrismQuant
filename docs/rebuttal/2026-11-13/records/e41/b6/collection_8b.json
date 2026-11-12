@@ -1,0 +1,173 @@
+{
+  "statistics": {
+    "32": {
+      "status": "unavailable"
+    },
+    "512": {
+      "status": "unavailable"
+    },
+    "d": {
+      "status": "unavailable"
+    }
+  },
+  "read_errors": [],
+  "submission_provenance": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/parallel_8b_submissions_001.json",
+    "sha256": "b16dabc6b9046b9e215c898f1ba077af472d6b5589b35bac9c6c6bc714663ff0",
+    "description": "submitted 1734028 (PENDING Priority in submission manifest)"
+  },
+  "experiment": "e41",
+  "created_utc": "2026-11-11T05:15:03.140172+00:00",
+  "collector": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/scripts/collect_rebuttal8b.py",
+    "sha256": "cc3b377c5211ff1f5980d485e78135eb32a033dc5f5ff4ed69c74fa3a5920e17"
+  },
+  "table_rows": [
+    [
+      "32",
+      "hadamard_asym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "32",
+      "pq_constant_asym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "32",
+      "pq_signed_asym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "32",
+      "hadamard_sym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "32",
+      "pq_constant_sym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "32",
+      "pq_signed_sym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "512",
+      "hadamard_asym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "512",
+      "pq_constant_asym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "512",
+      "pq_signed_asym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "512",
+      "hadamard_sym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "512",
+      "pq_constant_sym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "512",
+      "pq_signed_sym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "d",
+      "hadamard_asym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "d",
+      "pq_constant_asym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "d",
+      "pq_signed_asym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "d",
+      "hadamard_sym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "d",
+      "pq_constant_sym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ],
+    [
+      "d",
+      "pq_signed_sym",
+      "pending",
+      "pending",
+      "submitted 1734028 (PENDING Priority in submission manifest)",
+      "pending"
+    ]
+  ],
+  "selection_policy": "latest attempt by job ID then mtime per phase; never choose a better score",
+  "preserved_table": "/home/yanlongc/prismquant-rebuttal-e41/results/e41/b6/history_before_collect8b/table.md"
+}

@@ -1,0 +1,253 @@
+{
+  "kind": "partial_fp16_collection",
+  "collected_utc": "2026-11-10T08:10:38.752840+00:00",
+  "job_id": "1732990",
+  "experiment_status": "PARTIAL",
+  "rows": [
+    {
+      "model": "llama32_3b",
+      "phase": "prefill",
+      "seed": 0,
+      "source": "results/e38/raw/fp16_3b_prefill_b1_s1_job1732990.json",
+      "source_sha256": "c8911ff07b649ef92a08cebbdbee6727ff3fa362915c2ac67776be4d451a6679",
+      "source_commit": "40330a7d796f13ebf2f056ad593af37aa74fe1f7",
+      "ppl": 7.81657912796739,
+      "chunks": 141,
+      "prefill_gate": {
+        "status": "PASS",
+        "sequences": 64,
+        "backend_ppl": 7.6438352681611175,
+        "reference_ppl": 7.6438352681611175,
+        "ppl_difference": 0.0,
+        "threshold_absolute_ppl": 0.01,
+        "max_abs_logit_difference": 0.0,
+        "argmax_agreement": 1.0,
+        "positions": 131072,
+        "scope": "FP16 backend vs same-version HF FP16; not an INT4 equivalence gate"
+      },
+      "decode_gate": {
+        "status": "PASS",
+        "rows": [
+          {
+            "sequence": 0,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 9.503395636917272,
+            "reference_ppl": 9.502104546010314,
+            "ppl_difference": 0.0012910909069585585,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.03125,
+            "status": "PASS"
+          },
+          {
+            "sequence": 1,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 16.99354618120419,
+            "reference_ppl": 16.99721165793755,
+            "ppl_difference": -0.0036654767333601512,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.03515625,
+            "status": "PASS"
+          }
+        ]
+      },
+      "timing_status": "BLOCKED",
+      "timing_samples": 0,
+      "timing_failure_reason": "host CPU load, not GPU process sharing",
+      "load1_per_cpu": 0.57857666015625,
+      "cpu_busy_fraction": 0.43887775551102204,
+      "guard_threshold": 0.5,
+      "logged_gate_backend_rows": 141
+    },
+    {
+      "model": "llama32_3b",
+      "phase": "decode",
+      "seed": 0,
+      "source": "results/e38/raw/fp16_3b_decode_b1_s1_job1732990.json",
+      "source_sha256": "70222cd21e5b6fe68a3cbcc74cdddc4f08b2cfaf1dc35f5088a575ba2e8ffa80",
+      "source_commit": "40330a7d796f13ebf2f056ad593af37aa74fe1f7",
+      "ppl": 7.81657912796739,
+      "chunks": 141,
+      "prefill_gate": {
+        "status": "PASS",
+        "sequences": 64,
+        "backend_ppl": 7.6438352681611175,
+        "reference_ppl": 7.6438352681611175,
+        "ppl_difference": 0.0,
+        "threshold_absolute_ppl": 0.01,
+        "max_abs_logit_difference": 0.0,
+        "argmax_agreement": 1.0,
+        "positions": 131072,
+        "scope": "FP16 backend vs same-version HF FP16; not an INT4 equivalence gate"
+      },
+      "decode_gate": {
+        "status": "PASS",
+        "rows": [
+          {
+            "sequence": 0,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 9.503395636917272,
+            "reference_ppl": 9.502104546010314,
+            "ppl_difference": 0.0012910909069585585,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.03125,
+            "status": "PASS"
+          },
+          {
+            "sequence": 1,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 16.99354618120419,
+            "reference_ppl": 16.99721165793755,
+            "ppl_difference": -0.0036654767333601512,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.03515625,
+            "status": "PASS"
+          }
+        ]
+      },
+      "timing_status": "BLOCKED",
+      "timing_samples": 0,
+      "timing_failure_reason": "host CPU load, not GPU process sharing",
+      "load1_per_cpu": 0.59144287109375,
+      "cpu_busy_fraction": 0.5200400801603207,
+      "guard_threshold": 0.5,
+      "logged_gate_backend_rows": 141
+    },
+    {
+      "model": "llama31_8b",
+      "phase": "prefill",
+      "seed": 0,
+      "source": "results/e38/raw/fp16_8b_prefill_b1_s1_job1732990.json",
+      "source_sha256": "f23285b47197936e33417b7210155670f3e2ffd77a321ba4fc62703b479ab754",
+      "source_commit": "40330a7d796f13ebf2f056ad593af37aa74fe1f7",
+      "ppl": 6.238432455537351,
+      "chunks": 141,
+      "prefill_gate": {
+        "status": "PASS",
+        "sequences": 64,
+        "backend_ppl": 6.188467932452708,
+        "reference_ppl": 6.188467932452708,
+        "ppl_difference": 0.0,
+        "threshold_absolute_ppl": 0.01,
+        "max_abs_logit_difference": 0.0,
+        "argmax_agreement": 1.0,
+        "positions": 131072,
+        "scope": "FP16 backend vs same-version HF FP16; not an INT4 equivalence gate"
+      },
+      "decode_gate": {
+        "status": "PASS",
+        "rows": [
+          {
+            "sequence": 0,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 7.596131284995609,
+            "reference_ppl": 7.593029118447095,
+            "ppl_difference": 0.0031021665485138072,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.046875,
+            "status": "PASS"
+          },
+          {
+            "sequence": 1,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 14.30248797553562,
+            "reference_ppl": 14.304771860108715,
+            "ppl_difference": -0.002283884573095918,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.04638671875,
+            "status": "PASS"
+          }
+        ]
+      },
+      "timing_status": "BLOCKED",
+      "timing_samples": 0,
+      "timing_failure_reason": "host CPU load, not GPU process sharing",
+      "load1_per_cpu": 0.63023681640625,
+      "cpu_busy_fraction": 0.45499999999999996,
+      "guard_threshold": 0.5,
+      "logged_gate_backend_rows": 141
+    },
+    {
+      "model": "llama31_8b",
+      "phase": "decode",
+      "seed": 0,
+      "source": "results/e38/raw/fp16_8b_decode_b1_s1_job1732990.json",
+      "source_sha256": "c792654f002f56ddf61e97d0136d38cacdc2fe08c53fa2281c24fa2925efa57c",
+      "source_commit": "40330a7d796f13ebf2f056ad593af37aa74fe1f7",
+      "ppl": 6.238432455537351,
+      "chunks": 141,
+      "prefill_gate": {
+        "status": "PASS",
+        "sequences": 64,
+        "backend_ppl": 6.188467932452708,
+        "reference_ppl": 6.188467932452708,
+        "ppl_difference": 0.0,
+        "threshold_absolute_ppl": 0.01,
+        "max_abs_logit_difference": 0.0,
+        "argmax_agreement": 1.0,
+        "positions": 131072,
+        "scope": "FP16 backend vs same-version HF FP16; not an INT4 equivalence gate"
+      },
+      "decode_gate": {
+        "status": "PASS",
+        "rows": [
+          {
+            "sequence": 0,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 7.596131284995609,
+            "reference_ppl": 7.593029118447095,
+            "ppl_difference": 0.0031021665485138072,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.046875,
+            "status": "PASS"
+          },
+          {
+            "sequence": 1,
+            "prefix": 2048,
+            "batch_size": 1,
+            "steps": 128,
+            "backend_ppl": 14.30248797553562,
+            "reference_ppl": 14.304771860108715,
+            "ppl_difference": -0.002283884573095918,
+            "argmax_agreement": 1.0,
+            "max_abs_logit_difference": 0.04638671875,
+            "status": "PASS"
+          }
+        ]
+      },
+      "timing_status": "BLOCKED",
+      "timing_samples": 0,
+      "timing_failure_reason": "host CPU load, not GPU process sharing",
+      "load1_per_cpu": 0.66893310546875,
+      "cpu_busy_fraction": 0.4354354354354354,
+      "guard_threshold": 0.5,
+      "logged_gate_backend_rows": 141
+    }
+  ],
+  "scheduler": {
+    "command": [
+      "sacct",
+      "-j",
+      "1732989,1732990",
+      "--format=JobID,JobName%22,State,ExitCode,Elapsed,Start,End,NodeList%25",
+      "-P"
+    ],
+    "stdout": "JobID|JobName|State|ExitCode|Elapsed|Start|End|NodeList\n1732989|e38-checkpoint|PENDING|0:0|00:00:00|Unknown|Unknown|None assigned\n1732990|e38-fp16-stage-a|COMPLETED|0:0|00:12:31|2026-11-10T07:51:33|2026-11-10T08:04:04|gpu-a40-1\n1732990.batch|batch|COMPLETED|0:0|00:12:31|2026-11-10T07:51:33|2026-11-10T08:04:04|gpu-a40-1\n1732990.extern|extern|COMPLETED|0:0|00:12:31|2026-11-10T07:51:33|2026-11-10T08:04:04|gpu-a40-1\n",
+    "stderr": ""
+  },
+  "statistics_note": "Two processes per model share seed0; they are not independent seeds. No seed standard deviation or task CI is claimed.",
+  "bookkeeping_note": "Original gate_progress.backend_rows aliases the full PPL list and ends at141 entries. Gate metrics independently verified using first64; original logs unchanged. Collector records this; runner now snapshots the64rows for future attempts."
+}

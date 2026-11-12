@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETE",
+  "job_id": "1736285",
+  "step_id": "4",
+  "hostname": "gpu-a40-1.cluster02.eee.ntu.edu.sg",
+  "cuda_visible_devices": "0",
+  "purpose": "Deterministic tiny kernel correctness only; no model, FP16control, throughput or latency benchmark",
+  "checks": {
+    "full_native_model_module_import": "PASS",
+    "signed4_gemm_exact": "PASS",
+    "signed4_quant_exact": "PASS",
+    "int32_dequant_official_source_exact": "PASS",
+    "pinned_fht128_exact": "PASS"
+  },
+  "libraries": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.45.0",
+    "triton": "3.2.0",
+    "flash_attn": "2.7.4.post1"
+  },
+  "gpu_name": "NVIDIA A40",
+  "gpu_count": 1,
+  "deploy_cuda": "/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124/deploy/_CUDA.cpython-311-x86_64-linux-gnu.so",
+  "dequant_ideal_difference": {
+    "max_abs": 1.125,
+    "different_values": 476,
+    "values": 512,
+    "scope": "Tiny deterministic kernel input only, not model/logit/PPL error"
+  },
+  "dequant_source_difference": {
+    "max_abs": 0.0,
+    "source": "quant.cu: int_to_half static_cast<int>(q/10.0f), clamp, convert half, half scale products, multiply half10"
+  },
+  "verified_binary_sha256": {
+    "deploy_cuda": "991e4ceec6006232e672fe4423d28433f512111f66501839d517cf6d2e7d4b77",
+    "fht_cuda": "8fe63df58f14b34abe5448c5c6543811902dcfe54fa5ccc332c045785ee0922c"
+  },
+  "verification_utc": "2026-11-12T15:49:32.749970+00:00"
+}

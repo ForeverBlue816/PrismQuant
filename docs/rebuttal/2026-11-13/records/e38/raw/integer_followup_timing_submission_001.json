@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-11-10T13:24:21.620856+00:00",
+  "mode": "timing",
+  "seed": 0,
+  "source_commit": "dd524c12db7d7dedb48879cef4bb3fc36a579caf",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--job-name=e38-int8-timing-seed0",
+    "--gpus=a40:1",
+    "--mem=40G",
+    "--time=04:00:00",
+    "--nodelist=gpu-a40-2",
+    "slurm_e38_integer_followup.sh"
+  ],
+  "script_sha256": "f6f59328ab11df0347d4e5f856c1186adf4beba318a5bbabe04c6fd05e99c1af",
+  "relative_ppl_tolerance": 0.005,
+  "scope": "4-bit storage expanded to INT8 compute, original E14 simulated KV; prototype evidence, not native INT4 or final joint C1",
+  "original_failure_retained": "integer_gate_3b_kmax_seed0_job1733332.json",
+  "returncode": 0,
+  "stdout": "1733477\n",
+  "stderr": "",
+  "job_id": "1733477",
+  "scontrol": "JobId=1733477 JobName=e38-int8-timing-seed0\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Priority Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=04:00:00 TimeMin=N/A\n   SubmitTime=2026-11-10T13:24:21 EligibleTime=2026-11-10T13:24:21\n   AccrueTime=Unknown\n   StartTime=Unknown EndTime=Unknown Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-10T13:24:21 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-2:2394098\n   ReqNodeList=gpu-a40-2 ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=4,mem=40G,node=1,billing=3,gres/gpu=1,gres/gpu:a40=1\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=40G MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_e38_integer_followup.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-integer-followup-1733477.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-integer-followup-1733477.out\n   Power=\n   TresPerJob=gres/gpu:a40:1\n   TresPerTask=cpu:4\n   \n\n"
+}

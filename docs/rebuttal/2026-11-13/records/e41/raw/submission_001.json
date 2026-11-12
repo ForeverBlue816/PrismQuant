@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-11-10T13:56:22.799162+00:00",
+  "source_commit": "4ee367bcec43869e874787bd921e9db6c6e684b7",
+  "seed": 0,
+  "command": [
+    "sbatch",
+    "--parsable",
+    "slurm_e41_seed0.sh"
+  ],
+  "script_sha256": "ac375781c20b4558b19a0aabfb3ab14e3b7a14101f502decedc8bc37a137069f",
+  "scope": "8B activation-only mechanism: Had/PQconstant/PQsigned x asymmetric/symmetric, g128, full141PPL, BF16 weights/KV, no numerical execution gate",
+  "gpu": "pro6000:1",
+  "wall_limit": "04:00:00",
+  "returncode": 0,
+  "stdout": "1733515\n",
+  "stderr": "",
+  "job_id": "1733515",
+  "scontrol": "JobId=1733515 JobName=e41-mechanism-seed0\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Priority Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=04:00:00 TimeMin=N/A\n   SubmitTime=2026-11-10T13:56:22 EligibleTime=2026-11-10T13:56:22\n   AccrueTime=Unknown\n   StartTime=Unknown EndTime=Unknown Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-10T13:56:22 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-2:2484636\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=4,mem=90G,node=1,billing=8,gres/gpu=1,gres/gpu:pro6000=1\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=90G MinTmpDiskNode=0\n   Features=highmem DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e41/slurm_e41_seed0.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e41\n   StdErr=/home/yanlongc/prismquant-rebuttal-e41/runs/e41-seed0-1733515.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e41/runs/e41-seed0-1733515.out\n   Power=\n   TresPerJob=gres/gpu:pro6000:1\n   TresPerTask=cpu:4\n   \n\n"
+}

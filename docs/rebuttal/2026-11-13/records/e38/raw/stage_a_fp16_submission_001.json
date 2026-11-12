@@ -1,0 +1,19 @@
+{
+  "kind": "scheduler_submission",
+  "status": "SUBMITTED",
+  "created_utc": "2026-11-10T07:50:38.279572+00:00",
+  "commit": "40330a7d796f13ebf2f056ad593af37aa74fe1f7",
+  "command": "sbatch --parsable slurm_e38_stage_a.sh",
+  "cwd": "/home/yanlongc/prismquant-rebuttal-e38",
+  "explicit_environment": {
+    "E38_EXPECTED_SOURCE_COMMIT": "40330a7d796f13ebf2f056ad593af37aa74fe1f7"
+  },
+  "gpu_request": "a40:1",
+  "time_limit": "08:00:00",
+  "purpose": "3B and 8B real FP16 backend reference gates, full WT2 PPL, B1 prefill/decode session1 gated timing",
+  "seed": 0,
+  "returncode": 0,
+  "stdout": "1732990\n",
+  "stderr": "sbatch: slurm_job_submit: enforced 4 CPUs for 1 task and 40960 MiB mem/node for 1 GPU(s) (model=a40)\nsbatch: slurm_job_submit: you requested 4 CPUs/node and 65536 MiB mem/node\n",
+  "job_id": "1732990"
+}

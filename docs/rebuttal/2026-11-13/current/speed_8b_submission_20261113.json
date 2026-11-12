@@ -1,0 +1,33 @@
+{
+  "utc": "2026-11-12T16:04:58.160146+00:00",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--export=ALL",
+    "--dependency=afterany:1736252",
+    "slurm_rebuttal_speed_8b.sh"
+  ],
+  "source_heads": {
+    "E38_SOURCE_COMMIT": "08542f85d2ab6aa3b38eac6937097977d4e72ae8",
+    "E39_SOURCE_COMMIT": "84ea20a1c74d77a628c1666445c2ac8402407e50",
+    "E42_SOURCE_COMMIT": "e989827c42a256ca6cec7858b0cd6fcadfb90fba"
+  },
+  "returncode": 0,
+  "stdout": "1736351\n",
+  "stderr": "",
+  "dependency": "afterany:1736252",
+  "replaces": "1736287",
+  "no_fp16": true,
+  "same_gpu_sequential_rows": [
+    "FlatQuant native official",
+    "FlatQuant native remove-dead-random",
+    "PQk8 fast fresh-cache",
+    "FlatQuant floating fake-quant",
+    "DuQuant floating fake-quant"
+  ],
+  "job_id": "1736351",
+  "cancel_old_pending": {
+    "returncode": 0,
+    "stderr": ""
+  }
+}

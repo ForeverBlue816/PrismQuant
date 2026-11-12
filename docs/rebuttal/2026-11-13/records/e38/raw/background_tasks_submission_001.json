@@ -1,0 +1,18 @@
+{
+  "status": "PAUSED_BY_USER",
+  "updated_utc": "2026-11-12T15:22:25.517040+00:00",
+  "reason": "Only FlatQuant and DuQuant; no FP16 or PrismQuant runs",
+  "job_id": "1736075",
+  "previous_state": {
+    "status": "SUBMITTED",
+    "job_id": "1736075",
+    "seed12_job_id": "1736076",
+    "compute_job_id": "1736074",
+    "updated_utc": "2026-11-12T13:48:20.061638+00:00",
+    "previous_failed_tasks_job": "1735191",
+    "seed0_dependency": "none; all seed0 packed checkpoints already complete",
+    "seed12_dependency": "afterany:1736074",
+    "recovery_record": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/slurm_bundle_recovery_20261112.json"
+  },
+  "current_baselines_job": "1736252"
+}

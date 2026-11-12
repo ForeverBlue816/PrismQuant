@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-10T11:53:31.449911+00:00",
+  "kind": "fp16",
+  "model": "3b",
+  "seed": 0,
+  "source_commit": "e8d914bd1d553121ef43ddb37e99fad22c2e7e65",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "slurm_e38_eight_tasks.sh"
+  ],
+  "script_sha256": "b88009a9ab2bfe51fa251b6e30619c453f387d7762dfb79fe82a020480dc5b02",
+  "gpu": "a40:1",
+  "wall_limit": "12:00:00",
+  "per_item_outputs": true,
+  "scope": "complete eight-task accuracy after model-quality gate; no timing",
+  "sbatch_returncode": 0,
+  "sbatch_stdout": "1733347\n",
+  "sbatch_stderr": "",
+  "job_id": "1733347",
+  "scontrol": "JobId=1733347 JobName=e38-fp16-eight-tasks\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Priority Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=12:00:00 TimeMin=N/A\n   SubmitTime=2026-11-10T11:53:31 EligibleTime=2026-11-10T11:53:31\n   AccrueTime=Unknown\n   StartTime=Unknown EndTime=Unknown Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-10T11:53:31 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-2:2146545\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=4,mem=40G,node=1,billing=3,gres/gpu=1,gres/gpu:a40=1\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=40G MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_e38_eight_tasks.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-eight-tasks-1733347.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-eight-tasks-1733347.out\n   Power=\n   TresPerJob=gres/gpu:a40:1\n   TresPerTask=cpu:4\n   \n\n"
+}

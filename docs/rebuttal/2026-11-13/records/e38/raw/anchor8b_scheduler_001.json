@@ -1,0 +1,11 @@
+{
+  "observed_utc": "2026-11-11T04:16:11.945779+00:00",
+  "stdout": "             JOBID                             NAME      STATE       TIME         NODELIST(REASON)\n       1733997_[1]              e38-anchor8b-nar_k8    PENDING       0:00 (QOSMaxJobsPerUserLimit)\n       1733996_[0]            e38-anchor8b-hadamard    PENDING       0:00 (QOSMaxJobsPerUserLimit)\n",
+  "stderr": "",
+  "returncode": 0,
+  "new_gpu_jobs_only": [
+    "1733996_0",
+    "1733997_1"
+  ],
+  "other_experiments": "held pending8Banchor result reconciliation"
+}

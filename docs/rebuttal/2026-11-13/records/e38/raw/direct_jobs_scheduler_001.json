@@ -1,0 +1,27 @@
+{
+  "collected_utc": "2026-11-10T13:58:17.623323+00:00",
+  "active": {
+    "command": [
+      "squeue",
+      "-j",
+      "1733510,1733511,1733512,1733513,1733515",
+      "-o",
+      "%.18i %.30j %.10T %.10M %.30R"
+    ],
+    "stdout": "             JOBID                           NAME      STATE       TIME               NODELIST(REASON)\n           1733510          e38-direct-integer-3b    PENDING       0:00                     (Priority)\n           1733515            e41-mechanism-seed0    PENDING       0:00                     (Priority)\n           1733513             e38-direct-fp16-8b    PENDING       0:00                     (Priority)\n           1733512             e38-direct-fp16-3b    PENDING       0:00                     (Priority)\n           1733511        e38-direct-reference-3b    RUNNING       2:49                      gpu-a40-2\n",
+    "stderr": ""
+  },
+  "replaced": {
+    "command": [
+      "sacct",
+      "-j",
+      "1733476,1733349,1733347,1733348",
+      "-o",
+      "JobID,State,ExitCode,Start,End",
+      "-P"
+    ],
+    "stdout": "JobID|State|ExitCode|Start|End\n1733347|CANCELLED by 295800911|0:0|None|2026-11-10T13:54:56\n1733348|CANCELLED by 295800911|0:0|None|2026-11-10T13:54:56\n1733349|CANCELLED by 295800911|0:0|None|2026-11-10T13:54:56\n1733476|CANCELLED by 295800911|0:0|None|2026-11-10T13:54:56\n",
+    "stderr": ""
+  },
+  "execution_policy": "No numerical execution thresholds; seed0; direct measurements; no OffQ"
+}

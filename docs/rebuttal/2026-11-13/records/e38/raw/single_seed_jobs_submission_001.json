@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-11-10T11:54:24.076150+00:00",
+  "scope": "User requested seed0 only; no seeds1/2 and no OffQ",
+  "jobs": [
+    {
+      "submission": "results/e38/raw/integer_submission_001.json",
+      "sha256": "24648e837677dfc68635a29da655a9bc922cd03c6527fa044932af22041375af",
+      "job_id": "1733332",
+      "source_commit": "8851a692dbd877a93d45ca84cd6f1a3bc5235420",
+      "seed": 0
+    },
+    {
+      "submission": "results/e38/raw/eight_tasks_submission_fp16_3b_001.json",
+      "sha256": "5bcdcd431340c0e780aca2a9dea71114219efc7990c1c260d8281684b2802daf",
+      "job_id": "1733347",
+      "source_commit": "e8d914bd1d553121ef43ddb37e99fad22c2e7e65",
+      "seed": 0
+    },
+    {
+      "submission": "results/e38/raw/eight_tasks_submission_fp16_8b_001.json",
+      "sha256": "deb965566914ab286a3775bd4ee57bd150c742de479405491b2ab6622197a1b2",
+      "job_id": "1733348",
+      "source_commit": "e8d914bd1d553121ef43ddb37e99fad22c2e7e65",
+      "seed": 0
+    },
+    {
+      "submission": "results/e38/raw/eight_tasks_submission_simulator_reference_3b_kmax_001.json",
+      "sha256": "9565c91d95428ff09d7017a82c1f015dfa432fdbdf77b99cfefb3c167b8a50ed",
+      "job_id": "1733349",
+      "source_commit": "e8d914bd1d553121ef43ddb37e99fad22c2e7e65",
+      "seed": 0
+    }
+  ],
+  "scheduler": {
+    "command": [
+      "squeue",
+      "-j",
+      "1733332,1733347,1733348,1733349",
+      "-o",
+      "%.18i %.30j %.10T %.10M %.30R"
+    ],
+    "stdout": "             JOBID                           NAME      STATE       TIME               NODELIST(REASON)\n           1733349            e38-ref-tasks-seed0    PENDING       0:00                     (Priority)\n           1733332              e38-integer-seed0    PENDING       0:00                     (Priority)\n           1733348           e38-fp16-eight-tasks    PENDING       0:00                     (Priority)\n           1733347           e38-fp16-eight-tasks    PENDING       0:00                     (Priority)\n",
+    "stderr": ""
+  },
+  "restoration": [
+    {
+      "manifest": "results/e38/raw/restore_seed0_3b_hadamard_001.json",
+      "status": "COMPLETE",
+      "verified_files": 29
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_3b_kmax_local_001.json",
+      "status": "ALREADY_VERIFIED_LOCAL",
+      "verified_files": 29
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_3b_nar_k8_001.json",
+      "status": "COMPLETE",
+      "verified_files": 29
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_8b_nar_kmax_001.json",
+      "status": "DOWNLOADING",
+      "verified_files": 18
+    }
+  ]
+}

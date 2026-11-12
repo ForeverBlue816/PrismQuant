@@ -1,0 +1,26 @@
+{
+  "observed_utc": "2026-11-12T15:20:04.885884+00:00",
+  "model": "Meta-Llama-3.1-8B",
+  "methods": [
+    "FlatQuant official native",
+    "DuQuant official native"
+  ],
+  "source_heads": {
+    "e38": "2b28a98fc9c1abaadf34c553a1e2d5563bd09c3a",
+    "e39": "56ae3cfb695edb61026de9208307500a9c456e4f",
+    "e42": "54898df318e88eb6a7c41ed7fdcb838ae507386a"
+  },
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--export=ALL",
+    "slurm_rebuttal_baselines_8b.sh"
+  ],
+  "returncode": 0,
+  "stdout": "1736252\n",
+  "stderr": "",
+  "resources": "2 PRO6000, one configuration per GPU; 8CPU/66GiB hostRAM",
+  "dependency": "none",
+  "scope": "experiments/rebuttal_baselines_only_20261112.json",
+  "job_id": "1736252"
+}

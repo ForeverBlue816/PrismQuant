@@ -1,0 +1,221 @@
+{
+  "kind": "e38_stage_a_trained8b_native",
+  "status": "FAILED",
+  "model": "llama31_8b",
+  "rotation": "hadamard",
+  "row": "hadamard",
+  "seed": 0,
+  "backend": "native CUTLASS signed INT4 GEMM",
+  "scope": "Actual trained8B weights; independent per-token symmetric activation/native per-head KV4 protocol; no Table1 equivalence claim",
+  "source_commit": "9a1bade02df471d25c4cf04e88ae83468175772a",
+  "command_line": [
+    "/projects/nar/nar-validation/e28-env/bin/python",
+    "-m",
+    "e38.stage_a_8b",
+    "--row",
+    "hadamard",
+    "--phase",
+    "ppl-timing",
+    "--artifact-dir",
+    "/projects/nar/nar-validation/artifacts/e38/native_packed8b_seed0_v1",
+    "--source-commit",
+    "9a1bade02df471d25c4cf04e88ae83468175772a",
+    "--repetitions",
+    "20",
+    "--warmup",
+    "10",
+    "--batch-size",
+    "1",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_hadamard_seed0_job1734010.json"
+  ],
+  "started_utc": "2026-11-11T15:27:32.170327+00:00",
+  "hostname": "gpu-a40-1.cluster02.eee.ntu.edu.sg",
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "pid": 579832,
+  "source_sha256": {
+    "quarot-llama3/e38/stage_a_8b.py": "a872b42d54333409013e3411cf0d1b4f1281e1567bb7f3af6024886cedab4ab6",
+    "quarot-llama3/e38/stage_a_8b_model.py": "92c2f295da29b3347fbde12a0c4b690e8f9fbea209552e0ce50e6af4cfa45dd9",
+    "quarot-llama3/e38/fp16.py": "5ce9ae1f7dd00910cd08b1c68bc4a95970b295ba4a92fd426ad5fcb4925af367",
+    "quarot-llama3/modeling_llama3.py": "ec8f03779820a4a749a97a8e84b337a31f880c40e4145a0a0099ae3ca9299582",
+    "quarot-llama3/e28_v2/cache_adapter.py": "91b8fa46bfa453d553190ccc526257717650002607b016ef917a1d383d5f3bfe",
+    "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+    "nar/activation_experiments.py": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+    "nar/e38_checkpoint_probe.py": "1d39b7777aae43861b2a8ca034c78bb56d5e7c56f101326d7d9c6c21d8100a23"
+  },
+  "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "quant_snapshot": "fc812e6687165115feee00293c953a1b521d3bd0",
+  "task_seed": 0,
+  "quality_execution_gates": "none",
+  "ppl": {
+    "status": "not run"
+  },
+  "eight_tasks": {
+    "status": "not run"
+  },
+  "timing": {
+    "status": "not run"
+  },
+  "quantization": {
+    "weights": "original default E14 GPTQ symmetric per-channel saved BF16 values recovered into signed4 codes; native FP16scale projection drift recorded",
+    "activation": "symmetric per-token maxabs/7; native packed4",
+    "kv": "native asymmetric packed4 per-token/head128, FP16 scale+offset, no residual window; prefill reads actual packed pages and reconstructs K/V",
+    "table1_difference": "Table1 uses asymmetric group128 activations and KIVI token-axis grouped K plus residual32",
+    "native_int4_tensorcore": true,
+    "whole_graph_integer": false
+  },
+  "slurm": {
+    "SLURM_JOB_ID": "1734010",
+    "SLURM_JOB_NODELIST": "gpu-a40-1",
+    "CUDA_VISIBLE_DEVICES": "0"
+  },
+  "gpu_model": "NVIDIA A40",
+  "cuda_runtime": "12.4",
+  "actual_head_commit": "79c2e4caadcb36ec7b612542cadb56fd4b4b13a0",
+  "libraries": {
+    "torch": "2.4.1+cu124",
+    "transformers": "4.36.2",
+    "triton": "3.0.0",
+    "datasets": "2.17.1",
+    "numpy": "1.26.4",
+    "tokenizers": "0.15.2",
+    "flash-attn": "2.6.3"
+  },
+  "native_operator_sources": [
+    {
+      "path": "/projects/_hdd/nar/nar-validation/external/quarot/quarot/nn/linear.py",
+      "sha256": "d53d33fff182ea6e561bf3a8fc8a49c3380eb76634dc760226bbde742241ac9e"
+    },
+    {
+      "path": "/projects/_hdd/nar/nar-validation/external/quarot/quarot/nn/quantization.py",
+      "sha256": "04b07eb72b55e556f2af7b9a5cb92c30f362bf41e4389ec9aed6855dac25fc0a"
+    },
+    {
+      "path": "/projects/_hdd/nar/nar-validation/external/quarot/quarot/transformers/kv_cache.py",
+      "sha256": "48d9f12a1b712c6494ca928b7cfba600f1b7774f9abe11dbac68761692447304"
+    }
+  ],
+  "native_extension": {
+    "path": "/projects/_hdd/nar/nar-validation/external/quarot/quarot/_CUDA.cpython-311-x86_64-linux-gnu.so",
+    "bytes": 912912,
+    "content_hash_checked": false
+  },
+  "evaluation_tokens": {
+    "path": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+    "sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021"
+  },
+  "source_observation": {
+    "quarot-llama3/e38/stage_a_8b.py": "a872b42d54333409013e3411cf0d1b4f1281e1567bb7f3af6024886cedab4ab6",
+    "quarot-llama3/e38/stage_a_8b_model.py": "92c2f295da29b3347fbde12a0c4b690e8f9fbea209552e0ce50e6af4cfa45dd9",
+    "quarot-llama3/e38/fp16.py": "5ce9ae1f7dd00910cd08b1c68bc4a95970b295ba4a92fd426ad5fcb4925af367",
+    "quarot-llama3/modeling_llama3.py": "ec8f03779820a4a749a97a8e84b337a31f880c40e4145a0a0099ae3ca9299582",
+    "quarot-llama3/e28_v2/cache_adapter.py": "91b8fa46bfa453d553190ccc526257717650002607b016ef917a1d383d5f3bfe",
+    "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+    "nar/activation_experiments.py": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+    "nar/e38_checkpoint_probe.py": "1d39b7777aae43861b2a8ca034c78bb56d5e7c56f101326d7d9c6c21d8100a23"
+  },
+  "checkpoint_loading": {
+    "directory": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_hadamard_seed0",
+    "manifest": {
+      "bf16_reparameterization_drift": {
+        "exceeds_previous_bf16_gate": true,
+        "max_abs_logit_error": 17.90625,
+        "previous_bf16_gate": 0.02,
+        "probe_tokens": 128,
+        "relative_l2_logit_error": 0.09499092400074005
+      },
+      "checkpoint": "one bf16 fake-quantized state file per decoder layer",
+      "elapsed_seconds": 611.2434983253479,
+      "fold": {
+        "embedding_centering": false,
+        "norm": "all RMSNorm affine weights fused into consumer weights then set to one",
+        "official_bug_avoided": "official head calls rotate_embeddings twice; E14 applies algebraic R1 once",
+        "r1": "global residual rotation; input rows WQ, residual output Q^T W",
+        "r2": "per-head V rotation with identical fold into every GQA-expanded o_proj head block",
+        "r3": "QuaRot cross-head Hadamard at o_proj for Hadamard rows; omitted for the specified NAR R1/R2/R4 rows",
+        "r4": "per-layer down-input rotation folded into down_proj rows",
+        "tied_embeddings_materialized_before_final_norm_fusion": false
+      },
+      "fp32_algebra_control": {
+        "full_stage": {
+          "max_abs_logit_error": 3.147125244140625e-05,
+          "model": "llama32_3b",
+          "model_dtype": "torch.float32",
+          "relative_l2_logit_error": 1.3911335372540634e-06,
+          "rotation": "hadamard",
+          "stage": "norm_r1_r2_r4",
+          "tokens": 16
+        },
+        "source": "/projects/_hdd/nar/nar-validation/results/llama32_3b/e14_hadamard_fp32_fold_diagnostic.json",
+        "tolerance": 1e-05
+      },
+      "gptq": {
+        "act_order": false,
+        "bits": 4,
+        "blocksize": 128,
+        "calibration_dataset": "WikiText-2 train",
+        "calibration_seed": 0,
+        "calibration_sequences": 128,
+        "excluded": [
+          "embed_tokens",
+          "lm_head"
+        ],
+        "grid": 100,
+        "groupsize": -1,
+        "maxshrink": 0.8,
+        "mse_clipping": true,
+        "norm": 2.4,
+        "percdamp": 0.01,
+        "perchannel": true,
+        "sequence_length": 2048,
+        "static_groups": false,
+        "symmetric": true
+      },
+      "hardware": {
+        "cuda_available": true,
+        "cuda_runtime": "12.8",
+        "gpu_capability": [
+          12,
+          0
+        ],
+        "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+        "hostname": "gpu-node",
+        "nvidia_smi": [
+          "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, GPU-REDACTED, 97887 MiB, 96477 MiB, 580.173.02"
+        ],
+        "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+        "slurm_job_gpus": "1",
+        "slurm_job_id": "137081",
+        "torch": "2.11.0+cu128"
+      },
+      "model": "llama31_8b",
+      "model_id": "unsloth/Meta-Llama-3.1-8B",
+      "quarot_commit": "5008669b08c1f11f9b64d52d16fddd47ca754c5a",
+      "rotation": "hadamard"
+    },
+    "manifest_sha256": "968ca9910ac392602feb36f683ee4e86850cd41e5e0ef491c538c920b34b88f0",
+    "native_representation_note": "Same source trained checkpoint; FP16scale packing generally changes represented real-valued weights, recorded per matrix"
+  },
+  "embedding_head_fold": [
+    {
+      "name": "model.embed_tokens.weight",
+      "file": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00001-of-00004.safetensors",
+      "source_dtype": "torch.bfloat16",
+      "fold_dtype": "BF16 at original E14 rounding boundaries, then FP16 backend container"
+    },
+    {
+      "name": "lm_head.weight",
+      "file": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00004-of-00004.safetensors",
+      "source_dtype": "torch.bfloat16",
+      "fold_dtype": "BF16 at original E14 rounding boundaries, then FP16 backend container"
+    }
+  ],
+  "packed_layers": [],
+  "error": "RuntimeError('\"nextafter_cuda\" not implemented for \\'Half\\'')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/stage_a_8b.py\", line 327, in main\n    model = backend.build(args.row, args.artifact_dir, record, args.output)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/stage_a_8b_model.py\", line 194, in build\n    packed, info, reused = layer_payload(checkpoint, cache, index)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/stage_a_8b_model.py\", line 117, in layer_payload\n    packed[name], audits[name] = export_matrix(weight)\n                                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/stage_a_8b_model.py\", line 80, in export_matrix\n    audit, recovered = audit_symmetric_grid(weight.cuda(), row_batch=128)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/yanlongc/prismquant-rebuttal-e38/nar/e38_checkpoint_probe.py\", line 162, in audit_symmetric_grid\n    torch.nextafter(s16, torch.zeros_like(s16)),\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: \"nextafter_cuda\" not implemented for 'Half'\n",
+  "finished_utc": "2026-11-11T15:28:16.903741+00:00"
+}

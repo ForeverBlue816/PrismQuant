@@ -1,0 +1,120 @@
+{
+  "observed_utc": "2026-11-12T13:48:20.007183+00:00",
+  "model": "Meta-Llama-3.1-8B",
+  "failed_seed0_job": "1735191",
+  "commands": [
+    {
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--export=ALL",
+        "slurm_rebuttal_compute_8b.sh"
+      ],
+      "extra_env": {},
+      "returncode": 0,
+      "stdout": "1736074\n",
+      "stderr": "",
+      "utc": "2026-11-12T13:48:20.023016+00:00"
+    },
+    {
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--export=ALL",
+        "--job-name=pq8b-tasks-seed0",
+        "slurm_rebuttal_tasks_8b.sh"
+      ],
+      "extra_env": {
+        "E38_TASK_SCOPE": "seed0"
+      },
+      "returncode": 0,
+      "stdout": "1736075\n",
+      "stderr": "",
+      "utc": "2026-11-12T13:48:20.030927+00:00"
+    },
+    {
+      "command": [
+        "sbatch",
+        "--parsable",
+        "--export=ALL",
+        "--job-name=pq8b-tasks-seed12",
+        "--ntasks=2",
+        "--gpus=a40:2",
+        "--mem=80G",
+        "--dependency=afterany:1736074",
+        "slurm_rebuttal_tasks_8b.sh"
+      ],
+      "extra_env": {
+        "E38_TASK_SCOPE": "seed12"
+      },
+      "returncode": 0,
+      "stdout": "1736076\n",
+      "stderr": "",
+      "utc": "2026-11-12T13:48:20.040059+00:00"
+    },
+    {
+      "command": [
+        "squeue",
+        "-h",
+        "-j",
+        "1735192",
+        "-o",
+        "%T"
+      ],
+      "extra_env": {},
+      "returncode": 0,
+      "stdout": "PENDING\n",
+      "stderr": "",
+      "utc": "2026-11-12T13:48:20.046219+00:00"
+    },
+    {
+      "command": [
+        "scancel",
+        "1735192"
+      ],
+      "extra_env": {},
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "utc": "2026-11-12T13:48:20.050362+00:00"
+    },
+    {
+      "command": [
+        "squeue",
+        "-h",
+        "-j",
+        "1734028",
+        "-o",
+        "%T"
+      ],
+      "extra_env": {},
+      "returncode": 0,
+      "stdout": "PENDING\n",
+      "stderr": "",
+      "utc": "2026-11-12T13:48:20.055142+00:00"
+    },
+    {
+      "command": [
+        "scancel",
+        "1734028"
+      ],
+      "extra_env": {},
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "utc": "2026-11-12T13:48:20.059390+00:00"
+    }
+  ],
+  "source_heads": {
+    "e38": "0bf135e1ea21df2f8f0e395009bb245d695319f0",
+    "e39": "007389d93350fa42728a5bd52be854fa29380af7",
+    "e40": "9ca1f32f26edf9062319ad56a9946fd87bae404f",
+    "e41": "ba9aeefbf774f0bccf5ed3fa9f8c0b64e4575b5a",
+    "e42": "fca51718e8515bcd011f8d3a3c9b1e90cf935f6a"
+  },
+  "unrelated_jobs": "untouched",
+  "compute_job": "1736074",
+  "seed0_tasks_job": "1736075",
+  "seed12_tasks_job": "1736076",
+  "status": "SUBMITTED_REPLACEMENTS_OLD_PENDING_CANCELLED"
+}

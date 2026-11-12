@@ -1,0 +1,511 @@
+{
+  "kind": "e41_seed0_mechanism_collection",
+  "collected_utc": "2026-11-11T03:34:09.361779+00:00",
+  "job_id": "1733515",
+  "status": "COMPLETE",
+  "source_commit": "4ee367bcec43869e874787bd921e9db6c6e684b7",
+  "runtime_head_commit": "522ea0e980b412782e703b11bdd4f035a0b8fa9f",
+  "runtime_head_note": "522ea0e adds only submission_001.json relative to executable source 4ee367b; no experiment source changed.",
+  "source_files": {
+    "nar/e41_mechanism_seed0.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/nar/e41_mechanism_seed0.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/nar/e41_mechanism_seed0.py",
+      "bytes": 15072,
+      "sha256": "9e3737fd768fbf239c1958a5164bbaf58e4dabaf25af5844bd3c2d86bffa8d61"
+    },
+    "nar/reviewer_ablations.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/nar/reviewer_ablations.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/nar/reviewer_ablations.py",
+      "bytes": 22026,
+      "sha256": "77fd8fb86343b22bd1a58309f99907d3566a601918aab1f16d314d04108d8880"
+    },
+    "nar/e33_rangelaw.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/nar/e33_rangelaw.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/nar/e33_rangelaw.py",
+      "bytes": 11820,
+      "sha256": "37e594326bd6c9b111119c188b7744bff33a317fef24b4806240ca2547596482"
+    },
+    "nar/e34_anchor_attribution.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/nar/e34_anchor_attribution.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/nar/e34_anchor_attribution.py",
+      "bytes": 19568,
+      "sha256": "9f06b33e77e07809faa2e161df27adae5c1ab18e820a1bde530092d6364aa28f"
+    },
+    "nar/activation_experiments.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/nar/activation_experiments.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/nar/activation_experiments.py",
+      "bytes": 48657,
+      "sha256": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d"
+    },
+    "nar/experiment.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/nar/experiment.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/nar/experiment.py",
+      "bytes": 71072,
+      "sha256": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f"
+    },
+    "nar/e12_wy.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/nar/e12_wy.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/nar/e12_wy.py",
+      "bytes": 9459,
+      "sha256": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f"
+    },
+    "nar/e18_v2.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/nar/e18_v2.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/nar/e18_v2.py",
+      "bytes": 32386,
+      "sha256": "94a13efed0b9008f9b59a5c4806bc7e720729327b1f477b89e91cbd88bd8dc00"
+    },
+    "nar/extended_experiment.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/nar/extended_experiment.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/nar/extended_experiment.py",
+      "bytes": 58166,
+      "sha256": "8331f9bb5cd20c7877c836b2db1115aacf5689337fac4a7428ac59f7eb834f8b"
+    },
+    "slurm_e41_seed0.sh": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/slurm_e41_seed0.sh",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/slurm_e41_seed0.sh",
+      "bytes": 1102,
+      "sha256": "ac375781c20b4558b19a0aabfb3ab14e3b7a14101f502decedc8bc37a137069f"
+    },
+    "experiments/e41_seed0_protocol_001.json": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e41/experiments/e41_seed0_protocol_001.json",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e41/experiments/e41_seed0_protocol_001.json",
+      "bytes": 3195,
+      "sha256": "62b76dc484fa0a461e07e875b2712f4ded2f8f7d4a4bf124a42f720f03ef74ee"
+    }
+  },
+  "protocol": {
+    "experiment": "E41",
+    "scope": "8B activation-only mechanism, seed0 only, no OffQ, no timing, no numerical execution gates",
+    "model": "llama31_8b",
+    "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+    "weights": "Original BF16, no weight quantization or weight recalibration",
+    "kv": "Original BF16, no KV quantization",
+    "sites": [
+      "post-RMSNorm qkv input",
+      "down_proj input"
+    ],
+    "evaluation": {
+      "dataset": "WikiText-2 test",
+      "token_cache": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+      "sequence_length": 2048,
+      "sequences": 141,
+      "added_bos": false,
+      "expected_token_sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021",
+      "loss": "E29 explicit next-token cross-entropy with logits upcast to FP32 before loss; corpus PPL exp(token-weighted mean NLL)",
+      "note": "This full141 stream differs from the historical BOS-prefixed64-chunk E29/E34 mechanism evaluation; old values are not inserted into the new table"
+    },
+    "rotation": {
+      "source": "/projects/nar/nar-validation/activations/llama31_8b/activation_factors",
+      "calibration": "Frozen original E11 factor manifest;128 train sequences, group128, k=max, randomized spectral construction; no new exact eigensolve",
+      "implementation": "E33 frozen-E11 forward/transpose compact-WY formula, FP32 products; same cached reflectors for both PQ orientations",
+      "seed_index": 0,
+      "sign_seed": "DEFAULT_SEED + 1000*layer + (100000 if down else 0) + 128, matching E33 E11 branch",
+      "group": 128,
+      "constant_column": 0,
+      "signed_column": 64,
+      "signed_control": "E34 minimal per-group target swap0<->64; corresponding normalized Walsh direction has equal-magnitude half-positive/half-negative entries",
+      "interpretation_limit": "Minimal swap displaces one residual coordinate per group, so the direction contrast is not a pure additive causal effect"
+    },
+    "quantizers": {
+      "asymmetric": "Original E29/reviewer_ablations.quantize -> experiment.dynamic_asym_int4; group128 FP16 scale+offset,4.25 bits",
+      "symmetric": "Original E29/reviewer_ablations.quantize; group128 FP16 absmax/7 scale, signed[-8,7],4.125 bits",
+      "cast_order": "R^T Q(R x), BF16 cast after transpose, original BF16 linear; unchanged E29 mechanism hook semantics"
+    },
+    "rows": [
+      {
+        "name": "hadamard_asym",
+        "method": "hadamard",
+        "column": 0,
+        "symmetric": false
+      },
+      {
+        "name": "pq_constant_asym",
+        "method": "pq",
+        "column": 0,
+        "symmetric": false
+      },
+      {
+        "name": "pq_signed_asym",
+        "method": "pq",
+        "column": 64,
+        "symmetric": false
+      },
+      {
+        "name": "hadamard_sym",
+        "method": "hadamard",
+        "column": 0,
+        "symmetric": true
+      },
+      {
+        "name": "pq_constant_sym",
+        "method": "pq",
+        "column": 0,
+        "symmetric": true
+      },
+      {
+        "name": "pq_signed_sym",
+        "method": "pq",
+        "column": 64,
+        "symmetric": true
+      }
+    ],
+    "failure_policy": "Retain failed row and partial chunks; attempt remaining fixed rows. No PPL/anchor/roundtrip/source-hash acceptance threshold.",
+    "claims_not_supported": [
+      "E14 W4A4KV4 replication",
+      "full alignment/flattening/offset three-switch factorial or Shapley attribution",
+      "other group sizes",
+      "multi-seed standard deviation",
+      "native INT4 deployment",
+      "performance comparison"
+    ]
+  },
+  "protocol_record": {
+    "path": "experiments/e41_seed0_protocol_001.json",
+    "bytes": 3195,
+    "sha256": "62b76dc484fa0a461e07e875b2712f4ded2f8f7d4a4bf124a42f720f03ef74ee"
+  },
+  "master_record": {
+    "path": "results/e41/raw/mechanism_8b_seed0_job1733515.json",
+    "bytes": 51589,
+    "sha256": "8a9d1a29fb175695c347e37f362232fa5111298219b587b8e8026b6d13f2fae6"
+  },
+  "submission_record": {
+    "path": "results/e41/raw/submission_001.json",
+    "bytes": 2010,
+    "sha256": "1291943e82cfefc799fc664c9b28935889ec5afe7727950e83413699e12a64c9"
+  },
+  "stdout_record": {
+    "path": "runs/e41-seed0-1733515.out",
+    "bytes": 2553,
+    "sha256": "3b5726547045be902ca27b3197c22a6508be63459eae505ee851011d97c4d17f"
+  },
+  "stderr_record": {
+    "path": "runs/e41-seed0-1733515.err",
+    "bytes": 5475,
+    "sha256": "23e9b41feccab736b6a72876b78534a0632805c772edec2442b6729183a7940a"
+  },
+  "started_utc": "2026-11-10T17:29:15.934958+00:00",
+  "finished_utc": "2026-11-10T17:40:23.489514+00:00",
+  "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "libraries": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.16.0.dev0",
+    "numpy": "2.4.6"
+  },
+  "slurm_accounting": "JobID|State|ExitCode|Start|End|Elapsed|NodeList\n1733515|COMPLETED|0:0|2026-11-10T17:29:14|2026-11-10T17:40:24|00:11:10|gpu-pro6000-9\n1733515.batch|COMPLETED|0:0|2026-11-10T17:29:14|2026-11-10T17:40:24|00:11:10|gpu-pro6000-9\n1733515.extern|COMPLETED|0:0|2026-11-10T17:29:14|2026-11-10T17:40:24|00:11:10|gpu-pro6000-9\n",
+  "expected_rows": 6,
+  "completed_rows": 6,
+  "all_completeness_checks": true,
+  "expected_rows_match": true,
+  "total_row_sequence_observations": 846,
+  "rows": [
+    {
+      "name": "hadamard_asym",
+      "method": "hadamard",
+      "quantizer": "asymmetric",
+      "column": 0,
+      "seed": 0,
+      "status": "COMPLETE",
+      "group": 128,
+      "activation_effective_bits": 4.25,
+      "ppl": 6.402455527297511,
+      "mean_nll": 1.8566815929209932,
+      "completed_sequences": 141,
+      "tokens_scored": 288627,
+      "sequence_length": 2048,
+      "started_utc": "2026-11-10T17:30:38.070554+00:00",
+      "finished_utc": "2026-11-10T17:32:49.003269+00:00",
+      "checks": {
+        "complete": true,
+        "seed0": true,
+        "full141": true,
+        "chunk_indices_0_to_140_once": true,
+        "length2048": true,
+        "tokens_per_chunk2047": true,
+        "all_nll_finite": true,
+        "ppl_finite": true,
+        "ppl_recomputes_exactly": true,
+        "raw_hash_matches_master": true,
+        "same_evaluation_tokens": true
+      },
+      "raw_record": {
+        "path": "results/e41/raw/mechanism_8b_seed0_job1733515_hadamard_asym.json",
+        "bytes": 18036,
+        "sha256": "2f5736775bb5f1208de756ac43f68826ccdfe5c958f13507b8969a1951aae7b0"
+      }
+    },
+    {
+      "name": "pq_constant_asym",
+      "method": "pq",
+      "quantizer": "asymmetric",
+      "column": 0,
+      "seed": 0,
+      "status": "COMPLETE",
+      "group": 128,
+      "activation_effective_bits": 4.25,
+      "ppl": 6.333371267806577,
+      "mean_nll": 1.845832680134063,
+      "completed_sequences": 141,
+      "tokens_scored": 288627,
+      "sequence_length": 2048,
+      "started_utc": "2026-11-10T17:33:08.191571+00:00",
+      "finished_utc": "2026-11-10T17:34:26.497181+00:00",
+      "checks": {
+        "complete": true,
+        "seed0": true,
+        "full141": true,
+        "chunk_indices_0_to_140_once": true,
+        "length2048": true,
+        "tokens_per_chunk2047": true,
+        "all_nll_finite": true,
+        "ppl_finite": true,
+        "ppl_recomputes_exactly": true,
+        "raw_hash_matches_master": true,
+        "same_evaluation_tokens": true
+      },
+      "raw_record": {
+        "path": "results/e41/raw/mechanism_8b_seed0_job1733515_pq_constant_asym.json",
+        "bytes": 18026,
+        "sha256": "2e3c39cbb08a911a296b0df3b269859b5af793c6dc4ba64962d2629d5004fbec"
+      }
+    },
+    {
+      "name": "pq_signed_asym",
+      "method": "pq",
+      "quantizer": "asymmetric",
+      "column": 64,
+      "seed": 0,
+      "status": "COMPLETE",
+      "group": 128,
+      "activation_effective_bits": 4.25,
+      "ppl": 6.3611985859275455,
+      "mean_nll": 1.8502168165031054,
+      "completed_sequences": 141,
+      "tokens_scored": 288627,
+      "sequence_length": 2048,
+      "started_utc": "2026-11-10T17:34:26.646435+00:00",
+      "finished_utc": "2026-11-10T17:35:43.914608+00:00",
+      "checks": {
+        "complete": true,
+        "seed0": true,
+        "full141": true,
+        "chunk_indices_0_to_140_once": true,
+        "length2048": true,
+        "tokens_per_chunk2047": true,
+        "all_nll_finite": true,
+        "ppl_finite": true,
+        "ppl_recomputes_exactly": true,
+        "raw_hash_matches_master": true,
+        "same_evaluation_tokens": true
+      },
+      "raw_record": {
+        "path": "results/e41/raw/mechanism_8b_seed0_job1733515_pq_signed_asym.json",
+        "bytes": 18027,
+        "sha256": "0772114b9e3676121ba7fd3894f3adda229c9a1f5ac1d06da5138f74ff07834e"
+      }
+    },
+    {
+      "name": "hadamard_sym",
+      "method": "hadamard",
+      "quantizer": "symmetric",
+      "column": 0,
+      "seed": 0,
+      "status": "COMPLETE",
+      "group": 128,
+      "activation_effective_bits": 4.125,
+      "ppl": 6.4886230876162365,
+      "mean_nll": 1.8700503491340799,
+      "completed_sequences": 141,
+      "tokens_scored": 288627,
+      "sequence_length": 2048,
+      "started_utc": "2026-11-10T17:35:44.057500+00:00",
+      "finished_utc": "2026-11-10T17:37:51.937516+00:00",
+      "checks": {
+        "complete": true,
+        "seed0": true,
+        "full141": true,
+        "chunk_indices_0_to_140_once": true,
+        "length2048": true,
+        "tokens_per_chunk2047": true,
+        "all_nll_finite": true,
+        "ppl_finite": true,
+        "ppl_recomputes_exactly": true,
+        "raw_hash_matches_master": true,
+        "same_evaluation_tokens": true
+      },
+      "raw_record": {
+        "path": "results/e41/raw/mechanism_8b_seed0_job1733515_hadamard_sym.json",
+        "bytes": 18042,
+        "sha256": "09b7dd5d0991569a17aff7fcae7e7bf21b3a1b75efc552a153e2da14bd1a6317"
+      }
+    },
+    {
+      "name": "pq_constant_sym",
+      "method": "pq",
+      "quantizer": "symmetric",
+      "column": 0,
+      "seed": 0,
+      "status": "COMPLETE",
+      "group": 128,
+      "activation_effective_bits": 4.125,
+      "ppl": 6.398832585633139,
+      "mean_nll": 1.8561155652323513,
+      "completed_sequences": 141,
+      "tokens_scored": 288627,
+      "sequence_length": 2048,
+      "started_utc": "2026-11-10T17:37:52.088629+00:00",
+      "finished_utc": "2026-11-10T17:39:07.643347+00:00",
+      "checks": {
+        "complete": true,
+        "seed0": true,
+        "full141": true,
+        "chunk_indices_0_to_140_once": true,
+        "length2048": true,
+        "tokens_per_chunk2047": true,
+        "all_nll_finite": true,
+        "ppl_finite": true,
+        "ppl_recomputes_exactly": true,
+        "raw_hash_matches_master": true,
+        "same_evaluation_tokens": true
+      },
+      "raw_record": {
+        "path": "results/e41/raw/mechanism_8b_seed0_job1733515_pq_constant_sym.json",
+        "bytes": 18035,
+        "sha256": "7ec5d75185b0b766d5c45d7ad35a8afd4bf7c85e7d43a2d39cf3f0582e5f0764"
+      }
+    },
+    {
+      "name": "pq_signed_sym",
+      "method": "pq",
+      "quantizer": "symmetric",
+      "column": 64,
+      "seed": 0,
+      "status": "COMPLETE",
+      "group": 128,
+      "activation_effective_bits": 4.125,
+      "ppl": 6.401769981228978,
+      "mean_nll": 1.8565745116971064,
+      "completed_sequences": 141,
+      "tokens_scored": 288627,
+      "sequence_length": 2048,
+      "started_utc": "2026-11-10T17:39:07.771627+00:00",
+      "finished_utc": "2026-11-10T17:40:23.335730+00:00",
+      "checks": {
+        "complete": true,
+        "seed0": true,
+        "full141": true,
+        "chunk_indices_0_to_140_once": true,
+        "length2048": true,
+        "tokens_per_chunk2047": true,
+        "all_nll_finite": true,
+        "ppl_finite": true,
+        "ppl_recomputes_exactly": true,
+        "raw_hash_matches_master": true,
+        "same_evaluation_tokens": true
+      },
+      "raw_record": {
+        "path": "results/e41/raw/mechanism_8b_seed0_job1733515_pq_signed_sym.json",
+        "bytes": 18032,
+        "sha256": "e229bd7fabb885d53d2ff8dad35ecab4d2f628f535c78d3dc24ac9048c8c8909"
+      }
+    }
+  ],
+  "pairwise_contrasts": [
+    {
+      "name": "constant_minus_had_asym",
+      "left": "pq_constant_asym",
+      "right": "hadamard_asym",
+      "ppl_difference": -0.06908425949093377,
+      "relative_ppl_difference_percent": -1.0790275574174002,
+      "mean_nll_difference": -0.010848912786930232
+    },
+    {
+      "name": "signed_minus_had_asym",
+      "left": "pq_signed_asym",
+      "right": "hadamard_asym",
+      "ppl_difference": -0.041256941369965716,
+      "relative_ppl_difference_percent": -0.6443924708896875,
+      "mean_nll_difference": -0.006464776417887785
+    },
+    {
+      "name": "signed_minus_constant_asym",
+      "left": "pq_signed_asym",
+      "right": "pq_constant_asym",
+      "ppl_difference": 0.02782731812096806,
+      "relative_ppl_difference_percent": 0.4393760754626497,
+      "mean_nll_difference": 0.004384136369042446
+    },
+    {
+      "name": "constant_minus_had_sym",
+      "left": "pq_constant_sym",
+      "right": "hadamard_sym",
+      "ppl_difference": -0.08979050198309757,
+      "relative_ppl_difference_percent": -1.383814420573537,
+      "mean_nll_difference": -0.013934783901728531
+    },
+    {
+      "name": "signed_minus_had_sym",
+      "left": "pq_signed_sym",
+      "right": "hadamard_sym",
+      "ppl_difference": -0.08685310638725863,
+      "relative_ppl_difference_percent": -1.338544483390025,
+      "mean_nll_difference": -0.013475837436973448
+    },
+    {
+      "name": "signed_minus_constant_sym",
+      "left": "pq_signed_sym",
+      "right": "pq_constant_sym",
+      "ppl_difference": 0.002937395595838943,
+      "relative_ppl_difference_percent": 0.04590517967970609,
+      "mean_nll_difference": 0.0004589464647550834
+    },
+    {
+      "name": "symmetric_minus_asymmetric_hadamard",
+      "left": "hadamard_sym",
+      "right": "hadamard_asym",
+      "ppl_difference": 0.0861675603187253,
+      "relative_ppl_difference_percent": 1.3458517587719543,
+      "mean_nll_difference": 0.013368756213086641
+    },
+    {
+      "name": "symmetric_minus_asymmetric_pq_constant",
+      "left": "pq_constant_sym",
+      "right": "pq_constant_asym",
+      "ppl_difference": 0.0654613178265615,
+      "relative_ppl_difference_percent": 1.0335935642887595,
+      "mean_nll_difference": 0.010282885098288341
+    },
+    {
+      "name": "symmetric_minus_asymmetric_pq_signed",
+      "left": "pq_signed_sym",
+      "right": "pq_signed_asym",
+      "ppl_difference": 0.04057139530143239,
+      "relative_ppl_difference_percent": 0.6377948236231168,
+      "mean_nll_difference": 0.0063576951940009785
+    }
+  ],
+  "interaction": {
+    "name": "direction_by_quantizer_interaction",
+    "definition": "(signed_asym-constant_asym)-(signed_sym-constant_sym)",
+    "ppl_difference": 0.024889922525129116,
+    "mean_nll_difference": 0.003925189904287363
+  },
+  "supported_statements": [
+    "PQ constant has lower PPL than Hadamard under both asymmetric and symmetric activation quantization in this 8B seed0 experiment.",
+    "PQ signed also has lower PPL than Hadamard under both quantizers, so this matrix does not support describing the total PQ improvement as exclusively an affine-offset effect.",
+    "Replacing the constant direction by the equally flat signed direction has a larger PPL cost under asymmetric quantization (+0.0278273181) than under symmetric quantization (+0.0029373956), consistent with an additional role for the constant direction when the quantizer includes a groupwise offset.",
+    "These are measured directional contrasts, not additive causal contribution percentages."
+  ],
+  "interpretation_limits": [
+    "Single seed 0 point estimates; no seed standard deviation, confidence interval or significance claim.",
+    "Activation-only R^T Q(Rx) at post-RMSNorm qkv and down_proj inputs with original BF16 weights/KV; not joint W4A4KV4 or native INT4 deployment.",
+    "The same-group target swap 0<->64 also moves one residual coordinate per group; the signed-versus-constant difference is not a pure additive causal effect.",
+    "Asymmetric and symmetric quantizers also differ in scale definition, code range and metadata cost (4.25 versus 4.125 effective bits), so their interaction does not isolate the offset alone.",
+    "Hadamard uses the original full-width transform and PQ uses frozen E11 alignment plus group size 128 transform; this six-row matrix is not the full alignment/flattening/offset factorial or a Shapley attribution.",
+    "Frozen E11 randomized spectral factors are reused; these are not newly computed exact E29 S3 factors.",
+    "The no-BOS full 141-sequence token stream differs from historical BOS-prefixed 64-chunk E29/E34 runs; historical PPL values must not be mixed into this table.",
+    "No numerical quality acceptance gate was used; the checks here only establish output completeness and provenance after measurement."
+  ],
+  "raw_data_policy": "Seven small raw JSON records are retained unchanged, including all 141 per-sequence NLLs for each row; no per-token tensor is produced or staged."
+}

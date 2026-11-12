@@ -1,0 +1,62 @@
+{
+  "kind": "harness_interface_cpu_smoke_no_model_accuracy",
+  "status": "PASS",
+  "started_utc": "2026-11-10T11:50:20.246376+00:00",
+  "command_line": [
+    "/projects/nar/nar-validation/e28-env/bin/python",
+    "-u",
+    "-"
+  ],
+  "note": "Constant dummy likelihoods only validate task construction, metric plumbing and log_samples; no model accuracy is measured.",
+  "checks": [
+    {
+      "task": "arc_easy",
+      "status": "PASS",
+      "samples": 1,
+      "metric_key_present": "acc_norm,none"
+    },
+    {
+      "task": "arc_challenge",
+      "status": "PASS",
+      "samples": 1,
+      "metric_key_present": "acc_norm,none"
+    },
+    {
+      "task": "boolq",
+      "status": "PASS",
+      "samples": 1,
+      "metric_key_present": "acc,none"
+    },
+    {
+      "task": "hellaswag",
+      "status": "PASS",
+      "samples": 1,
+      "metric_key_present": "acc_norm,none"
+    },
+    {
+      "task": "openbookqa",
+      "status": "PASS",
+      "samples": 1,
+      "metric_key_present": "acc_norm,none"
+    },
+    {
+      "task": "piqa",
+      "status": "PASS",
+      "samples": 1,
+      "metric_key_present": "acc_norm,none"
+    },
+    {
+      "task": "social_iqa",
+      "status": "PASS",
+      "samples": 1,
+      "metric_key_present": "acc,none"
+    },
+    {
+      "task": "winogrande",
+      "status": "PASS",
+      "samples": 1,
+      "metric_key_present": "acc,none"
+    }
+  ],
+  "ended_utc": "2026-11-10T11:50:32.161897+00:00"
+}

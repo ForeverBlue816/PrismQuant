@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-11-12T13:47:10.807173+00:00",
+  "failed_job": "1735191",
+  "error": "srun: fatal: gpus-per-task is mutually exclusive with tres-per-task\n",
+  "reproduction": "SLURM_TRES_PER_TASK=cpu:4 + srun --gpus-per-task=a40:1 triggers fatal before allocation; removing inherited option passes srun --test-only",
+  "slurm_version": "slurm-wlm 23.11.4",
+  "pending_jobs": {
+    "1734028": {
+      "before": "JobId=1734028 JobName=pq8b-parallel-five\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=21 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Priority Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=3-00:00:00 TimeMin=N/A\n   SubmitTime=2026-11-11T04:59:35 EligibleTime=2026-11-11T04:59:35\n   AccrueTime=2026-11-11T04:59:35\n   StartTime=2026-11-12T22:00:35 EndTime=2026-11-15T22:00:35 Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T13:46:55 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-3:828059\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList= SchedNodeList=gpu-pro6000-10\n   NumNodes=1-1 NumCPUs=20 NumTasks=5 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=20,mem=165G,node=1,billing=40,gres/gpu=5,gres/gpu:pro6000=5\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=165G MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_compute_8b.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-8b-compute-1734028.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-8b-compute-1734028.out\n   Power=\n   TresPerJob=gres/gpu:pro6000:5\n   TresPerTask=cpu:4\n   \n\n",
+      "batch_snapshot": "results/e38/raw/batch_snapshot_1734028_before_recovery.sh",
+      "snapshot_command_returncode": 0
+    },
+    "1735192": {
+      "before": "JobId=1735192 JobName=pq8b-tasks-seed12\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Dependency Dependency=afterany:1734028(unfulfilled)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=3-00:00:00 TimeMin=N/A\n   SubmitTime=2026-11-12T02:24:37 EligibleTime=Unknown\n   AccrueTime=Unknown\n   StartTime=Unknown EndTime=Unknown Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T02:24:37 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-1:71525\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=8 NumTasks=2 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=8,mem=80G,node=1,billing=6,gres/gpu=2,gres/gpu:a40=2\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=80G MinTmpDiskNode=0\n   Features=(null) DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_tasks_8b.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-8b-tasks-1735192.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-8b-tasks-1735192.out\n   Power=\n   TresPerJob=gres/gpu:a40:2\n   TresPerTask=cpu:4\n   \n\n",
+      "batch_snapshot": "results/e38/raw/batch_snapshot_1735192_before_recovery.sh",
+      "snapshot_command_returncode": 0
+    }
+  }
+}

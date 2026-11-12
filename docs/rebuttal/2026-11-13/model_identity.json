@@ -1,0 +1,24 @@
+{
+  "model": "llama31_8b",
+  "source_result": "records/e38/raw/stage_a_8b_nar_k8_seed0_fast_job1736296.json",
+  "result_sha256": "d350e48219deb7d0dee4b30d6b3df102a54644a3aa7c2eedb12681a86f55e51b",
+  "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "quant_snapshot": "fc812e6687165115feee00293c953a1b521d3bd0",
+  "quantized_checkpoint": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0",
+  "checkpoint_manifest_model": "llama31_8b",
+  "packed_layer_count": 32,
+  "first_layer_k_proj_shape": [
+    1024,
+    4096
+  ],
+  "full141_ppl": 9.995008261163498,
+  "quantization": {
+    "weights": "original default E14 GPTQ symmetric per-channel saved BF16 values recovered into signed4 codes; native FP16scale projection drift recorded",
+    "activation": "symmetric per-token maxabs/7; native packed4",
+    "kv": "native asymmetric packed4 per-token/head128, FP16 scale+offset, no residual window; prefill reads actual packed pages and reconstructs K/V",
+    "table1_difference": "Table1 uses asymmetric group128 activations and KIVI token-axis grouped K plus residual32",
+    "native_int4_tensorcore": true,
+    "whole_graph_integer": false
+  },
+  "note": "The checkpoint manifest includes a historical llama32_3b fp32_algebra_control diagnostic. That nested diagnostic is not the model evaluated in this run; the run and all32 packed-layer sources are llama31_8b."
+}

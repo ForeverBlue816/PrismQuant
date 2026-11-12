@@ -1,0 +1,539 @@
+{
+  "schema_version": 1,
+  "kind": "read_only_cluster_environment_audit",
+  "experiment": "E38",
+  "created_utc": "2026-11-10T05:51:06.761488+00:00",
+  "hostname": "login-3.cluster02.eee.ntu.edu.sg",
+  "commit": "1ead849c3d6c70267ca68d38d60fe6d8d01ee883",
+  "seed": null,
+  "gpu_model": null,
+  "performance_measured": false,
+  "jobs_submitted": false,
+  "source_environment": {
+    "PYTHONPATH": "/home/yanlongc/.e13_packages:/home/yanlongc/prismquant-rebuttal-e38",
+    "HF_HUB_OFFLINE": "1",
+    "HF_DATASETS_OFFLINE": "1"
+  },
+  "main_environment": {
+    "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+    "executable": "/projects/nar/nar-validation/venv/bin/python",
+    "packages": {
+      "torch": {
+        "version": "2.11.0+cu128",
+        "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "transformers": {
+        "version": "5.16.0.dev0",
+        "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+        "vcs_info": {
+          "commit_id": "a353632607c59463e6ced86a44c2de3c2cd62d5e",
+          "requested_revision": "main",
+          "vcs": "git"
+        }
+      },
+      "triton": {
+        "version": "3.6.0",
+        "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "datasets": {
+        "version": "5.0.1",
+        "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "accelerate": {
+        "version": "1.14.0",
+        "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "numpy": {
+        "version": "2.4.6",
+        "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "pandas": {
+        "version": "3.0.5",
+        "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "lm_eval": {
+        "version": "0.4.14.dev0",
+        "location": "/home/yanlongc/.e13_packages",
+        "vcs_info": null
+      }
+    },
+    "modules": {
+      "torch": {
+        "status": "ok",
+        "file": "/projects/river/envs/qwen35/lib/python3.11/site-packages/torch/__init__.py"
+      },
+      "transformers": {
+        "status": "ok",
+        "file": "/projects/river/envs/qwen35/lib/python3.11/site-packages/transformers/__init__.py"
+      },
+      "triton": {
+        "status": "ok",
+        "file": "/projects/river/envs/qwen35/lib/python3.11/site-packages/triton/__init__.py"
+      },
+      "datasets": {
+        "status": "ok",
+        "file": "/projects/river/envs/qwen35/lib/python3.11/site-packages/datasets/__init__.py"
+      },
+      "accelerate": {
+        "status": "ok",
+        "file": "/projects/river/envs/qwen35/lib/python3.11/site-packages/accelerate/__init__.py"
+      },
+      "lm_eval": {
+        "status": "ok",
+        "file": "/home/yanlongc/.e13_packages/lm_eval/__init__.py"
+      },
+      "nar.e14_w4a4kv4": {
+        "status": "ok",
+        "file": "/home/yanlongc/prismquant-rebuttal-e38/nar/e14_w4a4kv4.py"
+      }
+    }
+  },
+  "e28_environment": {
+    "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+    "executable": "/projects/nar/nar-validation/e28-env/bin/python",
+    "packages": {
+      "torch": {
+        "version": "2.4.1+cu124",
+        "location": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "transformers": {
+        "version": "4.36.2",
+        "location": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "triton": {
+        "version": "3.0.0",
+        "location": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "datasets": {
+        "version": "2.17.1",
+        "location": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "accelerate": {
+        "version": "0.27.2",
+        "location": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "numpy": {
+        "version": "1.26.4",
+        "location": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "pandas": {
+        "version": "3.0.5",
+        "location": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages",
+        "vcs_info": null
+      },
+      "lm_eval": {
+        "status": "not installed"
+      }
+    },
+    "modules": {
+      "torch": {
+        "status": "ok",
+        "file": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/torch/__init__.py"
+      },
+      "transformers": {
+        "status": "ok",
+        "file": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/__init__.py"
+      },
+      "triton": {
+        "status": "ok",
+        "file": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/triton/__init__.py"
+      }
+    }
+  },
+  "findings": {
+    "pro6000_gpus_configured": 90,
+    "pro6000_memory_basis": "Slurm gpu_96g feature; no allocated-GPU nvidia-smi measurement in this audit",
+    "a40_gpus_configured": 18,
+    "all_gpu_gres_allocated_at_observation": true,
+    "a40_reachable": true,
+    "account": "rose",
+    "per_qos_running_job_count_note": "At observation one running rose job and one running override-limits-but-killable job. Do not combine them when applying rose MaxJobsPU=2.",
+    "main_env_matches_saved_requirements": true,
+    "e28_separate_env": true,
+    "no_proven_environment_drift": true
+  },
+  "recommended_anchor_resources": {
+    "partition": "cluster02",
+    "account": "rose",
+    "qos": "rose",
+    "nodes": 1,
+    "ntasks": 1,
+    "gpus": "pro6000:1",
+    "constraint": "highmem",
+    "cpus_per_task": 4,
+    "mem": "90G",
+    "time": "02:00:00"
+  },
+  "commands": [
+    {
+      "label": "scheduler_nodes",
+      "command_argv": [
+        "sinfo",
+        "-h",
+        "-N",
+        "-o",
+        "%N|%t|%G|%f"
+      ],
+      "started_utc": "2026-11-10T05:49:58.208840+00:00",
+      "finished_utc": "2026-11-10T05:49:58.215425+00:00",
+      "returncode": 0,
+      "stdout": "cpu-1|mix|(null)|cpu_ok\ncpu-2|mix|(null)|cpu_ok\ngpu-5090-1|alloc|gpu:rtx5090:4|rtx5090,gpu\ngpu-5090-2|alloc|gpu:rtx5090:4|rtx5090,gpu\ngpu-5090-3|alloc|gpu:rtx5090:4|rtx5090,gpu\ngpu-5090-4|alloc|gpu:rtx5090:4|rtx5090,gpu\ngpu-5090-5|alloc|gpu:rtx5090:4|rtx5090,gpu\ngpu-6000ada-1|alloc|gpu:6000ada:4|6000ada,gpu,gpu_16g,gpu_32g,gpu_48g\ngpu-6000ada-2|alloc|gpu:6000ada:4|6000ada,gpu,gpu_16g,gpu_32g,gpu_48g\ngpu-6000ada-3|alloc|gpu:6000ada:4|6000ada,gpu,gpu_16g,gpu_32g,gpu_48g\ngpu-a40-1|alloc|gpu:a40:10|a40,gpu,gpu_16g,gpu_32g,gpu_48g\ngpu-a40-2|alloc|gpu:a40:8|a40,gpu,gpu_16g,gpu_32g,gpu_48g\ngpu-a6000-1|alloc|gpu:a6000:10|a6000,gpu,gpu_16g,gpu_32g,gpu_48g\ngpu-gh200-1|alloc|gpu:gh200:1|gh200,gpu,gpu_96g,aarch64,highmem\ngpu-l40-1|mix|gpu:l40:4(S:0-1)|l40,gpu,gpu_16g,gpu_32g,gpu_48g\ngpu-l40-2|alloc|gpu:l40:4|l40,gpu,gpu_16g,gpu_32g,gpu_48g\ngpu-pro6000-1|alloc|gpu:pro6000:4|pro6000,highmem,gpu_96g\ngpu-pro6000-2|alloc|gpu:pro6000:4|pro6000,highmem,gpu_96g\ngpu-pro6000-3|alloc|gpu:pro6000:4|pro6000,highmem,gpu_96g\ngpu-pro6000-4|alloc|gpu:pro6000:4|pro6000,highmem,gpu_96g\ngpu-pro6000-5|alloc|gpu:pro6000:10(S:0-1)|pro6000,gpu_96g\ngpu-pro6000-6|alloc|gpu:pro6000:10(S:0-1)|pro6000,gpu_96g\ngpu-pro6000-7|alloc|gpu:pro6000:8(S:0-1)|pro6000,gpu_96g,highmem\ngpu-pro6000-8|alloc|gpu:pro6000:8(S:0-1)|pro6000,gpu_96g,highmem\ngpu-pro6000-9|alloc|gpu:pro6000:8(S:0-1)|pro6000,gpu_96g,highmem\ngpu-pro6000-10|alloc|gpu:pro6000:8(S:0-1)|pro6000,gpu_96g,highmem\ngpu-pro6000-11|alloc|gpu:pro6000:4|pro6000,gpu_96g,highmem\ngpu-pro6000-12|alloc|gpu:pro6000:10(S:0-1)|pro6000,gpu_96g,midmem\ngpu-pro6000-13|alloc|gpu:pro6000:4|pro6000,highmem,gpu_96g\ngpu-pro6000-14|alloc|gpu:pro6000:4|pro6000,highmem,gpu_96g\n",
+      "stderr": ""
+    },
+    {
+      "label": "user_jobs",
+      "command_argv": [
+        "squeue",
+        "-u",
+        "yanlongc",
+        "-h",
+        "-o",
+        "%i|%P|%j|%T|%q|%b|%R"
+      ],
+      "started_utc": "2026-11-10T05:49:58.215446+00:00",
+      "finished_utc": "2026-11-10T05:49:58.224320+00:00",
+      "returncode": 0,
+      "stdout": "281109|cluster02|vla-plustrain-drivers|PENDING|override-limits-but-killable|N/A|(Dependency)\n1732591|cluster02|vla-plustrain-groot_n17_tcq_raqft_d1_s_plus_6000ada|RUNNING|rose|gres/gpu:6000ada:1|gpu-6000ada-2\n278744|cluster02|vla-plustrain-drivers|RUNNING|override-limits-but-killable|N/A|cpu-1\n",
+      "stderr": ""
+    },
+    {
+      "label": "account",
+      "command_argv": [
+        "sacctmgr",
+        "-n",
+        "-P",
+        "show",
+        "assoc",
+        "user=yanlongc",
+        "format=Account,User,Partition,QOS,DefaultQOS"
+      ],
+      "started_utc": "2026-11-10T05:49:58.224337+00:00",
+      "finished_utc": "2026-11-10T05:49:58.436577+00:00",
+      "returncode": 0,
+      "stdout": "rose|yanlongc||override-limits-but-killable,rose|rose\n",
+      "stderr": ""
+    },
+    {
+      "label": "qos",
+      "command_argv": [
+        "sacctmgr",
+        "-n",
+        "-P",
+        "show",
+        "qos",
+        "rose,override-limits-but-killable",
+        "format=Name,MaxWall,MaxTRESPU,MaxJobsPU,MaxSubmitPU,Preempt,PreemptMode"
+      ],
+      "started_utc": "2026-11-10T05:49:58.436596+00:00",
+      "finished_utc": "2026-11-10T05:49:58.730780+00:00",
+      "returncode": 0,
+      "stdout": "override-limits-but-killable||gres/gpu=8||5||requeue\nrose||gres/gpu:6000ada=4,gres/gpu:a40=8,gres/gpu:a6000=4,gres/gpu:l40=4,gres/gpu:pro6000=8,gres/gpu:rtx5090=4|2|5|override-limits-but-killable|cluster\n",
+      "stderr": ""
+    },
+    {
+      "label": "historical_jobs",
+      "command_argv": [
+        "sacct",
+        "-u",
+        "yanlongc",
+        "--starttime",
+        "2026-09-01",
+        "--endtime",
+        "2026-09-20",
+        "--name=nar-e14-3b-proto,nar-e17-fused,nar-e22-timing",
+        "--format=JobID,JobName,Partition,Account,QOS,State,AllocTRES,NodeList",
+        "-P",
+        "-n"
+      ],
+      "started_utc": "2026-11-10T05:49:58.730800+00:00",
+      "finished_utc": "2026-11-10T05:49:58.951661+00:00",
+      "returncode": 0,
+      "stdout": "137687|nar-e17-fused|cluster02|rose|rose|FAILED|billing=8,cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=33G,node=1|gpu-pro6000-6\n137687.batch|batch||rose||FAILED|cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=33G,node=1|gpu-pro6000-6\n137687.extern|extern||rose||COMPLETED|billing=8,cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=33G,node=1|gpu-pro6000-6\n137694|nar-e17-fused|cluster02|rose|rose|COMPLETED|billing=8,cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=33G,node=1|gpu-pro6000-1\n137694.batch|batch||rose||COMPLETED|cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=33G,node=1|gpu-pro6000-1\n137694.extern|extern||rose||COMPLETED|billing=8,cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=33G,node=1|gpu-pro6000-1\n137696|nar-e17-fused|cluster02|rose|rose|COMPLETED|billing=8,cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=33G,node=1|gpu-pro6000-4\n137696.batch|batch||rose||COMPLETED|cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=33G,node=1|gpu-pro6000-4\n137696.extern|extern||rose||COMPLETED|billing=8,cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=33G,node=1|gpu-pro6000-4\n141650|nar-e14-3b-proto|cluster02|rose|rose|COMPLETED|billing=8,cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=90G,node=1|gpu-pro6000-9\n141650.batch|batch||rose||COMPLETED|cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=90G,node=1|gpu-pro6000-9\n141650.extern|extern||rose||COMPLETED|billing=8,cpu=4,gres/gpu:pro6000=1,gres/gpu=1,mem=90G,node=1|gpu-pro6000-9\n143654|nar-e22-timing|cluster02|rose|override-limits-but-killable|COMPLETED|billing=3,cpu=4,gres/gpu:a40=1,gres/gpu=1,mem=40G,node=1|gpu-a40-1\n143654.batch|batch||rose||COMPLETED|cpu=4,gres/gpu:a40=1,gres/gpu=1,mem=40G,node=1|gpu-a40-1\n143654.extern|extern||rose||COMPLETED|billing=3,cpu=4,gres/gpu:a40=1,gres/gpu=1,mem=40G,node=1|gpu-a40-1\n143743|nar-e22-timing|cluster02|rose|override-limits-but-killable|COMPLETED|billing=6,cpu=8,gres/gpu:a40=2,gres/gpu=2,mem=80G,node=1|gpu-a40-2\n143743.batch|batch||rose||COMPLETED|cpu=8,gres/gpu:a40=2,gres/gpu=2,mem=80G,node=1|gpu-a40-2\n143743.extern|extern||rose||COMPLETED|billing=6,cpu=8,gres/gpu:a40=2,gres/gpu=2,mem=80G,node=1|gpu-a40-2\n143917|nar-e22-timing|cluster02|rose|override-limits-but-killable|CANCELLED by 295800911||None assigned\n",
+      "stderr": ""
+    },
+    {
+      "label": "a40_nodes",
+      "command_argv": [
+        "scontrol",
+        "show",
+        "node",
+        "gpu-a40-1,gpu-a40-2"
+      ],
+      "started_utc": "2026-11-10T05:49:58.951680+00:00",
+      "finished_utc": "2026-11-10T05:49:58.957295+00:00",
+      "returncode": 0,
+      "stdout": "NodeName=gpu-a40-1 Arch=x86_64 CoresPerSocket=40 \n   CPUAlloc=40 CPUEfctv=40 CPUTot=40 CPULoad=38.96\n   AvailableFeatures=a40,gpu,gpu_16g,gpu_32g,gpu_48g\n   ActiveFeatures=a40,gpu,gpu_16g,gpu_32g,gpu_48g\n   Gres=gpu:a40:10\n   NodeAddr=gpu-a40-1 NodeHostName=gpu-a40-1 Version=23.11.4\n   OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026 \n   RealMemory=488542 AllocMem=409600 FreeMem=3587 Sockets=1 Boards=1\n   MemSpecLimit=7168\n   State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A\n   Partitions=cluster02 \n   BootTime=2026-09-27T08:20:18 SlurmdStartTime=2026-11-06T06:45:29\n   LastBusyTime=2026-10-15T06:25:54 ResumeAfterTime=None\n   CfgTRES=cpu=40,mem=488542M,billing=30,gres/gpu=10,gres/gpu:a40=10\n   AllocTRES=cpu=40,mem=400G,gres/gpu=10,gres/gpu:a40=10\n   CapWatts=n/a\n   CurrentWatts=0 AveWatts=0\n   ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\n\nNodeName=gpu-a40-2 Arch=x86_64 CoresPerSocket=48 \n   CPUAlloc=32 CPUEfctv=32 CPUTot=48 CPULoad=26.85\n   AvailableFeatures=a40,gpu,gpu_16g,gpu_32g,gpu_48g\n   ActiveFeatures=a40,gpu,gpu_16g,gpu_32g,gpu_48g\n   Gres=gpu:a40:8\n   NodeAddr=gpu-a40-2 NodeHostName=gpu-a40-2 Version=23.11.4\n   OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026 \n   RealMemory=442880 AllocMem=327680 FreeMem=42107 Sockets=1 Boards=1\n   CoreSpecCount=16 CPUSpecList=32-47 MemSpecLimit=7168\n   State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A\n   Partitions=cluster02 \n   BootTime=2026-09-26T16:57:48 SlurmdStartTime=2026-11-06T06:52:31\n   LastBusyTime=2026-10-15T06:25:54 ResumeAfterTime=None\n   CfgTRES=cpu=32,mem=432.50G,billing=24,gres/gpu=8,gres/gpu:a40=8\n   AllocTRES=cpu=32,mem=320G,gres/gpu=8,gres/gpu:a40=8\n   CapWatts=n/a\n   CurrentWatts=0 AveWatts=0\n   ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "harness_commit",
+      "command_argv": [
+        "git",
+        "-C",
+        "/home/yanlongc/lm-evaluation-harness-upstream",
+        "rev-parse",
+        "HEAD"
+      ],
+      "started_utc": "2026-11-10T05:49:58.957309+00:00",
+      "finished_utc": "2026-11-10T05:49:58.959386+00:00",
+      "returncode": 0,
+      "stdout": "b954108c9baaaa934b4ad842033b31a97ee30816\n",
+      "stderr": ""
+    },
+    {
+      "label": "harness_worktree",
+      "command_argv": [
+        "git",
+        "-C",
+        "/home/yanlongc/lm-evaluation-harness-upstream",
+        "status",
+        "--short"
+      ],
+      "started_utc": "2026-11-10T05:49:58.959405+00:00",
+      "finished_utc": "2026-11-10T05:49:59.328964+00:00",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "main_environment",
+      "command_argv": [
+        "/projects/nar/nar-validation/venv/bin/python",
+        "-u",
+        "-c",
+        "import json,sys,importlib,importlib.metadata as m\nout={'python':sys.version,'executable':sys.executable,'packages':{},'modules':{}}\nfor name in ['torch','transformers','triton','datasets','accelerate','numpy','pandas','lm_eval']:\n try:\n  d=m.distribution(name); direct=json.loads(d.read_text('direct_url.json') or '{}')\n  out['packages'][name]={'version':d.version,'location':str(d.locate_file('')),'vcs_info':direct.get('vcs_info')}\n except m.PackageNotFoundError: out['packages'][name]={'status':'not installed'}\nfor name in ['torch', 'transformers', 'triton', 'datasets', 'accelerate', 'lm_eval', 'nar.e14_w4a4kv4']:\n try:\n  mod=importlib.import_module(name);out['modules'][name]={'status':'ok','file':mod.__file__}\n except Exception as e:out['modules'][name]={'status':'failed','error':repr(e)}\nprint(json.dumps(out))\n"
+      ],
+      "started_utc": "2026-11-10T05:49:59.329099+00:00",
+      "finished_utc": "2026-11-10T05:50:03.490636+00:00",
+      "returncode": 0,
+      "stdout": "{\"python\": \"3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]\", \"executable\": \"/projects/nar/nar-validation/venv/bin/python\", \"packages\": {\"torch\": {\"version\": \"2.11.0+cu128\", \"location\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages\", \"vcs_info\": null}, \"transformers\": {\"version\": \"5.16.0.dev0\", \"location\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages\", \"vcs_info\": {\"commit_id\": \"a353632607c59463e6ced86a44c2de3c2cd62d5e\", \"requested_revision\": \"main\", \"vcs\": \"git\"}}, \"triton\": {\"version\": \"3.6.0\", \"location\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages\", \"vcs_info\": null}, \"datasets\": {\"version\": \"5.0.1\", \"location\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages\", \"vcs_info\": null}, \"accelerate\": {\"version\": \"1.14.0\", \"location\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages\", \"vcs_info\": null}, \"numpy\": {\"version\": \"2.4.6\", \"location\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages\", \"vcs_info\": null}, \"pandas\": {\"version\": \"3.0.5\", \"location\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages\", \"vcs_info\": null}, \"lm_eval\": {\"version\": \"0.4.14.dev0\", \"location\": \"/home/yanlongc/.e13_packages\", \"vcs_info\": null}}, \"modules\": {\"torch\": {\"status\": \"ok\", \"file\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages/torch/__init__.py\"}, \"transformers\": {\"status\": \"ok\", \"file\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages/transformers/__init__.py\"}, \"triton\": {\"status\": \"ok\", \"file\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages/triton/__init__.py\"}, \"datasets\": {\"status\": \"ok\", \"file\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages/datasets/__init__.py\"}, \"accelerate\": {\"status\": \"ok\", \"file\": \"/projects/river/envs/qwen35/lib/python3.11/site-packages/accelerate/__init__.py\"}, \"lm_eval\": {\"status\": \"ok\", \"file\": \"/home/yanlongc/.e13_packages/lm_eval/__init__.py\"}, \"nar.e14_w4a4kv4\": {\"status\": \"ok\", \"file\": \"/home/yanlongc/prismquant-rebuttal-e38/nar/e14_w4a4kv4.py\"}}}\n",
+      "stderr": ""
+    },
+    {
+      "label": "e28_environment",
+      "command_argv": [
+        "/projects/nar/nar-validation/e28-env/bin/python",
+        "-u",
+        "-c",
+        "import json,sys,importlib,importlib.metadata as m\nout={'python':sys.version,'executable':sys.executable,'packages':{},'modules':{}}\nfor name in ['torch','transformers','triton','datasets','accelerate','numpy','pandas','lm_eval']:\n try:\n  d=m.distribution(name); direct=json.loads(d.read_text('direct_url.json') or '{}')\n  out['packages'][name]={'version':d.version,'location':str(d.locate_file('')),'vcs_info':direct.get('vcs_info')}\n except m.PackageNotFoundError: out['packages'][name]={'status':'not installed'}\nfor name in ['torch', 'transformers', 'triton']:\n try:\n  mod=importlib.import_module(name);out['modules'][name]={'status':'ok','file':mod.__file__}\n except Exception as e:out['modules'][name]={'status':'failed','error':repr(e)}\nprint(json.dumps(out))\n"
+      ],
+      "started_utc": "2026-11-10T05:50:03.490668+00:00",
+      "finished_utc": "2026-11-10T05:51:06.758771+00:00",
+      "returncode": 0,
+      "stdout": "{\"python\": \"3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]\", \"executable\": \"/projects/nar/nar-validation/e28-env/bin/python\", \"packages\": {\"torch\": {\"version\": \"2.4.1+cu124\", \"location\": \"/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages\", \"vcs_info\": null}, \"transformers\": {\"version\": \"4.36.2\", \"location\": \"/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages\", \"vcs_info\": null}, \"triton\": {\"version\": \"3.0.0\", \"location\": \"/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages\", \"vcs_info\": null}, \"datasets\": {\"version\": \"2.17.1\", \"location\": \"/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages\", \"vcs_info\": null}, \"accelerate\": {\"version\": \"0.27.2\", \"location\": \"/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages\", \"vcs_info\": null}, \"numpy\": {\"version\": \"1.26.4\", \"location\": \"/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages\", \"vcs_info\": null}, \"pandas\": {\"version\": \"3.0.5\", \"location\": \"/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages\", \"vcs_info\": null}, \"lm_eval\": {\"status\": \"not installed\"}}, \"modules\": {\"torch\": {\"status\": \"ok\", \"file\": \"/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/torch/__init__.py\"}, \"transformers\": {\"status\": \"ok\", \"file\": \"/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/__init__.py\"}, \"triton\": {\"status\": \"ok\", \"file\": \"/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/triton/__init__.py\"}}}\n",
+      "stderr": "/projects/nar/nar-validation/e28-env/lib/python3.11/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.\n  _torch_pytree._register_pytree_node(\n"
+    },
+    {
+      "label": "worktree_commit",
+      "command_argv": [
+        "git",
+        "-C",
+        "/home/yanlongc/prismquant-rebuttal-e38",
+        "rev-parse",
+        "HEAD"
+      ],
+      "started_utc": "2026-11-10T05:51:06.758812+00:00",
+      "finished_utc": "2026-11-10T05:51:06.761477+00:00",
+      "returncode": 0,
+      "stdout": "1ead849c3d6c70267ca68d38d60fe6d8d01ee883\n",
+      "stderr": ""
+    },
+    {
+      "label": "node_allocations",
+      "command_argv": [
+        "scontrol",
+        "show",
+        "nodes",
+        "--oneliner"
+      ],
+      "started_utc": "2026-11-10T05:51:23.988933+00:00",
+      "finished_utc": "2026-11-10T05:51:23.994297+00:00",
+      "returncode": 0,
+      "stdout": "NodeName=cpu-1 Arch=x86_64 CoresPerSocket=96  CPUAlloc=23 CPUEfctv=96 CPUTot=96 CPULoad=1.04 AvailableFeatures=cpu_ok ActiveFeatures=cpu_ok Gres=(null) NodeAddr=cpu-1 NodeHostName=cpu-1 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=339968 AllocMem=70656 FreeMem=9236 Sockets=1 Boards=1 MemSpecLimit=5120 State=MIXED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-10-21T08:35:01 SlurmdStartTime=2026-10-24T06:52:29 LastBusyTime=2026-11-05T10:23:28 ResumeAfterTime=None CfgTRES=cpu=96,mem=332G,billing=96 AllocTRES=cpu=23,mem=69G CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=cpu-2 Arch=x86_64 CoresPerSocket=96  CPUAlloc=13 CPUEfctv=96 CPUTot=96 CPULoad=1.34 AvailableFeatures=cpu_ok ActiveFeatures=cpu_ok Gres=(null) NodeAddr=cpu-2 NodeHostName=cpu-2 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=339968 AllocMem=39936 FreeMem=168307 Sockets=1 Boards=1 MemSpecLimit=5120 State=MIXED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-11-02T02:18:15 SlurmdStartTime=2026-11-05T06:27:44 LastBusyTime=2026-11-07T07:03:41 ResumeAfterTime=None CfgTRES=cpu=96,mem=332G,billing=96 AllocTRES=cpu=13,mem=39G CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-5090-1 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=6.42 AvailableFeatures=rtx5090,gpu ActiveFeatures=rtx5090,gpu Gres=gpu:rtx5090:4 NodeAddr=gpu-5090-1 NodeHostName=gpu-5090-1 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=215568 AllocMem=196608 FreeMem=105880 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-26T20:49:53 SlurmdStartTime=2026-11-06T06:23:56 LastBusyTime=2026-10-31T03:42:27 ResumeAfterTime=None CfgTRES=cpu=16,mem=215568M,billing=24,gres/gpu=4,gres/gpu:rtx5090=4 AllocTRES=cpu=16,mem=192G,gres/gpu=4,gres/gpu:rtx5090=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-5090-2 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=7.08 AvailableFeatures=rtx5090,gpu ActiveFeatures=rtx5090,gpu Gres=gpu:rtx5090:4 NodeAddr=gpu-5090-2 NodeHostName=gpu-5090-2 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=215568 AllocMem=196608 FreeMem=107539 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-11-01T08:17:39 SlurmdStartTime=2026-11-04T06:09:28 LastBusyTime=2026-11-10T03:47:05 ResumeAfterTime=None CfgTRES=cpu=16,mem=215568M,billing=24,gres/gpu=4,gres/gpu:rtx5090=4 AllocTRES=cpu=16,mem=192G,gres/gpu=4,gres/gpu:rtx5090=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-5090-3 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=10.15 AvailableFeatures=rtx5090,gpu ActiveFeatures=rtx5090,gpu Gres=gpu:rtx5090:4 NodeAddr=gpu-5090-3 NodeHostName=gpu-5090-3 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=215568 AllocMem=196608 FreeMem=155728 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-26T20:49:48 SlurmdStartTime=2026-11-06T06:47:53 LastBusyTime=2026-10-30T14:52:57 ResumeAfterTime=None CfgTRES=cpu=16,mem=215568M,billing=24,gres/gpu=4,gres/gpu:rtx5090=4 AllocTRES=cpu=16,mem=192G,gres/gpu=4,gres/gpu:rtx5090=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-5090-4 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=3.68 AvailableFeatures=rtx5090,gpu ActiveFeatures=rtx5090,gpu Gres=gpu:rtx5090:4 NodeAddr=gpu-5090-4 NodeHostName=gpu-5090-4 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=215568 AllocMem=196608 FreeMem=190004 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-10-19T03:54:33 SlurmdStartTime=2026-11-04T06:20:07 LastBusyTime=2026-10-28T05:32:02 ResumeAfterTime=None CfgTRES=cpu=16,mem=215568M,billing=24,gres/gpu=4,gres/gpu:rtx5090=4 AllocTRES=cpu=16,mem=192G,gres/gpu=4,gres/gpu:rtx5090=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-5090-5 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=11.56 AvailableFeatures=rtx5090,gpu ActiveFeatures=rtx5090,gpu Gres=gpu:rtx5090:4 NodeAddr=gpu-5090-5 NodeHostName=gpu-5090-5 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=215568 AllocMem=196608 FreeMem=120337 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-26T20:49:32 SlurmdStartTime=2026-11-07T06:29:33 LastBusyTime=2026-11-07T07:19:15 ResumeAfterTime=None CfgTRES=cpu=16,mem=215568M,billing=24,gres/gpu=4,gres/gpu:rtx5090=4 AllocTRES=cpu=16,mem=192G,gres/gpu=4,gres/gpu:rtx5090=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-6000ada-1 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=5.47 AvailableFeatures=6000ada,gpu,gpu_16g,gpu_32g,gpu_48g ActiveFeatures=6000ada,gpu,gpu_16g,gpu_32g,gpu_48g Gres=gpu:6000ada:4 NodeAddr=gpu-6000ada-1 NodeHostName=gpu-6000ada-1 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=265216 AllocMem=262144 FreeMem=4949 Sockets=1 Boards=1 MemSpecLimit=3072 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=4 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-10-01T06:33:58 SlurmdStartTime=2026-11-07T06:45:06 LastBusyTime=2026-10-26T06:23:25 ResumeAfterTime=None CfgTRES=cpu=16,mem=259G,billing=16,gres/gpu=4,gres/gpu:6000ada=4 AllocTRES=cpu=16,mem=256G,gres/gpu=4,gres/gpu:6000ada=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-6000ada-2 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=10.98 AvailableFeatures=6000ada,gpu,gpu_16g,gpu_32g,gpu_48g ActiveFeatures=6000ada,gpu,gpu_16g,gpu_32g,gpu_48g Gres=gpu:6000ada:4 NodeAddr=gpu-6000ada-2 NodeHostName=gpu-6000ada-2 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=265216 AllocMem=262144 FreeMem=13930 Sockets=1 Boards=1 MemSpecLimit=3072 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=4 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-10-01T06:36:07 SlurmdStartTime=2026-11-07T06:59:36 LastBusyTime=2026-10-30T14:11:39 ResumeAfterTime=None CfgTRES=cpu=16,mem=259G,billing=16,gres/gpu=4,gres/gpu:6000ada=4 AllocTRES=cpu=16,mem=256G,gres/gpu=4,gres/gpu:6000ada=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-6000ada-3 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=12.38 AvailableFeatures=6000ada,gpu,gpu_16g,gpu_32g,gpu_48g ActiveFeatures=6000ada,gpu,gpu_16g,gpu_32g,gpu_48g Gres=gpu:6000ada:4 NodeAddr=gpu-6000ada-3 NodeHostName=gpu-6000ada-3 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=265216 AllocMem=262144 FreeMem=2658 Sockets=1 Boards=1 MemSpecLimit=3072 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=4 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-10-01T06:35:45 SlurmdStartTime=2026-11-06T06:55:41 LastBusyTime=2026-10-30T14:55:11 ResumeAfterTime=None CfgTRES=cpu=16,mem=259G,billing=16,gres/gpu=4,gres/gpu:6000ada=4 AllocTRES=cpu=16,mem=256G,gres/gpu=4,gres/gpu:6000ada=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-a40-1 Arch=x86_64 CoresPerSocket=40  CPUAlloc=40 CPUEfctv=40 CPUTot=40 CPULoad=40.68 AvailableFeatures=a40,gpu,gpu_16g,gpu_32g,gpu_48g ActiveFeatures=a40,gpu,gpu_16g,gpu_32g,gpu_48g Gres=gpu:a40:10 NodeAddr=gpu-a40-1 NodeHostName=gpu-a40-1 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=488542 AllocMem=409600 FreeMem=27228 Sockets=1 Boards=1 MemSpecLimit=7168 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-27T08:20:18 SlurmdStartTime=2026-11-06T06:45:29 LastBusyTime=2026-10-15T06:25:54 ResumeAfterTime=None CfgTRES=cpu=40,mem=488542M,billing=30,gres/gpu=10,gres/gpu:a40=10 AllocTRES=cpu=40,mem=400G,gres/gpu=10,gres/gpu:a40=10 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-a40-2 Arch=x86_64 CoresPerSocket=48  CPUAlloc=32 CPUEfctv=32 CPUTot=48 CPULoad=27.20 AvailableFeatures=a40,gpu,gpu_16g,gpu_32g,gpu_48g ActiveFeatures=a40,gpu,gpu_16g,gpu_32g,gpu_48g Gres=gpu:a40:8 NodeAddr=gpu-a40-2 NodeHostName=gpu-a40-2 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=442880 AllocMem=327680 FreeMem=40355 Sockets=1 Boards=1 CoreSpecCount=16 CPUSpecList=32-47 MemSpecLimit=7168 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-26T16:57:48 SlurmdStartTime=2026-11-06T06:52:31 LastBusyTime=2026-10-15T06:25:54 ResumeAfterTime=None CfgTRES=cpu=32,mem=432.50G,billing=24,gres/gpu=8,gres/gpu:a40=8 AllocTRES=cpu=32,mem=320G,gres/gpu=8,gres/gpu:a40=8 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-a6000-1 Arch=x86_64 CoresPerSocket=40  CPUAlloc=40 CPUEfctv=40 CPUTot=40 CPULoad=23.46 AvailableFeatures=a6000,gpu,gpu_16g,gpu_32g,gpu_48g ActiveFeatures=a6000,gpu,gpu_16g,gpu_32g,gpu_48g Gres=gpu:a6000:10 NodeAddr=gpu-a6000-1 NodeHostName=gpu-a6000-1 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=233472 AllocMem=225280 FreeMem=79405 Sockets=1 Boards=1 MemSpecLimit=8192 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=2 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-11-10T00:27:48 SlurmdStartTime=2026-11-10T00:28:14 LastBusyTime=2026-11-10T00:35:20 ResumeAfterTime=None CfgTRES=cpu=40,mem=228G,billing=30,gres/gpu=10,gres/gpu:a6000=10 AllocTRES=cpu=40,mem=220G,gres/gpu=10,gres/gpu:a6000=10 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-gh200-1 Arch=aarch64 CoresPerSocket=72  CPUAlloc=72 CPUEfctv=72 CPUTot=72 CPULoad=7.81 AvailableFeatures=gh200,gpu,gpu_96g,aarch64,highmem ActiveFeatures=gh200,gpu,gpu_96g,aarch64,highmem Gres=gpu:gh200:1 NodeAddr=gpu-gh200-1 NodeHostName=gpu-gh200-1 Version=23.11.4 OS=Linux 6.17.0-40-generic-64k #40~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Jun 23 18:33:24 UTC 2  RealMemory=578560 AllocMem=573440 FreeMem=497993 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-10-03T07:37:35 SlurmdStartTime=2026-10-03T07:45:01 LastBusyTime=2026-11-10T05:27:24 ResumeAfterTime=None CfgTRES=cpu=72,mem=565G,billing=8,gres/gpu=1,gres/gpu:gh200=1 AllocTRES=cpu=72,mem=560G,gres/gpu=1,gres/gpu:gh200=1 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-l40-1 Arch=x86_64 CoresPerSocket=12  CPUAlloc=16 CPUEfctv=24 CPUTot=24 CPULoad=4.96 AvailableFeatures=l40,gpu,gpu_16g,gpu_32g,gpu_48g ActiveFeatures=l40,gpu,gpu_16g,gpu_32g,gpu_48g Gres=gpu:l40:4(S:0-1) NodeAddr=gpu-l40-1 NodeHostName=gpu-l40-1 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=244736 AllocMem=196608 FreeMem=232965 Sockets=2 Boards=1 MemSpecLimit=9216 State=MIXED ThreadsPerCore=1 TmpDisk=0 Weight=3 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-30T03:45:38 SlurmdStartTime=2026-11-06T06:23:17 LastBusyTime=2026-11-06T11:10:04 ResumeAfterTime=None CfgTRES=cpu=24,mem=239G,billing=16,gres/gpu=4,gres/gpu:l40=4 AllocTRES=cpu=16,mem=192G,gres/gpu=4,gres/gpu:l40=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-l40-2 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=19.29 AvailableFeatures=l40,gpu,gpu_16g,gpu_32g,gpu_48g ActiveFeatures=l40,gpu,gpu_16g,gpu_32g,gpu_48g Gres=gpu:l40:4 NodeAddr=gpu-l40-2 NodeHostName=gpu-l40-2 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=205824 AllocMem=196608 FreeMem=7314 Sockets=1 Boards=1 MemSpecLimit=9216 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=3 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-30T03:44:39 SlurmdStartTime=2026-11-06T06:15:02 LastBusyTime=2026-11-09T13:23:05 ResumeAfterTime=None CfgTRES=cpu=16,mem=201G,billing=16,gres/gpu=4,gres/gpu:l40=4 AllocTRES=cpu=16,mem=192G,gres/gpu=4,gres/gpu:l40=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-1 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=9.16 AvailableFeatures=pro6000,highmem,gpu_96g ActiveFeatures=pro6000,highmem,gpu_96g Gres=gpu:pro6000:4 NodeAddr=gpu-pro6000-1 NodeHostName=gpu-pro6000-1 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=396288 AllocMem=135168 FreeMem=6610 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=5 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-27T14:12:21 SlurmdStartTime=2026-11-07T06:26:31 LastBusyTime=2026-10-28T06:52:25 ResumeAfterTime=None CfgTRES=cpu=16,mem=387G,billing=32,gres/gpu=4,gres/gpu:pro6000=4 AllocTRES=cpu=16,mem=132G,gres/gpu=4,gres/gpu:pro6000=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-2 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=8.21 AvailableFeatures=pro6000,highmem,gpu_96g ActiveFeatures=pro6000,highmem,gpu_96g Gres=gpu:pro6000:4 NodeAddr=gpu-pro6000-2 NodeHostName=gpu-pro6000-2 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=396288 AllocMem=135168 FreeMem=14779 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=5 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-27T08:20:56 SlurmdStartTime=2026-11-06T06:23:42 LastBusyTime=2026-11-07T23:19:25 ResumeAfterTime=None CfgTRES=cpu=16,mem=387G,billing=32,gres/gpu=4,gres/gpu:pro6000=4 AllocTRES=cpu=16,mem=132G,gres/gpu=4,gres/gpu:pro6000=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-3 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=37.33 AvailableFeatures=pro6000,highmem,gpu_96g ActiveFeatures=pro6000,highmem,gpu_96g Gres=gpu:pro6000:4 NodeAddr=gpu-pro6000-3 NodeHostName=gpu-pro6000-3 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=396288 AllocMem=135168 FreeMem=18483 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=5 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-27T08:23:20 SlurmdStartTime=2026-11-06T06:26:49 LastBusyTime=2026-11-06T14:12:45 ResumeAfterTime=None CfgTRES=cpu=16,mem=387G,billing=32,gres/gpu=4,gres/gpu:pro6000=4 AllocTRES=cpu=16,mem=132G,gres/gpu=4,gres/gpu:pro6000=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-4 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=5.97 AvailableFeatures=pro6000,highmem,gpu_96g ActiveFeatures=pro6000,highmem,gpu_96g Gres=gpu:pro6000:4 NodeAddr=gpu-pro6000-4 NodeHostName=gpu-pro6000-4 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=396288 AllocMem=135168 FreeMem=8438 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=5 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-27T08:22:01 SlurmdStartTime=2026-11-07T06:46:24 LastBusyTime=2026-11-09T16:38:45 ResumeAfterTime=None CfgTRES=cpu=16,mem=387G,billing=32,gres/gpu=4,gres/gpu:pro6000=4 AllocTRES=cpu=16,mem=132G,gres/gpu=4,gres/gpu:pro6000=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-5 Arch=x86_64 CoresPerSocket=32  CPUAlloc=40 CPUEfctv=40 CPUTot=64 CPULoad=19.05 AvailableFeatures=pro6000,gpu_96g ActiveFeatures=pro6000,gpu_96g Gres=gpu:pro6000:10(S:0-1) NodeAddr=gpu-pro6000-5 NodeHostName=gpu-pro6000-5 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=376000 AllocMem=337920 FreeMem=27721 Sockets=2 Boards=1 CoreSpecCount=24 CPUSpecList=20-31,52-63 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=100 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-26T16:54:00 SlurmdStartTime=2026-11-07T06:18:46 LastBusyTime=2026-10-15T06:25:54 ResumeAfterTime=None CfgTRES=cpu=40,mem=376000M,billing=80,gres/gpu=10,gres/gpu:pro6000=10 AllocTRES=cpu=40,mem=330G,gres/gpu=10,gres/gpu:pro6000=10 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-6 Arch=x86_64 CoresPerSocket=32  CPUAlloc=40 CPUEfctv=40 CPUTot=64 CPULoad=29.13 AvailableFeatures=pro6000,gpu_96g ActiveFeatures=pro6000,gpu_96g Gres=gpu:pro6000:10(S:0-1) NodeAddr=gpu-pro6000-6 NodeHostName=gpu-pro6000-6 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=376000 AllocMem=337920 FreeMem=34630 Sockets=2 Boards=1 CoreSpecCount=24 CPUSpecList=20-31,52-63 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=100 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-26T16:54:11 SlurmdStartTime=2026-11-06T06:07:57 LastBusyTime=2026-10-15T06:25:54 ResumeAfterTime=None CfgTRES=cpu=40,mem=376000M,billing=80,gres/gpu=10,gres/gpu:pro6000=10 AllocTRES=cpu=40,mem=330G,gres/gpu=10,gres/gpu:pro6000=10 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-7 Arch=x86_64 CoresPerSocket=32  CPUAlloc=32 CPUEfctv=32 CPUTot=64 CPULoad=24.12 AvailableFeatures=pro6000,gpu_96g,highmem ActiveFeatures=pro6000,gpu_96g,highmem Gres=gpu:pro6000:8(S:0-1) NodeAddr=gpu-pro6000-7 NodeHostName=gpu-pro6000-7 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=760832 AllocMem=270336 FreeMem=327649 Sockets=2 Boards=1 CoreSpecCount=32 CPUSpecList=16-31,48-63 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=150 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-10-01T06:32:51 SlurmdStartTime=2026-11-06T06:35:39 LastBusyTime=2026-10-15T06:25:54 ResumeAfterTime=None CfgTRES=cpu=32,mem=743G,billing=64,gres/gpu=8,gres/gpu:pro6000=8 AllocTRES=cpu=32,mem=264G,gres/gpu=8,gres/gpu:pro6000=8 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-8 Arch=x86_64 CoresPerSocket=32  CPUAlloc=32 CPUEfctv=32 CPUTot=64 CPULoad=15.54 AvailableFeatures=pro6000,gpu_96g,highmem ActiveFeatures=pro6000,gpu_96g,highmem Gres=gpu:pro6000:8(S:0-1) NodeAddr=gpu-pro6000-8 NodeHostName=gpu-pro6000-8 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=760832 AllocMem=270336 FreeMem=444462 Sockets=2 Boards=1 CoreSpecCount=32 CPUSpecList=16-31,48-63 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=150 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-10-01T06:32:51 SlurmdStartTime=2026-11-07T06:58:12 LastBusyTime=2026-10-28T06:35:54 ResumeAfterTime=None CfgTRES=cpu=32,mem=743G,billing=64,gres/gpu=8,gres/gpu:pro6000=8 AllocTRES=cpu=32,mem=264G,gres/gpu=8,gres/gpu:pro6000=8 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-9 Arch=x86_64 CoresPerSocket=32  CPUAlloc=32 CPUEfctv=32 CPUTot=64 CPULoad=11.54 AvailableFeatures=pro6000,gpu_96g,highmem ActiveFeatures=pro6000,gpu_96g,highmem Gres=gpu:pro6000:8(S:0-1) NodeAddr=gpu-pro6000-9 NodeHostName=gpu-pro6000-9 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=760832 AllocMem=503808 FreeMem=188641 Sockets=2 Boards=1 CoreSpecCount=32 CPUSpecList=16-31,48-63 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=150 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-10-01T06:32:35 SlurmdStartTime=2026-11-07T06:37:52 LastBusyTime=2026-10-15T06:25:54 ResumeAfterTime=None CfgTRES=cpu=32,mem=743G,billing=64,gres/gpu=8,gres/gpu:pro6000=8 AllocTRES=cpu=32,mem=492G,gres/gpu=8,gres/gpu:pro6000=8 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-10 Arch=x86_64 CoresPerSocket=32  CPUAlloc=32 CPUEfctv=32 CPUTot=64 CPULoad=23.84 AvailableFeatures=pro6000,gpu_96g,highmem ActiveFeatures=pro6000,gpu_96g,highmem Gres=gpu:pro6000:8(S:0-1) NodeAddr=gpu-pro6000-10 NodeHostName=gpu-pro6000-10 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=760832 AllocMem=387072 FreeMem=80049 Sockets=2 Boards=1 CoreSpecCount=32 CPUSpecList=16-31,48-63 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=150 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-10-01T06:32:36 SlurmdStartTime=2026-10-03T07:21:18 LastBusyTime=2026-10-24T17:47:39 ResumeAfterTime=None CfgTRES=cpu=32,mem=743G,billing=64,gres/gpu=8,gres/gpu:pro6000=8 AllocTRES=cpu=32,mem=378G,gres/gpu=8,gres/gpu:pro6000=8 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-11 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=5.32 AvailableFeatures=pro6000,gpu_96g,highmem ActiveFeatures=pro6000,gpu_96g,highmem Gres=gpu:pro6000:4 NodeAddr=gpu-pro6000-11 NodeHostName=gpu-pro6000-11 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=373760 AllocMem=251904 FreeMem=265760 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=100 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-26T19:04:04 SlurmdStartTime=2026-11-07T06:36:26 LastBusyTime=2026-11-08T09:06:11 ResumeAfterTime=None CfgTRES=cpu=16,mem=365G,billing=32,gres/gpu=4,gres/gpu:pro6000=4 AllocTRES=cpu=16,mem=246G,gres/gpu=4,gres/gpu:pro6000=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-12 Arch=x86_64 CoresPerSocket=16  CPUAlloc=40 CPUEfctv=40 CPUTot=64 CPULoad=21.72 AvailableFeatures=pro6000,gpu_96g,midmem ActiveFeatures=pro6000,gpu_96g,midmem Gres=gpu:pro6000:10(S:0-1) NodeAddr=gpu-pro6000-12 NodeHostName=gpu-pro6000-12 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=506880 AllocMem=337920 FreeMem=198017 Sockets=2 Boards=1 CoreSpecCount=12 CPUSpecList=20-31,52-63 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=2 TmpDisk=0 Weight=100 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-29T04:11:27 SlurmdStartTime=2026-11-07T06:38:52 LastBusyTime=2026-10-15T06:25:54 ResumeAfterTime=None CfgTRES=cpu=40,mem=495G,billing=80,gres/gpu=10,gres/gpu:pro6000=10 AllocTRES=cpu=40,mem=330G,gres/gpu=10,gres/gpu:pro6000=10 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-13 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=5.00 AvailableFeatures=pro6000,highmem,gpu_96g ActiveFeatures=pro6000,highmem,gpu_96g Gres=gpu:pro6000:4 NodeAddr=gpu-pro6000-13 NodeHostName=gpu-pro6000-13 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=396288 AllocMem=135168 FreeMem=267614 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=5 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-09-27T08:18:47 SlurmdStartTime=2026-11-07T06:07:08 LastBusyTime=2026-11-08T12:55:34 ResumeAfterTime=None CfgTRES=cpu=16,mem=387G,billing=32,gres/gpu=4,gres/gpu:pro6000=4 AllocTRES=cpu=16,mem=132G,gres/gpu=4,gres/gpu:pro6000=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\nNodeName=gpu-pro6000-14 Arch=x86_64 CoresPerSocket=16  CPUAlloc=16 CPUEfctv=16 CPUTot=16 CPULoad=0.65 AvailableFeatures=pro6000,highmem,gpu_96g ActiveFeatures=pro6000,highmem,gpu_96g Gres=gpu:pro6000:4 NodeAddr=gpu-pro6000-14 NodeHostName=gpu-pro6000-14 Version=23.11.4 OS=Linux 6.8.0-142-generic #142-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep  2 14:24:27 UTC 2026  RealMemory=396288 AllocMem=135168 FreeMem=302922 Sockets=1 Boards=1 MemSpecLimit=5120 State=ALLOCATED ThreadsPerCore=1 TmpDisk=0 Weight=5 Owner=N/A MCS_label=N/A Partitions=cluster02  BootTime=2026-11-02T02:09:42 SlurmdStartTime=2026-11-04T06:06:07 LastBusyTime=2026-11-10T03:06:27 ResumeAfterTime=None CfgTRES=cpu=16,mem=387G,billing=32,gres/gpu=4,gres/gpu:pro6000=4 AllocTRES=cpu=16,mem=132G,gres/gpu=4,gres/gpu:pro6000=4 CapWatts=n/a CurrentWatts=0 AveWatts=0 ExtSensorsJoules=n/a ExtSensorsWatts=0 ExtSensorsTemp=n/a\n",
+      "stderr": ""
+    }
+  ],
+  "gpu_allocations": [
+    {
+      "node": "gpu-5090-1",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-5090-2",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-5090-3",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-5090-4",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-5090-5",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-6000ada-1",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-6000ada-2",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-6000ada-3",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-a40-1",
+      "configured_gpus": 10,
+      "allocated_gpus": 10,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-a40-2",
+      "configured_gpus": 8,
+      "allocated_gpus": 8,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-a6000-1",
+      "configured_gpus": 10,
+      "allocated_gpus": 10,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-gh200-1",
+      "configured_gpus": 1,
+      "allocated_gpus": 1,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-l40-1",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "MIXED"
+    },
+    {
+      "node": "gpu-l40-2",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-1",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-2",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-3",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-4",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-5",
+      "configured_gpus": 10,
+      "allocated_gpus": 10,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-6",
+      "configured_gpus": 10,
+      "allocated_gpus": 10,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-7",
+      "configured_gpus": 8,
+      "allocated_gpus": 8,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-8",
+      "configured_gpus": 8,
+      "allocated_gpus": 8,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-9",
+      "configured_gpus": 8,
+      "allocated_gpus": 8,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-10",
+      "configured_gpus": 8,
+      "allocated_gpus": 8,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-11",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-12",
+      "configured_gpus": 10,
+      "allocated_gpus": 10,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-13",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    },
+    {
+      "node": "gpu-pro6000-14",
+      "configured_gpus": 4,
+      "allocated_gpus": 4,
+      "state": "ALLOCATED"
+    }
+  ],
+  "updated_utc": "2026-11-10T05:51:23.994611+00:00"
+}

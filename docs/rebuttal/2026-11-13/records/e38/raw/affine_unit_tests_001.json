@@ -1,0 +1,16 @@
+{
+  "kind": "unit_test_execution_record",
+  "recorded_utc": "2026-11-10T05:57:52.437427+00:00",
+  "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /projects/nar/nar-validation/venv/bin/python -m unittest discover -s tests -p test_e38_affine_contract.py -v",
+  "cwd": "/home/yanlongc/prismquant-rebuttal-e38",
+  "reported_by": "e38_audit collaborating agent, original execution tool result",
+  "tests_run": 9,
+  "status": "PASS",
+  "exit_code": 0,
+  "attempts": 1,
+  "failures": 0,
+  "source_state_at_execution": "new source files, not yet committed; hashes below identify exact tested arithmetic/tests",
+  "test_sha256": "545e5f8b8a125524a0981c09a914962add520bebf5c7d83e230dc58024d16ba9",
+  "model_evidence": false,
+  "gpu_evidence": false
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "provenance_amendment",
+  "created_utc": "2026-11-10T05:57:52.436532+00:00",
+  "original_record": "affine_contract_seed0.json",
+  "original_sha256": "30d416daf92d390794cce381f8e812410d05fba2c48c837c71fb180ab5897411",
+  "issue": "Initial logger used sys.argv which loses the -m invocation; direct execution would fail the relative import. Numeric result is retained.",
+  "actual_command": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "-m",
+    "nar.e38_affine_contract",
+    "--seed",
+    "0",
+    "--output",
+    "results/e38/raw/affine_contract_seed0.json"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "correction": "Use sys.orig_argv in future records; run a separate logging verification record without replacing first attempt."
+}

@@ -1,0 +1,177 @@
+{
+  "kind": "e38_direct_accuracy_task_items",
+  "backend": "FP16",
+  "scope": "Actual trained8B weights; independent per-token symmetric activation/native per-head KV4 protocol; no Table1 equivalence claim",
+  "model": "llama31_8b",
+  "rotation": "fp16",
+  "seed": 0,
+  "source_commit": "0bf135e1ea21df2f8f0e395009bb245d695319f0",
+  "source_sha256": {
+    "quarot-llama3/e38/stage_a_8b.py": "a872b42d54333409013e3411cf0d1b4f1281e1567bb7f3af6024886cedab4ab6",
+    "quarot-llama3/e38/stage_a_8b_model.py": "92c2f295da29b3347fbde12a0c4b690e8f9fbea209552e0ce50e6af4cfa45dd9",
+    "quarot-llama3/e38/fp16.py": "5ce9ae1f7dd00910cd08b1c68bc4a95970b295ba4a92fd426ad5fcb4925af367",
+    "quarot-llama3/modeling_llama3.py": "ec8f03779820a4a749a97a8e84b337a31f880c40e4145a0a0099ae3ca9299582",
+    "quarot-llama3/e28_v2/cache_adapter.py": "91b8fa46bfa453d553190ccc526257717650002607b016ef917a1d383d5f3bfe",
+    "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+    "nar/activation_experiments.py": "60ae33785675a388d3879a5e53cb7ab34233fea15807eab411348d0ce0b72303",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+    "nar/e38_checkpoint_probe.py": "584797c5347e8f37aa125fb0f0d4e1593f504c2aa77152e8ba94b8957300787c"
+  },
+  "parent_run": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1736075.json",
+  "command_line": [
+    "/projects/nar/nar-validation/e28-env/bin/python",
+    "-m",
+    "e38.stage_a_8b",
+    "--row",
+    "fp16",
+    "--phase",
+    "eight-tasks",
+    "--artifact-dir",
+    "/projects/nar/nar-validation/artifacts/e38/native_packed8b_seed0_v1",
+    "--source-commit",
+    "0bf135e1ea21df2f8f0e395009bb245d695319f0",
+    "--repetitions",
+    "20",
+    "--warmup",
+    "10",
+    "--batch-size",
+    "1",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1736075.json"
+  ],
+  "gpu_model": "NVIDIA A40",
+  "libraries": {
+    "torch": "2.4.1+cu124",
+    "transformers": "4.36.2",
+    "triton": "3.0.0",
+    "datasets": "2.17.1",
+    "numpy": "1.26.4",
+    "tokenizers": "0.15.2",
+    "flash-attn": "2.6.3"
+  },
+  "harness_commit_recorded": "b954108c9baaaa934b4ad842033b31a97ee30816",
+  "batch_size": 1,
+  "status": "PASS",
+  "metric": "acc,none",
+  "accuracy": 0.8308868501529052,
+  "samples": 3270,
+  "result": {
+    "results": {
+      "boolq": {
+        "name": "boolq",
+        "alias": "boolq",
+        "sample_len": 3270,
+        "acc,none": 0.8308868501529052,
+        "acc_stderr,none": "N/A"
+      }
+    },
+    "group_subtasks": {},
+    "configs": {
+      "boolq": {
+        "task": "boolq",
+        "dataset_path": "aps/super_glue",
+        "dataset_name": "boolq",
+        "training_split": "train",
+        "validation_split": "validation",
+        "doc_to_text": "{{passage}}\nQuestion: {{question}}?\nAnswer:",
+        "doc_to_target": "label",
+        "unsafe_code": false,
+        "doc_to_choice": [
+          "no",
+          "yes"
+        ],
+        "description": "",
+        "target_delimiter": " ",
+        "fewshot_delimiter": "\n\n",
+        "fewshot_config": {
+          "sampler": "default",
+          "split": null,
+          "process_docs": null,
+          "fewshot_indices": null,
+          "samples": null,
+          "doc_to_text": "{{passage}}\nQuestion: {{question}}?\nAnswer:",
+          "doc_to_choice": [
+            "no",
+            "yes"
+          ],
+          "doc_to_target": "label",
+          "gen_prefix": null,
+          "fewshot_delimiter": "\n\n",
+          "target_delimiter": " "
+        },
+        "num_fewshot": 0,
+        "metric_list": [
+          {
+            "metric": "acc"
+          }
+        ],
+        "output_type": "multiple_choice",
+        "repeats": 1,
+        "should_decontaminate": true,
+        "doc_to_decontamination_query": "passage",
+        "metadata": {
+          "version": 2.0,
+          "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/super_glue/boolq/default.yaml"
+        }
+      }
+    },
+    "versions": {
+      "boolq": 2.0
+    },
+    "n-shot": {
+      "boolq": 0
+    },
+    "higher_is_better": {
+      "boolq": {
+        "acc": true
+      }
+    },
+    "n-samples": {
+      "boolq": {
+        "original": 3270,
+        "effective": 3270
+      }
+    },
+    "config": {
+      "model": "meta-llama/meta-Llama-3.1-8B",
+      "model_args": null,
+      "model_num_parameters": 8030261248,
+      "model_dtype": "torch.float16",
+      "model_revision": "main",
+      "model_sha": "",
+      "batch_size": 1,
+      "batch_sizes": [],
+      "device": null,
+      "use_cache": null,
+      "limit": null,
+      "bootstrap_iters": 0,
+      "gen_kwargs": null,
+      "random_seed": 0,
+      "numpy_seed": 0,
+      "torch_seed": 0,
+      "fewshot_seed": 0
+    },
+    "git_hash": "research-archive-2026-09-25-41-gef948c4",
+    "date": 1794495617.7151864,
+    "pretty_env_info": "PyTorch version: 2.4.1+cu124\nIs debug build: False\nCUDA used to build PyTorch: 12.4\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 24.04.5 LTS (x86_64)\nGCC version: (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.39\n\nPython version: 3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0] (64-bit runtime)\nPython platform: Linux-6.8.0-142-generic-x86_64-with-glibc2.39\nIs CUDA available: True\nCUDA runtime version: Could not collect\nCUDA_MODULE_LOADING set to: LAZY\nGPU models and configuration: GPU 0: NVIDIA A40\nNvidia driver version: 595.71.05\ncuDNN version: Could not collect\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: True\n\nCPU:\nArchitecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           52 bits physical, 57 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  40\nOn-line CPU(s) list:                     0-39\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz\nCPU family:                              6\nModel:                                   106\nThread(s) per core:                      1\nCore(s) per socket:                      20\nSocket(s):                               2\nStepping:                                6\nBogoMIPS:                                5799.99\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq dtes64 vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves wbnoinvd arat vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid fsrm md_clear flush_l1d arch_capabilities\nVirtualization:                          VT-x\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               1.3 MiB (40 instances)\nL1i cache:                               1.3 MiB (40 instances)\nL2 cache:                                160 MiB (40 instances)\nL3 cache:                                32 MiB (2 instances)\nNUMA node(s):                            2\nNUMA node0 CPU(s):                       0-19\nNUMA node1 CPU(s):                       20-39\nVulnerability Gather data sampling:      Unknown: Dependent on hypervisor status\nVulnerability Indirect target selection: Mitigation; Aligned branch/return thunks\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Mitigation; Clear CPU buffers; SMT Host state unknown\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Mitigation; TSX disabled\nVulnerability Vmscape:                   Not affected\n\nVersions of relevant libraries:\n[pip3] numpy==1.26.4\n[pip3] torch==2.4.1+cu124\n[pip3] triton==3.0.0\n[conda] Could not collect",
+    "transformers_version": "4.36.2",
+    "lm_eval_version": "0.4.14.dev0",
+    "upper_git_hash": null,
+    "tokenizer_pad_token": [
+      "<|finetune_right_pad_id|>",
+      "128004"
+    ],
+    "tokenizer_eos_token": [
+      "<|end_of_text|>",
+      "128001"
+    ],
+    "tokenizer_bos_token": [
+      "<|begin_of_text|>",
+      "128000"
+    ],
+    "eot_token_id": 128001,
+    "max_length": 2048
+  },
+  "elapsed_seconds": 157.02661599311978
+}

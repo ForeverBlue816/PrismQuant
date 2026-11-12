@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\small
+\caption{E41: Meta-Llama-3.1-8B, BF16 weights and K/V, activation-only A4 at qkv/down inputs (seed 0; WikiText-2 test, 141 sequences of 2048 tokens; group size 128). Weights and KV remain BF16. All six rows completed; lower PPL is better.}
+\label{tab:e41-mechanism-seed0}
+\begin{tabular}{lrr}
+\toprule
+Rotation & Asymmetric PPL & Symmetric PPL \\
+\midrule
+Hadamard & 6.40246 & 6.48862 \\
+PQ constant direction & 6.33337 & 6.39883 \\
+PQ signed direction & 6.36120 & 6.40177 \\
+\midrule
+\multicolumn{3}{l}{PPL contrasts (left minus right)} \\
+PQ constant $-$ Hadamard & -0.06908 & -0.08979 \\
+PQ signed $-$ Hadamard & -0.04126 & -0.08685 \\
+PQ signed $-$ PQ constant & +0.02783 & +0.00294 \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{0.98\linewidth}
+\footnotesize
+The difference of signed-minus-constant contrasts is +0.02489 PPL. The signed control also swaps one residual coordinate per group. Asymmetric and symmetric quantizers differ in scale, code range and metadata cost (4.25 versus 4.125 effective bits). This is a single-seed directional comparison, not a pure causal decomposition or a joint W4A4KV4 result.
+\end{minipage}
+\end{table}

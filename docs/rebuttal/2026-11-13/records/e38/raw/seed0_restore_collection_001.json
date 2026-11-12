@@ -1,0 +1,44 @@
+{
+  "collected_utc": "2026-11-10T13:19:54.043422+00:00",
+  "rows": [
+    {
+      "manifest": "results/e38/raw/restore_seed0_3b_hadamard_001.json",
+      "sha256": "046331194ad4546620387170960d2273b3a00ab76b0243d1fb8dfd2b2f9c010e",
+      "status": "COMPLETE",
+      "files": 29
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_3b_kmax_local_001.json",
+      "sha256": "f748dd30ba08e8a175e61c1fbb3aafb146676bba682c13c9495a4968e28bdb65",
+      "status": "ALREADY_VERIFIED_LOCAL",
+      "files": 29
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_3b_nar_k8_001.json",
+      "sha256": "71d407e4e4a9b150893c29b1ba68442a1ae6c6ef46c8a7c94f96eb59184235b4",
+      "status": "COMPLETE",
+      "files": 29
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_8b_hadamard_001.json",
+      "sha256": "d668060cc6a12c93f46c122b78fc023e91c7c220451daaf2aad80b19d6584cdf",
+      "status": "COMPLETE",
+      "files": 33
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_8b_nar_k8_001.json",
+      "sha256": "9095bde3549ab3fead11efb51c24263c8d8376612148083ca5f89ab17fdf33b6",
+      "status": "COMPLETE",
+      "files": 33
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_8b_nar_kmax_001.json",
+      "sha256": "1b7b95593b0930654970e6d83afd8fed8aca6f84a21e7f0e98260d8b503ba188",
+      "status": "COMPLETE",
+      "files": 33
+    }
+  ],
+  "independent_audit": "manifest file set, actual file existence/size, expected catalog LFS/Git blob fields and recorded hashes verified; no redundant53GB content rehash",
+  "source_amendment": "raw/restore_source_amendment_001.json",
+  "scope": "3B/8B Hadamard,k8,kmax, seed0 only"
+}

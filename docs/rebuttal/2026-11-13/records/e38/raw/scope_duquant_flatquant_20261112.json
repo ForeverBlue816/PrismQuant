@@ -1,0 +1,30 @@
+{
+  "observed_utc": "2026-11-12T15:18:53.835416+00:00",
+  "user_scope": "Only DuQuant and FlatQuant according to supplied OpenReview reviews; all other experiments paused",
+  "review_attachment": "/home/yanlongc/.codex/attachments/1783cd40-a2d9-46e1-96ff-c0642dcfb23e/\u5df2\u7c98\u8d34\u7684\u6587\u672c.txt",
+  "model": "Meta-Llama-3.1-8B",
+  "commands": [
+    {
+      "job_id": "1736076",
+      "before": "1736076|pq8b-tasks-seed12|PENDING\n",
+      "cancel_returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job_id": "1736074",
+      "before": "1736074|pq8b-parallel-five|PENDING\n",
+      "cancel_returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "job_id": "1736075",
+      "before": "1736075|pq8b-tasks-seed0|RUNNING\n",
+      "cancel_returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "preserve_all_prior_outputs": true
+}

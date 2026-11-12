@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-10T11:53:31.497124+00:00",
+  "kind": "simulator_reference",
+  "model": "3b_kmax",
+  "seed": 0,
+  "source_commit": "e8d914bd1d553121ef43ddb37e99fad22c2e7e65",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "slurm_e38_reference_tasks.sh"
+  ],
+  "script_sha256": "757f419a533214aa963b7e13ed7bc79aadd816921b1f60ce9f2e189e3747e14b",
+  "gpu": "pro6000:1",
+  "wall_limit": "12:00:00",
+  "per_item_outputs": true,
+  "scope": "complete eight-task accuracy after model-quality gate; no timing",
+  "sbatch_returncode": 0,
+  "sbatch_stdout": "1733349\n",
+  "sbatch_stderr": "",
+  "job_id": "1733349",
+  "scontrol": "JobId=1733349 JobName=e38-ref-tasks-seed0\n   UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A\n   Priority=1 Nice=0 Account=rose QOS=rose\n   JobState=PENDING Reason=Priority Dependency=(null)\n   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0\n   RunTime=00:00:00 TimeLimit=12:00:00 TimeMin=N/A\n   SubmitTime=2026-11-10T11:53:31 EligibleTime=2026-11-10T11:53:31\n   AccrueTime=Unknown\n   StartTime=Unknown EndTime=Unknown Deadline=N/A\n   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-10T11:53:31 Scheduler=Main\n   Partition=cluster02 AllocNode:Sid=login-2:2146545\n   ReqNodeList=(null) ExcNodeList=(null)\n   NodeList=\n   NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*\n   ReqTRES=cpu=4,mem=90G,node=1,billing=8,gres/gpu=1,gres/gpu:pro6000=1\n   AllocTRES=(null)\n   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*\n   MinCPUsNode=4 MinMemoryNode=90G MinTmpDiskNode=0\n   Features=highmem DelayBoot=00:00:00\n   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)\n   Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_e38_reference_tasks.sh\n   WorkDir=/home/yanlongc/prismquant-rebuttal-e38\n   StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-ref-tasks-1733349.err\n   StdIn=/dev/null\n   StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/e38-ref-tasks-1733349.out\n   Power=\n   TresPerJob=gres/gpu:pro6000:1\n   TresPerTask=cpu:4\n   \n\n"
+}

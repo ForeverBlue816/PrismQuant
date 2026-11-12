@@ -1,0 +1,605 @@
+{
+  "kind": "paired_task_stratified_bootstrap",
+  "status": "PASS",
+  "started_utc": "2026-11-11T03:35:16.019394+00:00",
+  "command_line": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "scripts/e38_direct_paired_bootstrap.py",
+    "--output",
+    "results/e38/raw/direct_paired_bootstrap_001.json"
+  ],
+  "script": "/home/yanlongc/prismquant-rebuttal-e38/scripts/e38_direct_paired_bootstrap.py",
+  "script_sha256": "fe9c40a417545b603cfccc87b38dee84aa31657cec4fa9892bea5cbdce19fb8e",
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "numpy": "2.4.6",
+  "hostname": "login-3.cluster02.eee.ntu.edu.sg",
+  "seed_scope": "one experimental seed0 only",
+  "bootstrap_seed": 0,
+  "resamples": 10000,
+  "method": "Independent paired nonparametric bootstrap within each task; unweighted eight-task mean per replicate",
+  "implementation": "Multinomial resampling of empirical paired binary outcome-difference counts {-1,0,+1}; distribution-identical to paired item index resampling",
+  "confidence_interval": "two-sided percentile95%; numpy quantile linear interpolation",
+  "multiple_comparisons": "Per-task intervals are nominal95%, without familywise adjustment",
+  "rows": [
+    {
+      "task": "arc_easy",
+      "metric": "acc_norm,none",
+      "n": 2376,
+      "integer_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_integer_3b_kmax_seed0_job1733510_arc_easy.json",
+        "sha256": "e0c64c4b3863fc458dd6d89b2b917ed907aef359ab2a904444c80677b99162ee"
+      },
+      "reference_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_arc_easy.json",
+        "sha256": "f449b54c5cf94cbfbbb0458209c60809a9ccfa379a94e35fffa59b8952da6932"
+      },
+      "pairing": {
+        "status": "PASS",
+        "key": "doc_id + filter",
+        "all_document_hashes_equal": true,
+        "all_prompt_hashes_equal": true,
+        "all_target_hashes_equal": true,
+        "all_documents_targets_and_full_arguments_equal": true,
+        "identity_sha256": "a8818f8c6b61e6f50b7591f75ba075d6278412ecd6fa84b5ae74a2f343cb40f5"
+      },
+      "task_config_raw_equal": true,
+      "task_config_equal_after_function_address_normalization": true,
+      "configuration_note": "Only process-specific function repr memory addresses are normalized; full docs/targets/requests are equal",
+      "canonical_task_config_sha256": "7c23c7d77a353f5cdcaa2c764055493e122455b4658e223fd8141c3020c1fe4b",
+      "versions": {
+        "arc_easy": 1.0
+      },
+      "integer_accuracy": 0.7070707070707071,
+      "reference_accuracy": 0.7154882154882155,
+      "difference": -0.008417508417508417,
+      "difference_percentage_points": -0.8417508417508417,
+      "paired_outcomes": {
+        "integer_only_correct": 83,
+        "reference_only_correct": 103,
+        "both_correct": 1597,
+        "both_wrong": 593
+      },
+      "resampling_difference_values": [
+        -1,
+        0,
+        1
+      ],
+      "resampling_difference_counts": [
+        103,
+        2190,
+        83
+      ],
+      "bootstrap_ci95": {
+        "low": -0.01936026936026936,
+        "high": 0.002946127946127946,
+        "low_percentage_points": -1.936026936026936,
+        "high_percentage_points": 0.2946127946127946,
+        "excludes_zero": false
+      },
+      "bootstrap_rng": "numpy PCG64",
+      "seed_sequence_spawn_key": [
+        0
+      ],
+      "bootstrap_standard_error": 0.005758168211415575,
+      "analytic_conditional_bootstrap_standard_error": 0.005737377223544578,
+      "bootstrap_replicates_float64_sha256": "7965e5c0525d172c069b727cf828885a9120c9b32145152ff2776eb117707d02"
+    },
+    {
+      "task": "arc_challenge",
+      "metric": "acc_norm,none",
+      "n": 1172,
+      "integer_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_integer_3b_kmax_seed0_job1733510_arc_challenge.json",
+        "sha256": "e7f1ba12cbd97925a48ff8191872d3eaccd9d83a06e8b4aeb6084cb3c3ef4ca5"
+      },
+      "reference_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_arc_challenge.json",
+        "sha256": "c06d3ab29af008d2f12da7e7df1421711d19a8836642fdcbea89c485f1ed48fa"
+      },
+      "pairing": {
+        "status": "PASS",
+        "key": "doc_id + filter",
+        "all_document_hashes_equal": true,
+        "all_prompt_hashes_equal": true,
+        "all_target_hashes_equal": true,
+        "all_documents_targets_and_full_arguments_equal": true,
+        "identity_sha256": "dd12c57eb86e85361b7c2054647e47b25cb29d7fc45e7cc1576132a6a71bb8a2"
+      },
+      "task_config_raw_equal": true,
+      "task_config_equal_after_function_address_normalization": true,
+      "configuration_note": "Only process-specific function repr memory addresses are normalized; full docs/targets/requests are equal",
+      "canonical_task_config_sha256": "9c1fe155b834d6537d6d6c0a9c065ca4165196b2ca96c409e6907a07e508cf0c",
+      "versions": {
+        "arc_challenge": 1.0
+      },
+      "integer_accuracy": 0.43600682593856654,
+      "reference_accuracy": 0.44112627986348124,
+      "difference": -0.005119453924914676,
+      "difference_percentage_points": -0.5119453924914675,
+      "paired_outcomes": {
+        "integer_only_correct": 59,
+        "reference_only_correct": 65,
+        "both_correct": 452,
+        "both_wrong": 596
+      },
+      "resampling_difference_values": [
+        -1,
+        0,
+        1
+      ],
+      "resampling_difference_counts": [
+        65,
+        1048,
+        59
+      ],
+      "bootstrap_ci95": {
+        "low": -0.02303754266211604,
+        "high": 0.013651877133105802,
+        "low_percentage_points": -2.303754266211604,
+        "high_percentage_points": 1.3651877133105803,
+        "excludes_zero": false
+      },
+      "bootstrap_rng": "numpy PCG64",
+      "seed_sequence_spawn_key": [
+        1
+      ],
+      "bootstrap_standard_error": 0.009472454579229649,
+      "analytic_conditional_bootstrap_standard_error": 0.009500127490301383,
+      "bootstrap_replicates_float64_sha256": "2ba80ea2fa872a0f2867ee08f47a8873e404c0dc13d8e5a57e68d09fb25edba9"
+    },
+    {
+      "task": "boolq",
+      "metric": "acc,none",
+      "n": 3270,
+      "integer_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_integer_3b_kmax_seed0_job1733510_boolq.json",
+        "sha256": "005a2d3d1cc03aa96f3b8378b8b16e7ef3bc58557ea637d3ea6e15adbc92cb9b"
+      },
+      "reference_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_boolq.json",
+        "sha256": "71b1b1eb67869d15826fe2405ce73883f5546df2af32e219eeb57dfb34a202fd"
+      },
+      "pairing": {
+        "status": "PASS",
+        "key": "doc_id + filter",
+        "all_document_hashes_equal": true,
+        "all_prompt_hashes_equal": true,
+        "all_target_hashes_equal": true,
+        "all_documents_targets_and_full_arguments_equal": true,
+        "identity_sha256": "59cbcbf8caf30460a25f85a80b352adf871ff704b94b318db9dca0bd64240406"
+      },
+      "task_config_raw_equal": true,
+      "task_config_equal_after_function_address_normalization": true,
+      "configuration_note": "Only process-specific function repr memory addresses are normalized; full docs/targets/requests are equal",
+      "canonical_task_config_sha256": "5fa3cbf0b7de4edc5548d5d5978814120feb52e8c1b8dfe5fd5f062eb99ee030",
+      "versions": {
+        "boolq": 2.0
+      },
+      "integer_accuracy": 0.7036697247706422,
+      "reference_accuracy": 0.6883792048929663,
+      "difference": 0.01529051987767584,
+      "difference_percentage_points": 1.529051987767584,
+      "paired_outcomes": {
+        "integer_only_correct": 240,
+        "reference_only_correct": 190,
+        "both_correct": 2061,
+        "both_wrong": 779
+      },
+      "resampling_difference_values": [
+        -1,
+        0,
+        1
+      ],
+      "resampling_difference_counts": [
+        190,
+        2840,
+        240
+      ],
+      "bootstrap_ci95": {
+        "low": 0.0030581039755351682,
+        "high": 0.027522935779816515,
+        "low_percentage_points": 0.3058103975535168,
+        "high_percentage_points": 2.7522935779816518,
+        "excludes_zero": true
+      },
+      "bootstrap_rng": "numpy PCG64",
+      "seed_sequence_spawn_key": [
+        2
+      ],
+      "bootstrap_standard_error": 0.006304723793017906,
+      "analytic_conditional_bootstrap_standard_error": 0.0063357794475435445,
+      "bootstrap_replicates_float64_sha256": "47d959b8f21ac97584a542253bd31cc1d17859464c35eb7ef6f109d0ceefbef1"
+    },
+    {
+      "task": "hellaswag",
+      "metric": "acc_norm,none",
+      "n": 10042,
+      "integer_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_integer_3b_kmax_seed0_job1733510_hellaswag.json",
+        "sha256": "9c9ff7e44df3787a4e2deb0a496795927c3ea92a90c537e62ca9fb568fac7420"
+      },
+      "reference_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_hellaswag.json",
+        "sha256": "224e89685a8f9baada845cbaaa5a7ccbda1bb4045056e275ce28250794a05ce9"
+      },
+      "pairing": {
+        "status": "PASS",
+        "key": "doc_id + filter",
+        "all_document_hashes_equal": true,
+        "all_prompt_hashes_equal": true,
+        "all_target_hashes_equal": true,
+        "all_documents_targets_and_full_arguments_equal": true,
+        "identity_sha256": "c50dc56aea1f1312cfcc3131efc1a012de677d189e614a0d607b5372a85049f8"
+      },
+      "task_config_raw_equal": false,
+      "task_config_equal_after_function_address_normalization": true,
+      "configuration_note": "Only process-specific function repr memory addresses are normalized; full docs/targets/requests are equal",
+      "canonical_task_config_sha256": "d8165b900a9ad0f34d58356fc3540f685870746e20f9d9a7a64e2d7c8193ccc1",
+      "versions": {
+        "hellaswag": 1.0
+      },
+      "integer_accuracy": 0.7114120693089027,
+      "reference_accuracy": 0.7108145787691695,
+      "difference": 0.0005974905397331209,
+      "difference_percentage_points": 0.059749053973312094,
+      "paired_outcomes": {
+        "integer_only_correct": 240,
+        "reference_only_correct": 234,
+        "both_correct": 6904,
+        "both_wrong": 2664
+      },
+      "resampling_difference_values": [
+        -1,
+        0,
+        1
+      ],
+      "resampling_difference_counts": [
+        234,
+        9568,
+        240
+      ],
+      "bootstrap_ci95": {
+        "low": -0.0035849432383987254,
+        "high": 0.004879506074487154,
+        "low_percentage_points": -0.35849432383987256,
+        "high_percentage_points": 0.4879506074487154,
+        "excludes_zero": false
+      },
+      "bootstrap_rng": "numpy PCG64",
+      "seed_sequence_spawn_key": [
+        3
+      ],
+      "bootstrap_standard_error": 0.0021512952984045664,
+      "analytic_conditional_bootstrap_standard_error": 0.0021680401041598647,
+      "bootstrap_replicates_float64_sha256": "92f78160472129baf9d4b1a02504746b6e3924d8540aa01a9882c45c999cfe65"
+    },
+    {
+      "task": "openbookqa",
+      "metric": "acc_norm,none",
+      "n": 500,
+      "integer_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_integer_3b_kmax_seed0_job1733510_openbookqa.json",
+        "sha256": "b05f4826dfd2c8a30843463aa237f050804c884af49ec64b52b94aae1fc0e020"
+      },
+      "reference_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_openbookqa.json",
+        "sha256": "45608aec9c6dfdf01361d4b4f5b6980b1203e99463894b55baf9004435b0728d"
+      },
+      "pairing": {
+        "status": "PASS",
+        "key": "doc_id + filter",
+        "all_document_hashes_equal": true,
+        "all_prompt_hashes_equal": true,
+        "all_target_hashes_equal": true,
+        "all_documents_targets_and_full_arguments_equal": true,
+        "identity_sha256": "f1ba7f76730ef4049fac339f9f671048e9d2a8214589c89242ae874e398adb43"
+      },
+      "task_config_raw_equal": true,
+      "task_config_equal_after_function_address_normalization": true,
+      "configuration_note": "Only process-specific function repr memory addresses are normalized; full docs/targets/requests are equal",
+      "canonical_task_config_sha256": "6225b98d6fa73bfaa65c7b101f38fd53de5b1a534c38ce80f12e3c7b473fe5ce",
+      "versions": {
+        "openbookqa": 1.0
+      },
+      "integer_accuracy": 0.398,
+      "reference_accuracy": 0.388,
+      "difference": 0.01,
+      "difference_percentage_points": 1.0,
+      "paired_outcomes": {
+        "integer_only_correct": 15,
+        "reference_only_correct": 10,
+        "both_correct": 184,
+        "both_wrong": 291
+      },
+      "resampling_difference_values": [
+        -1,
+        0,
+        1
+      ],
+      "resampling_difference_counts": [
+        10,
+        475,
+        15
+      ],
+      "bootstrap_ci95": {
+        "low": -0.01,
+        "high": 0.03,
+        "low_percentage_points": -1.0,
+        "high_percentage_points": 3.0,
+        "excludes_zero": false
+      },
+      "bootstrap_rng": "numpy PCG64",
+      "seed_sequence_spawn_key": [
+        4
+      ],
+      "bootstrap_standard_error": 0.010020340547230331,
+      "analytic_conditional_bootstrap_standard_error": 0.009989994994993742,
+      "bootstrap_replicates_float64_sha256": "7b746abdb314bcc706e40a017a578ddf6eb5ea41bdba84d0dae2df062aeededf"
+    },
+    {
+      "task": "piqa",
+      "metric": "acc_norm,none",
+      "n": 1838,
+      "integer_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_integer_3b_kmax_seed0_job1733510_piqa.json",
+        "sha256": "b50df3804b32b876778dfc27abad566ca12b0a4dfc90af1ec261b3850ca3aeed"
+      },
+      "reference_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_piqa.json",
+        "sha256": "6411c3e796e3505509fc0051907bfce78eed4f68224d7846f408e0d4a8f795cc"
+      },
+      "pairing": {
+        "status": "PASS",
+        "key": "doc_id + filter",
+        "all_document_hashes_equal": true,
+        "all_prompt_hashes_equal": true,
+        "all_target_hashes_equal": true,
+        "all_documents_targets_and_full_arguments_equal": true,
+        "identity_sha256": "36b4ea38b342dcb31db62dbad66951bfe6664ff5b7e24865345f1b848d932319"
+      },
+      "task_config_raw_equal": true,
+      "task_config_equal_after_function_address_normalization": true,
+      "configuration_note": "Only process-specific function repr memory addresses are normalized; full docs/targets/requests are equal",
+      "canonical_task_config_sha256": "051f6d3bc161b36e01ff094d4814c2067659e5e69575a77765bd07587a55c027",
+      "versions": {
+        "piqa": 1.0
+      },
+      "integer_accuracy": 0.7529923830250272,
+      "reference_accuracy": 0.7475516866158868,
+      "difference": 0.00544069640914037,
+      "difference_percentage_points": 0.544069640914037,
+      "paired_outcomes": {
+        "integer_only_correct": 78,
+        "reference_only_correct": 68,
+        "both_correct": 1306,
+        "both_wrong": 386
+      },
+      "resampling_difference_values": [
+        -1,
+        0,
+        1
+      ],
+      "resampling_difference_counts": [
+        68,
+        1692,
+        78
+      ],
+      "bootstrap_ci95": {
+        "low": -0.007616974972796518,
+        "high": 0.018498367791077257,
+        "low_percentage_points": -0.7616974972796519,
+        "high_percentage_points": 1.8498367791077257,
+        "excludes_zero": false
+      },
+      "bootstrap_rng": "numpy PCG64",
+      "seed_sequence_spawn_key": [
+        5
+      ],
+      "bootstrap_standard_error": 0.006519336006056848,
+      "analytic_conditional_bootstrap_standard_error": 0.006572793464427774,
+      "bootstrap_replicates_float64_sha256": "d9407bee7c342bebe7057f9288981a38963890ead8acf85eaf12041a05e816c2"
+    },
+    {
+      "task": "social_iqa",
+      "metric": "acc,none",
+      "n": 1954,
+      "integer_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_integer_3b_kmax_seed0_job1733510_social_iqa.json",
+        "sha256": "5bb31ce60cd29141fbfc0f104fbbb08acc528512744add07b2862d85c5a0f2e6"
+      },
+      "reference_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_social_iqa.json",
+        "sha256": "d9cf977b2799b2d8a7fa1c747fb48e0496c7e920fb25b0e72c04f52ea38cfb96"
+      },
+      "pairing": {
+        "status": "PASS",
+        "key": "doc_id + filter",
+        "all_document_hashes_equal": true,
+        "all_prompt_hashes_equal": true,
+        "all_target_hashes_equal": true,
+        "all_documents_targets_and_full_arguments_equal": true,
+        "identity_sha256": "30d643c5b8e7e75bdd0a67ed5ee87ad150a65b2d504be4c784604e32fbf4a7ef"
+      },
+      "task_config_raw_equal": true,
+      "task_config_equal_after_function_address_normalization": true,
+      "configuration_note": "Only process-specific function repr memory addresses are normalized; full docs/targets/requests are equal",
+      "canonical_task_config_sha256": "4ead73c588901b317a022d34e55211b9acf8bc46e78574ca893b54091a6b8dc6",
+      "versions": {
+        "social_iqa": 0.0
+      },
+      "integer_accuracy": 0.44882292732855683,
+      "reference_accuracy": 0.44114636642784033,
+      "difference": 0.007676560900716479,
+      "difference_percentage_points": 0.7676560900716478,
+      "paired_outcomes": {
+        "integer_only_correct": 73,
+        "reference_only_correct": 58,
+        "both_correct": 804,
+        "both_wrong": 1019
+      },
+      "resampling_difference_values": [
+        -1,
+        0,
+        1
+      ],
+      "resampling_difference_counts": [
+        58,
+        1823,
+        73
+      ],
+      "bootstrap_ci95": {
+        "low": -0.0040941658137154556,
+        "high": 0.018935516888433982,
+        "low_percentage_points": -0.4094165813715456,
+        "high_percentage_points": 1.8935516888433983,
+        "excludes_zero": false
+      },
+      "bootstrap_rng": "numpy PCG64",
+      "seed_sequence_spawn_key": [
+        6
+      ],
+      "bootstrap_standard_error": 0.005867019521732564,
+      "analytic_conditional_bootstrap_standard_error": 0.005854908779209106,
+      "bootstrap_replicates_float64_sha256": "fbda278bdbf4e31e133ad6e530fccd0ed60717704af882cfb60dd703b27498d4"
+    },
+    {
+      "task": "winogrande",
+      "metric": "acc,none",
+      "n": 1267,
+      "integer_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_integer_3b_kmax_seed0_job1733510_winogrande.json",
+        "sha256": "3bfb2d5220a3ad859e003afff2f5834956b1bc5aa0186ca88593f9fc953e74ce"
+      },
+      "reference_source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_winogrande.json",
+        "sha256": "a66919de3677a721f44b2fdd5412a9627b54726a067169086313f179f3f97dd7"
+      },
+      "pairing": {
+        "status": "PASS",
+        "key": "doc_id + filter",
+        "all_document_hashes_equal": true,
+        "all_prompt_hashes_equal": true,
+        "all_target_hashes_equal": true,
+        "all_documents_targets_and_full_arguments_equal": true,
+        "identity_sha256": "eaa955ecb6dc9d3d7d0fec8c4dbebed0898324ecd94f16bec8bb36a93c45f338"
+      },
+      "task_config_raw_equal": false,
+      "task_config_equal_after_function_address_normalization": true,
+      "configuration_note": "Only process-specific function repr memory addresses are normalized; full docs/targets/requests are equal",
+      "canonical_task_config_sha256": "5fb780f86dfe04f5f7e3753c8887558a1130247cd15d4f018af569b8cef473a9",
+      "versions": {
+        "winogrande": 1.0
+      },
+      "integer_accuracy": 0.6819258089976322,
+      "reference_accuracy": 0.67008681925809,
+      "difference": 0.011838989739542225,
+      "difference_percentage_points": 1.1838989739542225,
+      "paired_outcomes": {
+        "integer_only_correct": 117,
+        "reference_only_correct": 102,
+        "both_correct": 747,
+        "both_wrong": 301
+      },
+      "resampling_difference_values": [
+        -1,
+        0,
+        1
+      ],
+      "resampling_difference_counts": [
+        102,
+        1048,
+        117
+      ],
+      "bootstrap_ci95": {
+        "low": -0.011049723756906077,
+        "high": 0.03472770323599053,
+        "low_percentage_points": -1.1049723756906076,
+        "high_percentage_points": 3.472770323599053,
+        "excludes_zero": false
+      },
+      "bootstrap_rng": "numpy PCG64",
+      "seed_sequence_spawn_key": [
+        7
+      ],
+      "bootstrap_standard_error": 0.011646984988036364,
+      "analytic_conditional_bootstrap_standard_error": 0.011675333334014496,
+      "bootstrap_replicates_float64_sha256": "4142f0228637c2c40ebc9019085fdb86648d3ec276878aae78bae5a9973229e5"
+    }
+  ],
+  "analysis_head_commit": "03f484738ebf0a7874a07b1ca795e5604f866eac",
+  "integer_run": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_integer_3b_kmax_seed0_job1733510.json",
+    "sha256": "bf3fbab312ac3151c8a3d88709b093bc1f32cd96f0627d4a3d5a39eca5948948",
+    "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "source_commit": "35e76a6307602c17d0a801dcb7a4c73abd7273fb",
+    "backend": "integer",
+    "seed": 0,
+    "ppl": 8.71940159852088,
+    "ppl_recomputed": 8.71940159852088,
+    "full_ppl_chunks": 141,
+    "eight_task_accuracy": 0.6049875558050043
+  },
+  "reference_run": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_reference_3b_kmax_seed0_job1733511.json",
+    "sha256": "4cc5b7e8669c2dbf16d079c64c3da52aee3d8e8d010d423595d9c0a67aa50963",
+    "gpu_model": "NVIDIA A40",
+    "source_commit": "35e76a6307602c17d0a801dcb7a4c73abd7273fb",
+    "backend": "reference",
+    "seed": 0,
+    "ppl": 8.718024406077516,
+    "ppl_recomputed": 8.718024406077516,
+    "full_ppl_chunks": 141,
+    "eight_task_accuracy": 0.6003241439144562
+  },
+  "matched_protocol_fields": {
+    "model": true,
+    "rotation": true,
+    "seed": true,
+    "weight_protocol": true,
+    "activation": true,
+    "kv": true,
+    "task_batch_size": true,
+    "ppl_batch_size": true,
+    "base_model_revision": true,
+    "source_sha256": true,
+    "libraries": true,
+    "evaluation_tokens": true,
+    "tokenizer_files": true,
+    "harness_model": true
+  },
+  "same_gpu_model": false,
+  "causal_isolation": false,
+  "interpretation_limits": [
+    "Observed integer-vs-reference difference across these two fixed runs, not an isolated causal effect of integer implementation",
+    "GPU differs: NVIDIA RTX PRO 6000 Blackwell Server Edition versus NVIDIA A40",
+    "Conditional item-sampling uncertainty only; does not estimate seed, calibration, hardware or run-to-run uncertainty",
+    "This compares the same PrismQuant checkpoint under two numeric paths, not PrismQuant versus another quantization method",
+    "No latency or speed comparison is derived from task elapsed times"
+  ],
+  "ppl_comparison": {
+    "integer": 8.71940159852088,
+    "reference": 8.718024406077516,
+    "difference": 0.0013771924433640947,
+    "relative_absolute_difference": 0.00015797070290420674,
+    "relative_absolute_difference_percent": 0.015797070290420673
+  },
+  "macro_average": {
+    "integer_accuracy": 0.6049875558050043,
+    "reference_accuracy": 0.6003241439144562,
+    "difference": 0.004663411890548118,
+    "difference_percentage_points": 0.4663411890548118,
+    "bootstrap_ci95": {
+      "low": -0.0006492147659858602,
+      "high": 0.01002022515998029,
+      "low_percentage_points": -0.06492147659858602,
+      "high_percentage_points": 1.002022515998029,
+      "excludes_zero": false
+    },
+    "bootstrap_standard_error": 0.002746738438756013,
+    "analytic_conditional_bootstrap_standard_error": 0.002743194414243705,
+    "bootstrap_replicates_float64_sha256": "fad2dd816fae32d186451a316dcb32054e46d75a52f21be4cb1afe56e516089c",
+    "definition": "equal weight1/8 per task; each task independently resamples its own paired items",
+    "total_paired_items": 22419
+  },
+  "ended_utc": "2026-11-11T03:35:17.775496+00:00"
+}

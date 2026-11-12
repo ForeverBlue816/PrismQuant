@@ -1,0 +1,45 @@
+{
+  "kind": "checkpoint_collection",
+  "collected_utc": "2026-11-10T08:39:22.438705+00:00",
+  "raw_source": "/projects/nar/nar-validation/artifacts/e38/checkpoint-3b-kmax-job1732989/run.json",
+  "raw_sha256": "d7e247f3dbfabd0e41f27a9b6be81f41a019b0814ccc1d0eb4687183b7822902",
+  "local_copy": "results/e38/raw/checkpoint_3b_kmax_job1732989.json",
+  "scheduler": {
+    "command": [
+      "sacct",
+      "-j",
+      "1732989,1733011",
+      "--format=JobID,JobName%22,State,ExitCode,Elapsed,Start,End,NodeList%25",
+      "-P"
+    ],
+    "stdout": "JobID|JobName|State|ExitCode|Elapsed|Start|End|NodeList\n1732989|e38-checkpoint|COMPLETED|0:0|00:02:15|2026-11-10T08:30:22|2026-11-10T08:32:37|gpu-pro6000-10\n1732989.batch|batch|COMPLETED|0:0|00:02:15|2026-11-10T08:30:22|2026-11-10T08:32:37|gpu-pro6000-10\n1732989.extern|extern|COMPLETED|0:0|00:02:15|2026-11-10T08:30:22|2026-11-10T08:32:37|gpu-pro6000-10\n1733011|e38-fp16-stage-a|PENDING|0:0|00:00:00|Unknown|Unknown|None assigned\n",
+    "stderr": ""
+  },
+  "replay": {
+    "ppl": 8.71896824654021,
+    "delta_ppl": 0.004522165773041209,
+    "max_abs_chunk_nll_delta": 0.02977752685546875,
+    "all_chunk_dicts_exact": false,
+    "tolerance_abs_ppl": 0.01,
+    "passed": true
+  },
+  "grid_summary": {
+    "sites": 196,
+    "rows": 774144,
+    "rows_bf16_roundtrip_fp32": 774144,
+    "rows_bf16_roundtrip_fp16": 751625,
+    "rows_exact_real_grid": 87215,
+    "rows_exact_grid_stored_fp32_scale": 87215,
+    "all_sites_lossless_plain_integer_linear_gate": false,
+    "group128_weight_sum_fp32_bytes": 88080384,
+    "scope": "Export arithmetic diagnostic only; no packed model was run or timed; no weights changed."
+  },
+  "grid_fractions": {
+    "rows_bf16_roundtrip_fp32": 1.0,
+    "rows_bf16_roundtrip_fp16": 0.9709110966435185,
+    "rows_exact_grid_stored_fp32_scale": 0.11265991856812169
+  },
+  "plain_integer_gate_passed_sites": 0,
+  "interpretation": "Tolerance-level original E14 simulator replay, not deployed INT4 inference. False exact plain-integer weight-factorization gate is not an impossibility proof and does not establish failure of the eventual64-sequence model PPL tolerance.",
+  "independent_audit": "All13 source hashes,28 layers,196sites and capture/candidate SHA256 checked by cache_protocol_audit agent; no large model files rehashed during collection."
+}

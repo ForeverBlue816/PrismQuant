@@ -1,0 +1,1156 @@
+{
+  "kind": "e38_8b_table1_seed0_anchor",
+  "backend": "reference",
+  "status": "METADATA_ONLY",
+  "scope": "Trained E14 BF16 fake-quant reference; no packed INT4 or performance claim",
+  "model": "llama31_8b",
+  "model_id": "unsloth/Meta-Llama-3.1-8B",
+  "rotation": "nar_k8",
+  "seed": 0,
+  "weight_protocol": "default",
+  "activation": "asymmetric_g128; FP16 scale and real offset; BF16 reconstructed activation",
+  "kv": "Original E14 KIVI simulation: K group32 along tokens; V group128 per head; residual32; floating storage",
+  "container_dtype": "torch.bfloat16, matching the historical E14 loader; Appendix A.1 states FP32 containers",
+  "original_paper_claim": {
+    "quality_source": "Appendix A.1 physical p14 lines708-740",
+    "model": "Llama-3.1-8B",
+    "container_dtype": "FP32 containers holding released BF16 weights",
+    "weights": "GPTQ INT4 per-channel; symmetry is not specified in the paper paragraph",
+    "activation": "asymmetric group128",
+    "kv": "KIVI K group32, V per-head128, residual32",
+    "seeds": "paper says three-seed average; this replay is the source seed0 row",
+    "deployment_source": "Appendix D physical p31 Figure7/D.3 and p32 Table13",
+    "deployment_weights": "random weights; no trained-checkpoint identity implied"
+  },
+  "source_commit": null,
+  "requested_source_commit": null,
+  "command_line": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "-m",
+    "nar.e38_anchor8b",
+    "--rotation",
+    "nar_k8",
+    "--metadata-only",
+    "--output",
+    "results/e38/raw/anchor8b_nar_k8_seed0_cpu_metadata_002.json"
+  ],
+  "started_utc": "2026-11-11T04:14:18.276547+00:00",
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "hostname": "login-3.cluster02.eee.ntu.edu.sg",
+  "numerical_execution_gates": "none",
+  "timing": {
+    "status": "not run",
+    "reason": "8B anchor first"
+  },
+  "ppl": {
+    "status": "not run"
+  },
+  "eight_tasks": {
+    "status": "not run"
+  },
+  "slurm": {
+    "SLURM_JOB_ID": null,
+    "SLURM_ARRAY_JOB_ID": null,
+    "SLURM_ARRAY_TASK_ID": null,
+    "SLURM_JOB_NODELIST": null,
+    "CUDA_VISIBLE_DEVICES": null
+  },
+  "actual_head_commit": "7334afe6a60392f63db19a88534a554c25a44083",
+  "source_pin_policy": "record actual source hashes; no version or numerical veto",
+  "source_sha256": {
+    "nar/e38_anchor8b.py": "aeca580749ad3df8d0fef1573e993e2372ac7a1bda110a371ff664b52d4a1d3e",
+    "slurm_e38_anchor8b.sh": "491805c10009636d65e1cabdb4e1e851855bf6406ea5688c1a4162e0e5a23e4b",
+    "nar/e38_direct_accuracy.py": "fa658390fa9223e083aeafbaa50823e9726c1aba8a1c4b0e96eb11786df0836a",
+    "nar/e38_reference_tasks.py": "dbb56a343e5745c15fb6231ec3e6ef3fa3376a1ce479a1e57b22be52b75273c6",
+    "nar/e38_anchor.py": "58dc1b4e61f1ccaaea0d0c94568db46b60c11a9dceedead4f1b7d4d553e77f3a",
+    "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "nar/activation_experiments.py": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d",
+    "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+    "nar/extended_experiment.py": "8331f9bb5cd20c7877c836b2db1115aacf5689337fac4a7428ac59f7eb834f8b",
+    "nar/quarot_gptq.py": "84da020ecdf05384d56026ab18e2fd8f50ceea92782285580c1e499a31e6dd1e"
+  },
+  "libraries": {
+    "torch": {
+      "version": "2.11.0+cu128",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "transformers": {
+      "version": "5.16.0.dev0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": {
+        "url": "https://github.com/huggingface/transformers.git",
+        "vcs_info": {
+          "commit_id": "a353632607c59463e6ced86a44c2de3c2cd62d5e",
+          "requested_revision": "main",
+          "vcs": "git"
+        }
+      }
+    },
+    "triton": {
+      "version": "3.6.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "datasets": {
+      "version": "5.0.1",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "accelerate": {
+      "version": "1.14.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "numpy": {
+      "version": "2.4.6",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "lm_eval": {
+      "version": "0.4.14.dev0",
+      "location": "/home/yanlongc/.e13_packages",
+      "direct_url": {
+        "dir_info": {},
+        "url": "file:///home/yanlongc/lm-evaluation-harness-upstream"
+      }
+    },
+    "huggingface-hub": {
+      "version": "1.28.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "tokenizers": {
+      "version": "0.23.1",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    }
+  },
+  "historical_anchor": {
+    "source_files": [
+      {
+        "path": "/projects/nar/nar-validation/results/llama31_8b/e14_nar_k8_asym_g128_seed0_ppl.json",
+        "resolved": "/projects/_hdd/nar/nar-validation/results/llama31_8b/e14_nar_k8_asym_g128_seed0_ppl.json",
+        "exists": true,
+        "bytes": 14022,
+        "sha256": "a983b8ac242bd1acb5e3f94d8e42fe80bc531ab0c959bb05165b51717bea3619"
+      },
+      {
+        "path": "/projects/nar/nar-validation/results/llama31_8b/e14_nar_k8_asym_g128_seed0_zero_shot.json",
+        "resolved": "/projects/_hdd/nar/nar-validation/results/llama31_8b/e14_nar_k8_asym_g128_seed0_zero_shot.json",
+        "exists": true,
+        "bytes": 2278,
+        "sha256": "f99db44715fdba31a18a6e34e4bf29141fd3f8e1a0fbca1b6f96b560f8cc7cf8"
+      },
+      {
+        "path": "/projects/nar/nar-validation/results/llama31_8b/e14_nar_k8_asym_g128_seed0_zero_shot_extra.json",
+        "resolved": "/projects/_hdd/nar/nar-validation/results/llama31_8b/e14_nar_k8_asym_g128_seed0_zero_shot_extra.json",
+        "exists": true,
+        "bytes": 1739,
+        "sha256": "5284622e61306b0aac1d98d29ef0934df255a090626ccece8ff37aab70a7a03a"
+      }
+    ],
+    "ppl": 6.989837961936862,
+    "tasks": {
+      "arc_easy": {
+        "accuracy": 0.789983164983165,
+        "metric": "acc_norm,none",
+        "task": "arc_easy"
+      },
+      "arc_challenge": {
+        "accuracy": 0.48890784982935154,
+        "metric": "acc_norm,none",
+        "task": "arc_challenge"
+      },
+      "boolq": {
+        "accuracy": 0.8012232415902141,
+        "metric": "acc,none",
+        "task": "boolq"
+      },
+      "hellaswag": {
+        "accuracy": 0.7694682334196375,
+        "metric": "acc_norm,none",
+        "task": "hellaswag"
+      },
+      "openbookqa": {
+        "accuracy": 0.442,
+        "metric": "acc_norm,none",
+        "task": "openbookqa"
+      },
+      "piqa": {
+        "accuracy": 0.7812840043525572,
+        "metric": "acc_norm,none",
+        "task": "piqa"
+      },
+      "social_iqa": {
+        "accuracy": 0.47236438075742065,
+        "metric": "acc,none",
+        "task": "social_iqa"
+      },
+      "winogrande": {
+        "accuracy": 0.6835043409629045,
+        "metric": "acc,none",
+        "task": "winogrande"
+      }
+    },
+    "mean_accuracy": 0.6535919019869063,
+    "batch_size": 1,
+    "sample_counts": {
+      "arc_easy": {
+        "effective": 2376,
+        "original": 2376
+      },
+      "arc_challenge": {
+        "effective": 1172,
+        "original": 1172
+      },
+      "boolq": {
+        "effective": 3270,
+        "original": 3270
+      },
+      "hellaswag": {
+        "effective": 10042,
+        "original": 10042
+      },
+      "openbookqa": {
+        "effective": 500,
+        "original": 500
+      },
+      "piqa": {
+        "effective": 1838,
+        "original": 1838
+      },
+      "social_iqa": {
+        "effective": 1954,
+        "original": 1954
+      },
+      "winogrande": {
+        "effective": 1267,
+        "original": 1267
+      }
+    },
+    "task_versions": {
+      "arc_easy": 1.0,
+      "arc_challenge": 1.0,
+      "boolq": 2.0,
+      "hellaswag": 1.0,
+      "openbookqa": 1.0,
+      "piqa": 1.0,
+      "social_iqa": 0.0,
+      "winogrande": 1.0
+    },
+    "seed": 0,
+    "num_fewshot": 0,
+    "harness_commit": "b954108c9baaaa934b4ad842033b31a97ee30816",
+    "original_log_samples": false,
+    "new_log_samples": true,
+    "original_suite": "six tasks plus three extras; eight mean excludes LAMBADA",
+    "new_suite": "same eight individual tasks, each retaining complete samples"
+  },
+  "task_batch_size": 1,
+  "ppl_batch_size": 1,
+  "base_model_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "quant_checkpoint_revision": "fc812e6687165115feee00293c953a1b521d3bd0",
+  "checkpoint_manifest": {
+    "bf16_reparameterization_drift": {
+      "exceeds_previous_bf16_gate": true,
+      "max_abs_logit_error": 16.046875,
+      "previous_bf16_gate": 0.02,
+      "probe_tokens": 128,
+      "relative_l2_logit_error": 0.08331470191478729
+    },
+    "checkpoint": "one bf16 fake-quantized state file per decoder layer",
+    "elapsed_seconds": 610.6669986248016,
+    "fold": {
+      "embedding_centering": false,
+      "norm": "all RMSNorm affine weights fused into consumer weights then set to one",
+      "official_bug_avoided": "official head calls rotate_embeddings twice; E14 applies algebraic R1 once",
+      "r1": "global residual rotation; input rows WQ, residual output Q^T W",
+      "r2": "per-head V rotation with identical fold into every GQA-expanded o_proj head block",
+      "r3": "QuaRot cross-head Hadamard at o_proj for Hadamard rows; omitted for the specified NAR R1/R2/R4 rows",
+      "r4": "per-layer down-input rotation folded into down_proj rows",
+      "tied_embeddings_materialized_before_final_norm_fusion": false
+    },
+    "fp32_algebra_control": {
+      "full_stage": {
+        "max_abs_logit_error": 4.673004150390625e-05,
+        "model": "llama32_3b",
+        "model_dtype": "torch.float32",
+        "relative_l2_logit_error": 2.245823679913883e-06,
+        "rotation": "nar_k8",
+        "stage": "norm_r1_r2_r4",
+        "tokens": 16
+      },
+      "source": "/projects/_hdd/nar/nar-validation/results/llama32_3b/e14_nar_k8_fp32_fold_diagnostic.json",
+      "tolerance": 1e-05
+    },
+    "gptq": {
+      "act_order": false,
+      "bits": 4,
+      "blocksize": 128,
+      "calibration_dataset": "WikiText-2 train",
+      "calibration_seed": 0,
+      "calibration_sequences": 128,
+      "excluded": [
+        "embed_tokens",
+        "lm_head"
+      ],
+      "grid": 100,
+      "groupsize": -1,
+      "maxshrink": 0.8,
+      "mse_clipping": true,
+      "norm": 2.4,
+      "percdamp": 0.01,
+      "perchannel": true,
+      "sequence_length": 2048,
+      "static_groups": false,
+      "symmetric": true
+    },
+    "hardware": {
+      "cuda_available": true,
+      "cuda_runtime": "12.8",
+      "gpu_capability": [
+        12,
+        0
+      ],
+      "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+      "hostname": "gpu-node",
+      "nvidia_smi": [
+        "0, NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, GPU-REDACTED, 97887 MiB, 96411 MiB, 580.173.02"
+      ],
+      "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+      "slurm_job_gpus": "4",
+      "slurm_job_id": "137079",
+      "torch": "2.11.0+cu128"
+    },
+    "model": "llama31_8b",
+    "model_id": "unsloth/Meta-Llama-3.1-8B",
+    "quarot_commit": "5008669b08c1f11f9b64d52d16fddd47ca754c5a",
+    "rotation": "nar_k8"
+  },
+  "checkpoint_identity": [
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/DONE.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/663b365f735f0daeb7a35d8004ff93bfe63a79cb",
+      "exists": true,
+      "bytes": 2635,
+      "sha256": "88513729f6560245ea2f00a0f955cf1d1ee8ad79156ba10b93d2ad3bf23a1d52"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_00.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/2cc5f1a63f38c23ceae1f7a37980f74b948d41454687a1c38afa346d4c280fcc",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_01.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/9fa6bb69e36a0b21103bbff01aced583f7633ff1b19543a7112e8845a73f3eb7",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_02.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/5be18c26befe4c58a5c3291b717e958281f7e188fc0d25186ff0ad49f89cabdb",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_03.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/9c1225a562512ec3c88c4681e1eaf12610c50690bec89832a63b15023b344890",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_04.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/97ad329aaa0c7a97bae1aeab96590e367dd30842f3ab1700389f1e468a89c589",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_05.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/a73251b49573cc91327464283b7aeb8b0e755b039633f5bd288727503958be22",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_06.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/cd9fb97fd761af90ab6659dacc75c07eb88e85c7e703f5d0ff187d2a4d7eb548",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_07.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/145f8c5789311eab9f599c4e7ec05e4f4268dabcab8618eb278c716ea397cf67",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_08.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/48f43203c0f42b3fea53ba53dac2efc71c3216c341ecb2d3b8ea222047968eec",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_09.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/32ae6457639312a48a0aaa65e157ddaf4535b224e0bb61ca9b35d84dbb717d5b",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_10.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/e8f2d8ef980ec672eec55455f85da7e7147969c728a6df93eb74f903d7b57908",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_11.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/fbbdad5845f1711102706975c84a6d3bf28de96341c2cedf9a871e59955cdcf8",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_12.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/022a810cfdf11e7b0aa3f0627f6314a7b4bfb7154c6a2d82894242c67a8b7c7e",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_13.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/8d3848067e6e3d11775fdaa76edff6944b493c6187932a23c6c25127fbd011e1",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_14.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/5b286816f188c5a017dc76f9ce0905855b90dd363d8f3af628d88b21df4b8c7d",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_15.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/86995caf63b49ea4aa08e111c5afcc0ad1659c72f64b7c0d106cdadf41a845ac",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_16.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/725e5d87c9a31c652bf57d0471960ecd66356fec49fc5354be3f6202eb0410f4",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_17.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/d45beb1688de966227bef8046bbde434fa776bed7a6b59fa99630e4b099aa217",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_18.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/848b775716fcdb044f55176b0a5c21244aff96623eb5369e654f407dfd9c2e35",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_19.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/b6f6e53d9944b8ee16f431d849339a6f0af4c0b88c26d5bdd6fab2bae77127ce",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_20.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/253ffc8e486df0f321f3730539cca40514f7b14e0855e0dcd88449e86d727e60",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_21.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/ff04d39abea59f2f01022c5656dd63dbc9a47c6a4ec42fae88a47ecaf163da98",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_22.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/b7cef461e406293d67b618322e03ff520bd30dd21d2e74acadd334d59b2640a3",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_23.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/915788757ca4106afe61d31f0bee55cb825001939b6bca47ff9b034be35a47f3",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_24.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/0778bdd48742b3520d3b417c1ea126c4f25ff12724e46a92ee4c7766c20bc430",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_25.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/6e412162cc337bc1a1852b7a635c5f93d350a18019296ad512ebaf907de4d93e",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_26.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/6ea92b018481ded8f203413360b769cb570ae7fad4ee304ee898146c7e0deaaf",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_27.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/935399f5da23f8773398610120f8a1cb51cebba8313cf8cc2347be17becc6b38",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_28.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/c052267ee0cd97598fa52a5ca4c458aa160021172e8c26991d1559167096d06c",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_29.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/87715067c594c29e3de1b177ff2249820167abec0699d37886ffedc6d1096b48",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_30.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/33a1bc8b967c1a53c2eb8cafdcfb62280357c435322ba37602d5826f66dde4e5",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_31.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/bf984665ee28244bb0f2499f38320b26aeb5f295dc0ea935e1cf37298bd230c0",
+      "exists": true,
+      "bytes": 436210885,
+      "content_hash_checked": false
+    }
+  ],
+  "base_files": [
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/2a9e131b00e3cdf49fb230a17400519d4e098414",
+      "exists": true,
+      "bytes": 947,
+      "sha256": "0ea2186ccf686654fea498aae830b9de201334432b24b07f031d80b76dd928f0"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/generation_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/3cb2c4d47bba1c6a15655862910ca217e1a40812",
+      "exists": true,
+      "bytes": 235,
+      "sha256": "46097458fa97e44251c131fb384df37a37ec0a9334d7a001100782fc9f1fc0bd"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00001-of-00004.safetensors",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/f8b9704ab09cdeb097aa4a0a24bca96f906eec36bad63ab495bc21475058601b",
+      "exists": true,
+      "bytes": 4976698672,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00002-of-00004.safetensors",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/c28b25e7541751056ee126627e007f8d4288319733285e9f7b17b9ff6eb313f0",
+      "exists": true,
+      "bytes": 4999802720,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00003-of-00004.safetensors",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/d8e9504dd4e4a146d484c52a97584ec14dac92237c46b064934af67a85e7d383",
+      "exists": true,
+      "bytes": 4915916176,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00004-of-00004.safetensors",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/e4486f35c040f683f7d790354f66c169c109eb9fa0954a4a35d7c458a108405d",
+      "exists": true,
+      "bytes": 1168138808,
+      "content_hash_checked": false
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model.safetensors.index.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/0fd8120f1c6acddc268ebc2583058efaf699a771",
+      "exists": true,
+      "bytes": 23950,
+      "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/special_tokens_map.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/68b10c7f0a479eae0c358eac6a14959b3f9acdf1",
+      "exists": true,
+      "bytes": 459,
+      "sha256": "32f404d626cf7b1b6eea36c241ae7cbd6ec29c777a8701ea48c0fe9ebb94c9b1"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/tokenizer.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+      "exists": true,
+      "bytes": 17209920,
+      "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/tokenizer_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/193429ed119d6246336a149bc56bb217f2adff3e",
+      "exists": true,
+      "bytes": 50642,
+      "sha256": "590b9837d3c2a8790e2aaf920f4c69f9181c3ca8fe52e6579ad3a3f654e59a9b"
+    }
+  ],
+  "evaluation_tokens": {
+    "path": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+    "resolved": "/projects/_hdd/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+    "exists": true,
+    "bytes": 2312087,
+    "sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021"
+  },
+  "task_cache_policy": "offline existing cache; full per-item documents/configs and task versions are retained by lm_eval",
+  "task_cache_root": "/projects/nar/nar-validation/cache/datasets",
+  "actual_weight_protocol": {
+    "act_order": false,
+    "bits": 4,
+    "blocksize": 128,
+    "calibration_dataset": "WikiText-2 train",
+    "calibration_seed": 0,
+    "calibration_sequences": 128,
+    "excluded": [
+      "embed_tokens",
+      "lm_head"
+    ],
+    "grid": 100,
+    "groupsize": -1,
+    "maxshrink": 0.8,
+    "mse_clipping": true,
+    "norm": 2.4,
+    "percdamp": 0.01,
+    "perchannel": true,
+    "sequence_length": 2048,
+    "static_groups": false,
+    "symmetric": true
+  },
+  "calibration_caches": [
+    {
+      "role": "rotation",
+      "path": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-train-o0-n128-l2048.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/tokenized/ffcc87608d60-train-o0-n128-l2048.pt",
+      "exists": true,
+      "bytes": 2099053,
+      "sha256": "01d3c1ee921805fc62a1f27aff343fbdad90df4831ccd05da47b9c40ae6560f1"
+    },
+    {
+      "role": "GPTQ",
+      "path": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-quarot-wikitext2-train-seed0-n128-l2048.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/tokenized/ffcc87608d60-quarot-wikitext2-train-seed0-n128-l2048.pt",
+      "exists": true,
+      "bytes": 2099257,
+      "sha256": "a7fe564a8c8fd2d3f1b88cd01006f0e38bee916ef941753200f3977e03dbeac0"
+    }
+  ],
+  "historical_algebra_control_scope": {
+    "manifest_model": "llama32_3b",
+    "claim": "Historical metadata only; this replay does not establish an 8B algebra-control pass. A 3B control is not 8B equivalence evidence."
+  },
+  "rotation_assets": [
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/DONE.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/DONE.json",
+      "exists": true,
+      "bytes": 1164,
+      "sha256": "e151ce936ea30b44cfd622b836cbcd770d57e5e7f2cb13d4e4d83a57048a8222"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r1_k8.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r1_k8.pt",
+      "exists": true,
+      "bytes": 200289,
+      "sha256": "863ea6cb7015ddc81dd0115d3b4b8ce701cda7ad6f0bf7545b3ad0540dab7837"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_00.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_00.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "e73cbfed5883e5ba589c1391094d8c480e4c65058d1db85e327a6c0706ddd23e"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_01.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_01.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "b7bcced8ad48ed156313a172c53df6244873d19ad3ceaea79ccf0714a1917a4c"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_02.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_02.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "77e89c295b3f731b3c9f3d16f909f4260321a820dcf9cae6fcda039a74136c68"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_03.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_03.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "3b03a00403c2047248beb73e4d48c9723d5284eab66b270a4dc3786a446994a7"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_04.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_04.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "8f64e18e9f40a3529a14f9a7d668b85f224100721cc437c9ac32385f00336a8a"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_05.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_05.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "f6e7a753a245c6bee0a3d77e1020eb53b2507080662a0c18a83f3ebdef5ec3db"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_06.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_06.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "f051e319cca64efb540d2addf7d30112953425ef60e310e41d7930a5b1b61874"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_07.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_07.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "cdaddf75479631903f463764440c96f876d4cdba45b4391d2fa633426861dd38"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_08.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_08.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "3b100fe6ce6baca204d11fb85be9f99be1f373137434f389ffb61fa56988bdc2"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_09.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_09.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "45896cf21550fe86b8efab308bf94b04f1fe0b7bba361d7b6febc0260f4c0dbc"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_10.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_10.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "1a5c25e09ca597d5342e93f20075117b86a68b0bc399a0ba80194932b0fa428f"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_11.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_11.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "a03f0c6a45de32555f64078072d1b192e297cdf22c5e42379d874ba95efa8c1a"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_12.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_12.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "68df0c7179050c6a11eb25027e671e3102b06ca15d62a0aed62fbe3dbd5b04f2"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_13.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_13.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "0814b4154768d6e4c1dded336c8b9a548d3910589569952d1c9cd8bb2f0db99f"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_14.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_14.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "8150612c5d631e6c2329ef05b2a92a53eac343dafddd8ad32d26a6791b647d6b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_15.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_15.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "4aae264cd4fc48e7ea8b09d1c946d3f830f4ab8904c2ac5c25e76797238221d3"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_16.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_16.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "d65caaeaae4975c56c3aa62608276f63f0a1ac8bce72440301ab979f0e8c22f9"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_17.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_17.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "81352f7bff29471c009661d61571878e8396b903ad13ea7bc94503dca946eac2"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_18.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_18.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "c854243a59afbffd98989bd5eabc9d2c20c63edd82a8e3c8c1fbe271767953ec"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_19.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_19.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "c2287c55608f0abfedd1340a160eebd2305004a41cb3b0f62975f137e5e567e1"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_20.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_20.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "8215183dc2ff5840cb637d8ea8eadfba1c836dd8cab4ea96f9e080e381f9dd9b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_21.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_21.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "b741e2bd910e534a47933b1aecb5c4585f633c8b67150ed60c80ccc8cdf97705"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_22.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_22.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "5af41b0fcb2953898708854449e4170364e8434f7320747a78af54a8697b1b4e"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_23.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_23.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "9ee247436562278a36652062b94cb24a3bd9b0f2c29bef9e19224bb97b60df6d"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_24.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_24.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "0ba95b0cec6597eeea04c3619878963d7b3159ec124c63dc5d9e65ca59fc3bee"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_25.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_25.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "722e640e303a13db7bfdb93c29aa7bbbe565339a30ce7e2456b451064452a72d"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_26.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_26.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "f4239ec503f097fbdef20c404f2ef2ca4a6c07586b20858aec8ccd67307108c8"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_27.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_27.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "43c61f98b5bbf0ede96ca1292886f87efa46c01662d19146eeb0c2887f6341d1"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_28.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_28.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "7bf51eb4c5be1069acca08c4c37c3b31b0d0a44913c1c9e9e5d6f6e0b9998ebf"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_29.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_29.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "7ca05d10513ed7ff5a0984017816b9c470c3f630f3665001ea7c7d865bd61311"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_30.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_30.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "41302975964c1e110d41834f7e919e37e3e5c787ebd227cba7edb5d2fc88d9bd"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_31.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/activations/llama31_8b/e14_rotations/r2_v_layer_31.pt",
+      "exists": true,
+      "bytes": 5239,
+      "sha256": "fd589ef34156c9b413e9e74d94e014aa8316d08f3a30dfd7ce613b91a6d09c61"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_00.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_00.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "1bedf5bafe246329132dccb67d5426979ed2f448103bef8ba91fc35e37c8b6d4"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_01.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_01.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "af80f93981f5964eb8c0cac546cbed8c24f749b8b91f29b91a515e0323bcaf36"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_02.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_02.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "bd78a30bbf35ec171d1aeae0a7326e7075a41ef85f7066d36b969f249350284a"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_03.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_03.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "dcf911efead9196449d5945aeda5031fb744ce47082d430a0f5a9a586e79168a"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_04.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_04.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "9fd7f6de48fc910fa554912c01961a73e953316d53ecd9d6ec2f59b3e43325d2"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_05.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_05.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "f9c6127da67dab3981aa6f74c8fa288f111f9b9251833bd1af1c141c3353c5e5"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_06.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_06.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "1050818195682bddf58fe23ef4d81c3a892269ef8598a7a393d4e3eaf3b62152"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_07.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_07.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "f2b2ae6686ead03c7becf5f91b646c22ce186a059ceaa679d270f3066d00cdc3"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_08.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_08.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "c27eedc7715c13918735d279b1626e3708627b914997c6a76eff798e0e7d5f3f"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_09.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_09.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "924167304e24145afa9a1a903f6a43c8fdf65a307da33c4ae5883315736f2e14"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_10.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_10.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "2a11a6da97379918fe86ccdf488147656f33cceff22f4e915c0098be353d67c8"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_11.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_11.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "5c7a06ddfc2c869210d0a49e05598ef8a62b038b1d9e61c30e0747f610969fa3"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_12.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_12.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "aaed12875d2afd0b7cd12521482c7dd834eb4d8a3a96fc7fe8a3c64ddce49796"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_13.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_13.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "f4c27528fe1bf9fc5254094ac0f24a54a0b280506cbd455f0844597138aeed0a"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_14.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_14.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "5393455632f7ac5d362c9b0291b9f9024c210f3e02eabe8ef0126b7707cdafaf"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_15.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_15.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "a62dbe383188274a9e4f1ab85f15ba7239d965af4db3febac742304a131d90fa"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_16.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_16.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "116ef08acfb73d3002d74cfd08ca9a08476207456fdfc4e1e2a10e785a6af52f"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_17.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_17.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "59d112f0bfdbd3b5b230a296152d4ffe496d89d2ba22b99dcc6a9f53466a281a"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_18.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_18.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "58d374ccca3c6b4170ac63c723e96182eedac5f8cd98e58b2c9227ebcf10d9f1"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_19.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_19.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "64e7fdbf5f9737919e2b2b77a426ed9466d9228752a06f512abd641c86548bb5"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_20.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_20.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "a48de0c2760cb49176c4031e47f7160788cde33389e0e22d072ebd28f6822392"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_21.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_21.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "8e6078ce702c7a6ca387bde921fe26b3f9fceb54c34dbc4f91f486c7f491eb7c"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_22.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_22.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "e51504a941935a6284fa19692d24842b2a63b427b4433a976cd78f3c7387e82d"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_23.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_23.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "2eb28ea2fa56b8694b5e1a0fc56109258f757248e787161b55e5207cdf60c4a6"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_24.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_24.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "7cedca8fa26f174a2216e4932ef447d0bea24c9312c0bbd4b3b493e89cdab190"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_25.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_25.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "efc3134bf48036920272d81b6f3521954665502d570bdab43bee5f29e4041519"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_26.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_26.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "4c5372a7286a2f9634ef3c21bd09f860509bf3a1a76c917c53641f8a1f48dbbc"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_27.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_27.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "518777804997355f800fcc462394a291730fd3edd0947ed40bb8ff16b8433484"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_28.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_28.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "52a15fecc4bf1d293cc7ee2d51c226da4d32e7605e627d147d602cd0a9550c8a"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_29.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_29.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "40781b32f00d2a53ed39377b9798fed8ad6298b4d0d89371ca3a26e18ef467e7"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_30.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_30.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "a5c55af8415db9451a0ecea98ac8d3401a4042b69af0414d97d56f396a97f95c"
+    },
+    {
+      "path": "/projects/nar/nar-validation/activations/llama31_8b/e11_calibration/factors/nar_b128_k8/down_layer_31.pt",
+      "resolved": "/home/yanlongc/nar-e11-artifacts/llama31_8b/factors/nar_b128_k8/down_layer_31.pt",
+      "exists": true,
+      "bytes": 690935,
+      "sha256": "8590fec82796666c714ba4933443bdebc251b7a46f7c5559825433e0acacd2ee"
+    }
+  ],
+  "comparison_scope": "No model or task execution",
+  "ended_utc": "2026-11-11T04:14:18.373365+00:00"
+}

@@ -1,0 +1,103 @@
+{
+  "created_utc": "2026-11-12T15:23:21.128793+00:00",
+  "kind": "FlatQuant official native deployment CPU preflight",
+  "model": "Meta-Llama-3.1-8B",
+  "base_checkpoint": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "status": "BLOCKED_DEPENDENCIES",
+  "official_repository": "/home/yanlongc/FlatQuant-upstream",
+  "official_commit": "9d88ffcb7d2c6bda59fb5c44dad36adc101aadb1",
+  "python": "/projects/nar/nar-validation/venv/bin/python",
+  "packages": {
+    "torch": {
+      "available": true,
+      "path": "/projects/river/envs/qwen35/lib/python3.11/site-packages/torch/__init__.py",
+      "version": "2.11.0+cu128"
+    },
+    "transformers": {
+      "available": true,
+      "path": "/home/yanlongc/.prismquant/llama31-baseline-packages/transformers/__init__.py",
+      "version": "4.45.0"
+    },
+    "triton": {
+      "available": true,
+      "path": "/projects/river/envs/qwen35/lib/python3.11/site-packages/triton/__init__.py",
+      "version": "3.6.0"
+    },
+    "flash_attn": {
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    "fast_hadamard_transform": {
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    "ninja": {
+      "available": true,
+      "path": "/projects/river/envs/qwen35/lib/python3.11/site-packages/ninja/__init__.py",
+      "version": "1.13.0"
+    }
+  },
+  "native_extensions": [],
+  "cuda_home": null,
+  "nvcc": null,
+  "submodules": {
+    "cutlass": {
+      "path": "/home/yanlongc/FlatQuant-upstream/third-party/cutlass",
+      "pinned_gitlink": "160000 commit ad7b2f5e84fcfa124cb02b91d5bd26d238c0459e\tthird-party/cutlass",
+      "populated": false
+    },
+    "fast-hadamard-transform": {
+      "path": "/home/yanlongc/FlatQuant-upstream/third-party/fast-hadamard-transform",
+      "pinned_gitlink": "160000 commit d1a56eee9d502e67faacf61b7b947180d66b32a0\tthird-party/fast-hadamard-transform",
+      "populated": false
+    },
+    "nvbench": {
+      "path": "/home/yanlongc/FlatQuant-upstream/third-party/nvbench",
+      "pinned_gitlink": "160000 commit a171514056e5d6a7f52a035dd6c812fa301d4f4f\tthird-party/nvbench",
+      "populated": false
+    }
+  },
+  "checkpoint": {
+    "path": "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0",
+    "done_exists": false,
+    "quantized_model_exists": false,
+    "weight_quantizers_exist": false
+  },
+  "blockers": [
+    "Required runtime package unavailable: flash_attn",
+    "Required runtime package unavailable: fast_hadamard_transform",
+    "Official deploy._CUDA extension has not been built in this checkout",
+    "No nvcc found on PATH or under CUDA_HOME/bin",
+    "Official setup.py dependency checkout is empty: cutlass",
+    "Official setup.py dependency checkout is empty: fast-hadamard-transform"
+  ],
+  "source_sha256": {
+    "REALQUANT.md": "207617cbdeb87ad4c4d0a2997dc90521e785e4faa723be56c54070ab734ec2eb",
+    "setup.py": "37a71e52bfb17b4650122766a02eb2a9eca98f38a3ad95c7e0b7b05bb7dbd97f",
+    "benchmarks/benchmark_model.py": "b81833e90aa2bfa826b40a715b8ba3f2738e1ee2e8f5e3dee051a8577abb5cb5",
+    "flatquant/flat_utils.py": "892bae4c29cd91e27e07034b75c2ed69a731eded35e833c91fb204a9ff9a0284",
+    "deploy/transformers/modeling_llama.py": "c04f04028af967c092d74d6e8f5881b3acde6e5fb0fbe03150dbb13ad2a02558",
+    "deploy/transformers/kv_cache.py": "f425438b9ec8b15cd5157772b3356605b87b7f81eef75e4e8b6ed49d62d63da8"
+  },
+  "semantics_audit": {
+    "native_weights": "Signed packed INT4 with saved row scales; official real exporter available",
+    "activation": "Per-token symmetric INT4 with learned clipping in online transform kernels",
+    "kv_storage": "Actual pinned cache source packs asymmetric per-head INT4; it is not fully symmetric despite REALQUANT.md warning",
+    "prefill_attention": "Official cache update returns unquantized transformed K/V; packed cache is written for subsequent decode",
+    "kv_clipping": "Official packing calls omit lac=True, so learned KV clipping is not applied in the native cache",
+    "gqa_storage": "KV heads are repeated to attention-head count before native cache storage",
+    "accuracy_equivalence": "Not established; native backend needs its own PPL and task measurements"
+  },
+  "execution_policy": "Only FlatQuant; no FP16 or PrismQuant runs; no random-weight benchmark",
+  "next_steps": [
+    "Build official deploy._CUDA and install missing runtime dependencies in an isolated environment",
+    "After the accuracy checkpoint exists, export its saved weights/scales with official flat_utils.save_quantized_weights_with_safetensors without recalibration",
+    "Audit complete parameter loading before using official deployment model; benchmark_model.py silently allows missing keys",
+    "Measure native full141 PPL then prefill/decode/peak-memory on the same loaded FlatQuant model and exclusive GPU; preserve actual cache semantics in the table label"
+  ],
+  "gpu_work_launched": false,
+  "performance_measured": false,
+  "official_documentation": "https://github.com/ruikangliu/FlatQuant/blob/main/REALQUANT.md"
+}

@@ -1,0 +1,1959 @@
+{
+  "kind": "e38_direct_fp16_ppl_and_eight_tasks",
+  "status": "COMPLETE",
+  "seed": 0,
+  "model": "llama32_3b",
+  "source_commit": "35e76a6307602c17d0a801dcb7a4c73abd7273fb",
+  "command_line": [
+    "/projects/nar/nar-validation/e28-env/bin/python",
+    "-m",
+    "e38.direct_eight_tasks",
+    "--model",
+    "3b",
+    "--seed",
+    "0",
+    "--batch-size",
+    "2",
+    "--source-commit",
+    "35e76a6307602c17d0a801dcb7a4c73abd7273fb",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_3b_seed0_job1733512.json"
+  ],
+  "started_utc": "2026-11-10T14:18:12.948701+00:00",
+  "hostname": "gpu-a40-1.cluster02.eee.ntu.edu.sg",
+  "pid": 2227373,
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "scope": "Real FP16 E28 backend; direct measurements, no reference or equivalence gate",
+  "user_execution_policy": "Prioritize results without numerical acceptance thresholds; retain failures and attempt remaining measurements",
+  "timing": {
+    "status": "not run",
+    "reason": "accuracy-only job"
+  },
+  "source_observation": {
+    "quarot-llama3/e38/direct_eight_tasks.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/direct_eight_tasks.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/direct_eight_tasks.py",
+      "bytes": 16377,
+      "sha256": "2dc8c4ccb35ca34a88e6dde63873a15358ebb644d85f6b31fd23b7cc6510d7d9"
+    },
+    "quarot-llama3/e38/eight_tasks.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/eight_tasks.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/eight_tasks.py",
+      "bytes": 23977,
+      "sha256": "21e2eccb875773541b7e4010f5f924ee21d55b6de815334187a5925bd5f83e04"
+    },
+    "quarot-llama3/e38/fp16.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/fp16.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/fp16.py",
+      "bytes": 25530,
+      "sha256": "5ce9ae1f7dd00910cd08b1c68bc4a95970b295ba4a92fd426ad5fcb4925af367"
+    },
+    "quarot-llama3/modeling_llama3.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/modeling_llama3.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/modeling_llama3.py",
+      "bytes": 15551,
+      "sha256": "ec8f03779820a4a749a97a8e84b337a31f880c40e4145a0a0099ae3ca9299582"
+    },
+    "quarot-llama3/e28_v2/checkpoint.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/checkpoint.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/checkpoint.py",
+      "bytes": 2041,
+      "sha256": "ea3704f3e5f2584e41f359f8ca4cbffa5f845b6b6e5d816237ae58c68813ebbc"
+    },
+    "quarot-llama3/e28_v2/common.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/common.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/common.py",
+      "bytes": 8467,
+      "sha256": "8be1e3f426acb796bfb15d51164a1f545c346ce9b024fb0e8dc879159449c5e8"
+    },
+    "quarot-llama3/e28_v2/cache_adapter.py": {
+      "path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/cache_adapter.py",
+      "resolved": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e28_v2/cache_adapter.py",
+      "bytes": 2628,
+      "sha256": "91b8fa46bfa453d553190ccc526257717650002607b016ef917a1d383d5f3bfe"
+    },
+    "head": "03f484738ebf0a7874a07b1ca795e5604f866eac",
+    "working_tree": "M runs/commands.jsonl\n?? results/e38/raw/direct_fp16_3b_seed0_job1733512.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_arc_challenge.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_arc_easy.json\n?? results/e38/raw/direct_reference_3b_kmax_seed0_job1733511_boolq.json"
+  },
+  "slurm": {
+    "SLURM_JOB_ID": "1733512",
+    "SLURM_JOB_NODELIST": "gpu-a40-1",
+    "CUDA_VISIBLE_DEVICES": "0"
+  },
+  "dataset_metadata_compat": {
+    "scope": "in-process read compatibility only; cached files unchanged",
+    "change": "List[Value] feature metadata decoded as equivalent Sequence[Value]",
+    "rejected": "List[struct] and other List feature types",
+    "datasets_version": "2.17.1"
+  },
+  "libraries": {
+    "torch": "2.4.1+cu124",
+    "transformers": "4.36.2",
+    "datasets": "2.17.1",
+    "numpy": "1.26.4",
+    "lm_eval": "0.4.14.dev0",
+    "accelerate": "0.27.2",
+    "tokenizers": "0.23.1",
+    "huggingface-hub": "0.23.5",
+    "triton": "3.0.0",
+    "flash-attn": "2.6.3"
+  },
+  "tokenizer_runtime": {
+    "runtime_version": "0.23.1",
+    "module_path": "/projects/river/envs/qwen35/lib/python3.11/site-packages/tokenizers/__init__.py",
+    "installed_metadata_version": "0.15.2",
+    "compatibility": "original E14 native library selected in-process; no environment files changed"
+  },
+  "gpu_model": "NVIDIA A40",
+  "visible_cuda_devices": 1,
+  "cuda_runtime": "12.4",
+  "gpu_inventory": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA A40, GPU-c1b342e4-5344-54bb-f0c9-08766f54d18b, 595.71.05, 49140 MiB",
+  "checkpoint": {
+    "snapshot": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331",
+    "revision": "d4446454d87d51aa42e1fb174f25acc5f8762331",
+    "dtype": "released BF16 values cast to FP16",
+    "files": [
+      {
+        "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/model-00001-of-00002.safetensors",
+        "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+        "bytes": 4965799096
+      },
+      {
+        "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/model-00002-of-00002.safetensors",
+        "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb",
+        "bytes": 1459729952
+      }
+    ],
+    "config": {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/eeab235d033323f98b16ee4c9bf2158e800ab8e1",
+      "bytes": 890,
+      "sha256": "c0a6833b9da6e99a2a8920e879de7c1532c78883948327658cfdbd1eac6d5be6"
+    },
+    "note": "asset identities recorded; no multi-GB rehash/preflight"
+  },
+  "tokenizer_files": [
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/tokenizer.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+      "bytes": 17209920,
+      "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/tokenizer_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/8a071772876bc826e78c6649464bf838205fe5d1",
+      "bytes": 50641,
+      "sha256": "8ca815f697b8f6953d9bad3130ddd6238b99d36c20fde052cf730207ac0926d4"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/special_tokens_map.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/68b10c7f0a479eae0c358eac6a14959b3f9acdf1",
+      "bytes": 459,
+      "sha256": "32f404d626cf7b1b6eea36c241ae7cbd6ec29c777a8701ea48c0fe9ebb94c9b1"
+    }
+  ],
+  "backend_load": {
+    "snapshot": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331",
+    "files": [
+      "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/model-00001-of-00002.safetensors",
+      "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/model-00002-of-00002.safetensors"
+    ],
+    "loaded_tensor_count": 254,
+    "dtype": "original BF16 checkpoint converted to FP16 for this backend",
+    "native_integer_support": false
+  },
+  "ppl": {
+    "status": "COMPLETE",
+    "chunks": [
+      {
+        "chunk": 0,
+        "status": "COMPLETE",
+        "nll": 1.8339161763379908,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 1.838791272137314
+      },
+      {
+        "chunk": 1,
+        "status": "COMPLETE",
+        "nll": 2.4168772657848185,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2204550406895578
+      },
+      {
+        "chunk": 2,
+        "status": "COMPLETE",
+        "nll": 2.497198569815393,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2226386573165655
+      },
+      {
+        "chunk": 3,
+        "status": "COMPLETE",
+        "nll": 2.0104859747651385,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22100470401346684
+      },
+      {
+        "chunk": 4,
+        "status": "COMPLETE",
+        "nll": 1.9303345710519586,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2213600198738277
+      },
+      {
+        "chunk": 5,
+        "status": "COMPLETE",
+        "nll": 1.5523978504950557,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2216458972543478
+      },
+      {
+        "chunk": 6,
+        "status": "COMPLETE",
+        "nll": 1.6638882575992497,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22102841036394238
+      },
+      {
+        "chunk": 7,
+        "status": "COMPLETE",
+        "nll": 1.9179334542666286,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22221970511600375
+      },
+      {
+        "chunk": 8,
+        "status": "COMPLETE",
+        "nll": 2.2490949309274053,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22248290618881583
+      },
+      {
+        "chunk": 9,
+        "status": "COMPLETE",
+        "nll": 1.9666322559977254,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22128385491669178
+      },
+      {
+        "chunk": 10,
+        "status": "COMPLETE",
+        "nll": 1.8904526956965415,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2217697761952877
+      },
+      {
+        "chunk": 11,
+        "status": "COMPLETE",
+        "nll": 2.2559263884409733,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22180824307724833
+      },
+      {
+        "chunk": 12,
+        "status": "COMPLETE",
+        "nll": 2.1368224978388723,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22149544255807996
+      },
+      {
+        "chunk": 13,
+        "status": "COMPLETE",
+        "nll": 2.262804449740188,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2235356830060482
+      },
+      {
+        "chunk": 14,
+        "status": "COMPLETE",
+        "nll": 2.189137155507679,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22212193300947547
+      },
+      {
+        "chunk": 15,
+        "status": "COMPLETE",
+        "nll": 2.39789451968105,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22170859342440963
+      },
+      {
+        "chunk": 16,
+        "status": "COMPLETE",
+        "nll": 2.123317545195236,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22318103769794106
+      },
+      {
+        "chunk": 17,
+        "status": "COMPLETE",
+        "nll": 2.1402501123500093,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22263313783332705
+      },
+      {
+        "chunk": 18,
+        "status": "COMPLETE",
+        "nll": 1.9488863961313432,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22177940979599953
+      },
+      {
+        "chunk": 19,
+        "status": "COMPLETE",
+        "nll": 2.0979005695262885,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22230622917413712
+      },
+      {
+        "chunk": 20,
+        "status": "COMPLETE",
+        "nll": 2.2238068685452417,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22255672235041857
+      },
+      {
+        "chunk": 21,
+        "status": "COMPLETE",
+        "nll": 2.1562838421604025,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2219966989941895
+      },
+      {
+        "chunk": 22,
+        "status": "COMPLETE",
+        "nll": 2.2168789981456287,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2243644348345697
+      },
+      {
+        "chunk": 23,
+        "status": "COMPLETE",
+        "nll": 2.240084127734566,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22230699704959989
+      },
+      {
+        "chunk": 24,
+        "status": "COMPLETE",
+        "nll": 2.268100598758759,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.222493268083781
+      },
+      {
+        "chunk": 25,
+        "status": "COMPLETE",
+        "nll": 2.3498399265812964,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22299155499786139
+      },
+      {
+        "chunk": 26,
+        "status": "COMPLETE",
+        "nll": 2.4198311347756434,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2218640367500484
+      },
+      {
+        "chunk": 27,
+        "status": "COMPLETE",
+        "nll": 2.216436470900155,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22276715002954006
+      },
+      {
+        "chunk": 28,
+        "status": "COMPLETE",
+        "nll": 1.9935828480536495,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22274705627933145
+      },
+      {
+        "chunk": 29,
+        "status": "COMPLETE",
+        "nll": 1.799398626300493,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22200981574133039
+      },
+      {
+        "chunk": 30,
+        "status": "COMPLETE",
+        "nll": 1.6806509505263991,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2230683988891542
+      },
+      {
+        "chunk": 31,
+        "status": "COMPLETE",
+        "nll": 1.7049536544285464,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2230929108336568
+      },
+      {
+        "chunk": 32,
+        "status": "COMPLETE",
+        "nll": 2.0032863272185666,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22214797185733914
+      },
+      {
+        "chunk": 33,
+        "status": "COMPLETE",
+        "nll": 1.973778348698171,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22310338215902448
+      },
+      {
+        "chunk": 34,
+        "status": "COMPLETE",
+        "nll": 2.1586810523379296,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2233788319863379
+      },
+      {
+        "chunk": 35,
+        "status": "COMPLETE",
+        "nll": 1.4863728279594566,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22187762521207333
+      },
+      {
+        "chunk": 36,
+        "status": "COMPLETE",
+        "nll": 1.4350398091147105,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22282041795551777
+      },
+      {
+        "chunk": 37,
+        "status": "COMPLETE",
+        "nll": 1.4723578575592713,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22281033685430884
+      },
+      {
+        "chunk": 38,
+        "status": "COMPLETE",
+        "nll": 1.4499721256884122,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22221247805282474
+      },
+      {
+        "chunk": 39,
+        "status": "COMPLETE",
+        "nll": 1.6433955473496848,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22301671607419848
+      },
+      {
+        "chunk": 40,
+        "status": "COMPLETE",
+        "nll": 2.258422150865787,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22298508323729038
+      },
+      {
+        "chunk": 41,
+        "status": "COMPLETE",
+        "nll": 2.68915449402422,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22206067899242043
+      },
+      {
+        "chunk": 42,
+        "status": "COMPLETE",
+        "nll": 2.6935866690870025,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22309716930612922
+      },
+      {
+        "chunk": 43,
+        "status": "COMPLETE",
+        "nll": 2.316654639530601,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22271527675911784
+      },
+      {
+        "chunk": 44,
+        "status": "COMPLETE",
+        "nll": 2.3000523390627863,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22240227181464434
+      },
+      {
+        "chunk": 45,
+        "status": "COMPLETE",
+        "nll": 2.2765802067550265,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22105546155944467
+      },
+      {
+        "chunk": 46,
+        "status": "COMPLETE",
+        "nll": 2.3552790699088986,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2224359610117972
+      },
+      {
+        "chunk": 47,
+        "status": "COMPLETE",
+        "nll": 2.1489895968304418,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22117368783801794
+      },
+      {
+        "chunk": 48,
+        "status": "COMPLETE",
+        "nll": 2.0221910052725787,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2211049380712211
+      },
+      {
+        "chunk": 49,
+        "status": "COMPLETE",
+        "nll": 2.031416758363516,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22182526485994458
+      },
+      {
+        "chunk": 50,
+        "status": "COMPLETE",
+        "nll": 1.7605740202888374,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22213410632684827
+      },
+      {
+        "chunk": 51,
+        "status": "COMPLETE",
+        "nll": 1.830966891692683,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22131479298695922
+      },
+      {
+        "chunk": 52,
+        "status": "COMPLETE",
+        "nll": 1.6571500002027548,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2217975603416562
+      },
+      {
+        "chunk": 53,
+        "status": "COMPLETE",
+        "nll": 1.8910329545714766,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22246304899454117
+      },
+      {
+        "chunk": 54,
+        "status": "COMPLETE",
+        "nll": 1.6218149234564874,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22138638701289892
+      },
+      {
+        "chunk": 55,
+        "status": "COMPLETE",
+        "nll": 1.5907425649817186,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22113109612837434
+      },
+      {
+        "chunk": 56,
+        "status": "COMPLETE",
+        "nll": 1.7995327277246427,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22199417278170586
+      },
+      {
+        "chunk": 57,
+        "status": "COMPLETE",
+        "nll": 1.819779970497985,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22216206695884466
+      },
+      {
+        "chunk": 58,
+        "status": "COMPLETE",
+        "nll": 2.1708536749067804,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2211080091074109
+      },
+      {
+        "chunk": 59,
+        "status": "COMPLETE",
+        "nll": 2.326306848567931,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22214181115850806
+      },
+      {
+        "chunk": 60,
+        "status": "COMPLETE",
+        "nll": 2.353933381871241,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2225110176950693
+      },
+      {
+        "chunk": 61,
+        "status": "COMPLETE",
+        "nll": 2.461588059627084,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.221257955301553
+      },
+      {
+        "chunk": 62,
+        "status": "COMPLETE",
+        "nll": 1.516549986749378,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22147435508668423
+      },
+      {
+        "chunk": 63,
+        "status": "COMPLETE",
+        "nll": 1.9015299280387457,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22237317310646176
+      },
+      {
+        "chunk": 64,
+        "status": "COMPLETE",
+        "nll": 1.8934873460733315,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2227426483295858
+      },
+      {
+        "chunk": 65,
+        "status": "COMPLETE",
+        "nll": 1.6362688728932584,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2212833152152598
+      },
+      {
+        "chunk": 66,
+        "status": "COMPLETE",
+        "nll": 1.8456510125455126,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22249941201880574
+      },
+      {
+        "chunk": 67,
+        "status": "COMPLETE",
+        "nll": 1.8553904732320736,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2212602668441832
+      },
+      {
+        "chunk": 68,
+        "status": "COMPLETE",
+        "nll": 1.8547935653559802,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22148505924269557
+      },
+      {
+        "chunk": 69,
+        "status": "COMPLETE",
+        "nll": 2.084511052939038,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22210337594151497
+      },
+      {
+        "chunk": 70,
+        "status": "COMPLETE",
+        "nll": 2.2762204958976744,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22186592500656843
+      },
+      {
+        "chunk": 71,
+        "status": "COMPLETE",
+        "nll": 2.197079843466143,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22146092588081956
+      },
+      {
+        "chunk": 72,
+        "status": "COMPLETE",
+        "nll": 1.891840149730837,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2220976408571005
+      },
+      {
+        "chunk": 73,
+        "status": "COMPLETE",
+        "nll": 2.1389326758074887,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22249491792172194
+      },
+      {
+        "chunk": 74,
+        "status": "COMPLETE",
+        "nll": 2.001832388992943,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22142896009609103
+      },
+      {
+        "chunk": 75,
+        "status": "COMPLETE",
+        "nll": 1.9287879768673477,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22180003998801112
+      },
+      {
+        "chunk": 76,
+        "status": "COMPLETE",
+        "nll": 2.1243183413656035,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22285005496814847
+      },
+      {
+        "chunk": 77,
+        "status": "COMPLETE",
+        "nll": 2.1748193946767564,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22153569106012583
+      },
+      {
+        "chunk": 78,
+        "status": "COMPLETE",
+        "nll": 2.3259300377290892,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22146582370623946
+      },
+      {
+        "chunk": 79,
+        "status": "COMPLETE",
+        "nll": 1.7452514007374549,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22182028787210584
+      },
+      {
+        "chunk": 80,
+        "status": "COMPLETE",
+        "nll": 1.870913495770535,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22146049002185464
+      },
+      {
+        "chunk": 81,
+        "status": "COMPLETE",
+        "nll": 1.9474838249381716,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2222572690807283
+      },
+      {
+        "chunk": 82,
+        "status": "COMPLETE",
+        "nll": 1.8343450250891167,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2216765619814396
+      },
+      {
+        "chunk": 83,
+        "status": "COMPLETE",
+        "nll": 1.8307531344698416,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2213244209997356
+      },
+      {
+        "chunk": 84,
+        "status": "COMPLETE",
+        "nll": 1.7844237163116947,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22216755570843816
+      },
+      {
+        "chunk": 85,
+        "status": "COMPLETE",
+        "nll": 2.143782115762969,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2222343971952796
+      },
+      {
+        "chunk": 86,
+        "status": "COMPLETE",
+        "nll": 2.157094272451396,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22145551396533847
+      },
+      {
+        "chunk": 87,
+        "status": "COMPLETE",
+        "nll": 2.164201155952785,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22223808895796537
+      },
+      {
+        "chunk": 88,
+        "status": "COMPLETE",
+        "nll": 2.82404684077022,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22229989897459745
+      },
+      {
+        "chunk": 89,
+        "status": "COMPLETE",
+        "nll": 2.7528744070018627,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22142433794215322
+      },
+      {
+        "chunk": 90,
+        "status": "COMPLETE",
+        "nll": 2.372395063063897,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22249304223805666
+      },
+      {
+        "chunk": 91,
+        "status": "COMPLETE",
+        "nll": 2.584913707559844,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22216507280245423
+      },
+      {
+        "chunk": 92,
+        "status": "COMPLETE",
+        "nll": 2.5656731870620497,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22139749210327864
+      },
+      {
+        "chunk": 93,
+        "status": "COMPLETE",
+        "nll": 2.135135823945389,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22208743914961815
+      },
+      {
+        "chunk": 94,
+        "status": "COMPLETE",
+        "nll": 2.440115253577072,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22206474700942636
+      },
+      {
+        "chunk": 95,
+        "status": "COMPLETE",
+        "nll": 2.084213159931073,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2213927353732288
+      },
+      {
+        "chunk": 96,
+        "status": "COMPLETE",
+        "nll": 2.232293006438538,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22232086909934878
+      },
+      {
+        "chunk": 97,
+        "status": "COMPLETE",
+        "nll": 1.7803542337944056,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22232012497261167
+      },
+      {
+        "chunk": 98,
+        "status": "COMPLETE",
+        "nll": 2.158968889602639,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22130806418135762
+      },
+      {
+        "chunk": 99,
+        "status": "COMPLETE",
+        "nll": 2.373027173495607,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22231807513162494
+      },
+      {
+        "chunk": 100,
+        "status": "COMPLETE",
+        "nll": 2.0285089713629127,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22243248391896486
+      },
+      {
+        "chunk": 101,
+        "status": "COMPLETE",
+        "nll": 2.159986808117157,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22143099922686815
+      },
+      {
+        "chunk": 102,
+        "status": "COMPLETE",
+        "nll": 2.0049460988307968,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22232181299477816
+      },
+      {
+        "chunk": 103,
+        "status": "COMPLETE",
+        "nll": 2.440237346252233,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.222174605820328
+      },
+      {
+        "chunk": 104,
+        "status": "COMPLETE",
+        "nll": 2.073362297352547,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22155851125717163
+      },
+      {
+        "chunk": 105,
+        "status": "COMPLETE",
+        "nll": 2.0590895972836583,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22257028287276626
+      },
+      {
+        "chunk": 106,
+        "status": "COMPLETE",
+        "nll": 1.8752927645043622,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2225496768951416
+      },
+      {
+        "chunk": 107,
+        "status": "COMPLETE",
+        "nll": 1.8672330080152548,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2222962724044919
+      },
+      {
+        "chunk": 108,
+        "status": "COMPLETE",
+        "nll": 1.8779325350121747,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22315906174480915
+      },
+      {
+        "chunk": 109,
+        "status": "COMPLETE",
+        "nll": 1.7789829032387334,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22185634169727564
+      },
+      {
+        "chunk": 110,
+        "status": "COMPLETE",
+        "nll": 2.2696308011128137,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22305210400372744
+      },
+      {
+        "chunk": 111,
+        "status": "COMPLETE",
+        "nll": 2.0230664438192707,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22297699702903628
+      },
+      {
+        "chunk": 112,
+        "status": "COMPLETE",
+        "nll": 2.1842796277231162,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22226410312578082
+      },
+      {
+        "chunk": 113,
+        "status": "COMPLETE",
+        "nll": 2.156557538769102,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22284800792112947
+      },
+      {
+        "chunk": 114,
+        "status": "COMPLETE",
+        "nll": 1.8996330525855292,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22234511794522405
+      },
+      {
+        "chunk": 115,
+        "status": "COMPLETE",
+        "nll": 1.872870992670772,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2223524758592248
+      },
+      {
+        "chunk": 116,
+        "status": "COMPLETE",
+        "nll": 2.3109313040520427,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2228804617188871
+      },
+      {
+        "chunk": 117,
+        "status": "COMPLETE",
+        "nll": 1.9601186017146854,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22204225603491068
+      },
+      {
+        "chunk": 118,
+        "status": "COMPLETE",
+        "nll": 1.8724059536798325,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22268180968239903
+      },
+      {
+        "chunk": 119,
+        "status": "COMPLETE",
+        "nll": 1.7986431708846025,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2224382902495563
+      },
+      {
+        "chunk": 120,
+        "status": "COMPLETE",
+        "nll": 2.0179258867421264,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2221382982097566
+      },
+      {
+        "chunk": 121,
+        "status": "COMPLETE",
+        "nll": 2.0497986421272936,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22333558602258563
+      },
+      {
+        "chunk": 122,
+        "status": "COMPLETE",
+        "nll": 1.9961186023706567,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22190721984952688
+      },
+      {
+        "chunk": 123,
+        "status": "COMPLETE",
+        "nll": 2.0461454852709378,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2239953689277172
+      },
+      {
+        "chunk": 124,
+        "status": "COMPLETE",
+        "nll": 1.8950360498023022,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2222798289731145
+      },
+      {
+        "chunk": 125,
+        "status": "COMPLETE",
+        "nll": 2.06667679347349,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2223714105784893
+      },
+      {
+        "chunk": 126,
+        "status": "COMPLETE",
+        "nll": 2.0158799045191897,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22320245392620564
+      },
+      {
+        "chunk": 127,
+        "status": "COMPLETE",
+        "nll": 1.9060807668353268,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22218406293541193
+      },
+      {
+        "chunk": 128,
+        "status": "COMPLETE",
+        "nll": 2.046927186996691,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22321485029533505
+      },
+      {
+        "chunk": 129,
+        "status": "COMPLETE",
+        "nll": 2.203437816357112,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22286289231851697
+      },
+      {
+        "chunk": 130,
+        "status": "COMPLETE",
+        "nll": 2.1754138687499047,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.222047399263829
+      },
+      {
+        "chunk": 131,
+        "status": "COMPLETE",
+        "nll": 2.148086219865867,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22310291370376945
+      },
+      {
+        "chunk": 132,
+        "status": "COMPLETE",
+        "nll": 1.638064814475786,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2222371851094067
+      },
+      {
+        "chunk": 133,
+        "status": "COMPLETE",
+        "nll": 1.4195642159167998,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22314238781109452
+      },
+      {
+        "chunk": 134,
+        "status": "COMPLETE",
+        "nll": 2.3479711088134887,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22266762424260378
+      },
+      {
+        "chunk": 135,
+        "status": "COMPLETE",
+        "nll": 2.4989828865412798,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22212090902030468
+      },
+      {
+        "chunk": 136,
+        "status": "COMPLETE",
+        "nll": 2.2838830989805965,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22343358024954796
+      },
+      {
+        "chunk": 137,
+        "status": "COMPLETE",
+        "nll": 1.954762915838155,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.2228025528602302
+      },
+      {
+        "chunk": 138,
+        "status": "COMPLETE",
+        "nll": 2.1592638605562255,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22304215608164668
+      },
+      {
+        "chunk": 139,
+        "status": "COMPLETE",
+        "nll": 2.1472646156985644,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22256861301138997
+      },
+      {
+        "chunk": 140,
+        "status": "COMPLETE",
+        "nll": 2.2181444974078395,
+        "tokens_scored": 2047,
+        "elapsed_seconds": 0.22240121895447373
+      }
+    ],
+    "requested_sequences": 141,
+    "requested_sequence_length": 2048,
+    "reference_model": "not loaded",
+    "numerical_thresholds": "none",
+    "token_file": {
+      "path": "/projects/nar/nar-validation/cache/tokenized/llama32_3b-wikitext2-test-full-l2048.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/tokenized/llama32_3b-wikitext2-test-full-l2048.pt",
+      "bytes": 2312073,
+      "sha256": "0b1879cd29bec44e095f6ed5fa5c672a1cb1d7dac199c7f33ec5eca400e05a50"
+    },
+    "loss": "FP32 cross entropy summed in blocks of128 positions; host FP64 aggregation",
+    "loaded_shape": [
+      141,
+      2048
+    ],
+    "attempted_sequences": 141,
+    "completed_sequences": 141,
+    "failed_sequences": 0,
+    "value": 7.81657912796739,
+    "finished_utc": "2026-11-10T14:20:51.569236+00:00"
+  },
+  "eight_tasks": {
+    "status": "COMPLETE",
+    "tasks": [
+      {
+        "task": "arc_easy",
+        "metric": "acc_norm,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "arc_easy",
+            "dataset_path": "allenai/ai2_arc",
+            "dataset_name": "ARC-Easy",
+            "training_split": "train",
+            "validation_split": "validation",
+            "test_split": "test",
+            "doc_to_text": "Question: {{question}}\nAnswer:",
+            "doc_to_target": "{{choices.label.index(answerKey)}}",
+            "unsafe_code": false,
+            "doc_to_choice": "{{choices.text}}",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "Question: {{question}}\nAnswer:",
+              "doc_to_choice": "{{choices.text}}",
+              "doc_to_target": "{{choices.label.index(answerKey)}}",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              },
+              {
+                "metric": "acc_norm",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/arc/arc_easy.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 2251,
+              "fingerprint": "3f0efa3624a04562",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-train.arrow",
+                  "bytes": 621640
+                }
+              ]
+            },
+            "test": {
+              "rows": 2376,
+              "fingerprint": "b019ca21ba59e1f3",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-test.arrow",
+                  "bytes": 660168
+                }
+              ]
+            },
+            "validation": {
+              "rows": 570,
+              "fingerprint": "85bbde565a00cd05",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Easy/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-validation.arrow",
+                  "bytes": 158848
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 2376,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_3b_seed0_job1733512_arc_easy.json",
+        "sha256": "589de680668264fedf55daa8182bf93f48bf7bde8d36b41bcf62755180171041",
+        "samples": 2376,
+        "expected_samples": 2376,
+        "accuracy": 0.7209595959595959,
+        "elapsed_seconds": 127.40413966821507
+      },
+      {
+        "task": "arc_challenge",
+        "metric": "acc_norm,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "arc_challenge",
+            "dataset_path": "allenai/ai2_arc",
+            "dataset_name": "ARC-Challenge",
+            "training_split": "train",
+            "validation_split": "validation",
+            "test_split": "test",
+            "doc_to_text": "Question: {{question}}\nAnswer:",
+            "doc_to_target": "{{choices.label.index(answerKey)}}",
+            "unsafe_code": false,
+            "doc_to_choice": "{{choices.text}}",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "Question: {{question}}\nAnswer:",
+              "doc_to_choice": "{{choices.text}}",
+              "doc_to_target": "{{choices.label.index(answerKey)}}",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              },
+              {
+                "metric": "acc_norm",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "Question: {{question}}\nAnswer:",
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/arc/arc_challenge.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 1119,
+              "fingerprint": "4cad81c53cd88966",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-train.arrow",
+                  "bytes": 351808
+                }
+              ]
+            },
+            "test": {
+              "rows": 1172,
+              "fingerprint": "a4361c3f3e560fcd",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-test.arrow",
+                  "bytes": 377568
+                }
+              ]
+            },
+            "validation": {
+              "rows": 299,
+              "fingerprint": "7ad52fe9b4847f33",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___ai2_arc/ARC-Challenge/0.0.0/210d026faf9955653af8916fad021475a3f00453/ai2_arc-validation.arrow",
+                  "bytes": 98104
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 1172,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_3b_seed0_job1733512_arc_challenge.json",
+        "sha256": "03e7d0a593c46201fe6e383fb79426d43c01188649e86d9d6a66cb41e70c2431",
+        "samples": 1172,
+        "expected_samples": 1172,
+        "accuracy": 0.46245733788395904,
+        "elapsed_seconds": 64.55101335700601
+      },
+      {
+        "task": "boolq",
+        "metric": "acc,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "boolq",
+            "dataset_path": "aps/super_glue",
+            "dataset_name": "boolq",
+            "training_split": "train",
+            "validation_split": "validation",
+            "doc_to_text": "{{passage}}\nQuestion: {{question}}?\nAnswer:",
+            "doc_to_target": "label",
+            "unsafe_code": false,
+            "doc_to_choice": [
+              "no",
+              "yes"
+            ],
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "{{passage}}\nQuestion: {{question}}?\nAnswer:",
+              "doc_to_choice": [
+                "no",
+                "yes"
+              ],
+              "doc_to_target": "label",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc"
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "passage",
+            "metadata": {
+              "version": 2.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/super_glue/boolq/default.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 9427,
+              "fingerprint": "b185bde8d81835b3",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-train.arrow",
+                  "bytes": 6177312
+                }
+              ]
+            },
+            "validation": {
+              "rows": 3270,
+              "fingerprint": "3465575e190d308f",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-validation.arrow",
+                  "bytes": 2118400
+                }
+              ]
+            },
+            "test": {
+              "rows": 3245,
+              "fingerprint": "395e21f9d993dfe0",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/aps___super_glue/boolq/0.0.0/3de24cf8022e94f4ee4b9d55a6f539891524d646/super_glue-test.arrow",
+                  "bytes": 2107904
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 3270,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_3b_seed0_job1733512_boolq.json",
+        "sha256": "1761aed0afa6b92998a2c6aa1ba9a9d3beef098281f160dfe14ad7718edd3513",
+        "samples": 3270,
+        "expected_samples": 3270,
+        "accuracy": 0.7415902140672783,
+        "elapsed_seconds": 69.95611733803526
+      },
+      {
+        "task": "hellaswag",
+        "metric": "acc_norm,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "hellaswag",
+            "dataset_path": "Rowan/hellaswag",
+            "training_split": "train",
+            "validation_split": "validation",
+            "process_docs": "def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:\n    def _process_doc(doc):\n        ctx = doc[\"ctx_a\"] + \" \" + doc[\"ctx_b\"].capitalize()\n        out_doc = {\n            \"query\": preprocess(doc[\"activity_label\"] + \": \" + ctx),\n            \"choices\": [preprocess(ending) for ending in doc[\"endings\"]],\n            \"gold\": int(doc[\"label\"]),\n        }\n        return out_doc\n\n    return dataset.map(_process_doc)\n",
+            "doc_to_text": "{{query}}",
+            "doc_to_target": "{{label}}",
+            "unsafe_code": false,
+            "doc_to_choice": "choices",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": "<function process_docs at 0x7367a886fec0>",
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "{{query}}",
+              "doc_to_choice": "choices",
+              "doc_to_target": "{{label}}",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              },
+              {
+                "metric": "acc_norm",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": false,
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/hellaswag/hellaswag.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 39905,
+              "fingerprint": "5c5bea5996a5827b",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-train.arrow",
+                  "bytes": 43268336
+                }
+              ]
+            },
+            "test": {
+              "rows": 10003,
+              "fingerprint": "ade68387409a89dc",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-test.arrow",
+                  "bytes": 10802528
+                }
+              ]
+            },
+            "validation": {
+              "rows": 10042,
+              "fingerprint": "71a62ba9d49be089",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/Rowan___hellaswag/default/0.0.0/218ec52e09a7e7462a5400043bb9a69a41d06b76/hellaswag-validation.arrow",
+                  "bytes": 11186424
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 10042,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_3b_seed0_job1733512_hellaswag.json",
+        "sha256": "6674e27bd4fe5a97500fbf5a401cef1f6bced9ed7c4b2a237d85b9557b21da87",
+        "samples": 10042,
+        "expected_samples": 10042,
+        "accuracy": 0.7415853415654252,
+        "elapsed_seconds": 616.6872968701646
+      },
+      {
+        "task": "openbookqa",
+        "metric": "acc_norm,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "openbookqa",
+            "dataset_path": "allenai/openbookqa",
+            "dataset_name": "main",
+            "training_split": "train",
+            "validation_split": "validation",
+            "test_split": "test",
+            "doc_to_text": "question_stem",
+            "doc_to_target": "{{choices.label.index(answerKey.lstrip())}}",
+            "unsafe_code": false,
+            "doc_to_choice": "{{choices.text}}",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "question_stem",
+              "doc_to_choice": "{{choices.text}}",
+              "doc_to_target": "{{choices.label.index(answerKey.lstrip())}}",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              },
+              {
+                "metric": "acc_norm",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "question_stem",
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/openbookqa/openbookqa.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 4957,
+              "fingerprint": "c8c4e9bb369b94e0",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-train.arrow",
+                  "bytes": 899280
+                }
+              ]
+            },
+            "validation": {
+              "rows": 500,
+              "fingerprint": "4809c50e92d6f852",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-validation.arrow",
+                  "bytes": 96896
+                }
+              ]
+            },
+            "test": {
+              "rows": 500,
+              "fingerprint": "6ab147ba0552ca72",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___openbookqa/main/0.0.0/388097ea7776314e93a529163e0fea805b8a6454/openbookqa-test.arrow",
+                  "bytes": 93216
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 500,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_3b_seed0_job1733512_openbookqa.json",
+        "sha256": "f390a862e16b3118a119164d1f19c35836d977531dad4abc411fcd76cb1f1d54",
+        "samples": 500,
+        "expected_samples": 500,
+        "accuracy": 0.41,
+        "elapsed_seconds": 24.13263699505478
+      },
+      {
+        "task": "piqa",
+        "metric": "acc_norm,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "piqa",
+            "dataset_path": "baber/piqa",
+            "training_split": "train",
+            "validation_split": "validation",
+            "doc_to_text": "Question: {{goal}}\nAnswer:",
+            "doc_to_target": "label",
+            "unsafe_code": false,
+            "doc_to_choice": "{{[sol1, sol2]}}",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "Question: {{goal}}\nAnswer:",
+              "doc_to_choice": "{{[sol1, sol2]}}",
+              "doc_to_target": "label",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              },
+              {
+                "metric": "acc_norm",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "goal",
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/piqa/piqa.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 16113,
+              "fingerprint": "f0a93a05e1bc907d",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-train.arrow",
+                  "bytes": 4110832
+                }
+              ]
+            },
+            "validation": {
+              "rows": 1838,
+              "fingerprint": "506e3cab853d8e73",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-validation.arrow",
+                  "bytes": 465608
+                }
+              ]
+            },
+            "test": {
+              "rows": 3084,
+              "fingerprint": "c8edc3d1dc86702a",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/baber___piqa/default/0.0.0/142f6d7367fd9877f0fb3b5734ea6a545f54cdd1/piqa-test.arrow",
+                  "bytes": 763560
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 1838,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_3b_seed0_job1733512_piqa.json",
+        "sha256": "9f77029d3b32113547e820d0b5f99e45ce1132c0c9c97491269ef30da6d48614",
+        "samples": 1838,
+        "expected_samples": 1838,
+        "accuracy": 0.780195865070729,
+        "elapsed_seconds": 53.1158812479116
+      },
+      {
+        "task": "social_iqa",
+        "metric": "acc,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "social_iqa",
+            "dataset_path": "lighteval/siqa",
+            "training_split": "train",
+            "validation_split": "validation",
+            "doc_to_text": "Q: {{context}} {{question}}\nA:",
+            "doc_to_target": "{{ (label|int) - 1 }}",
+            "unsafe_code": false,
+            "doc_to_choice": "{{[answerA, answerB, answerC]}}",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "Q: {{context}} {{question}}\nA:",
+              "doc_to_choice": "{{[answerA, answerB, answerC]}}",
+              "doc_to_target": "{{ (label|int) - 1 }}",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": false,
+            "metadata": {
+              "version": 0.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/siqa/siqa.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 33410,
+              "fingerprint": "221898d646ee148b",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/lighteval___siqa/default/0.0.0/54c6a1f8cb6daf4f5abf24a601852612fb35eb25/siqa-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/lighteval___siqa/default/0.0.0/54c6a1f8cb6daf4f5abf24a601852612fb35eb25/siqa-train.arrow",
+                  "bytes": 6346480
+                }
+              ]
+            },
+            "validation": {
+              "rows": 1954,
+              "fingerprint": "12a14f9122f7c866",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/lighteval___siqa/default/0.0.0/54c6a1f8cb6daf4f5abf24a601852612fb35eb25/siqa-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/lighteval___siqa/default/0.0.0/54c6a1f8cb6daf4f5abf24a601852612fb35eb25/siqa-validation.arrow",
+                  "bytes": 374632
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 1954,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_3b_seed0_job1733512_social_iqa.json",
+        "sha256": "a189da1ec0e51a64694e2828d42fbbc7bf2ed251acd1031253112dc3323d72fe",
+        "samples": 1954,
+        "expected_samples": 1954,
+        "accuracy": 0.4672466734902764,
+        "elapsed_seconds": 78.9234957410954
+      },
+      {
+        "task": "winogrande",
+        "metric": "acc,none",
+        "status": "COMPLETE",
+        "task_data": {
+          "config": {
+            "task": "winogrande",
+            "dataset_path": "allenai/winogrande",
+            "dataset_name": "winogrande_xl",
+            "training_split": "train",
+            "validation_split": "validation",
+            "doc_to_text": "def doc_to_text(doc):\n    answer_to_num = {\"1\": 0, \"2\": 1}\n    return answer_to_num[doc[\"answer\"]]\n",
+            "doc_to_target": "def doc_to_target(doc):\n    idx = doc[\"sentence\"].index(\"_\") + 1\n    return doc[\"sentence\"][idx:].strip()\n",
+            "unsafe_code": false,
+            "doc_to_choice": "def doc_to_choice(doc):\n    idx = doc[\"sentence\"].index(\"_\")\n    options = [doc[\"option1\"], doc[\"option2\"]]\n    return [doc[\"sentence\"][:idx] + opt for opt in options]\n",
+            "description": "",
+            "target_delimiter": " ",
+            "fewshot_delimiter": "\n\n",
+            "fewshot_config": {
+              "sampler": "default",
+              "split": null,
+              "process_docs": null,
+              "fewshot_indices": null,
+              "samples": null,
+              "doc_to_text": "<function doc_to_text at 0x7366e57960c0>",
+              "doc_to_choice": "<function doc_to_choice at 0x7366e5797560>",
+              "doc_to_target": "<function doc_to_target at 0x7366e5796200>",
+              "gen_prefix": null,
+              "fewshot_delimiter": "\n\n",
+              "target_delimiter": " "
+            },
+            "metric_list": [
+              {
+                "metric": "acc",
+                "aggregation": "mean",
+                "higher_is_better": true
+              }
+            ],
+            "output_type": "multiple_choice",
+            "repeats": 1,
+            "should_decontaminate": true,
+            "doc_to_decontamination_query": "sentence",
+            "metadata": {
+              "version": 1.0,
+              "config_source": "/home/yanlongc/.e13_packages/lm_eval/tasks/winogrande/default.yaml"
+            }
+          },
+          "splits": {
+            "train": {
+              "rows": 40398,
+              "fingerprint": "d5752cdf34722002",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-train.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-train.arrow",
+                  "bytes": 5202424
+                }
+              ]
+            },
+            "test": {
+              "rows": 1767,
+              "fingerprint": "e1e2c9a9f0c7ce8f",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-test.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-test.arrow",
+                  "bytes": 228960
+                }
+              ]
+            },
+            "validation": {
+              "rows": 1267,
+              "fingerprint": "5b125086384c0403",
+              "cache_files": [
+                {
+                  "path": "/projects/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-validation.arrow",
+                  "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/allenai___winogrande/winogrande_xl/0.0.0/01e74176c63542e6b0bcb004dcdea22d94fb67b5/winogrande-validation.arrow",
+                  "bytes": 165504
+                }
+              ]
+            }
+          },
+          "evaluation_documents": 1267,
+          "observation": "paths/sizes/fingerprints only; no full cache hashing or preflight"
+        },
+        "output": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/direct_fp16_3b_seed0_job1733512_winogrande.json",
+        "sha256": "981000a02ada891468830a4e620a6efd35de2dd8ad8d044b0c8965cc3ea7dbab",
+        "samples": 1267,
+        "expected_samples": 1267,
+        "accuracy": 0.6945540647198106,
+        "elapsed_seconds": 35.41460319189355
+      }
+    ],
+    "seed": 0,
+    "batch_size": 2,
+    "max_length": 2048,
+    "num_fewshot": 0,
+    "log_samples": true,
+    "limit": null,
+    "task_order": [
+      "arc_easy",
+      "arc_challenge",
+      "boolq",
+      "hellaswag",
+      "openbookqa",
+      "piqa",
+      "social_iqa",
+      "winogrande"
+    ],
+    "numerical_thresholds": "none",
+    "execution": "same model; each task attempted independently",
+    "current_task": null,
+    "completed_tasks": 8,
+    "attempted_tasks": 8,
+    "mean_accuracy": 0.6273236365946343,
+    "mean_definition": "unweighted mean of all eight frozen E14 metrics; unavailable if a task failed"
+  },
+  "finished_utc": "2026-11-10T14:39:47.603241+00:00"
+}

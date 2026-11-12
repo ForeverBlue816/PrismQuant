@@ -1,0 +1,91 @@
+{
+  "started_utc": "2026-11-11T04:06:18.441980+00:00",
+  "command": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "scripts/e39_restore_anchor.py"
+  ],
+  "status": "COMPLETE",
+  "assets": [
+    {
+      "repository": "unsloth/llama-3-8b",
+      "revision": "b0c09b815d8a74b70622c740f108c995c5041a14",
+      "snapshot": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14",
+      "files": [
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14/config.json",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/blobs/c0ea41dc17f33c9cd9326b2fcd2c185d043564a9",
+          "bytes": 768
+        },
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14/generation_config.json",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/blobs/0f893e106f7de2fb60e86f48f163213ce1e2b670",
+          "bytes": 198
+        },
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14/model-00001-of-00004.safetensors",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/blobs/f2c144103072514542e327fa8080bd375cb300f2d453fba9ca3aea81d0d4cf33",
+          "bytes": 4976698672
+        },
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14/model-00002-of-00004.safetensors",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/blobs/d9eee5f23d94405d90b7e9ff88b9443fee42f8528a658f54214c2aba7530d80c",
+          "bytes": 4999802720
+        },
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14/model-00003-of-00004.safetensors",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/blobs/4b8fbc5e113f69768dd8de84661ea20af8a32b734a9976144b4236c447b40ccc",
+          "bytes": 4915916176
+        },
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14/model-00004-of-00004.safetensors",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/blobs/5dc34e6bdf2da9e35f0d93b5c333c870f3677dc43dc3a91ea3a8ad28a1fe1acb",
+          "bytes": 1168138808
+        },
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14/model.safetensors.index.json",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/blobs/0fd8120f1c6acddc268ebc2583058efaf699a771",
+          "bytes": 23950
+        },
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14/special_tokens_map.json",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/blobs/9c44d1d78fb1f530d4839937d9850f6f5621206d",
+          "bytes": 350
+        },
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14/tokenizer.json",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/blobs/b197f72effb9d5ed16ee0f5663e11e4cfac2ba62",
+          "bytes": 9085698
+        },
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/snapshots/b0c09b815d8a74b70622c740f108c995c5041a14/tokenizer_config.json",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--llama-3-8b/blobs/6b7e24ffc27d3786a23045df96fc0bbbe02ce9d3",
+          "bytes": 50641
+        }
+      ]
+    },
+    {
+      "repository": "ruikangliu/FlatQuant",
+      "revision": "cb4929bb6508633fb3bdf2726d38223fc14b4c2c",
+      "snapshot": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ruikangliu--FlatQuant/snapshots/cb4929bb6508633fb3bdf2726d38223fc14b4c2c",
+      "files": [
+        {
+          "path": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ruikangliu--FlatQuant/snapshots/cb4929bb6508633fb3bdf2726d38223fc14b4c2c/llama-3-8b/w4a4/flat_matrices.pth",
+          "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ruikangliu--FlatQuant/blobs/089cf7313e5d4c238bb6294145f525a0793bb3821ac49f584bebc690881971fd",
+          "bytes": 34684674
+        }
+      ]
+    }
+  ],
+  "original": {
+    "repository": "meta-llama/Meta-Llama-3-8B",
+    "revision": "8cde5ca8380496c9a6cc7ef3a8b46a0372a1d920",
+    "weight_lfs_sha256": {
+      "model-00001-of-00004.safetensors": "f2c144103072514542e327fa8080bd375cb300f2d453fba9ca3aea81d0d4cf33",
+      "model-00002-of-00004.safetensors": "d9eee5f23d94405d90b7e9ff88b9443fee42f8528a658f54214c2aba7530d80c",
+      "model-00003-of-00004.safetensors": "4b8fbc5e113f69768dd8de84661ea20af8a32b734a9976144b4236c447b40ccc",
+      "model-00004-of-00004.safetensors": "5dc34e6bdf2da9e35f0d93b5c333c870f3677dc43dc3a91ea3a8ad28a1fe1acb"
+    },
+    "access": "Official config download returned GatedRepoError401; public unsloth mirror has identical four published weight hashes"
+  },
+  "ended_utc": "2026-11-11T04:08:27.321407+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "collected_utc": "2026-11-10T13:25:26.360613+00:00",
+  "command": [
+    "squeue",
+    "-j",
+    "1733347,1733348,1733349,1733476,1733477",
+    "-o",
+    "%.18i %.30j %.10T %.10M %.30R"
+  ],
+  "stdout": "             JOBID                           NAME      STATE       TIME               NODELIST(REASON)\n           1733476        e38-int8-accuracy-seed0    PENDING       0:00                     (Priority)\n           1733347           e38-fp16-eight-tasks    PENDING       0:00                     (Priority)\n           1733348           e38-fp16-eight-tasks    PENDING       0:00                     (Priority)\n           1733349            e38-ref-tasks-seed0    PENDING       0:00                     (Priority)\n           1733477          e38-int8-timing-seed0    RUNNING       0:14                      gpu-a40-2\n",
+  "stderr": "",
+  "seed": 0,
+  "relative_ppl_gate": 0.005
+}

@@ -1,0 +1,167 @@
+{
+  "run_id": "preflight-bf16-3b-001",
+  "experiment": "E38",
+  "status": "PREFLIGHT_PASS",
+  "kind": "environment_anchor_preflight",
+  "started_utc": "2026-11-10T05:51:00.165454+00:00",
+  "hostname": "login-3.cluster02.eee.ntu.edu.sg",
+  "command": "/projects/nar/nar-validation/venv/bin/python /home/yanlongc/prismquant-rebuttal-e38/nar/e38_anchor.py --preflight-only --run-id preflight-bf16-3b-001 --model-snapshot /projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331 --tokens /projects/nar/nar-validation/cache/tokenized/llama32_3b-wikitext2-test-full-l2048.pt",
+  "seed": 0,
+  "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+  "slurm": {
+    "SLURM_JOB_ID": null,
+    "SLURM_JOB_NODELIST": null,
+    "SLURM_JOB_GPUS": null,
+    "SLURM_CPUS_PER_TASK": null,
+    "SLURM_MEM_PER_NODE": null,
+    "CUDA_VISIBLE_DEVICES": null
+  },
+  "scope": "Frozen E14 BF16 reference replay; no deployed INT4 quality or timing claim.",
+  "commit": "1ead849c3d6c70267ca68d38d60fe6d8d01ee883",
+  "source_sha256": {
+    "nar/e38_anchor.py": "cb251fd850b4f212b4085d046976cfc21af5dcb9fbf00beca4c89db46f50eacb",
+    "nar/e14_bf16_reference.py": "d1001632f21c1bb14177ae11ffcea6cf8174dbdf604a13fa145f9c954174da4d",
+    "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+    "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+    "nar/activation_experiments.py": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d",
+    "slurm_e38_anchor.sh": "bd2e71671b289630268bd597bd24db442b4a390a5f13323257190d731bcb8c05",
+    "experiments/e38_protocol.json": "bba6a188b441ce50a1711b4a8e18aa66f3313f77a7d006e3bc98a433bf1a76d5"
+  },
+  "libraries": {
+    "torch": {
+      "version": "2.11.0+cu128",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "transformers": {
+      "version": "5.16.0.dev0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": {
+        "url": "https://github.com/huggingface/transformers.git",
+        "vcs_info": {
+          "commit_id": "a353632607c59463e6ced86a44c2de3c2cd62d5e",
+          "requested_revision": "main",
+          "vcs": "git"
+        }
+      }
+    },
+    "triton": {
+      "version": "3.6.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "datasets": {
+      "version": "5.0.1",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "accelerate": {
+      "version": "1.14.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "numpy": {
+      "version": "2.4.6",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "lm_eval": {
+      "version": "0.4.14.dev0",
+      "location": "/home/yanlongc/.e13_packages",
+      "direct_url": {
+        "dir_info": {},
+        "url": "file:///home/yanlongc/lm-evaluation-harness-upstream"
+      }
+    },
+    "huggingface-hub": {
+      "version": "1.28.0",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    },
+    "tokenizers": {
+      "version": "0.23.1",
+      "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+      "direct_url": null
+    }
+  },
+  "hardware": {
+    "hostname": "login-3.cluster02.eee.ntu.edu.sg",
+    "python": "3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]",
+    "torch": "2.11.0+cu128",
+    "cuda_available": false,
+    "slurm_job_id": null,
+    "slurm_job_gpus": null
+  },
+  "model": "llama32_3b",
+  "model_id": "unsloth/Llama-3.2-3B",
+  "model_snapshot": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331",
+  "model_revision": "d4446454d87d51aa42e1fb174f25acc5f8762331",
+  "model_files": [
+    {
+      "file": "config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/eeab235d033323f98b16ee4c9bf2158e800ab8e1",
+      "bytes": 890,
+      "content_sha256": "c0a6833b9da6e99a2a8920e879de7c1532c78883948327658cfdbd1eac6d5be6"
+    },
+    {
+      "file": "generation_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/e9d7febb8a39c5a6f5fb8a2353806fba6cfff1fb",
+      "bytes": 230,
+      "content_sha256": "282855859ac10d3ccc1ff79fde2f8bf1568734d5d4e0c06f6173121d79b76e56"
+    },
+    {
+      "file": "model-00001-of-00002.safetensors",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+      "bytes": 4965799096,
+      "content_sha256": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002"
+    },
+    {
+      "file": "model-00002-of-00002.safetensors",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb",
+      "bytes": 1459729952,
+      "content_sha256": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb"
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/d3a1f0f5f401eeadca0c7a6786bd9e877fd42e58",
+      "bytes": 20919,
+      "content_sha256": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/68b10c7f0a479eae0c358eac6a14959b3f9acdf1",
+      "bytes": 459,
+      "content_sha256": "32f404d626cf7b1b6eea36c241ae7cbd6ec29c777a8701ea48c0fe9ebb94c9b1"
+    },
+    {
+      "file": "tokenizer.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+      "bytes": 17209920,
+      "content_sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/8a071772876bc826e78c6649464bf838205fe5d1",
+      "bytes": 50641,
+      "content_sha256": "8ca815f697b8f6953d9bad3130ddd6238b99d36c20fde052cf730207ac0926d4"
+    }
+  ],
+  "evaluation_tokens": {
+    "path": "/projects/nar/nar-validation/cache/tokenized/llama32_3b-wikitext2-test-full-l2048.pt",
+    "sha256": "0b1879cd29bec44e095f6ed5fa5c672a1cb1d7dac199c7f33ec5eca400e05a50",
+    "shape": [
+      141,
+      2048
+    ],
+    "bos": "none added"
+  },
+  "reference": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/results/llama32_3b/e14_bf16_reference_seed0_ppl.json",
+    "sha256": "42692fc9af89aa99a0bd24d0396150460e0b5d58d9ddc25913f6d138c12a40d1",
+    "ppl": 7.819581289874704
+  },
+  "tolerance_ppl_abs": 0.01,
+  "prompt_anchor_ppl": 7.8,
+  "prompt_anchor_status": "Different from frozen legacy reference; provenance unresolved",
+  "finished_utc": "2026-11-10T05:51:53.868053+00:00"
+}

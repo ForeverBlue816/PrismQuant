@@ -1,0 +1,27 @@
+{
+  "kind": "scheduler_completion",
+  "observed_utc": "2026-11-10T07:37:21.582906+00:00",
+  "command": [
+    "sacct",
+    "-j",
+    "1732842",
+    "--format=JobID,JobName%22,State,ExitCode,Elapsed,Start,End,NodeList%25",
+    "-P"
+  ],
+  "returncode": 0,
+  "stdout": "JobID|JobName|State|ExitCode|Elapsed|Start|End|NodeList\n1732842|prism-e38-anchor|COMPLETED|0:0|00:01:21|2026-11-10T06:58:02|2026-11-10T06:59:23|gpu-pro6000-10\n1732842.batch|batch|COMPLETED|0:0|00:01:21|2026-11-10T06:58:02|2026-11-10T06:59:23|gpu-pro6000-10\n1732842.extern|extern|COMPLETED|0:0|00:01:21|2026-11-10T06:58:02|2026-11-10T06:59:23|gpu-pro6000-10\n",
+  "stderr": "",
+  "job_id": "1732842",
+  "result_file": "anchor-bf16-3b-job1732842.json",
+  "result_sha256": "1de198ba5bc57d2db66ba5f280c37a0cafad92c78fb89749584a15e8e948dc03",
+  "captured_logs": {
+    "runs/e38-anchor-1732842.out": {
+      "sha256": "0931a21398f09dd158348a8ee5a6fc12041772280cc24e207189a5c08c83e2ef",
+      "text": "2026-11-10T06:59:06Z INFO loading model /projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331\n2026-11-10T06:59:11Z INFO E38 frozen E14 BF16 anchor PPL chunk 1/141 nll=1.836231\n2026-11-10T06:59:12Z INFO E38 frozen E14 BF16 anchor PPL chunk 17/141 nll=2.123729\n2026-11-10T06:59:13Z INFO E38 frozen E14 BF16 anchor PPL chunk 33/141 nll=2.004045\n2026-11-10T06:59:15Z INFO E38 frozen E14 BF16 anchor PPL chunk 49/141 nll=2.023246\n2026-11-10T06:59:16Z INFO E38 frozen E14 BF16 anchor PPL chunk 65/141 nll=1.893295\n2026-11-10T06:59:17Z INFO E38 frozen E14 BF16 anchor PPL chunk 81/141 nll=1.871365\n2026-11-10T06:59:18Z INFO E38 frozen E14 BF16 anchor PPL chunk 97/141 nll=2.232045\n2026-11-10T06:59:20Z INFO E38 frozen E14 BF16 anchor PPL chunk 113/141 nll=2.183767\n2026-11-10T06:59:21Z INFO E38 frozen E14 BF16 anchor PPL chunk 129/141 nll=2.048442\n{\"status\": \"PASS\", \"log\": \"/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/anchor-bf16-3b-job1732842.json\", \"ppl\": 7.819581289874704}\n"
+    },
+    "runs/e38-anchor-1732842.err": {
+      "sha256": "9b4de284ee5cf414d24028ee2a1cc21069cb614761af0dc0a772402095228163",
+      "text": "\nLoading weights:   0%|          | 0/254 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 254/254 [00:00<00:00, 20797.93it/s]\n"
+    }
+  }
+}

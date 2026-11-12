@@ -1,0 +1,35 @@
+{
+  "kind": "append_only_restore_provenance_amendment",
+  "created_utc": "2026-11-10T11:47:09.194650+00:00",
+  "script": "scripts/e38_restore_seed0.py",
+  "script_sha256": "8b9eb9fdaaaebff65bff3facc4c5b96dc59d055ce7edc700aa86bcc60d43c09f",
+  "matching_committed_source": "4bf6a7a9218f4b2a9d1793e380d0defc262030ba",
+  "explanation": "Restore started while this new script was untracked. The launch HEAD was recorded accurately, and the script content hash now matches this committed source. Original manifests remain untouched.",
+  "manifests": [
+    {
+      "manifest": "results/e38/raw/restore_seed0_3b_hadamard_001.json",
+      "state_at_collection": "COMPLETE",
+      "launch_source_commit": "fbf056ff6a6a8b666838998084d10ce43d139d6e"
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_3b_kmax_local_001.json",
+      "state_at_collection": "ALREADY_VERIFIED_LOCAL",
+      "launch_source_commit": "fbf056ff6a6a8b666838998084d10ce43d139d6e"
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_3b_nar_k8_001.json",
+      "state_at_collection": "COMPLETE",
+      "launch_source_commit": "8851a692dbd877a93d45ca84cd6f1a3bc5235420"
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_8b_nar_kmax_001.json",
+      "state_at_collection": "DOWNLOADING",
+      "launch_source_commit": "8851a692dbd877a93d45ca84cd6f1a3bc5235420"
+    },
+    {
+      "manifest": "results/e38/raw/restore_seed0_preflight_001.json",
+      "state_at_collection": "PREFLIGHT_PASS",
+      "launch_source_commit": "fbf056ff6a6a8b666838998084d10ce43d139d6e"
+    }
+  ]
+}

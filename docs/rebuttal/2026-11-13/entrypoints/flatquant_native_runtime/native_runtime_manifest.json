@@ -1,0 +1,162 @@
+{
+  "status": "BUILD_ABI_FULL_GPU_IMPORT_AND_TINY_KERNEL_SMOKE_COMPLETE",
+  "observed_utc": "2026-11-12T15:49:34.257496+00:00",
+  "python": "/projects/nar/nar-validation/e28-env/bin/python",
+  "python_version": "3.11.16",
+  "torch": {
+    "path": "/projects/nar/nar-validation/flatquant-native-runtime/packages/torch/__init__.py",
+    "version": "2.6.0+cu124",
+    "sha256": "5a190666c3853aa236c4d48ed64e2d4bbcd23bd32c21e64c0867646a6852e43f"
+  },
+  "cuda_runtime": "12.4",
+  "transformers": {
+    "path": "/home/yanlongc/.prismquant/llama31-baseline-packages/transformers/__init__.py",
+    "version": "4.45.0",
+    "sha256": "37ba70fdf1acdf8dc47d21d12a5fa2896d773211c8dfd4b73f5ed031bc6c0713"
+  },
+  "triton": {
+    "path": "/projects/nar/nar-validation/flatquant-native-runtime/packages/triton/__init__.py",
+    "version": "3.2.0",
+    "sha256": "6ee0b6e8d20e313e9cc26a1891ce63938ea36f77e996863afdb39960ac3374a4"
+  },
+  "flash_attn": {
+    "path": "/projects/nar/nar-validation/flatquant-native-runtime/packages/flash_attn/__init__.py",
+    "version": "2.7.4.post1",
+    "sha256": "19de6aae2ed6ace6bd29a0fa45c1872da7302b308bc2461144d3152f1a287ab8"
+  },
+  "fast_hadamard_transform": {
+    "path": "/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124/third-party/fast-hadamard-transform/fast_hadamard_transform/__init__.py",
+    "version": "1.0.4.post1",
+    "sha256": "75fc4e1f8b3795517648fa5ce564d83f806749e348f7a77933e6ccbe0519dccc"
+  },
+  "deploy_cuda": {
+    "path": "/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124/deploy/_CUDA.cpython-311-x86_64-linux-gnu.so",
+    "version": null,
+    "sha256": "991e4ceec6006232e672fe4423d28433f512111f66501839d517cf6d2e7d4b77"
+  },
+  "fht_cuda": {
+    "path": "/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124/third-party/fast-hadamard-transform/fast_hadamard_transform_cuda.cpython-311-x86_64-linux-gnu.so",
+    "version": null,
+    "sha256": "8fe63df58f14b34abe5448c5c6543811902dcfe54fa5ccc332c045785ee0922c"
+  },
+  "official_source": "/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124",
+  "official_commit": "9d88ffcb7d2c6bda59fb5c44dad36adc101aadb1",
+  "cutlass_commit": "ad7b2f5e84fcfa124cb02b91d5bd26d238c0459e",
+  "fht_commit": "d1a56eee9d502e67faacf61b7b947180d66b32a0",
+  "torch_cxx11abi": false,
+  "architecture": "SM86/A40 only",
+  "source_policy": "Original official CUDA sources and pinned CUTLASS/FHT; architecture restricted toSM86 and build parallelism reduced; numerical algorithms unchanged",
+  "gpu_operations_executed": true,
+  "no_fp16_or_random_weight_benchmark": true,
+  "environment_script": "/home/yanlongc/.prismquant/flatquant-native-tools/environment_torch26.sh",
+  "build_script": "/home/yanlongc/.prismquant/flatquant-native-tools/build_torch26.sh",
+  "limitations": [
+    "GPU checks cover deterministic tiny kernels only; real-checkpoint PPL, full model execution and performance are still unmeasured by this build task",
+    "Llama3.2-3B hidden3072 is outside the documented power-of-two hidden-size condition; actual supported shapes need GPU verification",
+    "Native backend prefill/KV semantics differ from fake-quant accuracy path; it requires its own PPL",
+    "Torch2.11-produced quantized checkpoints must be checked for load/export compatibility in torch2.6",
+    "Unchanged official dequant truncates q/10.0f to int then rescales by10; tiny kernel differs from ideal dequant. This is not a model accuracy measurement."
+  ],
+  "full_model_module_import": {
+    "status": "COMPLETE",
+    "context": "Historical allocated A40 smoke job1736285 step4; current CPU-only import is recorded separately"
+  },
+  "source_sha256": {
+    "deploy/__init__.py": "fe15cd87e073be9cb9e5e9891720b48541bb4f079e519542090f87fbe9fd088b",
+    "deploy/functional/__init__.py": "2ff168f9995bb3b740636422a335d6a09b2a29924058aa08f4247645c904554c",
+    "deploy/functional/online_trans.py": "7a7f4d8ae4ab4ac5d055fedd87adf1160e545010ea0cfd32361d6dde43a7805d",
+    "deploy/functional/quantization.py": "9a842ee7070e3fdecb239d7ba638da9b2422e6f252d6ae0b4c9d2911897e73ef",
+    "deploy/kernels/bindings.cpp": "9c1ecbe5fe80327aa81d7b896b70230a6ba7ef38edcb5c95f0b102b7f9d7488f",
+    "deploy/kernels/block_matmul.py": "7cbfcf6225315737a0875b6e149ad3a00c310e0e1deabfabf4e35c60bd02e0fb",
+    "deploy/kernels/flashinfer.cu": "3189be8da9c232fa6e2663cb3a6c40efcc6fd53d597cc8e235944db948dfae27",
+    "deploy/kernels/gemm.cu": "a351529098342c4e92d2a773ea33a08436e03b4bffb5efdd84b7542d95d7eabd",
+    "deploy/kernels/include/common.h": "7698f99d691fc342353b86896e36ed3efe7bb1fd2332d887f55fe9dd6b7ee91d",
+    "deploy/kernels/include/flashinfer/cp_async.cuh": "77cb840944b97135160da7a35314f6740684735ad988057559dec0061ca00d51",
+    "deploy/kernels/include/flashinfer/decode.cuh": "91e79143026e1d45e85ddbaff4354c364cc5d6c0baf68333450587bb536d585e",
+    "deploy/kernels/include/flashinfer/layout.cuh": "4135828e6fdf0879e2ac67592f98c08109ae7de3e7acc87bb45de02aa7df2b94",
+    "deploy/kernels/include/flashinfer/math.cuh": "a0c6e60102fa8601153e8d15d45c6db56fbb76f931bb01bbfe02b6d4a0251042",
+    "deploy/kernels/include/flashinfer/mma.cuh": "b978041ba9a207d9e8500cc1b56c8ec76bac857bb823239e84699756d009ad46",
+    "deploy/kernels/include/flashinfer/page.cuh": "d9eaf161158e645b02894ba950aeabbfc572755551220a60e9f4d661e41fbcd6",
+    "deploy/kernels/include/flashinfer/permuted_smem.cuh": "fadff9182d5922be9314edc3af8da7a77dfc844af0735a4abaf8a63b11c0c582",
+    "deploy/kernels/include/flashinfer/prefill.cuh": "22a6cd858792dd6d4b5ceed9d3e52b2665be086833db1b03028319ced3a96654",
+    "deploy/kernels/include/flashinfer/quantization.cuh": "7fd7a53e6cdcfb77d418073005de5af3501d407d21b4475fa845cce1b2df38c7",
+    "deploy/kernels/include/flashinfer/rope.cuh": "22722b1ea0f8b56026bcdebd66650abbad562fedad90a80975c564c5e8ae50f8",
+    "deploy/kernels/include/flashinfer/state.cuh": "51660b86ebe77f8a9dbdb17f57fca81ecff4ba19177e6ce43700eaa829f9648f",
+    "deploy/kernels/include/flashinfer/utils.cuh": "ca7c952ea92c5816b16dcf16c9af448405ab322767f8634da55471c26367a72d",
+    "deploy/kernels/include/flashinfer/vec_dtypes.cuh": "f55146f8426b0cf36dfe8d9004dbd259c07217fdd88fe668a0bd13021d233694",
+    "deploy/kernels/include/flashinfer.h": "941e854dbe6634acd52e649627a2589d9abb15b1e337267f7a469cd339b23804",
+    "deploy/kernels/include/gemm.h": "790e7cd9ddeb92752f959604c44957d36c7539be509aa1fd843beaaa2dac9bdc",
+    "deploy/kernels/include/int4.h": "02a8334f25a18eade476fe740520edd510c562f9a4c60c42bcd26e7f4cc7b22d",
+    "deploy/kernels/include/quant.h": "9826d20b9a058a03cecd98fbafb437c632f42892005e228d6efd4d836eb576e0",
+    "deploy/kernels/include/util.h": "601a9ae7170643658a0ee7f4ed760e69413de22348561798f6df516d2dc8f400",
+    "deploy/kernels/kron_matmul.py": "34d2289c5594917a6157bc46713c54ecb0a741843a4547befbec86ed4df3569e",
+    "deploy/kernels/quant.cu": "726d45bfdabfaa541bf6235fd12199022bae765842079c6fbed6b74865049c1d",
+    "deploy/nn/__init__.py": "f7aa2a939239d6394aafbdd40ed472c05c887299c179702f7987aca70ddb11ae",
+    "deploy/nn/linear.py": "0270580842844a539252fbde225dc20ac77013bbda48cd46560d49a6cb3d535a",
+    "deploy/nn/normalization.py": "6aee530e033f7b9f76af7d5733551baf9f2982a92ccde05471dda52a315c911f",
+    "deploy/nn/online_trans.py": "d19bee19c9f89e86f1512b756dc18d7685ae6c7462473359f94cf84d9fdb00ca",
+    "deploy/nn/quantization.py": "65a04e9842a3d01b7b38d7401f66bfcc93d88cd1539fe60a961cae07a3d96ec1",
+    "deploy/transformers/__init__.py": "bc35d8901f4b460d40b0f621269b67f011b297cf173d7f12dcc8eecd8ba034d6",
+    "deploy/transformers/kv_cache.py": "f425438b9ec8b15cd5157772b3356605b87b7f81eef75e4e8b6ed49d62d63da8",
+    "deploy/transformers/modeling_llama.py": "c04f04028af967c092d74d6e8f5881b3acde6e5fb0fbe03150dbb13ad2a02558"
+  },
+  "build_scripts_sha256": {
+    "build_pinned_fht.py": "01c44508c5571db96e94cd178ae75dc1d0d6395173e7ac6b1cf270a3844e4224",
+    "environment_torch26.sh": "9ea7c48c567fc36624fbddca44465f31a07362ae4ba82e92df4409bc9c2d340d",
+    "build_native_extension.py": "8a9810326c3a8801a6894fcb631297b207752727081497958fc1e2167d064a81",
+    "build.sh": "feef6819909b9eb9e8628f17ba947c775519227ebf2108273de6d5d033d3c163",
+    "environment.sh": "8fc8e93b9e8aaacaddf15e945eaf97b75eb790ba15347bc71c6ff835dfefb717",
+    "install_runtime.sh": "b0fa6cb8eba23737e890af86a16cd539ed29d667597ba8eac32047738acb5ffd",
+    "build_native_extension_torch26.py": "bcfad154476c7befa7405bcc0e8db6ee866be65b7524fa7f1e3c798b94e73f49",
+    "gpu_smoke.py": "047ebac4f79e134a31624247dfaa49f926812dfb49a181d4305ca12dd056dae8",
+    "check_runtime.py": "f8bb5cc0f4a30efda4c119eb20777b33283b6e2d0bf52403b8728bf59eae23b9",
+    "gpu_smoke_source_semantics.py": "b3fa88a9f51b1f26df509dd2ce2d0a31516d63070af6ceb5658133dff57543ea",
+    "build_torch26.sh": "645201febf3c35e8d6e163c4bd58701bfd95295217ad459233288d5e25b2f200"
+  },
+  "gpu_validation": {
+    "evidence_path": "/home/yanlongc/.prismquant/flatquant-native-tools/native_gpu_smoke_1736285_source_semantics.json",
+    "status": "COMPLETE",
+    "job_id": "1736285",
+    "step_id": "4",
+    "hostname": "gpu-a40-1.cluster02.eee.ntu.edu.sg",
+    "cuda_visible_devices": "0",
+    "purpose": "Deterministic tiny kernel correctness only; no model, FP16control, throughput or latency benchmark",
+    "checks": {
+      "full_native_model_module_import": "PASS",
+      "signed4_gemm_exact": "PASS",
+      "signed4_quant_exact": "PASS",
+      "int32_dequant_official_source_exact": "PASS",
+      "pinned_fht128_exact": "PASS"
+    },
+    "libraries": {
+      "torch": "2.6.0+cu124",
+      "transformers": "4.45.0",
+      "triton": "3.2.0",
+      "flash_attn": "2.7.4.post1"
+    },
+    "gpu_name": "NVIDIA A40",
+    "gpu_count": 1,
+    "deploy_cuda": "/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124/deploy/_CUDA.cpython-311-x86_64-linux-gnu.so",
+    "dequant_ideal_difference": {
+      "max_abs": 1.125,
+      "different_values": 476,
+      "values": 512,
+      "scope": "Tiny deterministic kernel input only, not model/logit/PPL error"
+    },
+    "dequant_source_difference": {
+      "max_abs": 0.0,
+      "source": "quant.cu: int_to_half static_cast<int>(q/10.0f), clamp, convert half, half scale products, multiply half10"
+    },
+    "verified_binary_sha256": {
+      "deploy_cuda": "991e4ceec6006232e672fe4423d28433f512111f66501839d517cf6d2e7d4b77",
+      "fht_cuda": "8fe63df58f14b34abe5448c5c6543811902dcfe54fa5ccc332c045785ee0922c"
+    },
+    "verification_utc": "2026-11-12T15:49:32.749970+00:00"
+  },
+  "installation_note": "Initial default-temp installation hit quota before target install; isolated project target/temp succeeded; shared environments unchanged.",
+  "current_context_model_module_import": {
+    "status": "GPU_DRIVER_REQUIRED",
+    "error": "RuntimeError('0 active drivers ([]). There should only be one.')",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/yanlongc/.prismquant/flatquant-native-tools/check_runtime.py\", line 16, in <module>\n    import deploy\n  File \"/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124/deploy/__init__.py\", line 3, in <module>\n    from . import functional\n  File \"/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124/deploy/functional/__init__.py\", line 2, in <module>\n    from .online_trans import (\n  File \"/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124/deploy/functional/online_trans.py\", line 3, in <module>\n    from deploy.kernels.kron_matmul import kron_matmul\n  File \"/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124/deploy/kernels/kron_matmul.py\", line 11, in <module>\n    @triton.autotune(\n     ^^^^^^^^^^^^^^^^\n  File \"/projects/nar/nar-validation/flatquant-native-runtime/packages/triton/runtime/autotuner.py\", line 368, in decorator\n    return Autotuner(fn, fn.arg_names, configs, key, reset_to_zero, restore_value, pre_hook=pre_hook,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/projects/nar/nar-validation/flatquant-native-runtime/packages/triton/runtime/autotuner.py\", line 130, in __init__\n    self.do_bench = driver.active.get_benchmarker()\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/projects/nar/nar-validation/flatquant-native-runtime/packages/triton/runtime/driver.py\", line 23, in __getattr__\n    self._initialize_obj()\n  File \"/projects/nar/nar-validation/flatquant-native-runtime/packages/triton/runtime/driver.py\", line 20, in _initialize_obj\n    self._obj = self._init_fn()\n                ^^^^^^^^^^^^^^^\n  File \"/projects/nar/nar-validation/flatquant-native-runtime/packages/triton/runtime/driver.py\", line 8, in _create_driver\n    raise RuntimeError(f\"{len(actives)} active drivers ({actives}). There should only be one.\")\nRuntimeError: 0 active drivers ([]). There should only be one.\n"
+  }
+}

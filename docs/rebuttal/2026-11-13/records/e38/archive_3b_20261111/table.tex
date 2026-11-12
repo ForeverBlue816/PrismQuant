@@ -1,0 +1,53 @@
+% Seed0 direct accuracy; full141 PPL, eight zero-shot tasks.
+\begin{tabular}{llrr}
+\toprule
+Model / implementation & GPU & PPL & Eight-task avg (\%) \\
+\midrule
+3B FP16 & A40 & 7.81658 & 62.73 \\
+3B PQ k=max simulator & A40 & 8.71802 & 60.03 \\
+3B PQ k=max integer prototype & PRO6000 Server & 8.71940 & 60.50 \\
+8B FP16 & A40 & 6.23843 & 68.68 \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{lrrrr}
+\toprule
+Task & 3B FP16 & 3B PQ sim. & 3B PQ int. & 8B FP16 \\
+\midrule
+arc\_easy & 72.10 & 71.55 & 70.71 & 82.58 \\
+arc\_challenge & 46.25 & 44.11 & 43.60 & 54.95 \\
+boolq & 74.16 & 68.84 & 70.37 & 83.06 \\
+hellaswag & 74.16 & 71.08 & 71.14 & 79.30 \\
+openbookqa & 41.00 & 38.80 & 39.80 & 45.40 \\
+piqa & 78.02 & 74.76 & 75.30 & 81.18 \\
+social\_iqa & 46.72 & 44.11 & 44.88 & 48.36 \\
+winogrande & 69.46 & 67.01 & 68.19 & 74.59 \\
+\bottomrule
+\end{tabular}
+
+% Historical timing is a separate job1733011, A40 B1, median [IQR].
+\begin{tabular}{lrrr}
+\toprule
+Model & Prefill (ms) & Decode (tokens/s) & Peak GiB (P/D) \\
+\midrule
+3B FP16 & 210.955 [0.576] & 42.911 [0.134] & 8.105 / 8.119 \\
+8B FP16 & 417.469 [0.889] & 29.038 [0.011] & 17.446 / 17.462 \\
+\bottomrule
+\end{tabular}
+
+% Item bootstrap; different GPUs; no seed/hardware uncertainty or multiplicity adjustment.
+\begin{tabular}{lrr}
+\toprule
+Task & Difference (pp) & 95\% interval (pp) \\
+\midrule
+arc\_easy & -0.8418 & [-1.9360, +0.2946] \\
+arc\_challenge & -0.5119 & [-2.3038, +1.3652] \\
+boolq & +1.5291 & [+0.3058, +2.7523] \\
+hellaswag & +0.0597 & [-0.3585, +0.4880] \\
+openbookqa & +1.0000 & [-1.0000, +3.0000] \\
+piqa & +0.5441 & [-0.7617, +1.8498] \\
+social\_iqa & +0.7677 & [-0.4094, +1.8936] \\
+winogrande & +1.1839 & [-1.1050, +3.4728] \\
+Eight-task mean & +0.4663 & [-0.0649, +1.0020] \\
+\bottomrule
+\end{tabular}
