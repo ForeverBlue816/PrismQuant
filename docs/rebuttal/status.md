@@ -1,35 +1,32 @@
 # Rebuttal 当前实验状态
 
-更新时间：**2026-11-13 01:03 新加坡时间**。当前优先完成官方 **DuQuant、FlatQuant** 的 PPL、八任务和速度；模型为 Llama-3.2-3B 和 Meta-Llama-3.1-8B。
+更新时间：**2026-11-13 11:23 新加坡时间**。
 
-## Llama-3.2-3B — seed0，官方方法原生量化配置，浮点 fake-quant 执行
+**OffQ不运行，也不进行无公开官方代码的复现。** 当前队列无OffQ，历史通用worker2已明确禁用。当前优先完成官方FlatQuant和DuQuant。
 
-| 方法 | 配置 | 完整141段 PPL | 八任务 | 计时 |
-| --- | --- | ---: | --- | --- |
-| FlatQuant | W4 RTN / per-token symmetric A4 / per-head asymmetric KV4；BF16 fake-quant；15 epochs | **8.716573** | 0/8完成，继续运行 | checkpoint已完成，已解除对八任务结束的依赖，排队中 |
-| DuQuant | 官方run.sh W4A4、QK/V quantizers；FP16 fake-quant；epochs0 | **10.349871** | 3/8完成，继续运行 | checkpoint已完成，同一个计时作业排队中 |
+## Llama-3.2-3B — seed0：PPL、八任务、同卡速度全部完成
 
-两行使用相同3B测试tokens，均为141×2048窗口、288,627个scored tokens。FlatQuant − DuQuant 的配对PPL差为 **−1.633298**，95%区间 **[−1.724958, −1.544721]**；20,000次逐段bootstrap，固定seed0，不代表校准种子不确定性。尚无完整八任务均值。
+| 方法 / 官方配置 | 完整141段 PPL | 八任务均值 | Prefill median | Decode median | 峰值allocated |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| FlatQuant，W4RTN/A4/KV4，BF16 fake-quant，15 epochs | **8.716573** | **60.5431%** | **580.081 ms** | **7.5693 tokens/s** | 7.2548 GiB |
+| DuQuant，官方W4A4/QK/V quantizers，FP16 fake-quant，epochs0 | **10.349871** | **57.5025%** | **606.882 ms** | **6.7625 tokens/s** | 7.1000 GiB |
 
-FlatQuant完成15轮变换训练，耗时 **71.80分钟 / 1.19663 GPU小时**，训练峰值allocated显存 **13.200 GiB**。DuQuant采用官方run.sh的epochs0配置，**不是DuQuant+LWC20epoch**。没有为拟合论文数字调整参数。
+**速度是官方浮点fake-quant实现的运行时间，不是原生packed INT4 kernel性能。** 两条速度行在job1736286同一张独占A40上顺序完成，各43/43独占检查通过；B1、prefix2048、decode128/drop8、token100、10次warmup/20次计时、fresh cache、last-position logits。每条路径用同一已加载模型先测完整PPL再计时，141段NLL与其校准后记录逐段相同。
 
-[FlatQuant完整PPL记录](updates/2026-11-13-0100/flatquant_3b_ppl.json) · [DuQuant完整PPL记录](2026-11-13/records/e42/raw/duquant_3b_seed0_quantize-ppl_retry1_job1736285.json) · [配对CI与来源](updates/2026-11-13-0100/paired_ppl_collection.json)
+[逐任务结果](updates/2026-11-13-1115/eight_tasks_table.md) · [FlatQuant八任务原始汇总](updates/2026-11-13-1115/flatquant_3b_eight_tasks.json) · [DuQuant完整八任务与复用证据](updates/2026-11-13-1115/duquant_3b_eight_tasks_complete.json) · [FlatQuant计时](updates/2026-11-13-1115/flatquant_3b_timing.json) · [DuQuant计时](updates/2026-11-13-1115/duquant_3b_timing.json)
+
+两方法使用相同141×2048测试窗口、288,627 scored tokens。配对FlatQuant−DuQuant PPL差 **−1.633298**，95%逐段bootstrap区间 **[−1.724958,−1.544721]**（20,000次，固定seed0）。该区间不代表校准种子变化。DuQuant为官方run.sh的epochs0配置，不是DuQuant+LWC20epoch；没有调参拟合论文。
+
+DuQuant旧作业的最后一项Winogrande曾被取消；job1736906验证并复用七个完整任务，仅补测缺失的一项，现已得到完整八任务均值。原中断记录保留并标为INTERRUPTED，不能再当作运行中的任务。
 
 ## Meta-Llama-3.1-8B — 官方FlatQuant、DuQuant
 
-精度作业 **1736252** 仍为 **PENDING / Priority**；没有已完成的8B FlatQuant/DuQuant PPL或八任务数字。已检查其他合法GPU资源：重新提交的估计等待更长，保留现有队列年龄。集群拒绝修改既有作业TimeLimit，因此该作业实际仍为原来的72小时上限；这不是已经运行72小时。
+精度作业 **1736252** 仍在Priority排队，尚无完整8B FlatQuant/DuQuant PPL或八任务结果。部署比较1736351等待对应checkpoint作业。保留原排队年龄，没有新增FP16或OffQ工作。
 
-## 作业推进
+[本轮调度快照](updates/2026-11-13-1115/scheduler_completion.json) · [源文件与导出SHA](updates/2026-11-13-1115/manifest.json) · [当前范围/OffQ禁用](updates/2026-11-13-1115/protocol.json)
 
-- **1736285**：两卡并行3B八任务，两个PPL和量化checkpoint均已完成。
-- **1736286**：3B两方法同卡速度，已清除原afterany1736285依赖；现在按Priority排队，不再等八任务全部结束。
-- **1736252**：8B两方法官方精度，保持原排队年龄。
-- **1736351**：8B同卡跨后端速度，仍等待8B训练checkpoint作业。
+## 之前的PrismQuant部署优化
 
-[调度快照](updates/2026-11-13-0100/scheduler.json) · [调度调整及返回结果](updates/2026-11-13-0100/priority_update.json) · [本次新增记录SHA](updates/2026-11-13-0100/manifest.json)
+PPL **9.9950** 对应 **Meta-Llama-3.1-8B** 的per-token symmetric原生部署变体，不能与上方3B行或论文Table1 g128行混为一谈。它的原版/优化版同卡prefill625.837→346.651ms、decode13.765→18.719tokens/s，完整PPL保持不变。跨方法的8B原生部署比较仍待完成。
 
-## 之前完成的部署优化与历史记录
-
-**PPL9.9950是8B PrismQuant部署变体，不是3B，也不是Table1 g128精度行。** 原版/优化版在同卡上保持141段NLL一致，prefill625.837→346.651ms、decode13.765→18.719tokens/s。与DuQuant/FlatQuant的完整跨方法速度比较尚未完成。
-
-[8B PQ优化表](2026-11-13/records/e38/rotation_optimization/table.md) · [00:27完整归档索引](2026-11-13/README.md)。归档记录保留原时间，本页更新当前进度。
+[8B PQ优化表](2026-11-13/records/e38/rotation_optimization/table.md) · [00:27完整历史归档](2026-11-13/README.md)。

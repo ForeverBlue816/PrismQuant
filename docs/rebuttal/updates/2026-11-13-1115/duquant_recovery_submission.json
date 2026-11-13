@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-13T03:14:53.899822+00:00",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--export=ALL",
+    "slurm_duquant_3b_finish.sh"
+  ],
+  "returncode": 0,
+  "stdout": "1736906\n",
+  "stderr": "",
+  "source_commit": "456c653fb718de61347064b3cf74b821eb5e3588",
+  "model": "Llama-3.2-3B",
+  "method": "DuQuant official",
+  "reused_tasks": 7,
+  "new_tasks": [
+    "winogrande"
+  ],
+  "no_recalibration": true,
+  "offq_excluded": true,
+  "job_id": "1736906"
+}

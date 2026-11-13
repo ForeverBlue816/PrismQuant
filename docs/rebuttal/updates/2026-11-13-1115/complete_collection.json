@@ -1,0 +1,118 @@
+{
+  "model": "Llama-3.2-3B",
+  "created_utc": "2026-11-13T03:23:58.659898+00:00",
+  "rows": {
+    "FlatQuant": {
+      "ppl_source": "[native_3b_seed0_ppl-timing_job1736286.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_ppl-timing_job1736286.json)",
+      "task_source": "[native_3b_seed0_tasks_job1736285.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285.json)",
+      "timing_source": "[native_3b_seed0_ppl-timing_job1736286.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_ppl-timing_job1736286.json)",
+      "calibration_source": "[native_3b_seed0_train-ppl_job1736285.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_train-ppl_job1736285.json)",
+      "task_status": {
+        "raw": "COMPLETE",
+        "display": "COMPLETE",
+        "observation": null
+      },
+      "prior_attempts": [
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_ppl-timing_job1736286.json",
+          "sha256": "aa98be0390c7fb64ce8ce2b093ba8b8645b75b1c806b2ee0b06a74295ceeabf7",
+          "phase": "ppl-timing",
+          "raw_status": "COMPLETE",
+          "status": "COMPLETE"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285.json",
+          "sha256": "e6a325aab60a0715b588b2bf1b2a2fc9458540ea9c7a1b213fccc8c69d3dac6d",
+          "phase": "tasks",
+          "raw_status": "COMPLETE",
+          "status": "COMPLETE"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_train-ppl_job1736285.json",
+          "sha256": "f8f9bb11d79cff9591a6580ba5cedea133bc287eb4b0ef140f1512d0e8712bbc",
+          "phase": "train-ppl",
+          "raw_status": "COMPLETE",
+          "status": "COMPLETE"
+        }
+      ]
+    },
+    "DuQuant": {
+      "ppl_source": "[duquant_3b_seed0_ppl-timing_job1736286.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_ppl-timing_job1736286.json)",
+      "task_source": "[duquant_3b_seed0_eight-tasks_finish_job1736906.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_finish_job1736906.json)",
+      "timing_source": "[duquant_3b_seed0_ppl-timing_job1736286.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_ppl-timing_job1736286.json)",
+      "calibration_source": "[duquant_3b_seed0_quantize-ppl_retry1_job1736285.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_retry1_job1736285.json)",
+      "task_status": {
+        "raw": "COMPLETE",
+        "display": "COMPLETE",
+        "observation": null
+      },
+      "prior_attempts": [
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_ppl-timing_job1736286.json",
+          "sha256": "ccb253c76fdd35fd025046c8dbb693a0f9723e8f34151936dbb240a48840ff71",
+          "phase": "ppl-timing",
+          "raw_status": "COMPLETE",
+          "status": "COMPLETE"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_finish_job1736906.json",
+          "sha256": "3706a681182a6eeb6c65d500a2d12d2a18c8fd7fa66c772bc1f7d985b855b96b",
+          "phase": "eight-tasks",
+          "raw_status": "COMPLETE",
+          "status": "COMPLETE"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_job1736285.json",
+          "sha256": "bfad9de4b3218a1371b018bf50373ff50c12f67fbf4f38acaaa7c5230e53bd0a",
+          "phase": "quantize-ppl",
+          "raw_status": "FAILED",
+          "status": "FAILED"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285.json",
+          "sha256": "76e3aa7fb03e3f60e591f06fc4a00dce36d4a13da2fcbc097d529792cad60f66",
+          "phase": "eight-tasks",
+          "raw_status": "RUNNING",
+          "status": "INTERRUPTED"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_quantize-ppl_retry1_job1736285.json",
+          "sha256": "99eaed8a1d09edfd6b6bc68a2b942a17637ad4d7e2d3bcdd2457df2aacde9e08",
+          "phase": "quantize-ppl",
+          "raw_status": "COMPLETE",
+          "status": "COMPLETE"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry1_job1736285.json",
+          "sha256": "896ac69772bc3225c155c4d7eea4e70995462f6793ca5a719511807813d6a8c0",
+          "phase": "eight-tasks",
+          "raw_status": "RUNNING",
+          "status": "INTERRUPTED"
+        },
+        {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_job1736285.json",
+          "sha256": "e7ad3bba06d75cbd71c112c0b321222040567d55889443725c851384c6f60062",
+          "phase": "eight-tasks",
+          "raw_status": "FAILED",
+          "status": "FAILED"
+        }
+      ]
+    }
+  },
+  "paired_ppl": {
+    "status": "COMPLETE",
+    "point": -1.6332979498833495,
+    "percentile95": [
+      -1.7249579079869877,
+      -1.5447213736112755
+    ],
+    "replicates": 20000,
+    "rng_seed": 20261111,
+    "evaluation_tokens_sha256": "0b1879cd29bec44e095f6ed5fa5c672a1cb1d7dac199c7f33ec5eca400e05a50",
+    "reference_source": "[duquant_3b_seed0_ppl-timing_job1736286.json](/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_ppl-timing_job1736286.json)",
+    "candidate_source": "[native_3b_seed0_ppl-timing_job1736286.json](/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_ppl-timing_job1736286.json)",
+    "scope": "paired test-sequence PPL difference, candidate minus reference; fixed runs, not seed uncertainty or a causal implementation effect"
+  },
+  "same_physical_gpu": true,
+  "selection": "latest attempt per method/model/phase, never score based"
+}

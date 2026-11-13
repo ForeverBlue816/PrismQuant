@@ -1,0 +1,243 @@
+{
+  "kind": "E42_DuQuant_official_native_3b",
+  "status": "RUNNING",
+  "scope": "Official DuQuant W4A4 native configuration in FP16 floating fake-quant modules; not E14 g128/KIVI and not native INT4 deployment",
+  "phase": "eight-tasks",
+  "seed": 0,
+  "model": "Llama-3.2-3B",
+  "model_key": "llama32_3b",
+  "base_revision": "d4446454d87d51aa42e1fb174f25acc5f8762331",
+  "command_line": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "-m",
+    "nar.e42_duquant_native",
+    "--phase",
+    "eight-tasks",
+    "--model",
+    "llama32_3b",
+    "--source-commit",
+    "e989827c42a256ca6cec7858b0cd6fcadfb90fba",
+    "--artifact-dir",
+    "/projects/nar/nar-validation/artifacts/e42/duquant_3b_seed0_v1",
+    "--batch-size",
+    "1",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285.json"
+  ],
+  "source_commit": "e989827c42a256ca6cec7858b0cd6fcadfb90fba",
+  "hostname": "gpu-a40-1.cluster02.eee.ntu.edu.sg",
+  "started_utc": "2026-11-12T16:03:21.152085+00:00",
+  "numerical_execution_gates": "none",
+  "ppl": {
+    "status": "not run"
+  },
+  "eight_tasks": {
+    "status": "RUNNING",
+    "tasks": [
+      {
+        "task": "arc_easy",
+        "status": "COMPLETE",
+        "output": {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_arc_easy.json",
+          "resolved": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_arc_easy.json",
+          "bytes": 6943381,
+          "sha256": "8e1cc08cab7d6ddf7304a0d0e24bb428412da46e338eca6c3c311b37286ee747"
+        },
+        "accuracy": 0.656986531986532
+      },
+      {
+        "task": "arc_challenge",
+        "status": "COMPLETE",
+        "output": {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_arc_challenge.json",
+          "resolved": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_arc_challenge.json",
+          "bytes": 3595687,
+          "sha256": "4419d8a18a60c0ada4d4d6b807fde8e94e355604be12e6e33fe147728fbef525"
+        },
+        "accuracy": 0.40955631399317405
+      },
+      {
+        "task": "boolq",
+        "status": "COMPLETE",
+        "output": {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_boolq.json",
+          "resolved": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_boolq.json",
+          "bytes": 10367637,
+          "sha256": "82405fac3976cab4b5d3f64f3554311d3a2582c7c63503057f42b82b77f476ac"
+        },
+        "accuracy": 0.6737003058103975
+      },
+      {
+        "task": "hellaswag",
+        "status": "COMPLETE",
+        "output": {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_hellaswag.json",
+          "resolved": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_hellaswag.json",
+          "bytes": 55233803,
+          "sha256": "0b14f4cf6ce54a45642595b4ebe950dcde9601536fce4bad78e60dcb8bdb806a"
+        },
+        "accuracy": 0.6712806213901613
+      },
+      {
+        "task": "openbookqa",
+        "status": "COMPLETE",
+        "output": {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_openbookqa.json",
+          "resolved": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_openbookqa.json",
+          "bytes": 1256752,
+          "sha256": "06bc8100545426ff5b8602dc2ea2fb8a9b6488a6cc2b73b09139b579898fbd6a"
+        },
+        "accuracy": 0.392
+      },
+      {
+        "task": "piqa",
+        "status": "COMPLETE",
+        "output": {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_piqa.json",
+          "resolved": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_piqa.json",
+          "bytes": 3341205,
+          "sha256": "7bbe11a176fe187703ef2c9680684b2cbd4db3312ba2f7f2631d15ebf3b26a65"
+        },
+        "accuracy": 0.7328618063112078
+      },
+      {
+        "task": "social_iqa",
+        "status": "COMPLETE",
+        "output": {
+          "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_social_iqa.json",
+          "resolved": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285_social_iqa.json",
+          "bytes": 4168453,
+          "sha256": "0e59e5857e12c4cf71e01505b4bbf7afd14ea2b9e052c75d7eaf0a91c704089c"
+        },
+        "accuracy": 0.43398157625383826
+      }
+    ],
+    "seed": 0,
+    "num_fewshot": 0,
+    "batch_size": 1,
+    "max_length": 2048,
+    "log_samples": true,
+    "limit": null
+  },
+  "slurm": {
+    "SLURM_JOB_ID": "1736285",
+    "SLURM_JOB_NODELIST": "gpu-a40-1",
+    "CUDA_VISIBLE_DEVICES": "0"
+  },
+  "official_commit": "d56cfc6fe97c34c0eb100fec82fe439865905679",
+  "official_files": {
+    "main.py": "b43fd7fad7a5aca83532f676b3a2961de2985e1f32b53c7ad2b9b59ab06997a2",
+    "run.sh": "6cfba2299712370d5990384715df1e0890ea1713be3c64bb24b7c6c0a5f992c9",
+    "get_rot.py": "aa11b175c86d36eb48ecf729a76b57614dd7aab89c0c749cc392dfb035ff1981",
+    "datautils.py": "6cda55ce962408fdf295e13c293afd1aca105ee2b16cdc14418cd8c72ed7e061",
+    "generate_act_scale_shift.py": "183fed415f515bf7d205779b4e1d6ec327203e13e5d66dcf3268957bf6ddcabc",
+    "utils.py": "9907095a77b674725118e2d0ff5041f34eb7e3576158c7df83c5638b7a6ad6dc",
+    "quantize/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quantize/const.py": "813ebddbbf7a6255796b18ce6677d04887a84815b8a065c882c7e7963e635dee",
+    "quantize/du_norm.py": "db9330bba090263b701d7a30b101073321fc60f7015f9ebb7b5cd6ffc63b4fc4",
+    "quantize/duquant.py": "3f365a2c4092b08e0d49dcf9733c26ce68cdc55c9b6fc45f0793af918c5abe15",
+    "quantize/int_linear.py": "cd7a68f2120d6883048624b020e5396eea204e5ef70bed2d0cbf34ae1d45ff1f",
+    "quantize/int_matmul.py": "4ad76e18152793550436d7c6c1b67a0da7e7cadafc1734c93728165a8d26bc13",
+    "quantize/quantizer.py": "99c2a0d76866e2289658fb85a2b7e2673c23517fb1d9c68642753bf5b9830b1a",
+    "quantize/utils.py": "d1c1e725c1ddbbefbbb27c5e5ba9387617defaf35a709ec30c236a79c7516fe4",
+    "models/LMClass.py": "e5b13e4821c3564bee1786c6c46f8679e7248d9539cfbaa9fc37f6470503d1e3",
+    "models/int_llama_layer.py": "ba3715401c12fd5e09e853a0837d83552b982b98807633ea01db4a6e1fa02f43",
+    "models/int_mistral_layer.py": "6af52b664cec64e5cf23890c8afa45f085eee42aa4891e1e5d0f9eff695b8bcc",
+    "models/models_utils.py": "2e2ceec3a667326d486856b16cd61d2e62e92558f1f54ae34f4586984dd91aa6",
+    "models/transformation.py": "50ae070639510869e64c246961008787b6f8580ffbc54df9b2a15e94ce4ac78b"
+  },
+  "runner_files": {
+    "nar/e42_duquant_native.py": "32efb818ef158a3156c9649a0daf833809b2840211c55830f39159452b51eee3",
+    "nar/e42_duquant_compat.py": "2715e6535217c17011f67c25265252cccdf20b3c719fce793c0ffafbff6dc6ed",
+    "slurm_e42_duquant_native.sh": "51cfd73c34debe2cef9e8a34d283cf479d6308888bd89824fdd589f4b0213ee2"
+  },
+  "policy": "record only; no source or numerical execution veto",
+  "libraries": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "transformers": "4.45.0",
+    "transformers_file": "/home/yanlongc/.prismquant/llama31-baseline-packages/transformers/__init__.py",
+    "tokenizers": "0.20.3",
+    "packages": {
+      "datasets": "5.0.1",
+      "accelerate": "0.32.0",
+      "peft": "0.13.2",
+      "numpy": "2.4.6"
+    }
+  },
+  "gpu_model": "NVIDIA A40",
+  "gpu_capability": [
+    8,
+    6
+  ],
+  "tokenizer_files": [
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/tokenizer.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+      "bytes": 17209920,
+      "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/tokenizer_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/8a071772876bc826e78c6649464bf838205fe5d1",
+      "bytes": 50641,
+      "sha256": "8ca815f697b8f6953d9bad3130ddd6238b99d36c20fde052cf730207ac0926d4"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/special_tokens_map.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/68b10c7f0a479eae0c358eac6a14959b3f9acdf1",
+      "bytes": 459,
+      "sha256": "32f404d626cf7b1b6eea36c241ae7cbd6ec29c777a8701ea48c0fe9ebb94c9b1"
+    }
+  ],
+  "tokenizer_adapter": "Fast loader for the same pinned tokenizer.json: TF4.45 cannot instantiate this snapshot via use_fast=False; no token vocabulary or special-token policy changed",
+  "checkpoint": {
+    "path": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_3b_seed0_v1/quantized_model.pt",
+    "resolved": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_3b_seed0_v1/quantized_model.pt",
+    "bytes": 6499724647,
+    "sha256": "bf67ba823b8318b8ee0110cf51d210435a41a7deeadde268b9b9c0cf271adfa1"
+  },
+  "compatibility": {
+    "old_api": "TF4.35 seq_len rotary + indexed cosine table",
+    "new_api": "TF4.45 configured Llama3.1 RoPE; no replacement frequencies or scaling",
+    "decoder_extra_keywords": "cache_position and precomputed position_embeddings are redundant with original position_ids and configured per-layer RoPE",
+    "frequency_dtype": "FP32 configured frequencies retained across official qlayer.half()",
+    "mask_adapter": "trim only excess future columns to past-cache length plus current query length",
+    "cache_support": "HF4.45 DynamicCache translated to official per-layer legacy tuple; official concatenated K/V retained without requantizing or duplicating prefix",
+    "cache_storage": "official floating post-QDQ K and pre-PV-QDQ V, not packed INT4 KV"
+  },
+  "loaded_model_identity": {
+    "base_config": {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/blobs/eeab235d033323f98b16ee4c9bf2158e800ab8e1",
+      "bytes": 890,
+      "sha256": "c0a6833b9da6e99a2a8920e879de7c1532c78883948327658cfdbd1eac6d5be6"
+    },
+    "matched_fields": {
+      "hidden_size": 3072,
+      "intermediate_size": 8192,
+      "num_hidden_layers": 28,
+      "num_attention_heads": 24,
+      "num_key_value_heads": 8,
+      "vocab_size": 128256,
+      "rope_theta": 500000.0,
+      "rope_scaling": {
+        "factor": 32.0,
+        "high_freq_factor": 4.0,
+        "low_freq_factor": 1.0,
+        "original_max_position_embeddings": 8192,
+        "rope_type": "llama3"
+      }
+    },
+    "actual_decoder_layers": 28
+  },
+  "harness": {
+    "module": {
+      "path": "/home/yanlongc/.e13_packages/lm_eval/__init__.py",
+      "resolved": "/home/yanlongc/.e13_packages/lm_eval/__init__.py",
+      "bytes": 805,
+      "sha256": "e09b8004f0b93ad0153b348e02b73582f5b9319a481f0efd9fb96b9e7d245a54"
+    },
+    "expected_revision_recorded": "b954108c9baaaa934b4ad842033b31a97ee30816"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "observed_utc": "2026-11-13T03:14:05.575265+00:00",
+  "evidence_command": [
+    "sacct",
+    "-j",
+    "1736285.5,1736285.6",
+    "--format=JobID,State,ExitCode,Start,End",
+    "--parsable2"
+  ],
+  "evidence_stdout": "JobID|State|ExitCode|Start|End\n1736285.5|CANCELLED by 295800911|0:9|2026-11-12T15:49:11|2026-11-12T16:00:34\n1736285.6|CANCELLED by 295800911|0:9|2026-11-12T16:03:20|2026-11-12T18:58:04\n",
+  "policy": "Apply only to a raw RUNNING record with the identical absolute path and SHA256. Preserve the original JSON. Completed records and new attempts retain their own state.",
+  "observations": [
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry1_job1736285.json",
+      "sha256": "896ac69772bc3225c155c4d7eea4e70995462f6793ca5a719511807813d6a8c0",
+      "raw_status": "RUNNING",
+      "display_status": "INTERRUPTED",
+      "observed_utc": "2026-11-13T03:14:05.575265+00:00",
+      "slurm_step": "1736285.5",
+      "scheduler_state": "CANCELLED by 295800911",
+      "evidence": {
+        "JobID": "1736285.5",
+        "State": "CANCELLED by 295800911",
+        "ExitCode": "0:9",
+        "Start": "2026-11-12T15:49:11",
+        "End": "2026-11-12T16:00:34"
+      },
+      "reason": "Exact task-evaluation step was cancelled; the parent job state is not used to infer individual result completion."
+    },
+    {
+      "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_3b_seed0_eight-tasks_retry2_job1736285.json",
+      "sha256": "76e3aa7fb03e3f60e591f06fc4a00dce36d4a13da2fcbc097d529792cad60f66",
+      "raw_status": "RUNNING",
+      "display_status": "INTERRUPTED",
+      "observed_utc": "2026-11-13T03:14:05.575265+00:00",
+      "slurm_step": "1736285.6",
+      "scheduler_state": "CANCELLED by 295800911",
+      "evidence": {
+        "JobID": "1736285.6",
+        "State": "CANCELLED by 295800911",
+        "ExitCode": "0:9",
+        "Start": "2026-11-12T16:03:20",
+        "End": "2026-11-12T18:58:04"
+      },
+      "reason": "Exact task-evaluation step was cancelled; the parent job state is not used to infer individual result completion."
+    }
+  ]
+}

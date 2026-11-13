@@ -1,0 +1,132 @@
+{
+  "observed_utc": "2026-11-13T03:23:59.869677+00:00",
+  "observed_singapore": "2026-11-13T11:23:59.869677+08:00",
+  "jobs": [
+    {
+      "JobID": "1736252",
+      "State": "PENDING",
+      "Elapsed": "00:00:00",
+      "Start": "Unknown",
+      "End": "Unknown"
+    },
+    {
+      "JobID": "1736285",
+      "State": "FAILED",
+      "Elapsed": "04:07:36",
+      "Start": "2026-11-12T15:37:19",
+      "End": "2026-11-12T19:44:55"
+    },
+    {
+      "JobID": "1736285.batch",
+      "State": "FAILED",
+      "Elapsed": "04:07:36",
+      "Start": "2026-11-12T15:37:19",
+      "End": "2026-11-12T19:44:55"
+    },
+    {
+      "JobID": "1736285.extern",
+      "State": "COMPLETED",
+      "Elapsed": "04:07:36",
+      "Start": "2026-11-12T15:37:19",
+      "End": "2026-11-12T19:44:55"
+    },
+    {
+      "JobID": "1736285.0",
+      "State": "FAILED",
+      "Elapsed": "00:01:39",
+      "Start": "2026-11-12T15:37:19",
+      "End": "2026-11-12T15:38:58"
+    },
+    {
+      "JobID": "1736285.1",
+      "State": "COMPLETED",
+      "Elapsed": "04:07:36",
+      "Start": "2026-11-12T15:37:19",
+      "End": "2026-11-12T19:44:55"
+    },
+    {
+      "JobID": "1736285.2",
+      "State": "FAILED",
+      "Elapsed": "00:00:44",
+      "Start": "2026-11-12T15:43:55",
+      "End": "2026-11-12T15:44:39"
+    },
+    {
+      "JobID": "1736285.3",
+      "State": "FAILED",
+      "Elapsed": "00:00:00",
+      "Start": "2026-11-12T15:47:53",
+      "End": "2026-11-12T15:47:53"
+    },
+    {
+      "JobID": "1736285.4",
+      "State": "COMPLETED",
+      "Elapsed": "00:00:12",
+      "Start": "2026-11-12T15:48:21",
+      "End": "2026-11-12T15:48:33"
+    },
+    {
+      "JobID": "1736285.5",
+      "State": "CANCELLED by 295800911",
+      "Elapsed": "00:11:23",
+      "Start": "2026-11-12T15:49:11",
+      "End": "2026-11-12T16:00:34"
+    },
+    {
+      "JobID": "1736285.6",
+      "State": "CANCELLED by 295800911",
+      "Elapsed": "02:54:44",
+      "Start": "2026-11-12T16:03:20",
+      "End": "2026-11-12T18:58:04"
+    },
+    {
+      "JobID": "1736286",
+      "State": "COMPLETED",
+      "Elapsed": "00:22:41",
+      "Start": "2026-11-12T17:21:13",
+      "End": "2026-11-12T17:43:54"
+    },
+    {
+      "JobID": "1736286.batch",
+      "State": "COMPLETED",
+      "Elapsed": "00:22:41",
+      "Start": "2026-11-12T17:21:13",
+      "End": "2026-11-12T17:43:54"
+    },
+    {
+      "JobID": "1736286.extern",
+      "State": "COMPLETED",
+      "Elapsed": "00:22:41",
+      "Start": "2026-11-12T17:21:13",
+      "End": "2026-11-12T17:43:54"
+    },
+    {
+      "JobID": "1736351",
+      "State": "PENDING",
+      "Elapsed": "00:00:00",
+      "Start": "Unknown",
+      "End": "Unknown"
+    },
+    {
+      "JobID": "1736906",
+      "State": "COMPLETED",
+      "Elapsed": "00:08:49",
+      "Start": "2026-11-13T03:15:04",
+      "End": "2026-11-13T03:23:53"
+    },
+    {
+      "JobID": "1736906.batch",
+      "State": "COMPLETED",
+      "Elapsed": "00:08:49",
+      "Start": "2026-11-13T03:15:04",
+      "End": "2026-11-13T03:23:53"
+    },
+    {
+      "JobID": "1736906.extern",
+      "State": "COMPLETED",
+      "Elapsed": "00:08:49",
+      "Start": "2026-11-13T03:15:04",
+      "End": "2026-11-13T03:23:53"
+    }
+  ]
+}

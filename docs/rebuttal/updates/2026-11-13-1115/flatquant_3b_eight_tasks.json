@@ -1,0 +1,206 @@
+{
+  "model": "Llama-3.2-3B",
+  "model_key": "llama32_3b",
+  "method": "FlatQuant official native",
+  "seed": 0,
+  "status": "COMPLETE",
+  "phase": "tasks",
+  "source_commit": "d359fd18eada56b81583370914fe0bad6ae6ed25",
+  "official_commit": "9d88ffcb7d2c6bda59fb5c44dad36adc101aadb1",
+  "base_checkpoint": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331",
+  "checkpoint": "/projects/nar/nar-validation/checkpoints/rebuttal_3b/flatquant_native_seed0",
+  "job_id": "1736285",
+  "config": "W4 RTN per-channel symmetric; A4 per-token symmetric; native K4/V4 asymmetric per head (128); BF16 residual",
+  "source_sha256": "071c9258c4abd78c01e5311642e5b1cb97edb4dcc7231859411488c5f27af642",
+  "command": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "-m",
+    "nar.e39_flatquant",
+    "--model",
+    "llama32_3b",
+    "--checkpoint",
+    "/projects/nar/nar-validation/checkpoints/rebuttal_3b/flatquant_native_seed0",
+    "--phase",
+    "tasks",
+    "--source-commit",
+    "d359fd18eada56b81583370914fe0bad6ae6ed25",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285.json"
+  ],
+  "numerical_execution_gates": "none",
+  "execution_backend": "official floating fake-quant PyTorch implementation; not packed INT4 deployment",
+  "native_int4_kernel": false,
+  "model_dispatch_adapter": "official get_llama_31 for Llama3.2; retain its original config and scaled RoPE",
+  "official_args": {
+    "model": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331",
+    "seed": 0,
+    "hf_token": null,
+    "a_bits": 4,
+    "a_groupsize": -1,
+    "a_asym": false,
+    "w_bits": 4,
+    "w_groupsize": -1,
+    "w_asym": false,
+    "gptq": false,
+    "gptq_mse": false,
+    "percdamp": 0.01,
+    "act_order": false,
+    "epochs": 15,
+    "cali_dataset": "wikitext2",
+    "nsamples": 128,
+    "cali_bsz": 4,
+    "flat_lr": 0.005,
+    "cali_trans": true,
+    "add_diag": true,
+    "lwc": true,
+    "lac": true,
+    "resume": false,
+    "save_matrix": true,
+    "reload_matrix": false,
+    "matrix_path": null,
+    "diag_init": "sq_style",
+    "diag_alpha": 0.3,
+    "warmup": false,
+    "deactive_amp": false,
+    "direct_inv": false,
+    "separate_vtrans": false,
+    "q_bits": 16,
+    "q_asym": false,
+    "q_groupsize": -1,
+    "k_bits": 4,
+    "k_asym": true,
+    "k_groupsize": 128,
+    "v_bits": 4,
+    "v_asym": true,
+    "v_groupsize": 128,
+    "output_dir": "/projects/nar/nar-validation/checkpoints/rebuttal_3b/flatquant_native_seed0",
+    "exp_name": "official_native_seed0",
+    "lm_eval": false,
+    "tasks": [
+      "piqa",
+      "hellaswag",
+      "arc_easy",
+      "arc_challenge",
+      "winogrande",
+      "lambada_openai"
+    ],
+    "lm_eval_batch_size": 128,
+    "distribute_model": false,
+    "quantized_save": false,
+    "quantize": true,
+    "model_name": "Llama-3.2-3B",
+    "exp_dir": "/projects/nar/nar-validation/checkpoints/rebuttal_3b/flatquant_native_seed0/Llama-3.2-3B/w4a4/official_native_seed0"
+  },
+  "libraries": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.45.0",
+    "datasets": "5.0.1",
+    "numpy": "2.4.6"
+  },
+  "gpu": "NVIDIA A40",
+  "tokenizer_adapter": "Fast tokenizer from pinned tokenizer.json; no token or BOS setting changed",
+  "checkpoint_reused": true,
+  "original_calibration_cost": {
+    "wall_seconds": 4307.868335858919,
+    "peak_allocated_bytes": 14173801984,
+    "peak_reserved_bytes": 16127098880,
+    "physical_gpu_count": 1,
+    "gpu_hours": 1.196630093294144
+  },
+  "model_object_id": 126656985243728,
+  "eight_tasks": {
+    "arc_easy": {
+      "metrics": {
+        "name": "arc_easy",
+        "alias": "arc_easy",
+        "sample_len": 2376,
+        "acc,none": 0.7306397306397306,
+        "acc_stderr,none": 0.00910304320775698,
+        "acc_norm,none": 0.694023569023569,
+        "acc_norm_stderr,none": 0.009455822036426618
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285_arc_easy.json"
+    },
+    "arc_challenge": {
+      "metrics": {
+        "name": "arc_challenge",
+        "alias": "arc_challenge",
+        "sample_len": 1172,
+        "acc,none": 0.4112627986348123,
+        "acc_stderr,none": 0.01437944106852208,
+        "acc_norm,none": 0.44283276450511944,
+        "acc_norm_stderr,none": 0.014515573873348906
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285_arc_challenge.json"
+    },
+    "boolq": {
+      "metrics": {
+        "name": "boolq",
+        "alias": "boolq",
+        "sample_len": 3270,
+        "acc,none": 0.7311926605504587,
+        "acc_stderr,none": 0.007754057418983883
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285_boolq.json"
+    },
+    "hellaswag": {
+      "metrics": {
+        "name": "hellaswag",
+        "alias": "hellaswag",
+        "sample_len": 10042,
+        "acc,none": 0.527185819557857,
+        "acc_stderr,none": 0.004982400368939688,
+        "acc_norm,none": 0.712109141605258,
+        "acc_norm_stderr,none": 0.004518546274738919
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285_hellaswag.json"
+    },
+    "openbookqa": {
+      "metrics": {
+        "name": "openbookqa",
+        "alias": "openbookqa",
+        "sample_len": 500,
+        "acc,none": 0.292,
+        "acc_stderr,none": 0.02035437548053008,
+        "acc_norm,none": 0.4,
+        "acc_norm_stderr,none": 0.0219308441207285
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285_openbookqa.json"
+    },
+    "piqa": {
+      "metrics": {
+        "name": "piqa",
+        "alias": "piqa",
+        "sample_len": 1838,
+        "acc,none": 0.749727965179543,
+        "acc_stderr,none": 0.010106561880089803,
+        "acc_norm,none": 0.7616974972796517,
+        "acc_norm_stderr,none": 0.009940334245876203
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285_piqa.json"
+    },
+    "social_iqa": {
+      "metrics": {
+        "name": "social_iqa",
+        "alias": "social_iqa",
+        "sample_len": 1954,
+        "acc,none": 0.44728761514841353,
+        "acc_stderr,none": 0.011251020423273035
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285_social_iqa.json"
+    },
+    "winogrande": {
+      "metrics": {
+        "name": "winogrande",
+        "alias": "winogrande",
+        "sample_len": 1267,
+        "acc,none": 0.654301499605367,
+        "acc_stderr,none": 0.013366596951934373
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_3b_seed0_tasks_job1736285_winogrande.json"
+    }
+  },
+  "same_model_object_id_after_measurements": 126656985243728,
+  "total_wall_seconds": 10376.692907433026,
+  "allocated_gpu_hours": 2.8824146965091737
+}
