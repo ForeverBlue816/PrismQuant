@@ -1,0 +1,63 @@
+{
+  "job_id": 1736351,
+  "created_utc": "2026-11-12T16:04:58.207523+00:00",
+  "same_physical_gpu": false,
+  "selection": "all latest attempts from specified allocation, never selected by score",
+  "rows": {
+    "flat_official": {
+      "source": null,
+      "status": "pending; timing pending",
+      "ppl": null,
+      "prefill_ms": null,
+      "decode_tokens_per_second": null,
+      "peak_allocated_gib": null,
+      "gpu_uuids": [],
+      "exclusive": false,
+      "cache_timing": null
+    },
+    "flat_clean": {
+      "source": null,
+      "status": "pending; timing pending",
+      "ppl": null,
+      "prefill_ms": null,
+      "decode_tokens_per_second": null,
+      "peak_allocated_gib": null,
+      "gpu_uuids": [],
+      "exclusive": false,
+      "cache_timing": null
+    },
+    "pq_fast": {
+      "source": null,
+      "status": "pending; timing pending",
+      "ppl": null,
+      "prefill_ms": null,
+      "decode_tokens_per_second": null,
+      "peak_allocated_gib": null,
+      "gpu_uuids": [],
+      "exclusive": false,
+      "cache_timing": null
+    },
+    "flat_fake": {
+      "source": null,
+      "status": "pending; timing pending",
+      "ppl": null,
+      "prefill_ms": null,
+      "decode_tokens_per_second": null,
+      "peak_allocated_gib": null,
+      "gpu_uuids": [],
+      "exclusive": false,
+      "cache_timing": null
+    },
+    "du_fake": {
+      "source": null,
+      "status": "pending; timing pending",
+      "ppl": null,
+      "prefill_ms": null,
+      "decode_tokens_per_second": null,
+      "peak_allocated_gib": null,
+      "gpu_uuids": [],
+      "exclusive": false,
+      "cache_timing": null
+    }
+  }
+}

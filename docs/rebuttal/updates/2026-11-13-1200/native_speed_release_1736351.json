@@ -1,0 +1,120 @@
+{
+  "observed_utc": "2026-11-13T04:43:31.643179+00:00",
+  "job_id": "1736351",
+  "producer_job_id": "1736252",
+  "caller_job_id": "1736252",
+  "trigger": "e39_train-ppl",
+  "numerical_criteria": "none",
+  "ready": true,
+  "artifacts": {
+    "flatquant": {
+      "ready": true,
+      "manifest": "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0/DONE.json",
+      "files": [
+        {
+          "path": "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0/quantized_model.pt",
+          "bytes": 16107097038
+        },
+        {
+          "path": "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0/weight_quantizers.pt",
+          "bytes": 11258043
+        }
+      ],
+      "completion_evidence": "COMPLETE DONE manifest and atomic checkpoint files"
+    },
+    "duquant": {
+      "ready": true,
+      "manifest": "/projects/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/quantization_manifest.json",
+      "files": [
+        {
+          "path": "/projects/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/quantized_model.pt",
+          "bytes": 16163719422
+        },
+        {
+          "path": "/projects/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/Rot.pkl",
+          "bytes": 65952
+        },
+        {
+          "path": "/projects/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/act_scales.pt",
+          "bytes": 5065341
+        },
+        {
+          "path": "/projects/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/calibration.pt",
+          "bytes": 21632637
+        }
+      ],
+      "manifest_run_status": "RUNNING",
+      "completion_evidence": "Quantization manifest is written after atomic model rename; checkpoint identity and save duration are present. Overall status RUNNING is expected because PPL follows; no PPL or task criterion is applied."
+    }
+  },
+  "action": "RELEASED",
+  "scheduler_before": {
+    "JobId": "1736351",
+    "JobName": "pq8b-official-speed",
+    "UserId": "yanlongc(295800911)",
+    "GroupId": "yanlongc(295800911)",
+    "MCS_label": "N/A",
+    "Priority": "1",
+    "Nice": "0",
+    "Account": "rose",
+    "QOS": "rose",
+    "JobState": "PENDING",
+    "Reason": "Dependency",
+    "Dependency": "afterany:1736252(unfulfilled)",
+    "Requeue": "0",
+    "Restarts": "0",
+    "BatchFlag": "1",
+    "Reboot": "0",
+    "ExitCode": "0:0",
+    "RunTime": "00:00:00",
+    "TimeLimit": "1-00:00:00",
+    "TimeMin": "N/A",
+    "SubmitTime": "2026-11-12T16:04:58",
+    "EligibleTime": "Unknown",
+    "AccrueTime": "Unknown",
+    "StartTime": "Unknown",
+    "EndTime": "Unknown",
+    "Deadline": "N/A",
+    "SuspendTime": "None",
+    "SecsPreSuspend": "0",
+    "LastSchedEval": "2026-11-12T16:04:58",
+    "Scheduler": "Main",
+    "Partition": "cluster02",
+    "AllocNode:Sid": "login-1:1945516",
+    "ReqNodeList": "(null)",
+    "ExcNodeList": "(null)",
+    "NodeList": "",
+    "NumNodes": "1-1",
+    "NumCPUs": "4",
+    "NumTasks": "1",
+    "CPUs/Task": "4",
+    "ReqB:S:C:T": "0:0:*:*",
+    "ReqTRES": "cpu=4,mem=40G,node=1,billing=3,gres/gpu=1,gres/gpu:a40=1",
+    "AllocTRES": "(null)",
+    "Socks/Node": "*",
+    "NtasksPerN:B:S:C": "0:0:*:*",
+    "CoreSpec": "*",
+    "MinCPUsNode": "4",
+    "MinMemoryNode": "40G",
+    "MinTmpDiskNode": "0",
+    "Features": "(null)",
+    "DelayBoot": "00:00:00",
+    "OverSubscribe": "OK",
+    "Contiguous": "0",
+    "Licenses": "(null)",
+    "Network": "(null)",
+    "Command": "/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_speed_8b.sh",
+    "WorkDir": "/home/yanlongc/prismquant-rebuttal-e38",
+    "StdErr": "/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-speed8b-1736351.err",
+    "StdIn": "/dev/null",
+    "StdOut": "/home/yanlongc/prismquant-rebuttal-e38/runs/rebuttal-speed8b-1736351.out",
+    "Power": "",
+    "TresPerJob": "gres/gpu:a40:1",
+    "TresPerTask": "cpu:4"
+  },
+  "release_requested_utc": "2026-11-13T04:43:31.656457+00:00",
+  "released_utc": "2026-11-13T04:43:31.660609+00:00",
+  "scheduler_stdout": "",
+  "scheduler_stderr": "",
+  "finished_utc": "2026-11-13T04:43:31.660614+00:00"
+}

@@ -1,0 +1,760 @@
+{
+  "kind": "historical_same_job_g128_int8_prototype_vs_fp16",
+  "generated_utc": "2026-11-13T03:34:11.359767+00:00",
+  "model": "Meta-Llama-3.1-8B",
+  "seed": 0,
+  "job_id": "1734010",
+  "measurement_date_utc": "2026-11-11",
+  "new_gpu_work": false,
+  "scope": "Historical measured comparison of different software stacks/cache implementations on the same exclusive A40; not a native INT4 g128 deployment benchmark or isolated quantization speedup",
+  "workload": {
+    "batch_size": 1,
+    "prefix_tokens": 2048,
+    "total_decode_tokens": 128,
+    "discarded_decode_tokens": 8,
+    "measured_decode_tokens": 120,
+    "fixed_decode_token_id": 100,
+    "warmups": 10,
+    "repetitions": 20,
+    "execution": "eager Python launches with CUDA synchronization; last-position logits only",
+    "ppl": "WikiText2 test,141 contiguous2048-token windows,2047 scored tokens/window",
+    "tokenized_input_file_sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021"
+  },
+  "ratios_definition": "Prefill main ratio uses median FP16 latency / median row latency; decode main ratio uses median row throughput / median FP16 throughput. Slowdown is reciprocal. Ratios are descriptive; no paired timing CI is inferred across sequential cohorts.",
+  "rows": [
+    {
+      "row": "fp16",
+      "label": "FP16",
+      "status": "COMPLETE",
+      "source": {
+        "path": "results/e38/raw/stage_a_8b_fp16_seed0_job1734010.json",
+        "sha256": "4a45d65943048e624f37429cac1893c63a5242365b1e0bfa18417aef1920a016",
+        "started_utc": "2026-11-11T15:19:39.272870+00:00",
+        "finished_utc": "2026-11-11T15:27:27.447057+00:00",
+        "requested_source_commit": "9a1bade02df471d25c4cf04e88ae83468175772a",
+        "actual_head_commit": "79c2e4caadcb36ec7b612542cadb56fd4b4b13a0",
+        "source_sha256": {
+          "quarot-llama3/e38/stage_a_8b.py": "a872b42d54333409013e3411cf0d1b4f1281e1567bb7f3af6024886cedab4ab6",
+          "quarot-llama3/e38/stage_a_8b_model.py": "92c2f295da29b3347fbde12a0c4b690e8f9fbea209552e0ce50e6af4cfa45dd9",
+          "quarot-llama3/e38/fp16.py": "5ce9ae1f7dd00910cd08b1c68bc4a95970b295ba4a92fd426ad5fcb4925af367",
+          "quarot-llama3/modeling_llama3.py": "ec8f03779820a4a749a97a8e84b337a31f880c40e4145a0a0099ae3ca9299582",
+          "quarot-llama3/e28_v2/cache_adapter.py": "91b8fa46bfa453d553190ccc526257717650002607b016ef917a1d383d5f3bfe",
+          "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+          "nar/activation_experiments.py": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d",
+          "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+          "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+          "nar/e38_checkpoint_probe.py": "1d39b7777aae43861b2a8ca034c78bb56d5e7c56f101326d7d9c6c21d8100a23"
+        }
+      },
+      "job": {
+        "SLURM_JOB_ID": "1734010",
+        "SLURM_JOB_NODELIST": "gpu-a40-1",
+        "CUDA_VISIBLE_DEVICES": "0"
+      },
+      "gpu_model": "NVIDIA A40",
+      "gpu_uuid": "GPU-02833fb5-df29-3b93-e608-b64499c0ae93",
+      "gpu_exclusivity": {
+        "checks": 43,
+        "all_pass": true,
+        "raw_status": "EXCLUSIVE"
+      },
+      "checkpoint": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+      "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+      "libraries": {
+        "torch": "2.4.1+cu124",
+        "transformers": "4.36.2",
+        "triton": "3.0.0",
+        "datasets": "2.17.1",
+        "numpy": "1.26.4",
+        "tokenizers": "0.15.2",
+        "flash-attn": "2.6.3"
+      },
+      "cuda_runtime": "12.4",
+      "formats": {
+        "weights": "Original released BF16 base checkpoint cast to FP16; no weight quantization",
+        "activations": "FP16",
+        "kv": "Native FP16 paged cache",
+        "nonlinear_dtype": "torch.float16",
+        "compute": "FP16 GEMM; native paged-cache attention"
+      },
+      "cache_boundary": {
+        "prefill": "One native paged cache allocated per workload and reused; clear(cache) outside timer; prefill writes into preallocated pages",
+        "decode": "Cache clear, full prefix and first 8 decode steps outside timer; next 120 steps timed",
+        "constructor_inside_prefill_timer": false
+      },
+      "quality": {
+        "status": "COMPLETE",
+        "requested_sequences": 141,
+        "sequence_length": 2048,
+        "logits": "all positions; FP32 cross entropy",
+        "same_loaded_instance": true,
+        "completed_sequences": 141,
+        "value": 6.238432455537351
+      },
+      "timing": {
+        "prefill": {
+          "seconds": {
+            "n": 20,
+            "median": 0.38934905361384153,
+            "q25": 0.3892534540500492,
+            "q75": 0.38962668902240694,
+            "iqr": 0.00037323497235774994,
+            "min": 0.38875182485207915,
+            "max": 0.39018750470131636
+          },
+          "tokens_per_second": {
+            "n": 20,
+            "median": 5260.061617477271,
+            "q25": 5256.313435325529,
+            "q75": 5261.353445188784,
+            "iqr": 5.040009863254454,
+            "min": 5248.758546401219,
+            "max": 5268.1424731041925
+          },
+          "milliseconds_per_token": {
+            "n": 20,
+            "median": 0.19011184258488356,
+            "q25": 0.19006516311037558,
+            "q75": 0.19024740674922214,
+            "iqr": 0.0001822436388465576,
+            "min": 0.18982022697855427,
+            "max": 0.19052124252993963
+          },
+          "samples_seconds": [
+            0.39011987717822194,
+            0.38875182485207915,
+            0.3892595721408725,
+            0.3893183749169111,
+            0.3892350997775793,
+            0.38904820941388607,
+            0.3892799150198698,
+            0.3892759340815246,
+            0.38963502179831266,
+            0.38984638173133135,
+            0.389580505900085,
+            0.38962410669773817,
+            0.38929301081225276,
+            0.38963443599641323,
+            0.38937973231077194,
+            0.38914768025279045,
+            0.38952743308618665,
+            0.3891878668218851,
+            0.38952988013625145,
+            0.39018750470131636
+          ],
+          "allocated_before_bytes": 18489190912,
+          "peak_allocated_bytes": 18732476928,
+          "peak_reserved_bytes": 18939379712,
+          "peak_allocated_gib": 17.44597864151001,
+          "peak_reserved_gib": 17.638671875
+        },
+        "decode": {
+          "seconds": {
+            "n": 20,
+            "median": 3.629614017903805,
+            "q25": 3.6295442493865266,
+            "q75": 3.6297137305373326,
+            "iqr": 0.00016948115080595016,
+            "min": 3.629437736235559,
+            "max": 3.80402675177902
+          },
+          "tokens_per_second": {
+            "n": 20,
+            "median": 33.061366693011756,
+            "q25": 33.06045845786822,
+            "q75": 33.06200221151919,
+            "iqr": 0.0015437536509708139,
+            "min": 31.545519479819614,
+            "max": 33.062972482471515
+          },
+          "milliseconds_per_token": {
+            "n": 20,
+            "median": 30.246783482531708,
+            "q25": 30.246202078221053,
+            "q75": 30.247614421144437,
+            "iqr": 0.0014123429233841023,
+            "min": 30.245314468629658,
+            "max": 31.700222931491833
+          },
+          "samples_seconds": [
+            3.80402675177902,
+            3.629587666131556,
+            3.6305861081928015,
+            3.6299575990997255,
+            3.630826068110764,
+            3.62956827506423,
+            3.629640373401344,
+            3.6297417487949133,
+            3.6295259669423103,
+            3.629437736235559,
+            3.6296128039248288,
+            3.62959996284917,
+            3.629704391118139,
+            3.6295414306223392,
+            3.629508568905294,
+            3.629615231882781,
+            3.629636622965336,
+            3.629631514661014,
+            3.629524959716946,
+            3.629545188974589
+          ],
+          "allocated_before_bytes": 18506230272,
+          "peak_allocated_bytes": 18749516288,
+          "peak_reserved_bytes": 18958254080,
+          "peak_allocated_gib": 17.46184778213501,
+          "peak_reserved_gib": 17.65625
+        }
+      },
+      "native_int4_tensorcore": false,
+      "packed_kv": null,
+      "ratios": {
+        "prefill": {
+          "latency_speedup_vs_fp16": 1.0,
+          "latency_slowdown_vs_fp16": 1.0,
+          "throughput_speedup_vs_fp16": 1.0,
+          "throughput_slowdown_vs_fp16": 1.0,
+          "peak_allocated_ratio_vs_fp16": 1.0
+        },
+        "decode": {
+          "latency_speedup_vs_fp16": 1.0,
+          "latency_slowdown_vs_fp16": 1.0,
+          "throughput_speedup_vs_fp16": 1.0,
+          "throughput_slowdown_vs_fp16": 1.0,
+          "peak_allocated_ratio_vs_fp16": 1.0
+        }
+      }
+    },
+    {
+      "row": "hadamard",
+      "label": "Hadamard g128 INT8 prototype",
+      "status": "COMPLETE",
+      "source": {
+        "path": "results/e38/raw/integer_8b_hadamard_seed0_equivalence-timing_job1734010.json",
+        "sha256": "428bf211dbd3222e962999b263cf6eff0b56b48841643c58a9289ae6e09906ba",
+        "started_utc": "2026-11-11T15:29:05.957372+00:00",
+        "finished_utc": "2026-11-11T19:40:56.624086+00:00",
+        "requested_source_commit": "9a1bade02df471d25c4cf04e88ae83468175772a",
+        "actual_head_commit": "79c2e4caadcb36ec7b612542cadb56fd4b4b13a0",
+        "source_sha256": {
+          "nar/e38_8b_integer.py": "d3be9149311142b74d2e49b0dc56ebc7d1d23f07d52a994fb3988c3bca77212d",
+          "slurm_e38_8b_integer.sh": "945dac810f5b4f01a9510c012e50fc3927dd153a4fe54f507eb314536bac66bb",
+          "nar/e38_8b_ops.py": "8c0d4789a0af01c746bf3c4aead79e2060b32c4be1129f4e2e071911370e6cdf",
+          "nar/e38_integer_operator.py": "396ed7faa3c7af1c3a1de35640515d07478a490626dacd88e468fd005b03a0a9",
+          "nar/e38_checkpoint_probe.py": "1d39b7777aae43861b2a8ca034c78bb56d5e7c56f101326d7d9c6c21d8100a23",
+          "nar/e38_direct_accuracy.py": "fa658390fa9223e083aeafbaa50823e9726c1aba8a1c4b0e96eb11786df0836a",
+          "nar/e38_reference_tasks.py": "dbb56a343e5745c15fb6231ec3e6ef3fa3376a1ce479a1e57b22be52b75273c6",
+          "nar/e38_anchor.py": "58dc1b4e61f1ccaaea0d0c94568db46b60c11a9dceedead4f1b7d4d553e77f3a",
+          "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+          "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+          "nar/activation_experiments.py": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d",
+          "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+          "nar/extended_experiment.py": "8331f9bb5cd20c7877c836b2db1115aacf5689337fac4a7428ac59f7eb834f8b",
+          "nar/quarot_gptq.py": "84da020ecdf05384d56026ab18e2fd8f50ceea92782285580c1e499a31e6dd1e"
+        }
+      },
+      "job": {
+        "SLURM_JOB_ID": "1734010",
+        "SLURM_JOB_NODELIST": "gpu-a40-1",
+        "CUDA_VISIBLE_DEVICES": "0"
+      },
+      "gpu_model": "NVIDIA A40",
+      "gpu_uuid": "GPU-02833fb5-df29-3b93-e608-b64499c0ae93",
+      "gpu_exclusivity": {
+        "checks": 43,
+        "all_pass": true,
+        "raw_status": "PASS"
+      },
+      "checkpoint": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_hadamard_seed0",
+      "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+      "libraries": {
+        "torch": {
+          "version": "2.11.0+cu128",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "transformers": {
+          "version": "5.16.0.dev0",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": {
+            "url": "https://github.com/huggingface/transformers.git",
+            "vcs_info": {
+              "commit_id": "a353632607c59463e6ced86a44c2de3c2cd62d5e",
+              "requested_revision": "main",
+              "vcs": "git"
+            }
+          }
+        },
+        "triton": {
+          "version": "3.6.0",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "datasets": {
+          "version": "5.0.1",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "accelerate": {
+          "version": "1.14.0",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "numpy": {
+          "version": "2.4.6",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "lm_eval": {
+          "version": "0.4.14.dev0",
+          "location": "/home/yanlongc/.e13_packages",
+          "direct_url": {
+            "dir_info": {},
+            "url": "file:///home/yanlongc/lm-evaluation-harness-upstream"
+          }
+        },
+        "huggingface-hub": {
+          "version": "1.28.0",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "tokenizers": {
+          "version": "0.23.1",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        }
+      },
+      "cuda_runtime": "12.8",
+      "formats": {
+        "weights": "GPTQ default protocol: signed symmetric W4 with one recovered FP32 scale per output row; packed two codes/byte; INT32 qW sum per K=128 group",
+        "activations": "Asymmetric uint4 per token and K=128 group; FP16 scale and real minimum offset; nearest-even; reconstructed BF16 only in reference",
+        "kv": "E14 floating simulation of KV4: K groups32 along token axis, V groups128 along head channels, residual window32; no packed KV storage",
+        "nonlinear_dtype": "torch.bfloat16",
+        "compute": "Each K128 group unpacked from signed W4 to INT8; torch._int_mm accumulates INT32, followed by FP32 affine correction; Python group loop; decode M padded to32"
+      },
+      "cache_boundary": {
+        "prefill": "Fresh Transformers DynamicCache object before each timer; tensor allocation/growth occurs in timed forward",
+        "decode": "Fresh DynamicCache, full prefix and first 8 decode steps outside timer; next120steps timed",
+        "constructor_inside_prefill_timer": false
+      },
+      "quality": {
+        "status": "COMPLETE",
+        "sequence_length": 2048,
+        "sequences_expected": 141,
+        "batch_size": 1,
+        "full_vocabulary": true,
+        "logit_storage": "per-chunk full-vocabulary comparison statistics; token argmax arrays saved; full logits streamed and discarded",
+        "numerical_execution_gate": false,
+        "comparison": "same loaded model and same GPU, reference vs integer on identical input_ids",
+        "completed_sequences": 141,
+        "tokens_scored": 288627,
+        "reference_ppl": 7.209735258128976,
+        "candidate_ppl": 7.211907166783962,
+        "max_abs_logit_difference": 27.0625,
+        "argmax_matches": 246335,
+        "positions": 288768,
+        "ppl_difference": 0.0021719086549856215,
+        "relative_ppl_difference_percent": 0.030124665847286458,
+        "argmax_agreement": 0.8530550476507093,
+        "relative_l2": 0.23284471952821245
+      },
+      "timing": {
+        "prefill": {
+          "seconds": {
+            "n": 20,
+            "median": 13.579846339533105,
+            "q25": 13.569916058331728,
+            "q75": 13.58990904840175,
+            "iqr": 0.019992990070022643,
+            "min": 13.563872215803713,
+            "max": 13.734842429868877
+          },
+          "tokens_per_second": {
+            "n": 20,
+            "median": 150.81172135553012,
+            "q25": 150.70005572217298,
+            "q75": 150.92208326367893,
+            "iqr": 0.22202754150595183,
+            "min": 149.10982855880872,
+            "max": 150.98933161680836
+          },
+          "milliseconds_per_token": {
+            "n": 20,
+            "median": 6.630784345475149,
+            "q25": 6.625935575357289,
+            "q75": 6.635697777539917,
+            "iqr": 0.009762202182628243,
+            "min": 6.6229844803729065,
+            "max": 6.706466030209413
+          },
+          "samples_seconds": [
+            13.734842429868877,
+            13.600429565180093,
+            13.585230923257768,
+            13.5936185172759,
+            13.582951520103961,
+            13.588672558777034,
+            13.56689177500084,
+            13.563872215803713,
+            13.564201880712062,
+            13.570724635850638,
+            13.580292290076613,
+            13.583563453983516,
+            13.593713238835335,
+            13.579400388989598,
+            13.575699158012867,
+            13.570290791336447,
+            13.56933850189671,
+            13.570108577143401,
+            13.568388298619539,
+            13.594399518799037
+          ],
+          "allocated_before_bytes": 5825553920,
+          "peak_allocated_bytes": 7862953472,
+          "peak_reserved_bytes": 7944011776,
+          "peak_allocated_gib": 7.322946071624756,
+          "peak_reserved_gib": 7.3984375
+        },
+        "decode": {
+          "seconds": {
+            "n": 20,
+            "median": 352.5281274106819,
+            "q25": 346.17359457723796,
+            "q75": 353.7528102793731,
+            "iqr": 7.579215702135116,
+            "min": 337.035840023309,
+            "max": 363.28448840929195
+          },
+          "tokens_per_second": {
+            "n": 20,
+            "median": 0.34039844435162936,
+            "q25": 0.33921999182203716,
+            "q75": 0.3466520487713981,
+            "iqr": 0.007432056949360943,
+            "min": 0.33031963606660475,
+            "max": 0.3560452205667532
+          },
+          "milliseconds_per_token": {
+            "n": 20,
+            "median": 2937.7343950890163,
+            "q25": 2884.779954810316,
+            "q75": 2947.940085661442,
+            "iqr": 63.160130851125814,
+            "min": 2808.6320001942418,
+            "max": 3027.3707367440998
+          },
+          "samples_seconds": [
+            343.0706989997998,
+            337.74167890893295,
+            337.035840023309,
+            346.94287995574996,
+            342.6866355519742,
+            354.03483520867303,
+            349.3429685998708,
+            343.865738441702,
+            353.3615235192701,
+            356.58013954991475,
+            363.28448840929195,
+            352.22273559635505,
+            352.69272691523656,
+            352.3635279061273,
+            353.65880196960643,
+            349.33617001213133,
+            354.6041044718586,
+            353.360488275066,
+            352.76107570994645,
+            356.663721350953
+          ],
+          "allocated_before_bytes": 5825553920,
+          "peak_allocated_bytes": 7862953472,
+          "peak_reserved_bytes": 7944011776,
+          "peak_allocated_gib": 7.322946071624756,
+          "peak_reserved_gib": 7.3984375
+        }
+      },
+      "native_int4_tensorcore": false,
+      "packed_kv": false,
+      "ratios": {
+        "prefill": {
+          "latency_speedup_vs_fp16": 0.02867109419937869,
+          "latency_slowdown_vs_fp16": 34.87833401285641,
+          "throughput_speedup_vs_fp16": 0.028671094052289736,
+          "throughput_slowdown_vs_fp16": 34.87833419178986,
+          "peak_allocated_ratio_vs_fp16": 0.4197498014929892
+        },
+        "decode": {
+          "latency_speedup_vs_fp16": 0.010295955799508281,
+          "latency_slowdown_vs_fp16": 97.12551408270016,
+          "throughput_speedup_vs_fp16": 0.010295958044093199,
+          "throughput_slowdown_vs_fp16": 97.12549290871489,
+          "peak_allocated_ratio_vs_fp16": 0.41936833735985074
+        }
+      }
+    },
+    {
+      "row": "nar_k8",
+      "label": "PrismQuant k=8 g128 INT8 prototype",
+      "status": "COMPLETE",
+      "source": {
+        "path": "results/e38/raw/integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json",
+        "sha256": "36a9c122e6fa26feaf38d82fc78889e14dc008744ab3585f41946d8e39920b4e",
+        "started_utc": "2026-11-11T11:21:23.427818+00:00",
+        "finished_utc": "2026-11-11T15:19:32.160872+00:00",
+        "requested_source_commit": "9a1bade02df471d25c4cf04e88ae83468175772a",
+        "actual_head_commit": "79c2e4caadcb36ec7b612542cadb56fd4b4b13a0",
+        "source_sha256": {
+          "nar/e38_8b_integer.py": "d3be9149311142b74d2e49b0dc56ebc7d1d23f07d52a994fb3988c3bca77212d",
+          "slurm_e38_8b_integer.sh": "945dac810f5b4f01a9510c012e50fc3927dd153a4fe54f507eb314536bac66bb",
+          "nar/e38_8b_ops.py": "8c0d4789a0af01c746bf3c4aead79e2060b32c4be1129f4e2e071911370e6cdf",
+          "nar/e38_integer_operator.py": "396ed7faa3c7af1c3a1de35640515d07478a490626dacd88e468fd005b03a0a9",
+          "nar/e38_checkpoint_probe.py": "1d39b7777aae43861b2a8ca034c78bb56d5e7c56f101326d7d9c6c21d8100a23",
+          "nar/e38_direct_accuracy.py": "fa658390fa9223e083aeafbaa50823e9726c1aba8a1c4b0e96eb11786df0836a",
+          "nar/e38_reference_tasks.py": "dbb56a343e5745c15fb6231ec3e6ef3fa3376a1ce479a1e57b22be52b75273c6",
+          "nar/e38_anchor.py": "58dc1b4e61f1ccaaea0d0c94568db46b60c11a9dceedead4f1b7d4d553e77f3a",
+          "nar/e14_w4a4kv4.py": "c7ab1b96621084d43d3dae4f694eb4e6bc534d753cd7ef6c5d620cd000559ab3",
+          "nar/experiment.py": "199e3a5e674a9098ff0f67f28d503afaf415271293d7d6d093928179a2c66f6f",
+          "nar/activation_experiments.py": "99296c5642069c445b0254562404840362412305d360019b312719ad0c3df23d",
+          "nar/e12_wy.py": "57ef771aa7f8fec8d30c26a49b333fa09ad84d9cb9c05be7fc2848b078dbbc1f",
+          "nar/extended_experiment.py": "8331f9bb5cd20c7877c836b2db1115aacf5689337fac4a7428ac59f7eb834f8b",
+          "nar/quarot_gptq.py": "84da020ecdf05384d56026ab18e2fd8f50ceea92782285580c1e499a31e6dd1e"
+        }
+      },
+      "job": {
+        "SLURM_JOB_ID": "1734010",
+        "SLURM_JOB_NODELIST": "gpu-a40-1",
+        "CUDA_VISIBLE_DEVICES": "0"
+      },
+      "gpu_model": "NVIDIA A40",
+      "gpu_uuid": "GPU-02833fb5-df29-3b93-e608-b64499c0ae93",
+      "gpu_exclusivity": {
+        "checks": 43,
+        "all_pass": true,
+        "raw_status": "PASS"
+      },
+      "checkpoint": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0",
+      "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+      "libraries": {
+        "torch": {
+          "version": "2.11.0+cu128",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "transformers": {
+          "version": "5.16.0.dev0",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": {
+            "url": "https://github.com/huggingface/transformers.git",
+            "vcs_info": {
+              "commit_id": "a353632607c59463e6ced86a44c2de3c2cd62d5e",
+              "requested_revision": "main",
+              "vcs": "git"
+            }
+          }
+        },
+        "triton": {
+          "version": "3.6.0",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "datasets": {
+          "version": "5.0.1",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "accelerate": {
+          "version": "1.14.0",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "numpy": {
+          "version": "2.4.6",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "lm_eval": {
+          "version": "0.4.14.dev0",
+          "location": "/home/yanlongc/.e13_packages",
+          "direct_url": {
+            "dir_info": {},
+            "url": "file:///home/yanlongc/lm-evaluation-harness-upstream"
+          }
+        },
+        "huggingface-hub": {
+          "version": "1.28.0",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        },
+        "tokenizers": {
+          "version": "0.23.1",
+          "location": "/projects/river/envs/qwen35/lib/python3.11/site-packages",
+          "direct_url": null
+        }
+      },
+      "cuda_runtime": "12.8",
+      "formats": {
+        "weights": "GPTQ default protocol: signed symmetric W4 with one recovered FP32 scale per output row; packed two codes/byte; INT32 qW sum per K=128 group",
+        "activations": "Asymmetric uint4 per token and K=128 group; FP16 scale and real minimum offset; nearest-even; reconstructed BF16 only in reference",
+        "kv": "E14 floating simulation of KV4: K groups32 along token axis, V groups128 along head channels, residual window32; no packed KV storage",
+        "nonlinear_dtype": "torch.bfloat16",
+        "compute": "Each K128 group unpacked from signed W4 to INT8; torch._int_mm accumulates INT32, followed by FP32 affine correction; Python group loop; decode M padded to32"
+      },
+      "cache_boundary": {
+        "prefill": "Fresh Transformers DynamicCache object before each timer; tensor allocation/growth occurs in timed forward",
+        "decode": "Fresh DynamicCache, full prefix and first 8 decode steps outside timer; next120steps timed",
+        "constructor_inside_prefill_timer": false
+      },
+      "quality": {
+        "status": "COMPLETE",
+        "sequence_length": 2048,
+        "sequences_expected": 141,
+        "batch_size": 1,
+        "full_vocabulary": true,
+        "logit_storage": "per-chunk full-vocabulary comparison statistics; token argmax arrays saved; full logits streamed and discarded",
+        "numerical_execution_gate": false,
+        "comparison": "same loaded model and same GPU, reference vs integer on identical input_ids",
+        "completed_sequences": 141,
+        "tokens_scored": 288627,
+        "reference_ppl": 6.990412215459079,
+        "candidate_ppl": 6.9892461050856465,
+        "max_abs_logit_difference": 28.0,
+        "argmax_matches": 250977,
+        "positions": 288768,
+        "ppl_difference": -0.0011661103734326161,
+        "relative_ppl_difference_percent": -0.016681568089127463,
+        "argmax_agreement": 0.869130236037234,
+        "relative_l2": 0.2087379352702387
+      },
+      "timing": {
+        "prefill": {
+          "seconds": {
+            "n": 20,
+            "median": 13.225179012166336,
+            "q25": 13.223729192162864,
+            "q75": 13.238420375972055,
+            "iqr": 0.014691183809190989,
+            "min": 13.221742436289787,
+            "max": 13.511642273049802
+          },
+          "tokens_per_second": {
+            "n": 20,
+            "median": 154.85612697069666,
+            "q25": 154.7012372250719,
+            "q75": 154.8731052567991,
+            "iqr": 0.17186803172720033,
+            "min": 151.57298858369882,
+            "max": 154.89637692372855
+          },
+          "milliseconds_per_token": {
+            "n": 20,
+            "median": 6.457606939534344,
+            "q25": 6.456899019610773,
+            "q75": 6.464072449205105,
+            "iqr": 0.007173429594331537,
+            "min": 6.455928923969623,
+            "max": 6.597481578637598
+          },
+          "samples_seconds": [
+            13.511642273049802,
+            13.25505716027692,
+            13.237858457956463,
+            13.250392803922296,
+            13.271250010933727,
+            13.24010613001883,
+            13.225343867205083,
+            13.226573418825865,
+            13.224024551920593,
+            13.222815594170243,
+            13.22257386893034,
+            13.221995810978115,
+            13.221742436289787,
+            13.222843112889677,
+            13.224500145763159,
+            13.224909380078316,
+            13.224747139029205,
+            13.23233963130042,
+            13.233205584809184,
+            13.225014157127589
+          ],
+          "allocated_before_bytes": 5877245952,
+          "peak_allocated_bytes": 7914645504,
+          "peak_reserved_bytes": 8015314944,
+          "peak_allocated_gib": 7.371088027954102,
+          "peak_reserved_gib": 7.46484375
+        },
+        "decode": {
+          "seconds": {
+            "n": 20,
+            "median": 317.83843067730777,
+            "q25": 312.90726983954664,
+            "q75": 322.3310657815309,
+            "iqr": 9.423795941984281,
+            "min": 307.7788550592959,
+            "max": 344.95673065586016
+          },
+          "tokens_per_second": {
+            "n": 20,
+            "median": 0.3775503223039466,
+            "q25": 0.37228931234699336,
+            "q75": 0.3835002000642956,
+            "iqr": 0.01121088771730222,
+            "min": 0.3478697162158457,
+            "max": 0.38989033205962476
+          },
+          "milliseconds_per_token": {
+            "n": 20,
+            "median": 2648.653588977565,
+            "q25": 2607.560581996222,
+            "q75": 2686.0922148460913,
+            "iqr": 78.53163284986931,
+            "min": 2564.8237921607993,
+            "max": 2874.639422132168
+          },
+          "samples_seconds": [
+            319.2046759147197,
+            319.6212049978785,
+            314.5503684640862,
+            316.01800775295123,
+            321.98636357393116,
+            317.7979889572598,
+            317.87887239735574,
+            324.79579547280446,
+            324.01992378011346,
+            323.3651724043302,
+            312.86942902905867,
+            307.7788550592959,
+            309.25619781715795,
+            344.95673065586016,
+            314.7635221867822,
+            312.1005810969509,
+            311.7268593260087,
+            312.91988344304264,
+            318.81898239115253,
+            343.19062339607626
+          ],
+          "allocated_before_bytes": 5878294528,
+          "peak_allocated_bytes": 7915694080,
+          "peak_reserved_bytes": 8017412096,
+          "peak_allocated_gib": 7.372064590454102,
+          "peak_reserved_gib": 7.466796875
+        }
+      },
+      "native_int4_tensorcore": false,
+      "packed_kv": false,
+      "ratios": {
+        "prefill": {
+          "latency_speedup_vs_fp16": 0.029439983629383375,
+          "latency_slowdown_vs_fp16": 33.96741019250849,
+          "throughput_speedup_vs_fp16": 0.02943998345117595,
+          "throughput_slowdown_vs_fp16": 33.96741039812154,
+          "peak_allocated_ratio_vs_fp16": 0.422509288783361
+        },
+        "decode": {
+          "latency_speedup_vs_fp16": 0.01141968266760305,
+          "latency_slowdown_vs_fp16": 87.5681075479391,
+          "throughput_speedup_vs_fp16": 0.011419682852486256,
+          "throughput_slowdown_vs_fp16": 87.56810613022263,
+          "peak_allocated_ratio_vs_fp16": 0.4221812423537654
+        }
+      }
+    }
+  ]
+}

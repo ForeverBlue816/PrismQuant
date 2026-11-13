@@ -1,0 +1,71 @@
+{
+  "model": "Meta-Llama-3.1-8B",
+  "seed": 0,
+  "observed_utc": "2026-11-13T05:47:09.342188+00:00",
+  "scope": "This deployment request only; completed smaller-model baseline results remain in previous updates",
+  "g128_fp16": {
+    "job_id": 1736915,
+    "submitted_source": "45183ed",
+    "recorded_status": "RUNNING",
+    "status_source": "scheduler_snapshot.json",
+    "status_observed_utc": "2026-11-13T05:47:09.342188+00:00",
+    "node": "gpu-a40-1",
+    "rows": [
+      "FP16 W/A/native paged cache",
+      "PrismQuant k=8 symmetric GPTQ W4 storage / asymmetric g128 A4 / expanded INT8 GEMM / simulated KV4"
+    ],
+    "ppl": "Full141 WikiText2 2048-token windows; sequence NLL retained",
+    "timing": "Same loaded model per row, same allocated A40 across rows, fresh cache construction included in prefill",
+    "checkpoint": "Reuse existing seed0 PQ packed checkpoint; no GPTQ recalibration",
+    "no_accuracy_threshold": true
+  },
+  "flatquant_native": {
+    "job_id": 1736351,
+    "dependency": null,
+    "status": "PENDING QOSMaxJobsPerUserLimit; both checkpoints ready and dependency released at04:43:31 UTC",
+    "status_provenance": "scheduler_snapshot.json and native_speed_release_1736351.json",
+    "rows": [
+      "Official FlatQuant packed backend",
+      "Same FlatQuant backend with overwritten random allocation removed",
+      "PrismQuant k=8 optimized per-token symmetric native backend"
+    ],
+    "ppl": "Full141 PPL on actual loaded deployment weights before timing",
+    "format_disclosure": "Report each backend actual W/A/KV format; native PQ per-token symmetric format differs from g128 asymmetric prototype"
+  },
+  "timing_protocol": {
+    "batch_size": 1,
+    "prefix_tokens": 2048,
+    "decode_tokens": 128,
+    "discarded_decode_tokens": 8,
+    "fixed_decode_token_id": 100,
+    "warmups": 10,
+    "repetitions": 20,
+    "gpu": "Exclusive A40, checked physically at runtime",
+    "mode": "Synchronized eager wall time, last-position logits",
+    "prefill_cache": "Fresh cache construction inside timer",
+    "decode_prefix": "Outside timer",
+    "metrics": [
+      "prefill latency",
+      "decode tokens/s",
+      "peak allocated/reserved memory"
+    ]
+  },
+  "no_native_g128_int4_backend": true,
+  "offq": "Excluded by explicit user instruction; no OffQ runs or reproduction",
+  "fp16_scope": "Deployment PPL and speed only; new user instruction supersedes previous no-FP16 speed exclusion",
+  "historical_results": "g128_vs_fp16_historical/table.md",
+  "current_results": "e38/g128_vs_fp16/job1736915/table.md; partial frozen snapshot, g128 decode ongoing",
+  "producer_job": {
+    "job_id": 1736252,
+    "status": "RUNNING",
+    "node": "gpu-pro6000-8"
+  },
+  "official_fakequant_accuracy_snapshot": {
+    "observed_utc": "2026-11-13T05:47:47.544340+00:00",
+    "flatquant_ppl": 7.020543393443095,
+    "flatquant_eight_tasks": "partial; see frozen record",
+    "duquant_ppl": 8.188651004899683,
+    "duquant_eight_task_mean_percent": 62.59466881425916,
+    "native_deployment": "not measured yet"
+  }
+}

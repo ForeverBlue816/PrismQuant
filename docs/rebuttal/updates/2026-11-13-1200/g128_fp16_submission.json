@@ -1,0 +1,24 @@
+{
+  "observed_utc": "2026-11-13T03:39:04.699817+00:00",
+  "job_id": 1736915,
+  "source_commit": "45183ed",
+  "model": "Meta-Llama-3.1-8B",
+  "seed": 0,
+  "rows": [
+    "FP16 native paged cache",
+    "PQ k8 g128 expanded INT8 prototype, simulated KV4"
+  ],
+  "checkpoint_reused": true,
+  "recalibration": false,
+  "protocol": "Exclusive A40, B1, prefix2048, decode128 with first8 omitted, fixed continuation token100,10warmups/20repeats,last-position logits only; PPL and timing on same loaded model; fresh cache construction inside prefill timer, prefix outside decode timer",
+  "timing_gpu": "one allocated A40 with runtime physical exclusivity checks",
+  "ppl": "full141 windows, then timing on same loaded object per row",
+  "numerical_gates": false,
+  "offq": "disabled by explicit user instruction",
+  "sources": {
+    "slurm_g128_vs_fp16_8b.sh": "db93759530ee2394185ddee409cb583cf92d798ede0e2f3c114383f25b376990",
+    "nar/e38_8b_integer.py": "7b3ef3898e27b9b2bac9e90f30c7da760803375c7444ec8f1ac4837b653cd1de",
+    "quarot-llama3/e38/stage_a_8b.py": "734e380f8125a9eaac706f963ded7b8271304632c5639dd76c613634287a7a4e"
+  },
+  "scheduler": "JobId=1736915 JobName=pq8b-g128-vs-fp16 UserId=yanlongc(295800911) GroupId=yanlongc(295800911) MCS_label=N/A Priority=1 Nice=0 Account=rose QOS=rose JobState=RUNNING Reason=None Dependency=(null) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:55 TimeLimit=06:00:00 TimeMin=N/A SubmitTime=2026-11-13T03:37:45 EligibleTime=2026-11-13T03:37:45 AccrueTime=2026-11-13T03:37:45 StartTime=2026-11-13T03:38:09 EndTime=2026-11-13T09:38:09 Deadline=N/A PreemptEligibleTime=2026-11-13T03:38:09 PreemptTime=None SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-13T03:38:09 Scheduler=Backfill Partition=cluster02 AllocNode:Sid=login-2:3297930 ReqNodeList=(null) ExcNodeList=(null) NodeList=gpu-a40-1 BatchHost=gpu-a40-1 NumNodes=1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=4,mem=40G,node=1,billing=3,gres/gpu=1,gres/gpu:a40=1 AllocTRES=cpu=4,mem=40G,node=1,billing=3,gres/gpu=1,gres/gpu:a40=1 Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=4 MinMemoryNode=40G MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null) Command=/home/yanlongc/prismquant-rebuttal-e38/slurm_g128_vs_fp16_8b.sh WorkDir=/home/yanlongc/prismquant-rebuttal-e38 StdErr=/home/yanlongc/prismquant-rebuttal-e38/runs/g128-vs-fp16-8b-1736915.err StdIn=/dev/null StdOut=/home/yanlongc/prismquant-rebuttal-e38/runs/g128-vs-fp16-8b-1736915.out Power= TresPerJob=gres/gpu:a40:1 TresPerTask=cpu:4"
+}

@@ -1,0 +1,95 @@
+{
+  "created_utc": "2026-11-13T03:33:22.325626+00:00",
+  "audit": "CPU-only official source/shape/readiness audit; no GPU kernels, measurements, or model forward",
+  "official_source": "/home/yanlongc/.prismquant/FlatQuant-native-torch26-cu124",
+  "official_commit": "9d88ffcb7d2c6bda59fb5c44dad36adc101aadb1",
+  "runtime_manifest": "/home/yanlongc/.prismquant/flatquant-native-tools/native_runtime_manifest.json",
+  "source_hash_checks": {
+    "deploy/__init__.py": true,
+    "deploy/functional/__init__.py": true,
+    "deploy/functional/online_trans.py": true,
+    "deploy/functional/quantization.py": true,
+    "deploy/kernels/bindings.cpp": true,
+    "deploy/kernels/block_matmul.py": true,
+    "deploy/kernels/flashinfer.cu": true,
+    "deploy/kernels/gemm.cu": true,
+    "deploy/kernels/include/common.h": true,
+    "deploy/kernels/include/flashinfer/cp_async.cuh": true,
+    "deploy/kernels/include/flashinfer/decode.cuh": true,
+    "deploy/kernels/include/flashinfer/layout.cuh": true,
+    "deploy/kernels/include/flashinfer/math.cuh": true,
+    "deploy/kernels/include/flashinfer/mma.cuh": true,
+    "deploy/kernels/include/flashinfer/page.cuh": true,
+    "deploy/kernels/include/flashinfer/permuted_smem.cuh": true,
+    "deploy/kernels/include/flashinfer/prefill.cuh": true,
+    "deploy/kernels/include/flashinfer/quantization.cuh": true,
+    "deploy/kernels/include/flashinfer/rope.cuh": true,
+    "deploy/kernels/include/flashinfer/state.cuh": true,
+    "deploy/kernels/include/flashinfer/utils.cuh": true,
+    "deploy/kernels/include/flashinfer/vec_dtypes.cuh": true,
+    "deploy/kernels/include/flashinfer.h": true,
+    "deploy/kernels/include/gemm.h": true,
+    "deploy/kernels/include/int4.h": true,
+    "deploy/kernels/include/quant.h": true,
+    "deploy/kernels/include/util.h": true,
+    "deploy/kernels/kron_matmul.py": true,
+    "deploy/kernels/quant.cu": true,
+    "deploy/nn/__init__.py": true,
+    "deploy/nn/linear.py": true,
+    "deploy/nn/normalization.py": true,
+    "deploy/nn/online_trans.py": true,
+    "deploy/nn/quantization.py": true,
+    "deploy/transformers/__init__.py": true,
+    "deploy/transformers/kv_cache.py": true,
+    "deploy/transformers/modeling_llama.py": true
+  },
+  "all_manifest_sources_match": true,
+  "models": {
+    "Llama-3.2-3B": {
+      "config": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Llama-3.2-3B/snapshots/d4446454d87d51aa42e1fb174f25acc5f8762331/config.json",
+      "hidden_size": 3072,
+      "num_attention_heads": 24,
+      "head_dim": 128,
+      "intermediate_size": 8192,
+      "o_proj_block_shape": [
+        128,
+        24
+      ],
+      "official_block_arange_valid": false
+    },
+    "Meta-Llama-3.1-8B": {
+      "config": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/config.json",
+      "hidden_size": 4096,
+      "num_attention_heads": 32,
+      "head_dim": 128,
+      "intermediate_size": 14336,
+      "o_proj_block_shape": [
+        128,
+        32
+      ],
+      "official_block_arange_valid": true
+    }
+  },
+  "triton_semantic_source": "/projects/nar/nar-validation/flatquant-native-runtime/packages/triton/language/semantic.py",
+  "triton_semantic_arange_checks": {
+    "24": {
+      "type": "ValueError",
+      "message": "arange's range must be a power of 2"
+    },
+    "32": {
+      "type": "RuntimeError",
+      "message": "passed shape checks; GPU IR deliberately not created"
+    },
+    "128": {
+      "type": "RuntimeError",
+      "message": "passed shape checks; GPU IR deliberately not created"
+    }
+  },
+  "checkpoint_ready": false,
+  "findings": {
+    "3b": "Official o_proj block_matmul passes num_heads=24 unchanged to tl.arange: unsupported; hidden_size=3072 Kron decomposition is not the direct failure. No official arithmetic modified.",
+    "8b": "The above shape restriction passes with head_dim=128,num_heads=32. Full trained 8B native forward/PPL/timing still require GPU execution.",
+    "cache_capacity": "Official _ensure_page_cnt_per_batch grows 2048-token cache on first decode token; common benchmark discards first 8 decode tokens, with peak memory still including prefix and growth.",
+    "dependency": "train-ppl writes complete checkpoint DONE before PPL. Release dedicated Flat/PQ speed job after this phase exits and a complete checkpoint exists, without waiting for eight tasks or numerical threshold. Do not infer DuQuant checkpoint readiness from FlatQuant."
+  }
+}

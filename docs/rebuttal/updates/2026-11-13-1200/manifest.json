@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-13T05:47:09.342188+00:00",
+  "scope": "Meta-Llama-3.1-8B deployment follow-up; running results frozen at capture",
+  "self_hash_omitted": true,
+  "benchmark_sample_payloads_exported": false,
+  "files": [
+    {
+      "path": "README.md",
+      "exported_bytes": 4607,
+      "exported_sha256": "72c916fdf216179701316c988f710c51f989ccd2066241794430fa3da4350433",
+      "captured_utc": "2026-11-13T05:47:47.544340+00:00",
+      "source_path": null,
+      "transformation": "generated from frozen exported records and scheduler observation"
+    },
+    {
+      "path": "active_protocol.json",
+      "exported_bytes": 2813,
+      "exported_sha256": "6df6ca39baeafd06ec588d66716d62312dbe5795cb3e0a0479fc6447270ca5ef",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/experiments/rebuttal_speed_comparison_20261112.json",
+      "source_sha256": "6df6ca39baeafd06ec588d66716d62312dbe5795cb3e0a0479fc6447270ca5ef",
+      "source_bytes": 2813,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "6df6ca39baeafd06ec588d66716d62312dbe5795cb3e0a0479fc6447270ca5ef"
+    },
+    {
+      "path": "deployment_plan.json",
+      "exported_bytes": 3045,
+      "exported_sha256": "e2423062f5ec3052406f5c998e6342c33dfbccbf36719f05fe5b8e010a49a3e9",
+      "captured_utc": "2026-11-13T05:47:47.544340+00:00",
+      "source_path": null,
+      "transformation": "generated from frozen exported records and scheduler observation"
+    },
+    {
+      "path": "e38/g128_vs_fp16/job1736915/comparison.json",
+      "exported_bytes": 26179,
+      "exported_sha256": "57e46d76b91c79e3cbc1eba49f08148fc9883ea88b5769f8a8283539ac407490",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": null,
+      "transformation": "generated from frozen exported records and scheduler observation"
+    },
+    {
+      "path": "e38/g128_vs_fp16/job1736915/summary.md",
+      "exported_bytes": 2208,
+      "exported_sha256": "7d2da19307fc76a0108bf2a9b479955d717f2ae57b4c7c2ab24c55919d46cbd2",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": null,
+      "transformation": "generated from frozen exported records and scheduler observation"
+    },
+    {
+      "path": "e38/g128_vs_fp16/job1736915/table.md",
+      "exported_bytes": 2546,
+      "exported_sha256": "5d0da5d9f823e469e4aa3faebe1de45bf1d3f57c8e4fe8aaecf7d439906264d7",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": null,
+      "transformation": "generated from frozen exported records and scheduler observation"
+    },
+    {
+      "path": "e38/raw/integer_8b_nar_k8_seed0_ppl-timing_job1736915.json",
+      "exported_bytes": 485993,
+      "exported_sha256": "d49812f4890a98c61a321709fd404d082932996dffa2eb19b29147a734b54569",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_ppl-timing_job1736915.json",
+      "source_sha256": "d49812f4890a98c61a321709fd404d082932996dffa2eb19b29147a734b54569",
+      "source_bytes": 485993,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "d49812f4890a98c61a321709fd404d082932996dffa2eb19b29147a734b54569"
+    },
+    {
+      "path": "e38/raw/stage_a_8b_fp16_seed0_g128comparison_job1736915.json",
+      "exported_bytes": 140481,
+      "exported_sha256": "d2bca2d3f985bcf6470b6780597befe2a0d9713f3ec44b7f2562c37432b15605",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_g128comparison_job1736915.json",
+      "source_sha256": "d2bca2d3f985bcf6470b6780597befe2a0d9713f3ec44b7f2562c37432b15605",
+      "source_bytes": 140481,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "d2bca2d3f985bcf6470b6780597befe2a0d9713f3ec44b7f2562c37432b15605"
+    },
+    {
+      "path": "entrypoints/nar/e38_8b_integer.py",
+      "exported_bytes": 33367,
+      "exported_sha256": "7b3ef3898e27b9b2bac9e90f30c7da760803375c7444ec8f1ac4837b653cd1de",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/nar/e38_8b_integer.py",
+      "source_sha256": "7b3ef3898e27b9b2bac9e90f30c7da760803375c7444ec8f1ac4837b653cd1de",
+      "source_bytes": 33367,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "7b3ef3898e27b9b2bac9e90f30c7da760803375c7444ec8f1ac4837b653cd1de"
+    },
+    {
+      "path": "entrypoints/nar/e38_integer_operator.py",
+      "exported_bytes": 17720,
+      "exported_sha256": "396ed7faa3c7af1c3a1de35640515d07478a490626dacd88e468fd005b03a0a9",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/nar/e38_integer_operator.py",
+      "source_sha256": "396ed7faa3c7af1c3a1de35640515d07478a490626dacd88e468fd005b03a0a9",
+      "source_bytes": 17720,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "396ed7faa3c7af1c3a1de35640515d07478a490626dacd88e468fd005b03a0a9"
+    },
+    {
+      "path": "entrypoints/quarot-llama3/e38/stage_a_8b.py",
+      "exported_bytes": 23433,
+      "exported_sha256": "734e380f8125a9eaac706f963ded7b8271304632c5639dd76c613634287a7a4e",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/quarot-llama3/e38/stage_a_8b.py",
+      "source_sha256": "734e380f8125a9eaac706f963ded7b8271304632c5639dd76c613634287a7a4e",
+      "source_bytes": 23433,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "734e380f8125a9eaac706f963ded7b8271304632c5639dd76c613634287a7a4e"
+    },
+    {
+      "path": "entrypoints/scripts/collect_g128_vs_fp16.py",
+      "exported_bytes": 16870,
+      "exported_sha256": "d2b65bc72d17856229c0eac5452b8e96259e82439edf7006bb3fe18b3b1b7c50",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/scripts/collect_g128_vs_fp16.py",
+      "source_sha256": "d2b65bc72d17856229c0eac5452b8e96259e82439edf7006bb3fe18b3b1b7c50",
+      "source_bytes": 16870,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "d2b65bc72d17856229c0eac5452b8e96259e82439edf7006bb3fe18b3b1b7c50"
+    },
+    {
+      "path": "entrypoints/scripts/rebuttal_compute_worker.sh",
+      "exported_bytes": 4152,
+      "exported_sha256": "f40fa5dd89a21bb3bd6fc721041e81329231b6f41ae2ceda2e6d075340592610",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/scripts/rebuttal_compute_worker.sh",
+      "source_sha256": "f40fa5dd89a21bb3bd6fc721041e81329231b6f41ae2ceda2e6d075340592610",
+      "source_bytes": 4152,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "f40fa5dd89a21bb3bd6fc721041e81329231b6f41ae2ceda2e6d075340592610"
+    },
+    {
+      "path": "entrypoints/scripts/release_native_speed_when_ready.py",
+      "exported_bytes": 8734,
+      "exported_sha256": "64a52e76f8253187adea39efef568b3daa025a48f90687d3ad1ca6019a3d1313",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/scripts/release_native_speed_when_ready.py",
+      "source_sha256": "64a52e76f8253187adea39efef568b3daa025a48f90687d3ad1ca6019a3d1313",
+      "source_bytes": 8734,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "64a52e76f8253187adea39efef568b3daa025a48f90687d3ad1ca6019a3d1313"
+    },
+    {
+      "path": "entrypoints/slurm_e38_8b_integer.sh",
+      "exported_bytes": 2161,
+      "exported_sha256": "945dac810f5b4f01a9510c012e50fc3927dd153a4fe54f507eb314536bac66bb",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/slurm_e38_8b_integer.sh",
+      "source_sha256": "945dac810f5b4f01a9510c012e50fc3927dd153a4fe54f507eb314536bac66bb",
+      "source_bytes": 2161,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "945dac810f5b4f01a9510c012e50fc3927dd153a4fe54f507eb314536bac66bb"
+    },
+    {
+      "path": "entrypoints/slurm_e39_native_8b.sh",
+      "exported_bytes": 1472,
+      "exported_sha256": "f7e6cec1da3cdca8ccc8eca33f6f6b3d975f53962ea441ff4f9049f35ab057a6",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e39/slurm_e39_native_8b.sh",
+      "source_sha256": "f7e6cec1da3cdca8ccc8eca33f6f6b3d975f53962ea441ff4f9049f35ab057a6",
+      "source_bytes": 1472,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "f7e6cec1da3cdca8ccc8eca33f6f6b3d975f53962ea441ff4f9049f35ab057a6"
+    },
+    {
+      "path": "entrypoints/slurm_g128_vs_fp16_8b.sh",
+      "exported_bytes": 2146,
+      "exported_sha256": "db93759530ee2394185ddee409cb583cf92d798ede0e2f3c114383f25b376990",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/slurm_g128_vs_fp16_8b.sh",
+      "source_sha256": "db93759530ee2394185ddee409cb583cf92d798ede0e2f3c114383f25b376990",
+      "source_bytes": 2146,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "db93759530ee2394185ddee409cb583cf92d798ede0e2f3c114383f25b376990"
+    },
+    {
+      "path": "entrypoints/slurm_rebuttal_speed_8b.sh",
+      "exported_bytes": 2319,
+      "exported_sha256": "cd7f7cf0affe14947bdd105e27f51c1ebc420e4bd4236e6a27b6fa40d141ac54",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_speed_8b.sh",
+      "source_sha256": "cd7f7cf0affe14947bdd105e27f51c1ebc420e4bd4236e6a27b6fa40d141ac54",
+      "source_bytes": 2319,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "cd7f7cf0affe14947bdd105e27f51c1ebc420e4bd4236e6a27b6fa40d141ac54"
+    },
+    {
+      "path": "entrypoints/tests/test_e38_8b_integer.py",
+      "exported_bytes": 9776,
+      "exported_sha256": "774b0d79d5279fa93ef8b49b6dfc6f2ee6fb6772e2134697a2fe8e63f0ded97e",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/tests/test_e38_8b_integer.py",
+      "source_sha256": "774b0d79d5279fa93ef8b49b6dfc6f2ee6fb6772e2134697a2fe8e63f0ded97e",
+      "source_bytes": 9776,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "774b0d79d5279fa93ef8b49b6dfc6f2ee6fb6772e2134697a2fe8e63f0ded97e"
+    },
+    {
+      "path": "entrypoints/tests/test_release_native_speed_when_ready.py",
+      "exported_bytes": 5618,
+      "exported_sha256": "d34d596e46457219ce2168af1384bbf2c313fbc2c58e87c164c75d74f460d066",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/tests/test_release_native_speed_when_ready.py",
+      "source_sha256": "d34d596e46457219ce2168af1384bbf2c313fbc2c58e87c164c75d74f460d066",
+      "source_bytes": 5618,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "d34d596e46457219ce2168af1384bbf2c313fbc2c58e87c164c75d74f460d066"
+    },
+    {
+      "path": "flatquant_native_submission.json",
+      "exported_bytes": 866,
+      "exported_sha256": "d6f1ba4f122a722e232601d513e1ab6597c852d6272268e0b40a7a125fd7ec33",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/baselines/speed_8b_submission_20261113.json",
+      "source_sha256": "d6f1ba4f122a722e232601d513e1ab6597c852d6272268e0b40a7a125fd7ec33",
+      "source_bytes": 866,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "d6f1ba4f122a722e232601d513e1ab6597c852d6272268e0b40a7a125fd7ec33"
+    },
+    {
+      "path": "g128_fp16_submission.json",
+      "exported_bytes": 2616,
+      "exported_sha256": "fefeefbe7cab20dac9fec7178c88e05bea3ba3b55ff1c81231f595a7fb4aad8b",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/baselines/g128_fp16_submission_20261113.json",
+      "source_sha256": "fefeefbe7cab20dac9fec7178c88e05bea3ba3b55ff1c81231f595a7fb4aad8b",
+      "source_bytes": 2616,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "fefeefbe7cab20dac9fec7178c88e05bea3ba3b55ff1c81231f595a7fb4aad8b"
+    },
+    {
+      "path": "g128_vs_fp16_historical/comparison.json",
+      "exported_bytes": 31348,
+      "exported_sha256": "2b91ad7d590308118ef43588b8ce6131326e76a53e43b8291361e0e8bc5d244e",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/g128_vs_fp16_historical/comparison.json",
+      "source_sha256": "2b91ad7d590308118ef43588b8ce6131326e76a53e43b8291361e0e8bc5d244e",
+      "source_bytes": 31348,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "2b91ad7d590308118ef43588b8ce6131326e76a53e43b8291361e0e8bc5d244e"
+    },
+    {
+      "path": "g128_vs_fp16_historical/summary.md",
+      "exported_bytes": 5710,
+      "exported_sha256": "3b19e6c83038b9e173b0b6b73f2d8a69bb67e5f9ed3af3055fedd291afe717fd",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/g128_vs_fp16_historical/summary.md",
+      "source_sha256": "3b19e6c83038b9e173b0b6b73f2d8a69bb67e5f9ed3af3055fedd291afe717fd",
+      "source_bytes": 5710,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "3b19e6c83038b9e173b0b6b73f2d8a69bb67e5f9ed3af3055fedd291afe717fd"
+    },
+    {
+      "path": "g128_vs_fp16_historical/table.md",
+      "exported_bytes": 2995,
+      "exported_sha256": "7af93270eba7c18a753261ad68e1fc70b795cae32ffb368f37fb2f67496ddab0",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/g128_vs_fp16_historical/table.md",
+      "source_sha256": "7af93270eba7c18a753261ad68e1fc70b795cae32ffb368f37fb2f67496ddab0",
+      "source_bytes": 2995,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "7af93270eba7c18a753261ad68e1fc70b795cae32ffb368f37fb2f67496ddab0"
+    },
+    {
+      "path": "native_8b_collection_at_submission.json",
+      "exported_bytes": 1643,
+      "exported_sha256": "e4ca6d2e1d19f600fd53031e5803ee17044bb7478962a88cc21bd0f28513ed80",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/baselines/native_8b/collection.json",
+      "source_sha256": "e4ca6d2e1d19f600fd53031e5803ee17044bb7478962a88cc21bd0f28513ed80",
+      "source_bytes": 1643,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "e4ca6d2e1d19f600fd53031e5803ee17044bb7478962a88cc21bd0f28513ed80"
+    },
+    {
+      "path": "native_cpu_source_audit_20261113.json",
+      "exported_bytes": 4494,
+      "exported_sha256": "d6f580c94f9bb545711b1f28e832eebdb5221f7cadad131d4c693df722d6924a",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_cpu_source_audit_20261113.json",
+      "source_sha256": "d6f580c94f9bb545711b1f28e832eebdb5221f7cadad131d4c693df722d6924a",
+      "source_bytes": 4494,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "d6f580c94f9bb545711b1f28e832eebdb5221f7cadad131d4c693df722d6924a"
+    },
+    {
+      "path": "native_speed_release_1736351.json",
+      "exported_bytes": 4096,
+      "exported_sha256": "89d6b78f8a957e064358e4062d643a8674e5faa2ba779dd69194442cf5d5750e",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/baselines/native_speed_release_1736351.json",
+      "source_sha256": "89d6b78f8a957e064358e4062d643a8674e5faa2ba779dd69194442cf5d5750e",
+      "source_bytes": 4096,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "89d6b78f8a957e064358e4062d643a8674e5faa2ba779dd69194442cf5d5750e"
+    },
+    {
+      "path": "raw/integer_8b_hadamard_seed0_equivalence-timing_job1734010.json",
+      "exported_bytes": 677098,
+      "exported_sha256": "428bf211dbd3222e962999b263cf6eff0b56b48841643c58a9289ae6e09906ba",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_hadamard_seed0_equivalence-timing_job1734010.json",
+      "source_sha256": "428bf211dbd3222e962999b263cf6eff0b56b48841643c58a9289ae6e09906ba",
+      "source_bytes": 677098,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "428bf211dbd3222e962999b263cf6eff0b56b48841643c58a9289ae6e09906ba"
+    },
+    {
+      "path": "raw/integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json",
+      "exported_bytes": 676362,
+      "exported_sha256": "36a9c122e6fa26feaf38d82fc78889e14dc008744ab3585f41946d8e39920b4e",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_equivalence-timing_job1734010.json",
+      "source_sha256": "36a9c122e6fa26feaf38d82fc78889e14dc008744ab3585f41946d8e39920b4e",
+      "source_bytes": 676362,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "36a9c122e6fa26feaf38d82fc78889e14dc008744ab3585f41946d8e39920b4e"
+    },
+    {
+      "path": "raw/stage_a_8b_fp16_seed0_job1734010.json",
+      "exported_bytes": 138953,
+      "exported_sha256": "4a45d65943048e624f37429cac1893c63a5242365b1e0bfa18417aef1920a016",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_job1734010.json",
+      "source_sha256": "4a45d65943048e624f37429cac1893c63a5242365b1e0bfa18417aef1920a016",
+      "source_bytes": 138953,
+      "transformation": "none; captured source bytes retained",
+      "current_source_sha256_at_manifest": "4a45d65943048e624f37429cac1893c63a5242365b1e0bfa18417aef1920a016"
+    },
+    {
+      "path": "scheduler_snapshot.json",
+      "exported_bytes": 4446,
+      "exported_sha256": "4f8995db872922085f08e2fde9e33b8dc456fa9da6dee39e3808144ba8a9b878",
+      "captured_utc": "2026-11-13T05:47:09.342188+00:00",
+      "source_path": null,
+      "transformation": "generated from frozen exported records and scheduler observation"
+    },
+    {
+      "path": "flatquant8b_fakequant_ppl.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_train-ppl_job1736252.json",
+      "source_bytes": 17502,
+      "source_sha256": "a768dc282bbc448d0cf48873e5b9c6fa72b38de293644fa4741b5dae2d85e2c9",
+      "exported_bytes": 17502,
+      "exported_sha256": "a768dc282bbc448d0cf48873e5b9c6fa72b38de293644fa4741b5dae2d85e2c9",
+      "captured_utc": "2026-11-13T05:47:47.544340+00:00",
+      "transformation": "none; captured source bytes retained",
+      "omitted_sample_payloads": []
+    },
+    {
+      "path": "flatquant8b_eight_tasks_partial.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_tasks_job1736252.json",
+      "source_bytes": 4917,
+      "source_sha256": "f1b92a19e779b4461465dbe5ce446abeab443021d9d9e443f9c7f1131ebc4e54",
+      "exported_bytes": 4917,
+      "exported_sha256": "f1b92a19e779b4461465dbe5ce446abeab443021d9d9e443f9c7f1131ebc4e54",
+      "captured_utc": "2026-11-13T05:47:47.544340+00:00",
+      "transformation": "none; captured source bytes retained",
+      "omitted_sample_payloads": []
+    },
+    {
+      "path": "duquant8b_fakequant_ppl.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_8b_seed0_quantize-ppl_job1736252.json",
+      "source_bytes": 33740,
+      "source_sha256": "a6ae287c6193bb76b808c3d3ee2933a2ed507321e69e76f85275a9c9f3591df2",
+      "exported_bytes": 33740,
+      "exported_sha256": "a6ae287c6193bb76b808c3d3ee2933a2ed507321e69e76f85275a9c9f3591df2",
+      "captured_utc": "2026-11-13T05:47:47.544340+00:00",
+      "transformation": "none; captured source bytes retained",
+      "omitted_sample_payloads": []
+    },
+    {
+      "path": "duquant8b_eight_tasks_complete.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_8b_seed0_eight-tasks_job1736252.json",
+      "source_bytes": 12773,
+      "source_sha256": "fb326abfda805d6fbf3d67e86f9f22de13daeab76892b89fd13430cdb0dda05b",
+      "exported_bytes": 12773,
+      "exported_sha256": "fb326abfda805d6fbf3d67e86f9f22de13daeab76892b89fd13430cdb0dda05b",
+      "captured_utc": "2026-11-13T05:47:47.544340+00:00",
+      "transformation": "none; captured source bytes retained",
+      "omitted_sample_payloads": []
+    },
+    {
+      "path": "baseline8b_collection.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/baselines/llama31_8b/collection.json",
+      "source_bytes": 3763,
+      "source_sha256": "8e62871533688a9322d650cf6996bbbf8b8f511a86ff3af6fcfbf4c94abc1c7f",
+      "exported_bytes": 3763,
+      "exported_sha256": "8e62871533688a9322d650cf6996bbbf8b8f511a86ff3af6fcfbf4c94abc1c7f",
+      "captured_utc": "2026-11-13T05:47:47.544340+00:00",
+      "transformation": "none; captured source bytes retained",
+      "omitted_sample_payloads": []
+    }
+  ],
+  "updated_utc": "2026-11-13T05:47:47.544340+00:00"
+}

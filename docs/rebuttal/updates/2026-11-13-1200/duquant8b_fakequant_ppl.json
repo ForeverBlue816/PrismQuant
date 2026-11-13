@@ -1,0 +1,1292 @@
+{
+  "kind": "E42_DuQuant_official_native_8b",
+  "status": "COMPLETE",
+  "scope": "Official DuQuant W4A4 native configuration in FP16 floating fake-quant modules; not E14 g128/KIVI and not native INT4 deployment",
+  "phase": "quantize-ppl",
+  "seed": 0,
+  "model": "Meta-Llama-3.1-8B",
+  "model_key": "llama31_8b",
+  "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "command_line": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "-m",
+    "nar.e42_duquant_native",
+    "--phase",
+    "quantize-ppl",
+    "--model",
+    "llama31_8b",
+    "--source-commit",
+    "54898df318e88eb6a7c41ed7fdcb838ae507386a",
+    "--artifact-dir",
+    "/projects/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1",
+    "--batch-size",
+    "1",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_8b_seed0_quantize-ppl_job1736252.json"
+  ],
+  "source_commit": "54898df318e88eb6a7c41ed7fdcb838ae507386a",
+  "hostname": "gpu-pro6000-8.cluster02.eee.ntu.edu.sg",
+  "started_utc": "2026-11-13T03:41:11.842679+00:00",
+  "numerical_execution_gates": "none",
+  "ppl": {
+    "status": "COMPLETE",
+    "chunks": [
+      {
+        "chunk": 0,
+        "nll": 1.8766926527023315,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 1,
+        "nll": 2.418724775314331,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 2,
+        "nll": 2.538483142852783,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 3,
+        "nll": 2.108785390853882,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 4,
+        "nll": 2.0143964290618896,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 5,
+        "nll": 1.596840262413025,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 6,
+        "nll": 1.6538389921188354,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 7,
+        "nll": 1.954159140586853,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 8,
+        "nll": 2.336266279220581,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 9,
+        "nll": 1.9837502241134644,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 10,
+        "nll": 1.9563837051391602,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 11,
+        "nll": 2.281162738800049,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 12,
+        "nll": 2.211249589920044,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 13,
+        "nll": 2.2939372062683105,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 14,
+        "nll": 2.2235498428344727,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 15,
+        "nll": 2.433321714401245,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 16,
+        "nll": 2.196969747543335,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 17,
+        "nll": 2.1904611587524414,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 18,
+        "nll": 1.9544684886932373,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 19,
+        "nll": 2.105964422225952,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 20,
+        "nll": 2.231992483139038,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 21,
+        "nll": 2.1808340549468994,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 22,
+        "nll": 2.1722583770751953,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 23,
+        "nll": 2.249776840209961,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 24,
+        "nll": 2.2893154621124268,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 25,
+        "nll": 2.431356430053711,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 26,
+        "nll": 2.4796743392944336,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 27,
+        "nll": 2.269855260848999,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 28,
+        "nll": 2.034062385559082,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 29,
+        "nll": 1.8779882192611694,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 30,
+        "nll": 1.7481276988983154,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 31,
+        "nll": 1.7403090000152588,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 32,
+        "nll": 2.032860040664673,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 33,
+        "nll": 2.0319697856903076,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 34,
+        "nll": 2.167097330093384,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 35,
+        "nll": 1.529052495956421,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 36,
+        "nll": 1.525315284729004,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 37,
+        "nll": 1.5431159734725952,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 38,
+        "nll": 1.5101354122161865,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 39,
+        "nll": 1.7264354228973389,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 40,
+        "nll": 2.3130815029144287,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 41,
+        "nll": 2.7472596168518066,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 42,
+        "nll": 2.7380990982055664,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 43,
+        "nll": 2.3316996097564697,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 44,
+        "nll": 2.3530948162078857,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 45,
+        "nll": 2.2816641330718994,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 46,
+        "nll": 2.3827667236328125,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 47,
+        "nll": 2.2066900730133057,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 48,
+        "nll": 2.1083054542541504,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 49,
+        "nll": 2.092024803161621,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 50,
+        "nll": 1.851253628730774,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 51,
+        "nll": 1.88404381275177,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 52,
+        "nll": 1.7238930463790894,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 53,
+        "nll": 1.882470726966858,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 54,
+        "nll": 1.648019790649414,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 55,
+        "nll": 1.6114110946655273,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 56,
+        "nll": 1.8862240314483643,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 57,
+        "nll": 1.8660534620285034,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 58,
+        "nll": 2.194587230682373,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 59,
+        "nll": 2.3665173053741455,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 60,
+        "nll": 2.345310926437378,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 61,
+        "nll": 2.524981737136841,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 62,
+        "nll": 1.6097911596298218,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 63,
+        "nll": 1.972352385520935,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 64,
+        "nll": 2.0018720626831055,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 65,
+        "nll": 1.7547026872634888,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 66,
+        "nll": 1.8735156059265137,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 67,
+        "nll": 1.952966332435608,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 68,
+        "nll": 1.9170479774475098,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 69,
+        "nll": 2.114466667175293,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 70,
+        "nll": 2.352811336517334,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 71,
+        "nll": 2.2907748222351074,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 72,
+        "nll": 1.9372762441635132,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 73,
+        "nll": 2.195638656616211,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 74,
+        "nll": 2.054861545562744,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 75,
+        "nll": 1.9818146228790283,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 76,
+        "nll": 2.1768507957458496,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 77,
+        "nll": 2.2414839267730713,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 78,
+        "nll": 2.337336778640747,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 79,
+        "nll": 1.7580615282058716,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 80,
+        "nll": 1.9261677265167236,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 81,
+        "nll": 2.0031864643096924,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 82,
+        "nll": 1.9177154302597046,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 83,
+        "nll": 1.8832268714904785,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 84,
+        "nll": 1.8994231224060059,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 85,
+        "nll": 2.1821084022521973,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 86,
+        "nll": 2.1924197673797607,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 87,
+        "nll": 2.2266082763671875,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 88,
+        "nll": 2.8631510734558105,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 89,
+        "nll": 2.756553888320923,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 90,
+        "nll": 2.410369873046875,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 91,
+        "nll": 2.588690996170044,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 92,
+        "nll": 2.601533889770508,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 93,
+        "nll": 2.1651034355163574,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 94,
+        "nll": 2.4412002563476562,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 95,
+        "nll": 2.146250009536743,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 96,
+        "nll": 2.2690939903259277,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 97,
+        "nll": 1.9136149883270264,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 98,
+        "nll": 2.2125566005706787,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 99,
+        "nll": 2.3693575859069824,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 100,
+        "nll": 2.07304048538208,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 101,
+        "nll": 2.120258331298828,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 102,
+        "nll": 2.037583589553833,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 103,
+        "nll": 2.502964973449707,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 104,
+        "nll": 2.0869555473327637,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 105,
+        "nll": 2.0310277938842773,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 106,
+        "nll": 1.9171862602233887,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 107,
+        "nll": 1.9190961122512817,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 108,
+        "nll": 1.8926770687103271,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 109,
+        "nll": 1.8104476928710938,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 110,
+        "nll": 2.3425941467285156,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 111,
+        "nll": 2.05963134765625,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 112,
+        "nll": 2.2207388877868652,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 113,
+        "nll": 2.1991724967956543,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 114,
+        "nll": 2.016974687576294,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 115,
+        "nll": 1.972686767578125,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 116,
+        "nll": 2.3729028701782227,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 117,
+        "nll": 2.0171282291412354,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 118,
+        "nll": 1.9201037883758545,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 119,
+        "nll": 1.846889615058899,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 120,
+        "nll": 2.0910096168518066,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 121,
+        "nll": 2.175410747528076,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 122,
+        "nll": 2.027402639389038,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 123,
+        "nll": 2.0881288051605225,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 124,
+        "nll": 1.910020351409912,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 125,
+        "nll": 2.10127329826355,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 126,
+        "nll": 2.0831856727600098,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 127,
+        "nll": 1.9539886713027954,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 128,
+        "nll": 2.0930325984954834,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 129,
+        "nll": 2.2503035068511963,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 130,
+        "nll": 2.205033540725708,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 131,
+        "nll": 2.1728901863098145,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 132,
+        "nll": 1.6683069467544556,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 133,
+        "nll": 1.4242315292358398,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 134,
+        "nll": 2.37380313873291,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 135,
+        "nll": 2.5492684841156006,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 136,
+        "nll": 2.3244500160217285,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 137,
+        "nll": 1.9621587991714478,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 138,
+        "nll": 2.227397918701172,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 139,
+        "nll": 2.230959415435791,
+        "tokens_scored": 2047,
+        "finite": true
+      },
+      {
+        "chunk": 140,
+        "nll": 2.282968044281006,
+        "tokens_scored": 2047,
+        "finite": true
+      }
+    ],
+    "batch_size": 1,
+    "sequence_length": 2048,
+    "no_bos": true,
+    "scoring": "FP32 next-token cross entropy, 2047 labels per complete2048-token window",
+    "tokens": {
+      "path": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+      "bytes": 2312087,
+      "sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021"
+    },
+    "numerical_execution_gate": false,
+    "sequences_expected": 141,
+    "completed_sequences": 141,
+    "tokens_scored": 288627,
+    "value": 8.188651004899683,
+    "completed_141_sequences": true,
+    "elapsed_seconds": 60.977403935045004
+  },
+  "eight_tasks": {
+    "status": "not run"
+  },
+  "slurm": {
+    "SLURM_JOB_ID": "1736252",
+    "SLURM_JOB_NODELIST": "gpu-pro6000-8",
+    "CUDA_VISIBLE_DEVICES": "0"
+  },
+  "official_commit": "d56cfc6fe97c34c0eb100fec82fe439865905679",
+  "official_files": {
+    "main.py": "b43fd7fad7a5aca83532f676b3a2961de2985e1f32b53c7ad2b9b59ab06997a2",
+    "run.sh": "6cfba2299712370d5990384715df1e0890ea1713be3c64bb24b7c6c0a5f992c9",
+    "get_rot.py": "aa11b175c86d36eb48ecf729a76b57614dd7aab89c0c749cc392dfb035ff1981",
+    "datautils.py": "6cda55ce962408fdf295e13c293afd1aca105ee2b16cdc14418cd8c72ed7e061",
+    "generate_act_scale_shift.py": "183fed415f515bf7d205779b4e1d6ec327203e13e5d66dcf3268957bf6ddcabc",
+    "utils.py": "9907095a77b674725118e2d0ff5041f34eb7e3576158c7df83c5638b7a6ad6dc",
+    "quantize/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "quantize/const.py": "813ebddbbf7a6255796b18ce6677d04887a84815b8a065c882c7e7963e635dee",
+    "quantize/du_norm.py": "db9330bba090263b701d7a30b101073321fc60f7015f9ebb7b5cd6ffc63b4fc4",
+    "quantize/duquant.py": "3f365a2c4092b08e0d49dcf9733c26ce68cdc55c9b6fc45f0793af918c5abe15",
+    "quantize/int_linear.py": "cd7a68f2120d6883048624b020e5396eea204e5ef70bed2d0cbf34ae1d45ff1f",
+    "quantize/int_matmul.py": "4ad76e18152793550436d7c6c1b67a0da7e7cadafc1734c93728165a8d26bc13",
+    "quantize/quantizer.py": "99c2a0d76866e2289658fb85a2b7e2673c23517fb1d9c68642753bf5b9830b1a",
+    "quantize/utils.py": "d1c1e725c1ddbbefbbb27c5e5ba9387617defaf35a709ec30c236a79c7516fe4",
+    "models/LMClass.py": "e5b13e4821c3564bee1786c6c46f8679e7248d9539cfbaa9fc37f6470503d1e3",
+    "models/int_llama_layer.py": "ba3715401c12fd5e09e853a0837d83552b982b98807633ea01db4a6e1fa02f43",
+    "models/int_mistral_layer.py": "6af52b664cec64e5cf23890c8afa45f085eee42aa4891e1e5d0f9eff695b8bcc",
+    "models/models_utils.py": "2e2ceec3a667326d486856b16cd61d2e62e92558f1f54ae34f4586984dd91aa6",
+    "models/transformation.py": "50ae070639510869e64c246961008787b6f8580ffbc54df9b2a15e94ce4ac78b"
+  },
+  "runner_files": {
+    "nar/e42_duquant_native.py": "932c4dbbf96f2bbfa86c71760d3eb5218ddb50cd98564a0bfc51060ef6495f47",
+    "nar/e42_duquant_compat.py": "2715e6535217c17011f67c25265252cccdf20b3c719fce793c0ffafbff6dc6ed",
+    "slurm_e42_duquant_native.sh": "d27dfff07df582887ea4a73bfb48b901cc319425f7f37340059ef359dc8ce849"
+  },
+  "policy": "record only; no source or numerical execution veto",
+  "libraries": {
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "transformers": "4.45.0",
+    "transformers_file": "/home/yanlongc/.prismquant/llama31-baseline-packages/transformers/__init__.py",
+    "tokenizers": "0.20.3",
+    "packages": {
+      "datasets": "5.0.1",
+      "accelerate": "0.32.0",
+      "peft": "0.13.2",
+      "numpy": "2.4.6"
+    }
+  },
+  "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "gpu_capability": [
+    12,
+    0
+  ],
+  "tokenizer_files": [
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/tokenizer.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+      "bytes": 17209920,
+      "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/tokenizer_config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/193429ed119d6246336a149bc56bb217f2adff3e",
+      "bytes": 50642,
+      "sha256": "590b9837d3c2a8790e2aaf920f4c69f9181c3ca8fe52e6579ad3a3f654e59a9b"
+    },
+    {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/special_tokens_map.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/68b10c7f0a479eae0c358eac6a14959b3f9acdf1",
+      "bytes": 459,
+      "sha256": "32f404d626cf7b1b6eea36c241ae7cbd6ec29c777a8701ea48c0fe9ebb94c9b1"
+    }
+  ],
+  "tokenizer_adapter": "Fast loader for the same pinned tokenizer.json: TF4.45 cannot instantiate this snapshot via use_fast=False; no token vocabulary or special-token policy changed",
+  "official_arguments": {
+    "model": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+    "net": "Meta-Llama-3.1-8B",
+    "seed": 0,
+    "nsamples": 128,
+    "batch_size": 1,
+    "wbits": 4,
+    "abits": 4,
+    "epochs": 0,
+    "smooth_epochs": 0,
+    "lwc": true,
+    "smooth": true,
+    "alpha": 0.6,
+    "let_alpha": 0.8,
+    "let": false,
+    "lac": 0.9,
+    "swc": 0.8,
+    "block_size": 128,
+    "max_rotation_step": 256,
+    "permutation_times": 1,
+    "symmetric": false,
+    "a_dynamic_method": "per_token",
+    "w_dynamic_method": "per_channel",
+    "group_size": null,
+    "act_group_size": null,
+    "quant_method": "duquant",
+    "deactive_amp": false,
+    "aug_loss": false,
+    "resume": null,
+    "save_dir": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/official_parameters",
+    "multigpu": false,
+    "let_lr": 0.005,
+    "smooth_lr": 0.0001,
+    "lwc_lr": 0.01,
+    "wd": 0,
+    "weight_quant_params": {
+      "n_bits": 4,
+      "per_channel_axes": [
+        0
+      ],
+      "symmetric": false,
+      "dynamic_method": "per_channel",
+      "group_size": null,
+      "lwc": true,
+      "swc": 0.8,
+      "quant_method": "duquant",
+      "block_size": 128,
+      "max_rotation_step": 256,
+      "permutation_times": 1
+    },
+    "act_quant_params": {
+      "n_bits": 4,
+      "per_channel_axes": [],
+      "symmetric": false,
+      "lac": 0.9,
+      "act_group_size": null,
+      "dynamic_method": "per_token",
+      "quant_method": "duquant",
+      "block_size": 128,
+      "max_rotation_step": 256,
+      "permutation_times": 1
+    },
+    "q_quant_params": {
+      "n_bits": 4,
+      "per_channel_axes": [],
+      "symmetric": false,
+      "dynamic_method": "per_token",
+      "quant_method": "duquant",
+      "block_size": 128,
+      "max_rotation_step": 256
+    },
+    "k_quant_params": {
+      "n_bits": 4,
+      "per_channel_axes": [],
+      "symmetric": false,
+      "dynamic_method": "per_token",
+      "quant_method": "duquant",
+      "block_size": 128
+    },
+    "v_quant_params": {
+      "n_bits": 4,
+      "per_channel_axes": [],
+      "symmetric": false,
+      "dynamic_method": "per_token"
+    },
+    "p_quant_params": {
+      "n_bits": 16,
+      "metric": "fix0to1"
+    }
+  },
+  "calibration_dtype": "official FP16 model/activations; no E14 weights or rotations reused",
+  "calibration": {
+    "source": {
+      "path": "/projects/nar/nar-validation/cache/datasets/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-train.arrow",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/datasets/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-train.arrow",
+      "bytes": 11068328,
+      "sha256": "57947bc7b58df4b19662c0609cc30651bc84328dab5fd588860b752072911789"
+    },
+    "dataset_fingerprint": "a16a9aed483ab0f9",
+    "nsamples": 128,
+    "sequence_length": 2048,
+    "seed": 0,
+    "positions": [
+      1615835,
+      1764005,
+      169803,
+      1085975,
+      2144441,
+      2038128,
+      1698416,
+      1272185,
+      1998992,
+      1501767,
+      916215,
+      2116810,
+      584156,
+      1182113,
+      586136,
+      397749,
+      1050699,
+      2233733,
+      616400,
+      1300853,
+      414243,
+      309298,
+      1384947,
+      1980310,
+      2348028,
+      422371,
+      1483908,
+      1821048,
+      1326225,
+      857641,
+      2317452,
+      2000724,
+      1856790,
+      2186715,
+      1092583,
+      261219,
+      2301411,
+      58895,
+      391210,
+      1672787,
+      4793,
+      2070215,
+      1397270,
+      1023036,
+      1364005,
+      264175,
+      801393,
+      2380312,
+      929893,
+      1000827,
+      597664,
+      2277464,
+      1878920,
+      382587,
+      337414,
+      1342406,
+      2130457,
+      2052217,
+      457421,
+      1264359,
+      2312182,
+      1220922,
+      523494,
+      2296133,
+      1395656,
+      2266113,
+      852290,
+      2295249,
+      1206522,
+      1866419,
+      384332,
+      1614392,
+      1329790,
+      2414455,
+      1015471,
+      1217730,
+      771201,
+      794364,
+      783200,
+      138296,
+      1090754,
+      1998715,
+      289764,
+      376750,
+      546200,
+      627259,
+      162074,
+      336585,
+      2267440,
+      1641214,
+      2200222,
+      1156093,
+      2188546,
+      987765,
+      902619,
+      1759188,
+      2431417,
+      1154317,
+      1889798,
+      2066346,
+      1498908,
+      345497,
+      1360316,
+      483811,
+      2040294,
+      1406226,
+      798506,
+      1019365,
+      67985,
+      1136815,
+      491296,
+      924678,
+      1560533,
+      715052,
+      1394757,
+      1787323,
+      260854,
+      421978,
+      613871,
+      917602,
+      189725,
+      2406968,
+      2240588,
+      310365,
+      111974,
+      521954,
+      790712,
+      2415721
+    ],
+    "token_count": 2436214,
+    "tokenizer_default_special_tokens": true,
+    "first_token_id": 128000,
+    "algorithm": "Official datautils.get_wikitext2: join all train text with two newlines; random.Random(0).randint(0,N-2048-1), with replacement",
+    "artifact": {
+      "path": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/calibration.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/calibration.pt",
+      "bytes": 21632637,
+      "sha256": "850b4519eeac3b0f21ab415ff5647de5e1296838ea5a3814a31f9280027e9dbb"
+    }
+  },
+  "smooth_scale_collection_seconds": 39.18120572110638,
+  "smoothing": {
+    "scales": {
+      "path": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/act_scales.pt",
+      "resolved": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/act_scales.pt",
+      "bytes": 5065341,
+      "sha256": "5d0b61839687183bf118355aab787bd8c0e53b87d7ef12d565a259c31bfdc038"
+    },
+    "shift": "unused by official Llama branch; passed empty dict",
+    "source": "official generate_act_scale_shift.get_act_scales, per-input-channel absolute maximum over128 sequences"
+  },
+  "compatibility": {
+    "old_api": "TF4.35 seq_len rotary + indexed cosine table",
+    "new_api": "TF4.45 configured Llama3.1 RoPE; no replacement frequencies or scaling",
+    "decoder_extra_keywords": "cache_position and precomputed position_embeddings are redundant with original position_ids and configured per-layer RoPE",
+    "frequency_dtype": "FP32 configured frequencies retained across official qlayer.half()",
+    "mask_adapter": "trim only excess future columns to past-cache length plus current query length",
+    "cache_support": "HF4.45 DynamicCache translated to official per-layer legacy tuple; official concatenated K/V retained without requantizing or duplicating prefix",
+    "cache_storage": "official floating post-QDQ K and pre-PV-QDQ V, not packed INT4 KV"
+  },
+  "rotation_table": {
+    "path": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/Rot.pkl",
+    "resolved": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/Rot.pkl",
+    "bytes": 65952,
+    "sha256": "8ff2004e24f62d2854d84765b805e72052a5c444a97293207fa892ea752ad85a",
+    "block_size": 128,
+    "construction": "official get_rot.py sequential Givens recursion and exchange(0,127); subsequent official random-QR draws unchanged"
+  },
+  "catcher_device_compatibility": {
+    "shared_rotary": "original HF module moved before official catcher",
+    "from_device": "cpu",
+    "to_device": "cuda:0",
+    "frequency_dtype": "torch.float32",
+    "mathematical_change": false
+  },
+  "quantization_seconds": 30.88361835712567,
+  "checkpoint": {
+    "path": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/quantized_model.pt",
+    "resolved": "/projects/_hdd/nar/nar-validation/artifacts/e42/duquant_8b_seed0_v1/quantized_model.pt",
+    "bytes": 16163719422,
+    "sha256": "f60cb21edf42cc8c43d9ff6eecc19a29bc73ae244c745dd958cdca8fbeec01d0",
+    "format": "local trusted full torch module pickle",
+    "reuse": "contains official weights, rotations, permutation and quantizer state; no recalibration required"
+  },
+  "checkpoint_save_seconds": 36.348077695816755,
+  "loaded_model_identity": {
+    "base_config": {
+      "path": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/config.json",
+      "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/blobs/2a9e131b00e3cdf49fb230a17400519d4e098414",
+      "bytes": 947,
+      "sha256": "0ea2186ccf686654fea498aae830b9de201334432b24b07f031d80b76dd928f0"
+    },
+    "matched_fields": {
+      "hidden_size": 4096,
+      "intermediate_size": 14336,
+      "num_hidden_layers": 32,
+      "num_attention_heads": 32,
+      "num_key_value_heads": 8,
+      "vocab_size": 128256,
+      "rope_theta": 500000.0,
+      "rope_scaling": {
+        "factor": 8.0,
+        "high_freq_factor": 4.0,
+        "low_freq_factor": 1.0,
+        "original_max_position_embeddings": 8192,
+        "rope_type": "llama3"
+      }
+    },
+    "actual_decoder_layers": 32
+  },
+  "peak_allocated_bytes": 18281091584,
+  "peak_reserved_bytes": 18895339520,
+  "ended_utc": "2026-11-13T03:44:53.544117+00:00",
+  "total_elapsed_seconds": 221.70143479900435,
+  "cost_scope": "wall clock of this process, phase breakdown and PyTorch peak memory; excludes queue wait; not a native kernel speed claim"
+}
