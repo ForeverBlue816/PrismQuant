@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "model": "Meta-Llama-3.1-8B",
+  "seed": 0,
+  "job_id": "1736915",
+  "created_utc": "2026-11-13T07:11:53.229609+00:00",
+  "rows": [
+    {
+      "key": "fp16",
+      "label": "FP16",
+      "format": "FP16 W/A; native FP16 paged KV; released BF16 base cast to FP16",
+      "source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_g128comparison_job1736915.json",
+        "status": "READ",
+        "sha256": "d2bca2d3f985bcf6470b6780597befe2a0d9713f3ec44b7f2562c37432b15605"
+      },
+      "status": "COMPLETE",
+      "ppl": {
+        "status": "COMPLETE",
+        "full141": true,
+        "completed_sequences": 141,
+        "value": 6.238432455537351,
+        "error": null,
+        "reason": null
+      },
+      "timing_status": "COMPLETE",
+      "timing_error": null,
+      "timing_reason": null,
+      "measurements": {
+        "prefill": {
+          "status": "COMPLETE",
+          "samples": 20,
+          "latency_ms": 389.48779995553195,
+          "tokens_per_second": null,
+          "peak_allocated_gib": 17.44597864151001,
+          "peak_reserved_gib": 17.638671875,
+          "complete": true,
+          "error": null,
+          "reason": null
+        },
+        "decode": {
+          "status": "COMPLETE",
+          "samples": 20,
+          "latency_ms": 3625.3780624829233,
+          "tokens_per_second": 33.09999617597084,
+          "peak_allocated_gib": 17.46184778213501,
+          "peak_reserved_gib": 17.65625,
+          "complete": true,
+          "error": null,
+          "reason": null
+        }
+      },
+      "protocol": {
+        "batch_size": 1,
+        "prefix": 2048,
+        "decode_steps": 128,
+        "discarded_decode_steps": 8,
+        "fixed_decode_token_id": 100,
+        "repetitions": 20,
+        "warmups": 10,
+        "fresh_prefill_cache_inside_timer": true,
+        "fresh_decode_cache_outside_timer": true,
+        "last_position_logits": true,
+        "eager": true
+      },
+      "gpu_uuids": [
+        "GPU-6e3338c3-8b6c-64b7-549b-90febc02999e"
+      ],
+      "gpu_model": "NVIDIA A40",
+      "exclusive": true,
+      "same_loaded_instance": true,
+      "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+      "evaluation_tokens": {
+        "path": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+        "sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021",
+        "shape": [
+          141,
+          2048
+        ]
+      },
+      "libraries": {
+        "torch": "2.4.1+cu124",
+        "transformers": "4.36.2",
+        "triton": "3.0.0",
+        "datasets": "2.17.1",
+        "numpy": "1.26.4",
+        "tokenizers": "0.15.2",
+        "flash-attn": "2.6.3",
+        "fast-hadamard-transform": "1.0.4.post1"
+      },
+      "cuda_runtime": "12.4",
+      "source_commit": "45183ed72518d3d3b4c771df27428a59df25ca24",
+      "actual_head_commit": "45183ed72518d3d3b4c771df27428a59df25ca24",
+      "checkpoint": {
+        "snapshot": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+        "files": [
+          "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00001-of-00004.safetensors",
+          "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00002-of-00004.safetensors",
+          "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00003-of-00004.safetensors",
+          "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc/model-00004-of-00004.safetensors"
+        ],
+        "loaded_tensor_count": 291,
+        "dtype": "original BF16 checkpoint converted to FP16 for this backend",
+        "native_integer_support": false
+      },
+      "packed_manifest": null,
+      "error": null,
+      "timing_issues": []
+    },
+    {
+      "key": "g128",
+      "label": "PrismQuant k=8 g128 integer prototype",
+      "format": "PQ k=8; GPTQ signed W4 storage expanded to INT8 GEMM; asymmetric g128 A4; INT32 partials/FP32 affine correction; simulated KV4 in BF16 DynamicCache",
+      "source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_ppl-timing_job1736915.json",
+        "status": "READ",
+        "sha256": "3c1ea5344ac0b3d8d0aca2eba9e16108bc82c615430e0ca766a6150bc56f8865"
+      },
+      "status": "COMPLETE",
+      "ppl": {
+        "status": "COMPLETE",
+        "full141": true,
+        "completed_sequences": 141,
+        "value": 6.9892461050856465,
+        "error": null,
+        "reason": null
+      },
+      "timing_status": "COMPLETE",
+      "timing_error": null,
+      "timing_reason": null,
+      "measurements": {
+        "prefill": {
+          "status": "COMPLETE",
+          "samples": 20,
+          "latency_ms": 13214.108319021761,
+          "tokens_per_second": null,
+          "peak_allocated_gib": 7.371088027954102,
+          "peak_reserved_gib": 7.42578125,
+          "complete": true,
+          "error": null,
+          "reason": null
+        },
+        "decode": {
+          "status": "COMPLETE",
+          "samples": 20,
+          "latency_ms": 295362.0876411442,
+          "tokens_per_second": 0.4062810932308171,
+          "peak_allocated_gib": 7.372064590454102,
+          "peak_reserved_gib": 7.427734375,
+          "complete": true,
+          "error": null,
+          "reason": null
+        }
+      },
+      "protocol": {
+        "batch_size": 1,
+        "prefix": 2048,
+        "decode_steps": 128,
+        "discarded_decode_steps": 8,
+        "fixed_decode_token_id": 100,
+        "warmups": 10,
+        "repetitions": 20,
+        "fresh_prefill_cache_inside_timer": true,
+        "fresh_decode_cache_outside_timer": true,
+        "last_position_logits": true,
+        "eager": true,
+        "prefill_workload_matches_decode": true,
+        "cache_lengths_verified": true
+      },
+      "gpu_uuids": [
+        "GPU-6e3338c3-8b6c-64b7-549b-90febc02999e"
+      ],
+      "gpu_model": "NVIDIA A40",
+      "exclusive": true,
+      "same_loaded_instance": true,
+      "base_revision": "e9a141a2091ea561b96483212645a2a05e6f99fc",
+      "evaluation_tokens": {
+        "path": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+        "resolved": "/projects/_hdd/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+        "bytes": 2312087,
+        "mtime_ns": 1788421096221206032,
+        "sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021",
+        "shape": [
+          141,
+          2048
+        ]
+      },
+      "libraries": {
+        "torch": "2.11.0+cu128",
+        "transformers": "5.16.0.dev0",
+        "triton": "3.6.0",
+        "datasets": "5.0.1",
+        "accelerate": "1.14.0",
+        "numpy": "2.4.6",
+        "lm_eval": "0.4.14.dev0",
+        "huggingface-hub": "1.28.0",
+        "tokenizers": "0.23.1"
+      },
+      "cuda_runtime": "12.8",
+      "source_commit": "45183ed72518d3d3b4c771df27428a59df25ca24",
+      "actual_head_commit": "4adbdfbe431b91c0a8cae7ca90ae6ed5584b48f0",
+      "checkpoint": {
+        "directory": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0",
+        "files": [
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/DONE.json",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/663b365f735f0daeb7a35d8004ff93bfe63a79cb",
+            "bytes": 2635,
+            "mtime_ns": 1794313872719480103,
+            "sha256": "88513729f6560245ea2f00a0f955cf1d1ee8ad79156ba10b93d2ad3bf23a1d52"
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_00.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/2cc5f1a63f38c23ceae1f7a37980f74b948d41454687a1c38afa346d4c280fcc",
+            "bytes": 436210885,
+            "mtime_ns": 1794313961160754373
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_01.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/9fa6bb69e36a0b21103bbff01aced583f7633ff1b19543a7112e8845a73f3eb7",
+            "bytes": 436210885,
+            "mtime_ns": 1794313969680587979
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_02.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/5be18c26befe4c58a5c3291b717e958281f7e188fc0d25186ff0ad49f89cabdb",
+            "bytes": 436210885,
+            "mtime_ns": 1794313976632452209
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_03.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/9c1225a562512ec3c88c4681e1eaf12610c50690bec89832a63b15023b344890",
+            "bytes": 436210885,
+            "mtime_ns": 1794313985157285722
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_04.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/97ad329aaa0c7a97bae1aeab96590e367dd30842f3ab1700389f1e468a89c589",
+            "bytes": 436210885,
+            "mtime_ns": 1794314019299619194
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_05.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/a73251b49573cc91327464283b7aeb8b0e755b039633f5bd288727503958be22",
+            "bytes": 436210885,
+            "mtime_ns": 1794314026163485195
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_06.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/cd9fb97fd761af90ab6659dacc75c07eb88e85c7e703f5d0ff187d2a4d7eb548",
+            "bytes": 436210885,
+            "mtime_ns": 1794314202318071876
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_07.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/145f8c5789311eab9f599c4e7ec05e4f4268dabcab8618eb278c716ea397cf67",
+            "bytes": 436210885,
+            "mtime_ns": 1794314210957902265
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_08.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/48f43203c0f42b3fea53ba53dac2efc71c3216c341ecb2d3b8ea222047968eec",
+            "bytes": 436210885,
+            "mtime_ns": 1794314217727769362
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_09.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/32ae6457639312a48a0aaa65e157ddaf4535b224e0bb61ca9b35d84dbb717d5b",
+            "bytes": 436210885,
+            "mtime_ns": 1794314260080942518
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_10.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/e8f2d8ef980ec672eec55455f85da7e7147969c728a6df93eb74f903d7b57908",
+            "bytes": 436210885,
+            "mtime_ns": 1794314268285783725
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_11.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/fbbdad5845f1711102706975c84a6d3bf28de96341c2cedf9a871e59955cdcf8",
+            "bytes": 436210885,
+            "mtime_ns": 1794314275253648871
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_12.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/022a810cfdf11e7b0aa3f0627f6314a7b4bfb7154c6a2d82894242c67a8b7c7e",
+            "bytes": 436210885,
+            "mtime_ns": 1794314317014839817
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_13.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/8d3848067e6e3d11775fdaa76edff6944b493c6187932a23c6c25127fbd011e1",
+            "bytes": 436210885,
+            "mtime_ns": 1794314339436403729
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_14.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/5b286816f188c5a017dc76f9ce0905855b90dd363d8f3af628d88b21df4b8c7d",
+            "bytes": 436210885,
+            "mtime_ns": 1794314346386268558
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_15.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/86995caf63b49ea4aa08e111c5afcc0ad1659c72f64b7c0d106cdadf41a845ac",
+            "bytes": 436210885,
+            "mtime_ns": 1794314353522129769
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_16.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/725e5d87c9a31c652bf57d0471960ecd66356fec49fc5354be3f6202eb0410f4",
+            "bytes": 436210885,
+            "mtime_ns": 1794314360616991778
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_17.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/d45beb1688de966227bef8046bbde434fa776bed7a6b59fa99630e4b099aa217",
+            "bytes": 436210885,
+            "mtime_ns": 1794314368785832897
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_18.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/848b775716fcdb044f55176b0a5c21244aff96623eb5369e654f407dfd9c2e35",
+            "bytes": 436210885,
+            "mtime_ns": 1794314375517701892
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_19.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/b6f6e53d9944b8ee16f431d849339a6f0af4c0b88c26d5bdd6fab2bae77127ce",
+            "bytes": 436210885,
+            "mtime_ns": 1794314384378529260
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_20.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/253ffc8e486df0f321f3730539cca40514f7b14e0855e0dcd88449e86d727e60",
+            "bytes": 436210885,
+            "mtime_ns": 1794314391617388230
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_21.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/ff04d39abea59f2f01022c5656dd63dbc9a47c6a4ec42fae88a47ecaf163da98",
+            "bytes": 436210885,
+            "mtime_ns": 1794314399243239660
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_22.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/b7cef461e406293d67b618322e03ff520bd30dd21d2e74acadd334d59b2640a3",
+            "bytes": 436210885,
+            "mtime_ns": 1794314406554097227
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_23.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/915788757ca4106afe61d31f0bee55cb825001939b6bca47ff9b034be35a47f3",
+            "bytes": 436210885,
+            "mtime_ns": 1794314415402924830
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_24.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/0778bdd48742b3520d3b417c1ea126c4f25ff12724e46a92ee4c7766c20bc430",
+            "bytes": 436210885,
+            "mtime_ns": 1794314422485786839
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_25.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/6e412162cc337bc1a1852b7a635c5f93d350a18019296ad512ebaf907de4d93e",
+            "bytes": 436210885,
+            "mtime_ns": 1794314431172617597
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_26.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/6ea92b018481ded8f203413360b769cb570ae7fad4ee304ee898146c7e0deaaf",
+            "bytes": 436210885,
+            "mtime_ns": 1794314438323478253
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_27.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/935399f5da23f8773398610120f8a1cb51cebba8313cf8cc2347be17becc6b38",
+            "bytes": 436210885,
+            "mtime_ns": 1794314446219323774
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_28.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/c052267ee0cd97598fa52a5ca4c458aa160021172e8c26991d1559167096d06c",
+            "bytes": 436210885,
+            "mtime_ns": 1794314453846174557
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_29.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/87715067c594c29e3de1b177ff2249820167abec0699d37886ffedc6d1096b48",
+            "bytes": 436210885,
+            "mtime_ns": 1794314462701001316
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_30.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/33a1bc8b967c1a53c2eb8cafdcfb62280357c435322ba37602d5826f66dde4e5",
+            "bytes": 436210885,
+            "mtime_ns": 1794314472992799959
+          },
+          {
+            "path": "/projects/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/snapshots/fc812e6687165115feee00293c953a1b521d3bd0/checkpoints/llama31_8b/gptq_nar_k8_seed0/layer_31.pt",
+            "resolved": "/projects/_hdd/nar/nar-validation/cache/huggingface/models--ForeverBlue--PrismQuant-Llama-3.1-8B/blobs/bf984665ee28244bb0f2499f38320b26aeb5f295dc0ea935e1cf37298bd230c0",
+            "bytes": 436210885,
+            "mtime_ns": 1794314503788197538
+          }
+        ]
+      },
+      "packed_manifest": {
+        "path": "/projects/nar/nar-validation/artifacts/e38/packed_8b_nar_k8_seed0/manifest.json",
+        "resolved": "/projects/_hdd/nar/nar-validation/artifacts/e38/packed_8b_nar_k8_seed0/manifest.json",
+        "bytes": 30502,
+        "mtime_ns": 1794396343110913135,
+        "sha256": "4f91aa96954cbe5509f2299b789a4a663980112662f2f4862702c6c457d58610"
+      },
+      "error": null,
+      "timing_issues": []
+    }
+  ],
+  "timing_comparison_status": "COMPLETE",
+  "timing_comparison_reasons": [],
+  "speedup_vs_fp16": {
+    "prefill": 0.029475148118383646,
+    "decode": 0.012274354687864272
+  },
+  "numerical_execution_gate": false,
+  "interpretation": "Whole backend elapsed-time comparison; differing Torch/Transformers, attention and KV implementations; not pure-format overhead or native INT4 acceleration",
+  "speedup_rule": "Only completed matched timing evidence determines ratios; PPL values do not veto timing or ratios"
+}

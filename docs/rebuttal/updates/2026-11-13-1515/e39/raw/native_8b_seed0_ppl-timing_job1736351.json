@@ -1,0 +1,1507 @@
+{
+  "model": "Meta-Llama-3.1-8B",
+  "model_key": "llama31_8b",
+  "method": "FlatQuant official native",
+  "seed": 0,
+  "status": "COMPLETE",
+  "phase": "ppl-timing",
+  "source_commit": "84ea20a1c74d77a628c1666445c2ac8402407e50",
+  "official_commit": "9d88ffcb7d2c6bda59fb5c44dad36adc101aadb1",
+  "base_checkpoint": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "checkpoint": "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0",
+  "job_id": "1736351",
+  "config": "W4 RTN per-channel symmetric; A4 per-token symmetric; native K4/V4 asymmetric per head (128); BF16 residual",
+  "source_sha256": "071c9258c4abd78c01e5311642e5b1cb97edb4dcc7231859411488c5f27af642",
+  "command": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "-m",
+    "nar.e39_flatquant",
+    "--model",
+    "llama31_8b",
+    "--checkpoint",
+    "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0",
+    "--phase",
+    "ppl-timing",
+    "--source-commit",
+    "84ea20a1c74d77a628c1666445c2ac8402407e50",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_ppl-timing_job1736351.json"
+  ],
+  "numerical_execution_gates": "none",
+  "execution_backend": "official floating fake-quant PyTorch implementation; not packed INT4 deployment",
+  "native_int4_kernel": false,
+  "model_dispatch_adapter": "unchanged official model dispatcher",
+  "official_args": {
+    "model": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+    "seed": 0,
+    "hf_token": null,
+    "a_bits": 4,
+    "a_groupsize": -1,
+    "a_asym": false,
+    "w_bits": 4,
+    "w_groupsize": -1,
+    "w_asym": false,
+    "gptq": false,
+    "gptq_mse": false,
+    "percdamp": 0.01,
+    "act_order": false,
+    "epochs": 15,
+    "cali_dataset": "wikitext2",
+    "nsamples": 128,
+    "cali_bsz": 4,
+    "flat_lr": 0.005,
+    "cali_trans": true,
+    "add_diag": true,
+    "lwc": true,
+    "lac": true,
+    "resume": false,
+    "save_matrix": true,
+    "reload_matrix": false,
+    "matrix_path": null,
+    "diag_init": "sq_style",
+    "diag_alpha": 0.3,
+    "warmup": false,
+    "deactive_amp": false,
+    "direct_inv": false,
+    "separate_vtrans": false,
+    "q_bits": 16,
+    "q_asym": false,
+    "q_groupsize": -1,
+    "k_bits": 4,
+    "k_asym": true,
+    "k_groupsize": 128,
+    "v_bits": 4,
+    "v_asym": true,
+    "v_groupsize": 128,
+    "output_dir": "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0",
+    "exp_name": "official_native_seed0",
+    "lm_eval": false,
+    "tasks": [
+      "piqa",
+      "hellaswag",
+      "arc_easy",
+      "arc_challenge",
+      "winogrande",
+      "lambada_openai"
+    ],
+    "lm_eval_batch_size": 128,
+    "distribute_model": false,
+    "quantized_save": false,
+    "quantize": true,
+    "model_name": "Llama-3.1-8B",
+    "exp_dir": "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0/Llama-3.1-8B/w4a4/official_native_seed0"
+  },
+  "libraries": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.45.0",
+    "datasets": "5.0.1",
+    "numpy": "2.4.6"
+  },
+  "gpu": "NVIDIA A40",
+  "tokenizer_adapter": "Fast tokenizer from pinned tokenizer.json; no token or BOS setting changed",
+  "checkpoint_reused": true,
+  "original_calibration_cost": {
+    "wall_seconds": 3593.20508750109,
+    "peak_allocated_bytes": 21796416512,
+    "peak_reserved_bytes": 22884122624,
+    "physical_gpu_count": 1,
+    "gpu_hours": 0.9981125243058583
+  },
+  "model_object_id": 134078734408912,
+  "evaluation": {
+    "tokens": "/projects/nar/nar-validation/cache/tokenized/ffcc87608d60-wikitext2-test-full-l2048.pt",
+    "sha256": "ee4c9c8e8722f57a443b1a7a449da84249ef106d52e42edaf2fcb11d00729021",
+    "batch_size": 1,
+    "sequence_length": 2048,
+    "added_bos": false,
+    "use_cache": false,
+    "loss": "FP32 shifted CE; token weighted"
+  },
+  "chunks": [
+    {
+      "chunk": 0,
+      "nll": 1.7238914966583252,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 1,
+      "nll": 2.297097682952881,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 2,
+      "nll": 2.3870272636413574,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 3,
+      "nll": 1.9412559270858765,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 4,
+      "nll": 1.8374426364898682,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 5,
+      "nll": 1.4284502267837524,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 6,
+      "nll": 1.4847512245178223,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 7,
+      "nll": 1.8137301206588745,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 8,
+      "nll": 2.147031545639038,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 9,
+      "nll": 1.906380295753479,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 10,
+      "nll": 1.8049046993255615,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 11,
+      "nll": 2.1598079204559326,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 12,
+      "nll": 2.0406038761138916,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 13,
+      "nll": 2.150233268737793,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 14,
+      "nll": 2.071723222732544,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 15,
+      "nll": 2.302145004272461,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 16,
+      "nll": 2.0186734199523926,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 17,
+      "nll": 2.0421695709228516,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 18,
+      "nll": 1.7935261726379395,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 19,
+      "nll": 1.9439647197723389,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 20,
+      "nll": 2.0714025497436523,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 21,
+      "nll": 2.0041098594665527,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 22,
+      "nll": 2.015556573867798,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 23,
+      "nll": 2.0906786918640137,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 24,
+      "nll": 2.1387057304382324,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 25,
+      "nll": 2.2903592586517334,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 26,
+      "nll": 2.3152098655700684,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 27,
+      "nll": 2.136976957321167,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 28,
+      "nll": 1.8979222774505615,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 29,
+      "nll": 1.7065398693084717,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 30,
+      "nll": 1.5758341550827026,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 31,
+      "nll": 1.580962061882019,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 32,
+      "nll": 1.9099065065383911,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 33,
+      "nll": 1.8873169422149658,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 34,
+      "nll": 2.0457992553710938,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 35,
+      "nll": 1.4027156829833984,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 36,
+      "nll": 1.3939332962036133,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 37,
+      "nll": 1.402280330657959,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 38,
+      "nll": 1.385604977607727,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 39,
+      "nll": 1.6083478927612305,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 40,
+      "nll": 2.1358656883239746,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 41,
+      "nll": 2.5840673446655273,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 42,
+      "nll": 2.6193041801452637,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 43,
+      "nll": 2.1858320236206055,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 44,
+      "nll": 2.19791841506958,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 45,
+      "nll": 2.1762211322784424,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 46,
+      "nll": 2.237701654434204,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 47,
+      "nll": 2.101919651031494,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 48,
+      "nll": 1.9521312713623047,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 49,
+      "nll": 1.9468798637390137,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 50,
+      "nll": 1.681329369544983,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 51,
+      "nll": 1.7293884754180908,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 52,
+      "nll": 1.5772373676300049,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 53,
+      "nll": 1.7664954662322998,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 54,
+      "nll": 1.5283913612365723,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 55,
+      "nll": 1.4813549518585205,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 56,
+      "nll": 1.6809347867965698,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 57,
+      "nll": 1.7642685174942017,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 58,
+      "nll": 2.0524988174438477,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 59,
+      "nll": 2.2330892086029053,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 60,
+      "nll": 2.2607738971710205,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 61,
+      "nll": 2.3751578330993652,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 62,
+      "nll": 1.416772484779358,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 63,
+      "nll": 1.7995613813400269,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 64,
+      "nll": 1.7803454399108887,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 65,
+      "nll": 1.560229778289795,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 66,
+      "nll": 1.7610911130905151,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 67,
+      "nll": 1.7508288621902466,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 68,
+      "nll": 1.7223758697509766,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 69,
+      "nll": 1.9770033359527588,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 70,
+      "nll": 2.177980661392212,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 71,
+      "nll": 2.0966224670410156,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 72,
+      "nll": 1.801947832107544,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 73,
+      "nll": 2.036735773086548,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 74,
+      "nll": 1.9089329242706299,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 75,
+      "nll": 1.8380523920059204,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 76,
+      "nll": 2.0314419269561768,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 77,
+      "nll": 2.079956293106079,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 78,
+      "nll": 2.21890926361084,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 79,
+      "nll": 1.6691631078720093,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 80,
+      "nll": 1.816572904586792,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 81,
+      "nll": 1.8459473848342896,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 82,
+      "nll": 1.7794452905654907,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 83,
+      "nll": 1.7488750219345093,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 84,
+      "nll": 1.7385947704315186,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 85,
+      "nll": 2.0680086612701416,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 86,
+      "nll": 2.049541711807251,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 87,
+      "nll": 2.0377607345581055,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 88,
+      "nll": 2.7047455310821533,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 89,
+      "nll": 2.6510560512542725,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 90,
+      "nll": 2.2650678157806396,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 91,
+      "nll": 2.4552247524261475,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 92,
+      "nll": 2.4578235149383545,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 93,
+      "nll": 2.0554707050323486,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 94,
+      "nll": 2.326930284500122,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 95,
+      "nll": 2.004589080810547,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 96,
+      "nll": 2.1286892890930176,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 97,
+      "nll": 1.627267837524414,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 98,
+      "nll": 2.0129826068878174,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 99,
+      "nll": 2.158829927444458,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 100,
+      "nll": 1.8522542715072632,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 101,
+      "nll": 1.976895809173584,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 102,
+      "nll": 1.8244692087173462,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 103,
+      "nll": 2.287080764770508,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 104,
+      "nll": 1.8738409280776978,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 105,
+      "nll": 1.8908172845840454,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 106,
+      "nll": 1.7222139835357666,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 107,
+      "nll": 1.693386435508728,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 108,
+      "nll": 1.6870858669281006,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 109,
+      "nll": 1.6394261121749878,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 110,
+      "nll": 2.224113702774048,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 111,
+      "nll": 1.9028136730194092,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 112,
+      "nll": 2.064260482788086,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 113,
+      "nll": 2.0637834072113037,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 114,
+      "nll": 1.8661179542541504,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 115,
+      "nll": 1.817036509513855,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 116,
+      "nll": 2.207300901412964,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 117,
+      "nll": 1.8744994401931763,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 118,
+      "nll": 1.7636222839355469,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 119,
+      "nll": 1.7062020301818848,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 120,
+      "nll": 1.908421277999878,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 121,
+      "nll": 2.0130269527435303,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 122,
+      "nll": 1.9023239612579346,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 123,
+      "nll": 1.9637622833251953,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 124,
+      "nll": 1.7953671216964722,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 125,
+      "nll": 1.9830677509307861,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 126,
+      "nll": 1.9039729833602905,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 127,
+      "nll": 1.7930312156677246,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 128,
+      "nll": 1.9314132928848267,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 129,
+      "nll": 2.0418648719787598,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 130,
+      "nll": 2.034895181655884,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 131,
+      "nll": 2.006190061569214,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 132,
+      "nll": 1.5247890949249268,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 133,
+      "nll": 1.320589303970337,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 134,
+      "nll": 2.251610517501831,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 135,
+      "nll": 2.4009416103363037,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 136,
+      "nll": 2.1161749362945557,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 137,
+      "nll": 1.768373727798462,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 138,
+      "nll": 2.0087356567382812,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 139,
+      "nll": 2.06170654296875,
+      "tokens_scored": 2047
+    },
+    {
+      "chunk": 140,
+      "nll": 2.140367269515991,
+      "tokens_scored": 2047
+    }
+  ],
+  "completed_sequences": 141,
+  "ppl": 7.020863463952398,
+  "ppl_status": "COMPLETE",
+  "timing_helper": {
+    "path": "/home/yanlongc/prismquant-rebuttal-e38/scripts/baseline_timing.py",
+    "sha256": "5ea99ab881be5b9553c2bc195f204ec28534e0f7ef7260c43bc994c8e6f0d6b6"
+  },
+  "timing": {
+    "status": "COMPLETE",
+    "model_object_id": 134078734408912,
+    "same_loaded_instance_after_ppl": true,
+    "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg",
+    "gpu_model": "NVIDIA A40",
+    "implementation": "official model implementation; execution mode is recorded by the method runner",
+    "execution_note": "Floating fake-quant results are software-runtime measurements, not native INT4 deployment speed",
+    "mode": "eager synchronized wall time; real autoregressive KV cache",
+    "batch_size": 1,
+    "prefix": 2048,
+    "decode_steps": 128,
+    "discarded_decode_steps": 8,
+    "measured_decode_steps": 120,
+    "fixed_decode_token_id": 100,
+    "warmup": 10,
+    "repetitions": 20,
+    "logits": "full vocabulary at last token position only; num_logits_to_keep=1",
+    "cache_reset": "fresh past_key_values=None for every repetition; prefix and discarded decode outside decode timer",
+    "memory_scope": "peak allocated/reserved includes decode prefix construction outside its latency timer",
+    "numerical_execution_gate": false,
+    "guards": [
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      },
+      {
+        "status": "EXCLUSIVE",
+        "own": [
+          {
+            "gpu_uuid": "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b",
+            "pid": 2139641
+          }
+        ],
+        "other": [],
+        "hostname": "gpu-a40-2.cluster02.eee.ntu.edu.sg"
+      }
+    ],
+    "workloads": {
+      "prefill": {
+        "status": "COMPLETE",
+        "samples_seconds": [
+          1.0810377579182386,
+          1.070150950923562,
+          1.0703257010318339,
+          1.0709749800153077,
+          1.0704309209249914,
+          1.070364311337471,
+          1.0708593600429595,
+          1.0706187402829528,
+          1.0701801110990345,
+          1.0710491798818111,
+          1.0711493999697268,
+          1.0712542501278222,
+          1.0706162108108401,
+          1.0698589207604527,
+          1.07062464999035,
+          1.0711172502487898,
+          1.0713287889957428,
+          1.0706650200299919,
+          1.0708320401608944,
+          1.0699276011437178
+        ],
+        "finite_last_position_logits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "cache_lengths": [
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048,
+          2048
+        ],
+        "peak_allocated_bytes": 17835373568,
+        "peak_reserved_bytes": 17878220800,
+        "seconds": {
+          "n": 20,
+          "median": 1.070644835010171,
+          "q25": 1.0703546587610617,
+          "q75": 1.0710661974735558,
+          "iqr": 0.0007115387124940753
+        },
+        "milliseconds": {
+          "n": 20,
+          "median": 1070.644835010171,
+          "q25": 1070.3546587610617,
+          "q75": 1071.0661974735558,
+          "iqr": 0.7115387124940753
+        }
+      },
+      "decode": {
+        "status": "COMPLETE",
+        "samples_seconds": [
+          21.583391366992146,
+          21.55799160990864,
+          21.554082057904452,
+          21.57574594160542,
+          21.56194349983707,
+          21.614628362003714,
+          21.59667253587395,
+          21.593434697948396,
+          21.603489209897816,
+          21.570067074149847,
+          21.62544302176684,
+          21.5909994863905,
+          21.59584116982296,
+          21.64727384224534,
+          21.660693204030395,
+          21.67080389196053,
+          21.611136958003044,
+          21.627762007061392,
+          21.5822286689654,
+          21.526035241317004
+        ],
+        "finite_last_position_logits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "cache_lengths": [
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176,
+          2176
+        ],
+        "peak_allocated_bytes": 17835373568,
+        "peak_reserved_bytes": 17878220800,
+        "seconds": {
+          "n": 20,
+          "median": 21.59463793388568,
+          "q25": 21.574326224741526,
+          "q75": 21.617332026944496,
+          "iqr": 0.04300580220296979
+        },
+        "tokens_per_second": {
+          "n": 20,
+          "median": 5.556935047484866,
+          "q25": 5.551101564256894,
+          "q75": 5.562166823153729,
+          "iqr": 0.011065258896834962
+        }
+      }
+    },
+    "same_model_object_id_after_timing": 134078734408912
+  },
+  "same_model_object_id_after_measurements": 134078734408912,
+  "total_wall_seconds": 951.539564606268,
+  "allocated_gpu_hours": 0.26431654572396335
+}

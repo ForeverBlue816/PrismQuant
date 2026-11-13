@@ -1,0 +1,113 @@
+{
+  "job_id": 1736351,
+  "created_utc": "2026-11-13T07:18:07.958686+00:00",
+  "same_physical_gpu": true,
+  "all_complete": true,
+  "pq_native_comparisons": {
+    "flat_official": {
+      "prefill_latency_ratio": 1.2470455492675199,
+      "decode_throughput_ratio": 1.719710985609468,
+      "ppl_difference": 3.0420270160122778,
+      "interpretation": "Whole-backend comparison with distinct quantization/KV formats and measured PPL; not equal-quality superiority"
+    },
+    "flat_clean": {
+      "prefill_latency_ratio": 1.2813585986143843,
+      "decode_throughput_ratio": 1.6101427993905537,
+      "ppl_difference": 3.0420270160122778,
+      "interpretation": "Whole-backend comparison with distinct quantization/KV formats and measured PPL; not equal-quality superiority"
+    }
+  },
+  "selection": "all latest attempts from specified allocation, never selected by score",
+  "rows": {
+    "flat_official": {
+      "source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/packed_native_8b_seed0_official_ppl-timing_job1736351.json",
+        "sha256": "d8e36f2c87a8e0f28a7e97d44ac3605ff71c08eea333bc7671c582703a13d9e5"
+      },
+      "status": "COMPLETE; timing COMPLETE",
+      "ppl": 6.9529812451512205,
+      "prefill_ms": 302.4819567799568,
+      "decode_tokens_per_second": 9.741383232983287,
+      "run_status": "COMPLETE",
+      "timing_status": "COMPLETE",
+      "peak_allocated_gib": 6.243996620178223,
+      "gpu_uuids": [
+        "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b"
+      ],
+      "exclusive": true,
+      "cache_timing": "fresh past_key_values=None for every repetition; prefix and discarded decode outside decode timer"
+    },
+    "flat_clean": {
+      "source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/packed_native_8b_seed0_remove-dead-random_ppl-timing_job1736351.json",
+        "sha256": "9372c96674a38fee4901e979535317594ad4f208bd1f4a8f695a0b37b8d97e97"
+      },
+      "status": "COMPLETE; timing COMPLETE",
+      "ppl": 6.9529812451512205,
+      "prefill_ms": 294.3818992935121,
+      "decode_tokens_per_second": 10.404272072721797,
+      "run_status": "COMPLETE",
+      "timing_status": "COMPLETE",
+      "peak_allocated_gib": 6.243996620178223,
+      "gpu_uuids": [
+        "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b"
+      ],
+      "exclusive": true,
+      "cache_timing": "fresh past_key_values=None for every repetition; prefix and discarded decode outside decode timer"
+    },
+    "pq_fast": {
+      "source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_fast_officialcomparison_job1736351.json",
+        "sha256": "cdc7bfd9f0007cf5ba9d0bbb00364f00078a5724a2b64b7cc875957a64d975a2"
+      },
+      "status": "COMPLETE; timing COMPLETE",
+      "ppl": 9.995008261163498,
+      "prefill_ms": 377.20877793617547,
+      "decode_tokens_per_second": 16.752363760793234,
+      "run_status": "COMPLETE",
+      "timing_status": "COMPLETE",
+      "peak_allocated_gib": 7.790694236755371,
+      "gpu_uuids": [
+        "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b"
+      ],
+      "exclusive": true,
+      "cache_timing": "fresh"
+    },
+    "flat_fake": {
+      "source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_ppl-timing_job1736351.json",
+        "sha256": "58490979cac8e89d1c3c2282c389ca88b9e7c80c58725f3bb5061376369d8c98"
+      },
+      "status": "COMPLETE; timing COMPLETE",
+      "ppl": 7.020863463952398,
+      "prefill_ms": 1070.644835010171,
+      "decode_tokens_per_second": 5.556935047484866,
+      "run_status": "COMPLETE",
+      "timing_status": "COMPLETE",
+      "peak_allocated_gib": 16.610486030578613,
+      "gpu_uuids": [
+        "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b"
+      ],
+      "exclusive": true,
+      "cache_timing": "fresh past_key_values=None for every repetition; prefix and discarded decode outside decode timer"
+    },
+    "du_fake": {
+      "source": {
+        "path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_8b_seed0_ppl-timing_job1736351.json",
+        "sha256": "c69cdee1aacadf8b5f2a7d886d98184e9ffc156bc98080f7e08fa9d805102072"
+      },
+      "status": "COMPLETE; timing COMPLETE",
+      "ppl": 8.198438760386336,
+      "prefill_ms": 1163.5052640922368,
+      "decode_tokens_per_second": 4.845373406430025,
+      "run_status": "COMPLETE",
+      "timing_status": "COMPLETE",
+      "peak_allocated_gib": 16.40189838409424,
+      "gpu_uuids": [
+        "GPU-c83e163a-aa72-7904-e707-3eb59a70b80b"
+      ],
+      "exclusive": true,
+      "cache_timing": "fresh past_key_values=None for every repetition; prefix and discarded decode outside decode timer"
+    }
+  }
+}

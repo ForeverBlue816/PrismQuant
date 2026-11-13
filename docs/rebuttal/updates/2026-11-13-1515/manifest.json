@@ -1,0 +1,188 @@
+{
+  "created_utc": "2026-11-13T07:12:47.048757+00:00",
+  "scope": "Meta-Llama-3.1-8B seed0; actual same-A40 deployment measurements in two separately paired allocations",
+  "pending": [],
+  "self_hash_omitted": true,
+  "benchmark_sample_payloads_exported": false,
+  "files": [
+    {
+      "path": "e38/raw/integer_8b_nar_k8_seed0_ppl-timing_job1736915.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/integer_8b_nar_k8_seed0_ppl-timing_job1736915.json",
+      "source_bytes": 497200,
+      "source_sha256": "3c1ea5344ac0b3d8d0aca2eba9e16108bc82c615430e0ca766a6150bc56f8865",
+      "exported_bytes": 497200,
+      "exported_sha256": "3c1ea5344ac0b3d8d0aca2eba9e16108bc82c615430e0ca766a6150bc56f8865",
+      "captured_utc": "2026-11-13T07:12:47.017710+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "e38/raw/stage_a_8b_fp16_seed0_g128comparison_job1736915.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_fp16_seed0_g128comparison_job1736915.json",
+      "source_bytes": 140481,
+      "source_sha256": "d2bca2d3f985bcf6470b6780597befe2a0d9713f3ec44b7f2562c37432b15605",
+      "exported_bytes": 140481,
+      "exported_sha256": "d2bca2d3f985bcf6470b6780597befe2a0d9713f3ec44b7f2562c37432b15605",
+      "captured_utc": "2026-11-13T07:12:47.019970+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "e38/raw/stage_a_8b_nar_k8_seed0_fast_officialcomparison_job1736351.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/raw/stage_a_8b_nar_k8_seed0_fast_officialcomparison_job1736351.json",
+      "source_bytes": 622429,
+      "source_sha256": "cdc7bfd9f0007cf5ba9d0bbb00364f00078a5724a2b64b7cc875957a64d975a2",
+      "exported_bytes": 622429,
+      "exported_sha256": "cdc7bfd9f0007cf5ba9d0bbb00364f00078a5724a2b64b7cc875957a64d975a2",
+      "captured_utc": "2026-11-13T07:12:47.024892+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "e39/raw/native_8b_seed0_ppl-timing_job1736351.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_ppl-timing_job1736351.json",
+      "source_bytes": 34298,
+      "source_sha256": "58490979cac8e89d1c3c2282c389ca88b9e7c80c58725f3bb5061376369d8c98",
+      "exported_bytes": 34298,
+      "exported_sha256": "58490979cac8e89d1c3c2282c389ca88b9e7c80c58725f3bb5061376369d8c98",
+      "captured_utc": "2026-11-13T07:12:47.026192+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "e39/raw/packed_native_8b_seed0_official_ppl-timing_job1736351.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/packed_native_8b_seed0_official_ppl-timing_job1736351.json",
+      "source_bytes": 369610,
+      "source_sha256": "d8e36f2c87a8e0f28a7e97d44ac3605ff71c08eea333bc7671c582703a13d9e5",
+      "exported_bytes": 369610,
+      "exported_sha256": "d8e36f2c87a8e0f28a7e97d44ac3605ff71c08eea333bc7671c582703a13d9e5",
+      "captured_utc": "2026-11-13T07:12:47.028489+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "e39/raw/packed_native_8b_seed0_remove-dead-random_ppl-timing_job1736351.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/packed_native_8b_seed0_remove-dead-random_ppl-timing_job1736351.json",
+      "source_bytes": 369676,
+      "source_sha256": "9372c96674a38fee4901e979535317594ad4f208bd1f4a8f695a0b37b8d97e97",
+      "exported_bytes": 369676,
+      "exported_sha256": "9372c96674a38fee4901e979535317594ad4f208bd1f4a8f695a0b37b8d97e97",
+      "captured_utc": "2026-11-13T07:12:47.030865+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "e38/g128_vs_fp16/job1736915/table.md",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/g128_vs_fp16/job1736915/table.md",
+      "source_bytes": 2577,
+      "source_sha256": "ee5d7397b90bd19c4066ec655112efdc58294da5c200f58fb4de51a8830dee20",
+      "exported_bytes": 2577,
+      "exported_sha256": "ee5d7397b90bd19c4066ec655112efdc58294da5c200f58fb4de51a8830dee20",
+      "captured_utc": "2026-11-13T07:12:47.037432+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "e38/g128_vs_fp16/job1736915/summary.md",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/g128_vs_fp16/job1736915/summary.md",
+      "source_bytes": 2126,
+      "source_sha256": "241b4587055be3e04310f3b686f92618459fefb798a48dc0ef26c3c87221fbe1",
+      "exported_bytes": 2126,
+      "exported_sha256": "241b4587055be3e04310f3b686f92618459fefb798a48dc0ef26c3c87221fbe1",
+      "captured_utc": "2026-11-13T07:12:47.039737+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "e38/g128_vs_fp16/job1736915/comparison.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/e38/g128_vs_fp16/job1736915/comparison.json",
+      "source_bytes": 25689,
+      "source_sha256": "7796a2236b26f5e605fe801d29fc9e1e77451b1f7b4ea76a864751270087478b",
+      "exported_bytes": 25689,
+      "exported_sha256": "7796a2236b26f5e605fe801d29fc9e1e77451b1f7b4ea76a864751270087478b",
+      "captured_utc": "2026-11-13T07:12:47.040280+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "entrypoints/slurm_g128_vs_fp16_8b.sh",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/slurm_g128_vs_fp16_8b.sh",
+      "source_bytes": 2146,
+      "source_sha256": "db93759530ee2394185ddee409cb583cf92d798ede0e2f3c114383f25b376990",
+      "exported_bytes": 2146,
+      "exported_sha256": "db93759530ee2394185ddee409cb583cf92d798ede0e2f3c114383f25b376990",
+      "captured_utc": "2026-11-13T07:12:47.044154+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "entrypoints/slurm_rebuttal_speed_8b.sh",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/slurm_rebuttal_speed_8b.sh",
+      "source_bytes": 2319,
+      "source_sha256": "cd7f7cf0affe14947bdd105e27f51c1ebc420e4bd4236e6a27b6fa40d141ac54",
+      "exported_bytes": 2319,
+      "exported_sha256": "cd7f7cf0affe14947bdd105e27f51c1ebc420e4bd4236e6a27b6fa40d141ac54",
+      "captured_utc": "2026-11-13T07:12:47.047428+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "entrypoints/collect_g128_vs_fp16.py",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/scripts/collect_g128_vs_fp16.py",
+      "source_bytes": 16870,
+      "source_sha256": "d2b65bc72d17856229c0eac5452b8e96259e82439edf7006bb3fe18b3b1b7c50",
+      "exported_bytes": 16870,
+      "exported_sha256": "d2b65bc72d17856229c0eac5452b8e96259e82439edf7006bb3fe18b3b1b7c50",
+      "captured_utc": "2026-11-13T07:12:47.048179+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "e42/raw/duquant_8b_seed0_ppl-timing_job1736351.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e42/results/e42/raw/duquant_8b_seed0_ppl-timing_job1736351.json",
+      "source_bytes": 43876,
+      "source_sha256": "c69cdee1aacadf8b5f2a7d886d98184e9ffc156bc98080f7e08fa9d805102072",
+      "exported_bytes": 43876,
+      "exported_sha256": "c69cdee1aacadf8b5f2a7d886d98184e9ffc156bc98080f7e08fa9d805102072",
+      "captured_utc": "2026-11-13T07:18:08.452558+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "native_8b/table.md",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/baselines/native_8b/table.md",
+      "source_bytes": 2555,
+      "source_sha256": "1a87aa098ad624d2d76f8716dcc0632a26e443cc548169c7f12ed548a8b57178",
+      "exported_bytes": 2555,
+      "exported_sha256": "1a87aa098ad624d2d76f8716dcc0632a26e443cc548169c7f12ed548a8b57178",
+      "captured_utc": "2026-11-13T07:18:08.455353+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "native_8b/collection.json",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/baselines/native_8b/collection.json",
+      "source_bytes": 4704,
+      "source_sha256": "85e743dee61d7720219a694810de3f2d268deac247ced223ae869d0f811a3c0b",
+      "exported_bytes": 4704,
+      "exported_sha256": "85e743dee61d7720219a694810de3f2d268deac247ced223ae869d0f811a3c0b",
+      "captured_utc": "2026-11-13T07:18:08.455923+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "native_8b/summary.md",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/results/baselines/native_8b/summary.md",
+      "source_bytes": 1877,
+      "source_sha256": "b644dfb8511d53c615b591945222e35bb0718794e4cbbeed2d944923bfe2adf4",
+      "exported_bytes": 1899,
+      "exported_sha256": "174b01788460ca752ea883c67b82fbf2ca833190f7084bda836c9dfcd1e0c567",
+      "captured_utc": "2026-11-13T07:18:08.458261+00:00",
+      "transformation": "relative documentation link adapted for publication"
+    },
+    {
+      "path": "entrypoints/collect_native_speed_8b.py",
+      "source_path": "/home/yanlongc/prismquant-rebuttal-e38/scripts/collect_native_speed_8b.py",
+      "source_bytes": 8814,
+      "source_sha256": "7c9af52c437ae931f9e08ce748379efd623b0762bb2466b0cf46a9ac2d2ed852",
+      "exported_bytes": 8814,
+      "exported_sha256": "7c9af52c437ae931f9e08ce748379efd623b0762bb2466b0cf46a9ac2d2ed852",
+      "captured_utc": "2026-11-13T07:18:08.460805+00:00",
+      "transformation": "none; original source bytes retained"
+    },
+    {
+      "path": "README.md",
+      "source_path": null,
+      "exported_bytes": 5000,
+      "exported_sha256": "0c5780d01a921d2ee8677cb1c369a8827492b60455e0d066bf68a8f1b08fbdc7",
+      "captured_utc": "2026-11-13T07:18:08.464658+00:00",
+      "transformation": "generated synthesis of complete frozen raw measurements"
+    }
+  ],
+  "completed_utc": "2026-11-13T07:18:08.464666+00:00"
+}

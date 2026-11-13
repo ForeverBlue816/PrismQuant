@@ -1,23 +1,37 @@
 # Rebuttal 当前实验状态
 
-更新时间：**2026-11-13 14:20 新加坡时间**。
+更新时间：**2026-11-13 15:18 新加坡时间**。
 
-**OffQ不运行，也不进行无公开官方代码的复现。** 当前队列无OffQ，历史通用worker2已明确禁用。当前优先完成官方FlatQuant和DuQuant。
+**OffQ仍不运行。** 以下为本机A40实测，取代此前引用其他硬件数字作为本地性能依据的做法。
 
-## Meta-Llama-3.1-8B — 新部署比较，seed0
+## Meta-Llama-3.1-8B — 两组A40实测已完成，seed0
 
-**1736915 已在A40运行**，顺序测试FP16和PQ k=8的g128 asymmetric整数原型。两条路径都先测完整141段PPL，再在同一已加载模型上计时；B1、prefix2048、decode128/drop8、10warmups/20repeats、fresh cache和last-position logits，逐次检查GPU独占。
+**job1736915：同卡FP16／g128整数原型。** 两行都在同一已加载模型上完成141段PPL和计时。
 
-| 同一A40的部署行 | 完整141段PPL | Prefill median | Decode median | 状态 |
-| --- | ---: | ---: | ---: | --- |
-| FP16，原生FP16 paged KV | **6.238432** | **389.488 ms** | **33.1000 tokens/s** | 完成 |
-| PQ k=8，GPTQ W4存储／asymmetric g128 A4／模拟KV4 | **6.989246** | **13214.108 ms** | 进行中 | decode未完成 |
+| 后端 | 完整141段PPL | Prefill ms | Decode tokens/s | 峰值allocated GiB |
+| --- | ---: | ---: | ---: | ---: |
+| FP16 | 6.238432 | 389.488 | 33.10000 | 17.4618 |
+| PQ k=8，g128整数原型 | 6.989246 | 13214.108 | 0.40628 | 7.3721 |
 
-**g128仍是展开INT8计算的整数原型，不是原生packed INT4加速后端。** 它保留BF16 KV cache并在attention中模拟KV4；FP16与其软件栈及attention/cache实现不同，结果比较的是完整后端，不能解释为纯格式开销。完成后再汇总完整速度比。
+g128原型相对FP16的prefill慢**33.9269倍**、decode慢**81.4707倍**。这是实际延迟测量，但该实现使用W4存储展开INT8分组GEMM，并在BF16 cache中模拟KV4；**它不构成原生g128 INT4加速结果**。两条路径的框架、attention和cache实现不同，不能据此隔离格式本身的开销，也不能把1.6%乘加或3.1%存储开销解释为相应延迟开销。
 
-FlatQuant官方packed INT4作业 **1736351** 已于**12:43新加坡时间**自动解除checkpoint依赖，现已在`gpu-a40-2`运行，完整跨方法对照尚未齐全。它将顺序测官方内核、移除无效随机分配的对照、PQ优化后的原生per-token symmetric后端以及浮点对照；各路径单独测部署PPL，使用同一张A40和相同计时协议。**现有fake-quant PPL不会冒充原生内核PPL。**
+**job1736351：另一张同卡A40上的FlatQuant／PQ／DuQuant。** 五行完整PPL和计时均已完成。
 
-[部署记录与冻结快照](updates/2026-11-13-1200/README.md) · [历史g128/FP16同卡结果](updates/2026-11-13-1200/g128_vs_fp16_historical/table.md) · [实际解除依赖记录](updates/2026-11-13-1200/native_speed_release_1736351.json)
+| 后端 | 完整141段PPL | Prefill ms | Decode tokens/s | 峰值allocated GiB |
+| --- | ---: | ---: | ---: | ---: |
+| FlatQuant 官方 packed INT4 | 6.952981 | 302.482 | 9.74138 | 6.2440 |
+| FlatQuant，移除无效随机分配 | 6.952981 | 294.382 | 10.40427 | 6.2440 |
+| PQ k=8 原生 INT4，per-token symmetric | 9.995008 | 377.209 | 16.75236 | 7.7907 |
+| FlatQuant 官方浮点 fake-quant | 7.020863 | 1070.645 | 5.55694 | 16.6105 |
+| DuQuant 官方浮点 fake-quant | 8.198439 | 1163.505 | 4.84537 | 16.4019 |
+
+PQ原生per-token变体相对FlatQuant官方packed内核，decode快**1.7197倍**，prefill延迟增加**24.7046%**；相对清理版，decode快**1.6101倍**，prefill延迟增加**28.1359%**。同时PPL为**9.9950对6.9530**，所以不能宣称同等精度下全面加速，也不能把该变体作为Table1 g128部署结果。
+
+共同计时协议：batch1、prefix2048、decode128/drop8、token100、10次预热／20次测量、last-position logits、fresh cache，eager同步墙钟计时。每行43/43 GPU独占检查通过。两组分属不同A40，速度比只在各自同卡组内计算。FlatQuant原生prefill使用变换后的未量化KV，decode使用packed KV；PQ使用原生packed per-head KV。浮点fake-quant实现与packed内核分别列出。
+
+本次A40浮点PPL与PRO6000校准后评测略有差异：FlatQuant7.020543→7.020863，DuQuant8.188651→8.198439。同checkpoint、同141段tokens、两次均use_cache=False；具体数值漂移原因未隔离，不能直接归因cache。各速度行保留其同次部署PPL。
+
+[A40完整原始记录与说明](updates/2026-11-13-1515/README.md) · [g128／FP16完整表](updates/2026-11-13-1515/e38/g128_vs_fp16/job1736915/table.md) · [FlatQuant／PQ／DuQuant完整表](updates/2026-11-13-1515/native_8b/table.md)
 
 ## Llama-3.2-3B — seed0：PPL、八任务、同卡速度全部完成
 
@@ -49,6 +63,6 @@ DuQuant旧作业的最后一项Winogrande曾被取消；job1736906验证并复�
 
 ## 之前的PrismQuant部署优化
 
-PPL **9.9950** 对应 **Meta-Llama-3.1-8B** 的per-token symmetric原生部署变体，不能与上方3B行或论文Table1 g128行混为一谈。它的原版/优化版同卡prefill625.837→346.651ms、decode13.765→18.719tokens/s，完整PPL保持不变。跨方法的8B原生部署比较仍待完成。
+PPL **9.9950** 对应 **Meta-Llama-3.1-8B** 的per-token symmetric原生部署变体，不能与上方3B行或论文Table1 g128行混为一谈。它的原版/优化版同卡prefill625.837→346.651ms、decode13.765→18.719tokens/s，完整PPL保持不变。跨方法的8B原生部署比较已完成，以上方job1736351的fresh-cache结果为准。
 
 [8B PQ优化表](2026-11-13/records/e38/rotation_optimization/table.md) · [00:27完整历史归档](2026-11-13/README.md)。
