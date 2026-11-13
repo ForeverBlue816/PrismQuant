@@ -1,6 +1,6 @@
 # Rebuttal 当前实验状态
 
-更新时间：**2026-11-13 13:47 新加坡时间**。
+更新时间：**2026-11-13 14:20 新加坡时间**。
 
 **OffQ不运行，也不进行无公开官方代码的复现。** 当前队列无OffQ，历史通用worker2已明确禁用。当前优先完成官方FlatQuant和DuQuant。
 
@@ -15,7 +15,7 @@
 
 **g128仍是展开INT8计算的整数原型，不是原生packed INT4加速后端。** 它保留BF16 KV cache并在attention中模拟KV4；FP16与其软件栈及attention/cache实现不同，结果比较的是完整后端，不能解释为纯格式开销。完成后再汇总完整速度比。
 
-FlatQuant官方packed INT4作业 **1736351** 已于**12:43新加坡时间**自动解除checkpoint依赖，目前因`QOSMaxJobsPerUserLimit`等待两个运行名额之一释放。它将顺序测官方内核、移除无效随机分配的对照、PQ优化后的原生per-token symmetric后端以及浮点对照；各路径单独测部署PPL，使用同一张A40和相同计时协议。**现有fake-quant PPL不会冒充原生内核PPL。**
+FlatQuant官方packed INT4作业 **1736351** 已于**12:43新加坡时间**自动解除checkpoint依赖，现已在`gpu-a40-2`运行，完整跨方法对照尚未齐全。它将顺序测官方内核、移除无效随机分配的对照、PQ优化后的原生per-token symmetric后端以及浮点对照；各路径单独测部署PPL，使用同一张A40和相同计时协议。**现有fake-quant PPL不会冒充原生内核PPL。**
 
 [部署记录与冻结快照](updates/2026-11-13-1200/README.md) · [历史g128/FP16同卡结果](updates/2026-11-13-1200/g128_vs_fp16_historical/table.md) · [实际解除依赖记录](updates/2026-11-13-1200/native_speed_release_1736351.json)
 
@@ -38,10 +38,12 @@ DuQuant旧作业的最后一项Winogrande曾被取消；job1736906验证并复�
 
 | 官方方法 | 完整141段PPL | 八任务均值 | 状态 |
 | --- | ---: | ---: | --- |
-| FlatQuant，W4RTN/A4/KV4，BF16 fake-quant，15epochs | **7.020543** | 进行中 | PPL与checkpoint完成，八任务进行中 |
+| FlatQuant，W4RTN/A4/KV4，BF16 fake-quant，15epochs | **7.020543** | **65.7515%** | PPL与八任务8/8完成 |
 | DuQuant，官方W4A4/QK/V，FP16 fake-quant，epochs0 | **8.188651** | **62.5947%** | PPL与八任务8/8完成 |
 
-两方法的checkpoint已经保存，job1736252仍在运行FlatQuant八任务。FlatQuant校准耗时**59.887分钟**、**0.9981 GPU小时**，峰值allocated **20.2995 GiB**，运行于PRO6000。配对Flat−Du PPL差**−1.16811**，95%逐段bootstrap区间**[−1.23328,−1.10578]**（固定seed0，非校准种子区间）。这些精度结果和上方原生部署比较分别记录。
+两方法的checkpoint已经保存，job1736252已完成两方法全部八任务。FlatQuant校准耗时**59.887分钟**、**0.9981 GPU小时**，峰值allocated **20.2995 GiB**，运行于PRO6000。配对Flat−Du PPL差**−1.16811**，95%逐段bootstrap区间**[−1.23328,−1.10578]**（固定seed0，非校准种子区间）。这些精度结果和上方原生部署比较分别记录。
+
+[两模型三方法逐任务正确数/总数](updates/2026-11-13-1420/table.md) · [可填表CSV](updates/2026-11-13-1420/counts.csv) · [FlatQuant8B完整八任务](updates/2026-11-13-1420/flatquant8b_eight_tasks_complete.json)
 
 [本轮8B原始记录索引](updates/2026-11-13-1200/README.md) · [源文件与导出SHA](updates/2026-11-13-1200/manifest.json)
 

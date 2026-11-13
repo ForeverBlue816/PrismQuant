@@ -1,0 +1,17 @@
+﻿model,task,metric,total,PrismQuant_k8_correct,FlatQuant_correct,DuQuant_correct
+Llama-3.2-3B,ARC-c,acc_norm,1172,502,519,480
+Llama-3.2-3B,ARC-e,acc_norm,2376,1622,1649,1561
+Llama-3.2-3B,BoolQ,acc,3270,2357,2391,2203
+Llama-3.2-3B,HellaSwag,acc_norm,10042,7116,7151,6741
+Llama-3.2-3B,OpenBookQA,acc_norm,500,194,200,196
+Llama-3.2-3B,PIQA,acc_norm,1838,1391,1400,1347
+Llama-3.2-3B,SocialIQA,acc,1954,888,874,848
+Llama-3.2-3B,WinoGrande,acc,1267,858,829,798
+Llama-3.1-8B,ARC-c,acc_norm,1172,573,591,549
+Llama-3.1-8B,ARC-e,acc_norm,2376,1877,1888,1752
+Llama-3.1-8B,BoolQ,acc,3270,2620,2659,2500
+Llama-3.1-8B,HellaSwag,acc_norm,10042,7727,7720,7498
+Llama-3.1-8B,OpenBookQA,acc_norm,500,221,207,206
+Llama-3.1-8B,PIQA,acc_norm,1838,1436,1443,1388
+Llama-3.1-8B,SocialIQA,acc,1954,923,912,875
+Llama-3.1-8B,WinoGrande,acc,1267,866,904,856

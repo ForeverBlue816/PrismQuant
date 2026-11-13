@@ -1,0 +1,204 @@
+{
+  "model": "Meta-Llama-3.1-8B",
+  "model_key": "llama31_8b",
+  "method": "FlatQuant official native",
+  "seed": 0,
+  "status": "COMPLETE",
+  "phase": "tasks",
+  "source_commit": "56ae3cfb695edb61026de9208307500a9c456e4f",
+  "official_commit": "9d88ffcb7d2c6bda59fb5c44dad36adc101aadb1",
+  "base_checkpoint": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+  "checkpoint": "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0",
+  "job_id": "1736252",
+  "config": "W4 RTN per-channel symmetric; A4 per-token symmetric; native K4/V4 asymmetric per head (128); BF16 residual",
+  "source_sha256": "071c9258c4abd78c01e5311642e5b1cb97edb4dcc7231859411488c5f27af642",
+  "command": [
+    "/projects/nar/nar-validation/venv/bin/python",
+    "-m",
+    "nar.e39_flatquant",
+    "--checkpoint",
+    "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0",
+    "--phase",
+    "tasks",
+    "--source-commit",
+    "56ae3cfb695edb61026de9208307500a9c456e4f",
+    "--output",
+    "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_tasks_job1736252.json"
+  ],
+  "numerical_execution_gates": "none",
+  "execution_backend": "official floating fake-quant PyTorch implementation; not packed INT4 deployment",
+  "native_int4_kernel": false,
+  "model_dispatch_adapter": "unchanged official model dispatcher",
+  "official_args": {
+    "model": "/projects/nar/nar-validation/cache/huggingface/models--unsloth--Meta-Llama-3.1-8B/snapshots/e9a141a2091ea561b96483212645a2a05e6f99fc",
+    "seed": 0,
+    "hf_token": null,
+    "a_bits": 4,
+    "a_groupsize": -1,
+    "a_asym": false,
+    "w_bits": 4,
+    "w_groupsize": -1,
+    "w_asym": false,
+    "gptq": false,
+    "gptq_mse": false,
+    "percdamp": 0.01,
+    "act_order": false,
+    "epochs": 15,
+    "cali_dataset": "wikitext2",
+    "nsamples": 128,
+    "cali_bsz": 4,
+    "flat_lr": 0.005,
+    "cali_trans": true,
+    "add_diag": true,
+    "lwc": true,
+    "lac": true,
+    "resume": false,
+    "save_matrix": true,
+    "reload_matrix": false,
+    "matrix_path": null,
+    "diag_init": "sq_style",
+    "diag_alpha": 0.3,
+    "warmup": false,
+    "deactive_amp": false,
+    "direct_inv": false,
+    "separate_vtrans": false,
+    "q_bits": 16,
+    "q_asym": false,
+    "q_groupsize": -1,
+    "k_bits": 4,
+    "k_asym": true,
+    "k_groupsize": 128,
+    "v_bits": 4,
+    "v_asym": true,
+    "v_groupsize": 128,
+    "output_dir": "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0",
+    "exp_name": "official_native_seed0",
+    "lm_eval": false,
+    "tasks": [
+      "piqa",
+      "hellaswag",
+      "arc_easy",
+      "arc_challenge",
+      "winogrande",
+      "lambada_openai"
+    ],
+    "lm_eval_batch_size": 128,
+    "distribute_model": false,
+    "quantized_save": false,
+    "quantize": true,
+    "model_name": "Llama-3.1-8B",
+    "exp_dir": "/projects/nar/nar-validation/checkpoints/rebuttal_8b/flatquant_native_seed0/Llama-3.1-8B/w4a4/official_native_seed0"
+  },
+  "libraries": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.45.0",
+    "datasets": "5.0.1",
+    "numpy": "2.4.6"
+  },
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "tokenizer_adapter": "Fast tokenizer from pinned tokenizer.json; no token or BOS setting changed",
+  "checkpoint_reused": true,
+  "original_calibration_cost": {
+    "wall_seconds": 3593.20508750109,
+    "peak_allocated_bytes": 21796416512,
+    "peak_reserved_bytes": 22884122624,
+    "physical_gpu_count": 1,
+    "gpu_hours": 0.9981125243058583
+  },
+  "model_object_id": 126486173398480,
+  "eight_tasks": {
+    "arc_easy": {
+      "metrics": {
+        "name": "arc_easy",
+        "alias": "arc_easy",
+        "sample_len": 2376,
+        "acc,none": 0.8017676767676768,
+        "acc_stderr,none": 0.008180497199102564,
+        "acc_norm,none": 0.7946127946127947,
+        "acc_norm_stderr,none": 0.008289582587432948
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_tasks_job1736252_arc_easy.json"
+    },
+    "arc_challenge": {
+      "metrics": {
+        "name": "arc_challenge",
+        "alias": "arc_challenge",
+        "sample_len": 1172,
+        "acc,none": 0.4761092150170648,
+        "acc_stderr,none": 0.014594701798071654,
+        "acc_norm,none": 0.5042662116040956,
+        "acc_norm_stderr,none": 0.014610858923956952
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_tasks_job1736252_arc_challenge.json"
+    },
+    "boolq": {
+      "metrics": {
+        "name": "boolq",
+        "alias": "boolq",
+        "sample_len": 3270,
+        "acc,none": 0.8131498470948012,
+        "acc_stderr,none": 0.006817490804551452
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_tasks_job1736252_boolq.json"
+    },
+    "hellaswag": {
+      "metrics": {
+        "name": "hellaswag",
+        "alias": "hellaswag",
+        "sample_len": 10042,
+        "acc,none": 0.5795658235411273,
+        "acc_stderr,none": 0.00492619848394869,
+        "acc_norm,none": 0.7687711611232823,
+        "acc_norm_stderr,none": 0.004207567164872165
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_tasks_job1736252_hellaswag.json"
+    },
+    "openbookqa": {
+      "metrics": {
+        "name": "openbookqa",
+        "alias": "openbookqa",
+        "sample_len": 500,
+        "acc,none": 0.3,
+        "acc_stderr,none": 0.02051442622562805,
+        "acc_norm,none": 0.414,
+        "acc_norm_stderr,none": 0.022049497969827865
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_tasks_job1736252_openbookqa.json"
+    },
+    "piqa": {
+      "metrics": {
+        "name": "piqa",
+        "alias": "piqa",
+        "sample_len": 1838,
+        "acc,none": 0.7812840043525572,
+        "acc_stderr,none": 0.009644731932667584,
+        "acc_norm,none": 0.7850924918389554,
+        "acc_norm_stderr,none": 0.009583665082653306
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_tasks_job1736252_piqa.json"
+    },
+    "social_iqa": {
+      "metrics": {
+        "name": "social_iqa",
+        "alias": "social_iqa",
+        "sample_len": 1954,
+        "acc,none": 0.46673490276356194,
+        "acc_stderr,none": 0.011289003238311952
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_tasks_job1736252_social_iqa.json"
+    },
+    "winogrande": {
+      "metrics": {
+        "name": "winogrande",
+        "alias": "winogrande",
+        "sample_len": 1267,
+        "acc,none": 0.7134964483030781,
+        "acc_stderr,none": 0.012707030139960381
+      },
+      "samples": "/home/yanlongc/prismquant-rebuttal-e39/results/e39/raw/native_8b_seed0_tasks_job1736252_winogrande.json"
+    }
+  },
+  "same_model_object_id_after_measurements": 126486173398480,
+  "total_wall_seconds": 5192.772766131908,
+  "allocated_gpu_hours": 1.4424368794810856
+}

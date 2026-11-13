@@ -1,0 +1,5 @@
+所有48个任务单元均已完成。FlatQuant8B现已8/8完成，八任务均值65.751548%。ARC-e、ARC-c、HellaSwag、OpenBookQA、PIQA使用acc_norm；BoolQ、SocialIQA、WinoGrande使用acc。八任务均值按八个任务准确率等权平均，不是合并样本计数后求比率。
+
+FlatQuant/DuQuant正确数由逐条0/1指标求和，已验证doc_id唯一、effective样本总数与聚合准确率一致。PrismQuant使用上一表对应的历史k8seed0结果：正确数由原始完整精度accuracy乘日志effective总数恢复（乘积均为整数至浮点误差），没有使用四舍五入的展示百分比；这些历史文件不含逐条预测，未做逐条核验。
+
+PrismQuant3B采用asymmetric g128 GPTQ权重，8B采用symmetric per-channel GPTQ权重；两者均asymmetric g128 A4和模拟KV4。FlatQuant/DuQuant是本轮官方配置的浮点量化评测。此表不是部署内核精度或三种子均值。
