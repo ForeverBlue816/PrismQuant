@@ -59,3 +59,15 @@ def test_signed_permutation_fold_preserves_swiglu_rotation():
     fold_swiglu_weights(gate,up,folded)
     actual=folded.apply(torch.nn.functional.silu(gate(x))*up(x))
     assert (actual-expected).norm()/expected.norm()<1e-6
+
+
+@pytest.mark.parametrize('sym', [True, False])
+def test_gptq_runs_on_cpu(sym):
+    from prismquant.gptq import GPTQ
+    torch.manual_seed(0)
+    layer = torch.nn.Linear(256, 32, bias=False)
+    gptq = GPTQ(layer, sym=sym)
+    gptq.add_batch(torch.randn(2, 16, 256))
+    audit = gptq.fasterquant(groupsize=-1 if sym else 128)
+    assert audit.columns == 256
+    assert torch.isfinite(layer.weight).all()
