@@ -328,7 +328,8 @@ class GPTQ:
                 errors[:, offset] = error
             output[:, block_start:block_stop] = quantized
             weight[:, block_stop:] -= errors @ hinv[block_start:block_stop, block_stop:]
-        torch.cuda.synchronize()
+        if weight.is_cuda:
+            torch.cuda.synchronize(weight.device)
         if act_order:
             output = output[:, inverse_order]
         self.layer.weight.data.copy_(output.to(self.layer.weight.dtype))
